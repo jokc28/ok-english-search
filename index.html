@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>옥모닝 표현 사전 — 상황별 영어 표현 검색</title>
+  <meta name="description" content="상황별 영어 표현을 검색하고 바로 시청하세요. @ok.english.kr의 영어 표현 릴스 모음.">
+  <meta name="theme-color" content="#1C1917">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="옥모닝 표현 사전">
+  <meta property="og:description" content="상황별 영어 표현을 검색하고 바로 시청하세요">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://jokc28.github.io/ok-english-search/">
+  <meta property="og:image" content="https://jokc28.github.io/ok-english-search/og-image.svg">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231C1917'/><text x='50' y='68' font-size='50' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='bold'>옥</text></svg>">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Pretendard Variable', 'Noto Sans KR', sans-serif;
+      background-color: #FAFAF8;
+      color: #1C1917;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      position: relative;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      opacity: 0.3;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      z-index: 9999;
+    }
+
+    .container {
+      max-width: 480px;
+      margin: 0 auto;
+      padding: 0 20px;
+      padding-bottom: 40px;
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 24px 0 20px;
+    }
+
+    .logo {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #1C1917, #44403C);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .logo span {
+      font-family: 'Space Mono', monospace;
+      font-weight: 700;
+      font-size: 20px;
+      color: #FFFFFF;
+    }
+
+    .header-text h1 {
+      font-size: 22px;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+
+    .header-text p {
+      font-size: 13px;
+      color: #78716C;
+      margin-top: 2px;
+    }
+
+    /* Search */
+    .search-wrap {
+      position: relative;
+      margin-bottom: 16px;
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #A8A29E;
+      pointer-events: none;
+    }
+
+    .search-input {
+      width: 100%;
+      height: 52px;
+      border: 2px solid #E7E5E4;
+      border-radius: 16px;
+      background: #FFFFFF;
+      padding: 0 48px 0 48px;
+      font-size: 16px;
+      font-family: 'Pretendard Variable', 'Noto Sans KR', sans-serif;
+      color: #1C1917;
+      outline: none;
+      transition: border-color 0.2s ease;
+    }
+
+    .search-input::placeholder {
+      color: #A8A29E;
+    }
+
+    .search-input:focus {
+      border-color: #1C1917;
+    }
+
+    .search-clear {
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      background: #F5F5F4;
+      border: none;
+      cursor: pointer;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      color: #78716C;
+      font-size: 14px;
+      line-height: 1;
+    }
+
+    .search-clear.visible {
+      display: flex;
+    }
+
+    /* Tags */
+    .tags-row {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 4px;
+      margin-bottom: 16px;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    .tags-row::-webkit-scrollbar {
+      display: none;
+    }
+
+    .tag-pill {
+      flex-shrink: 0;
+      padding: 8px 16px;
+      border-radius: 20px;
+      border: 1.5px solid #D6D3D1;
+      background: transparent;
+      font-size: 13px;
+      font-weight: 500;
+      color: #57534E;
+      cursor: pointer;
+      font-family: 'Pretendard Variable', 'Noto Sans KR', sans-serif;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .tag-pill.active {
+      background: #1C1917;
+      color: #FFFFFF;
+      border-color: #1C1917;
+    }
+
+    /* Result count */
+    .result-count {
+      font-size: 13px;
+      color: #78716C;
+      margin-bottom: 12px;
+    }
+
+    .result-count strong {
+      font-size: 15px;
+      font-weight: 700;
+      color: #1C1917;
+    }
+
+    /* Cards */
+    .card-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .card {
+      display: block;
+      background: #FFFFFF;
+      border: 1px solid #F0EEEC;
+      border-radius: 16px;
+      padding: 20px;
+      text-decoration: none;
+      color: inherit;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      animation: slideUp 0.4s ease-out both;
+    }
+
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+    }
+
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(16px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    .card-expression {
+      font-family: 'Space Mono', monospace;
+      font-weight: 700;
+      font-size: 16px;
+      color: #1C1917;
+      line-height: 1.3;
+      min-width: 0;
+      word-break: break-word;
+    }
+
+    .play-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: #1C1917;
+      color: #FFFFFF;
+      border-radius: 8px;
+      padding: 4px 10px 4px 8px;
+      flex-shrink: 0;
+    }
+
+    .play-badge svg {
+      width: 16px;
+      height: 16px;
+      fill: #FFFFFF;
+    }
+
+    .play-badge span {
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .card-situation {
+      font-size: 15px;
+      font-weight: 700;
+      color: #292524;
+      margin-bottom: 6px;
+    }
+
+    .card-description {
+      font-size: 13px;
+      font-weight: 400;
+      color: #78716C;
+      line-height: 1.6;
+      margin-bottom: 12px;
+    }
+
+    .card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .card-tag {
+      font-size: 11px;
+      font-weight: 500;
+      color: #A8A29E;
+      background: #F5F5F4;
+      border-radius: 6px;
+      padding: 4px 8px;
+    }
+
+    /* Empty state */
+    .empty-state {
+      text-align: center;
+      padding: 60px 0;
+    }
+
+    .empty-state p:first-child {
+      font-size: 16px;
+      font-weight: 700;
+      color: #57534E;
+      margin-bottom: 8px;
+    }
+
+    .empty-state p:last-child {
+      font-size: 13px;
+      color: #A8A29E;
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding: 40px 0 20px;
+    }
+
+    .footer p {
+      font-size: 12px;
+      color: #A8A29E;
+      margin-bottom: 10px;
+    }
+
+    .footer a {
+      color: #A8A29E;
+      transition: color 0.2s ease;
+    }
+
+    .footer a:hover {
+      color: #1C1917;
+    }
+
+    .footer-icon svg {
+      width: 16px;
+      height: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="logo"><span>옥</span></div>
+      <div class="header-text">
+        <h1>표현 사전</h1>
+        <p>상황별 영어 표현 · @ok.english.kr</p>
+      </div>
+    </header>
+
+    <div class="search-wrap">
+      <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="8"/>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+      </svg>
+      <input type="text" class="search-input" id="searchInput" placeholder="상황이나 영어 표현을 검색하세요">
+      <button class="search-clear" id="clearBtn" aria-label="검색어 지우기">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+          <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="tags-row" id="tagsRow"></div>
+
+    <div class="result-count" id="resultCount"></div>
+
+    <div class="card-list" id="cardList"></div>
+
+    <footer class="footer">
+      <p>&copy; 옥모닝 · 매일 아침, 영어로 깨어나다</p>
+      <a href="https://www.instagram.com/ok.english.kr/" target="_blank" rel="noopener noreferrer" class="footer-icon" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+      </a>
+    </footer>
+  </div>
+
+  <script src="data.js"></script>
+  <script>
+    const searchInput = document.getElementById('searchInput');
+    const clearBtn = document.getElementById('clearBtn');
+    const tagsRow = document.getElementById('tagsRow');
+    const cardList = document.getElementById('cardList');
+    const resultCount = document.getElementById('resultCount');
+
+    let activeTag = null;
+
+    // Extract unique tags
+    const allTags = [...new Set(REELS_DATA.flatMap(item => item.tags))];
+
+    // Render tag pills
+    allTags.forEach(tag => {
+      const pill = document.createElement('button');
+      pill.className = 'tag-pill';
+      pill.textContent = tag;
+      pill.addEventListener('click', () => {
+        if (activeTag === tag) {
+          activeTag = null;
+          pill.classList.remove('active');
+        } else {
+          activeTag = tag;
+          document.querySelectorAll('.tag-pill').forEach(p => p.classList.remove('active'));
+          pill.classList.add('active');
+        }
+        render();
+      });
+      tagsRow.appendChild(pill);
+    });
+
+    function searchScore(item, query) {
+      const q = query.toLowerCase().trim();
+      if (!q) return 1;
+
+      const fields = [
+        { text: item.situation_kr, weight: 3 },
+        { text: item.expression_en, weight: 3 },
+        { text: item.description_kr, weight: 2 },
+        { text: item.tags.join(' '), weight: 1 }
+      ];
+
+      let maxScore = 0;
+      for (const field of fields) {
+        const text = field.text.toLowerCase();
+        if (text.includes(q)) {
+          maxScore = Math.max(maxScore, field.weight * 10);
+        } else {
+          const words = q.split(/\s+/);
+          const matched = words.filter(w => text.includes(w)).length;
+          if (matched > 0) {
+            maxScore = Math.max(maxScore, field.weight * (matched / words.length) * 7);
+          }
+        }
+      }
+      return maxScore;
+    }
+
+    function render() {
+      const query = searchInput.value.trim();
+
+      // Toggle clear button
+      clearBtn.classList.toggle('visible', query.length > 0);
+
+      // Score and filter
+      let results = REELS_DATA.map(item => ({
+        item,
+        score: searchScore(item, query)
+      })).filter(r => r.score > 0);
+
+      // Apply tag filter
+      if (activeTag) {
+        results = results.filter(r => r.item.tags.includes(activeTag));
+      }
+
+      // Sort
+      if (query) {
+        results.sort((a, b) => b.score - a.score);
+      } else {
+        results.sort((a, b) => new Date(b.item.date) - new Date(a.item.date));
+      }
+
+      // Result count
+      let countText = `<strong>${results.length}</strong>개 표현`;
+      const filters = [];
+      if (activeTag) filters.push(`#${activeTag}`);
+      if (query) filters.push(`"${query}"`);
+      if (filters.length) countText += ' · ' + filters.join(' · ');
+      resultCount.innerHTML = countText;
+
+      // Render cards
+      if (results.length === 0) {
+        cardList.innerHTML = `
+          <div class="empty-state">
+            <p>검색 결과가 없습니다</p>
+            <p>다른 키워드로 검색해보세요</p>
+          </div>`;
+        return;
+      }
+
+      cardList.innerHTML = results.map((r, i) => {
+        const item = r.item;
+        const tagsHtml = item.tags.map(t => `<span class="card-tag">${t}</span>`).join('');
+        return `
+          <a class="card" href="${item.reel_url}" target="_blank" rel="noopener noreferrer" style="animation-delay: ${i * 40}ms">
+            <div class="card-top">
+              <span class="card-expression">${item.expression_en}</span>
+              <span class="play-badge">
+                <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+                <span>시청</span>
+              </span>
+            </div>
+            <div class="card-situation">${item.situation_kr}</div>
+            <div class="card-description">${item.description_kr}</div>
+            <div class="card-tags">${tagsHtml}</div>
+          </a>`;
+      }).join('');
+    }
+
+    searchInput.addEventListener('input', render);
+
+    clearBtn.addEventListener('click', () => {
+      searchInput.value = '';
+      activeTag = null;
+      document.querySelectorAll('.tag-pill').forEach(p => p.classList.remove('active'));
+      searchInput.focus();
+      render();
+    });
+
+    // Initial render
+    render();
+  </script>
+</body>
+</html>

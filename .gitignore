@@ -1,0 +1,20 @@
+# Instagram data export
+instagram_okenglish/
+your_instagram_activity/
+instagram-*/
+*.zip
+
+# Dev/admin tools
+url-matcher.html
+parse-instagram.js
+data-review.md
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Node
+node_modules/
+
+# Claude
+.claude/
