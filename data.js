@@ -1,5 +1,41 @@
 const REELS_DATA = [
   {
+    id: 258,
+    situation_kr: "[새 릴스 — 캡션 입력 필요]",
+    expression_en: "",
+    description_kr: "",
+    tags: ["미분류"],
+    reel_url: "https://www.instagram.com/reel/DTLHo-ggUAG/",
+    date: ""
+  },
+  {
+    id: 259,
+    situation_kr: "[새 릴스 — 캡션 입력 필요]",
+    expression_en: "",
+    description_kr: "",
+    tags: ["미분류"],
+    reel_url: "https://www.instagram.com/reel/DJ6OlDHRGV8/",
+    date: ""
+  },
+  {
+    id: 260,
+    situation_kr: "[새 릴스 — 캡션 입력 필요]",
+    expression_en: "",
+    description_kr: "",
+    tags: ["미분류"],
+    reel_url: "https://www.instagram.com/reel/C_j9QG9NYbd/",
+    date: ""
+  },
+  {
+    id: 261,
+    situation_kr: "[새 릴스 — 캡션 입력 필요]",
+    expression_en: "",
+    description_kr: "",
+    tags: ["미분류"],
+    reel_url: "https://www.instagram.com/reel/DUNvNuvAcC9/",
+    date: ""
+  },
+  {
     id: 1,
     situation_kr: "원어민은 노잼을 뭐라고 할까?",
     expression_en: "",
@@ -194,7 +230,7 @@ const REELS_DATA = [
     expression_en: "indifference",
     description_kr: "오늘의 표현:  → , 감정적으로도 신경 쓰지 않는 상태 예: His  hurt her more than anger",
     tags: ["감정", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_17930110398175578/",
+    reel_url: "https://www.instagram.com/reel/DSzcl7RgWBg/",
     date: "2025-12-28"
   },
   {
@@ -203,7 +239,7 @@ const REELS_DATA = [
     expression_en: "",
     description_kr: "",
     tags: ["돈"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_17911284978126437/",
+    reel_url: "https://www.instagram.com/reel/DSru6xXAd0V/",
     date: "2025-12-25"
   },
   {
@@ -212,7 +248,7 @@ const REELS_DATA = [
     expression_en: "photogenic",
     description_kr: "오늘의 표현:  → , 사진이 유독 잘 나오는 예: You look so  in that picture / This café is so",
     tags: ["뉘앙스", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_17878084683445382/",
+    reel_url: "https://www.instagram.com/reel/DSm-pnJAZvc/",
     date: "2025-12-23"
   },
   {
@@ -221,7 +257,7 @@ const REELS_DATA = [
     expression_en: "",
     description_kr: "",
     tags: ["일상"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18084857099515946/",
+    reel_url: "https://www.instagram.com/reel/DSfH9oaAY9Z/",
     date: "2025-12-20"
   },
   {
@@ -230,7 +266,7 @@ const REELS_DATA = [
     expression_en: "istoriaapp",
     description_kr: "이번 영상에서는 옥쌤이 직접 사용해보고 추천하는 영어 단어 어플을 소개해드리려고 합니다! @ 레벨 1~8까지, 영어 수준에 맞게 스토리나 책을 골라 읽기, 듣기, 단어, 퀴즈를 한 번에 진행할 수",
     tags: ["일상", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_17996668793706452/",
+    reel_url: "https://www.instagram.com/reel/DScHyq4kRi2/",
     date: "2025-12-19"
   },
   {
@@ -239,7 +275,7 @@ const REELS_DATA = [
     expression_en: "",
     description_kr: "",
     tags: ["슬랭", "문화"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18110248771622695/",
+    reel_url: "https://www.instagram.com/reel/DSU15toAX4t/",
     date: "2025-12-16"
   },
   {
@@ -248,7 +284,7 @@ const REELS_DATA = [
     expression_en: "foolproof",
     description_kr: "오늘의 표현:  → , 완전 확실한 예: This is a  solution — anyone can follow it / The setup is foolpro",
     tags: ["뉘앙스", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_17960861622033080/",
+    reel_url: "https://www.instagram.com/reel/DSNbawrgX75/",
     date: "2025-12-13"
   },
   {
@@ -257,7 +293,7 @@ const REELS_DATA = [
     expression_en: "",
     description_kr: "고급 영어 표현을 받고싶으면 댓글 달아주세요!",
     tags: ["일상"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18051929306689575/",
+    reel_url: "https://www.instagram.com/reel/DSHoE97AV7R/",
     date: "2025-12-11"
   },
   {
@@ -266,7 +302,7 @@ const REELS_DATA = [
     expression_en: "sorry to hear that",
     description_kr: "오늘의 표현:  →  사과가 아니라 상대 소식에 ‘공감·위로’를 전하는 표현이에요.",
     tags: ["사과", "뉘앙스"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18247171879291685/",
+    reel_url: "https://www.instagram.com/reel/DSCNZNrgXQg/",
     date: "2025-12-09"
   },
   {
@@ -275,7 +311,7 @@ const REELS_DATA = [
     expression_en: "",
     description_kr: "고급 영어 자료를 받고 싶다면 댓글 달아주세요",
     tags: ["일상"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_17955520239042778/",
+    reel_url: "https://www.instagram.com/reel/DR7K2tWAaqg/",
     date: "2025-12-06"
   },
   {
@@ -284,7 +320,7 @@ const REELS_DATA = [
     expression_en: "check all the boxes",
     description_kr: "오늘의 표현:  →  예: This version finally checks all the boxes / She checks all the boxes fo",
     tags: ["뉘앙스", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18301697968259596/",
+    reel_url: "https://www.instagram.com/reel/DRzMEbOAahI/",
     date: "2025-12-03"
   },
   {
@@ -293,7 +329,7 @@ const REELS_DATA = [
     expression_en: "Notice",
     description_kr: "고급영어자료를 받고 싶은 분들은 DM보내주세요!",
     tags: ["일상", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18065908055402820/",
+    reel_url: "https://www.instagram.com/reel/DRyXrP6AZIj/",
     date: "2025-12-03"
   },
   {
@@ -302,7 +338,7 @@ const REELS_DATA = [
     expression_en: "figure out",
     description_kr: "오늘의 표현:  →  문제 해결, 이해, 결정, 감정 파악까지 전부 연결되는 만능 표현!",
     tags: ["감정", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18118350574482986/",
+    reel_url: "https://www.instagram.com/reel/DRnwOfmgSgD/",
     date: "2025-11-29"
   },
   {
@@ -311,7 +347,7 @@ const REELS_DATA = [
     expression_en: "",
     description_kr: "고급 영어 자료를 받고싶은 분은 댓글에 퀴즈라고 달아주세요",
     tags: ["일상"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18095521075885708/",
+    reel_url: "https://www.instagram.com/reel/DRkDuEeAezU/",
     date: "2025-11-27"
   },
   {
@@ -320,7 +356,7 @@ const REELS_DATA = [
     expression_en: "put it down",
     description_kr: "오늘의 표현:  → , 이미지 하나로 여러 의미로 확장돼요. 예: Put the bag down / Don’t put yourself down / I had to put",
     tags: ["감정", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18041957138704694/",
+    reel_url: "https://www.instagram.com/reel/DRbnEIIEX20/",
     date: "2025-11-24"
   },
   {
@@ -329,7 +365,7 @@ const REELS_DATA = [
     expression_en: "아직도 chill guy만 쓰는 사람?",
     description_kr: "고급 영어 퀴즈를 받고 싶은 분은 댓글로 퀴즈를 달아주세요",
     tags: ["일상", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18046731848446408/",
+    reel_url: "https://www.instagram.com/reel/DRXDXmUgcfq/",
     date: "2025-11-22"
   },
   {
@@ -338,7 +374,7 @@ const REELS_DATA = [
     expression_en: "upset",
     description_kr: "오늘의 표현:  →  감정, 상황, 경기 등 다양한 맥락에서 쓰여요.",
     tags: ["감정", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18050260361372435/",
+    reel_url: "https://www.instagram.com/reel/DRPiX18j5fC/",
     date: "2025-11-19"
   },
   {
@@ -347,7 +383,7 @@ const REELS_DATA = [
     expression_en: "",
     description_kr: "고급 영어 퀴즈를 받고 싶으면 댓글로 퀴즈달아주세요",
     tags: ["감정"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18090462940902695/",
+    reel_url: "https://www.instagram.com/reel/DRMshUpgYf1/",
     date: "2025-11-18"
   },
   {
@@ -356,7 +392,7 @@ const REELS_DATA = [
     expression_en: "suit yourself",
     description_kr: "오늘의 표현:  →  상대의 선택에 동의하지 않거나 포기하는 뉘앙스가 있어요.",
     tags: ["동의", "뉘앙스"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18063545888428648/",
+    reel_url: "https://www.instagram.com/reel/DRE6KIKgZPF/",
     date: "2025-11-15"
   },
   {
@@ -365,7 +401,7 @@ const REELS_DATA = [
     expression_en: "",
     description_kr: "고급 영어 퀴즈를 받고 싶다면 댓글에 Dm보내주세요",
     tags: ["일상"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_17988275423883429/",
+    reel_url: "https://www.instagram.com/reel/DQ_o4aegfnm/",
     date: "2025-11-13"
   },
   {
@@ -374,7 +410,7 @@ const REELS_DATA = [
     expression_en: "earworm",
     description_kr: "오늘의 표현:  →  예: That song’s an  — I can’t stop humming it / Repeat the hook to make a r",
     tags: ["일상", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_17985145001752110/",
+    reel_url: "https://www.instagram.com/reel/DQ6wTiJgb9W/",
     date: "2025-11-11"
   },
   {
@@ -383,7 +419,7 @@ const REELS_DATA = [
     expression_en: "",
     description_kr: "고급영어퀴즈를 받고 싶으면 댓글로 퀴즈 달아주세요",
     tags: ["일상"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18098525425780050/",
+    reel_url: "https://www.instagram.com/reel/DQ0YnLjgSan/",
     date: "2025-11-09"
   },
   {
@@ -392,7 +428,7 @@ const REELS_DATA = [
     expression_en: "s the deal",
     description_kr: "오늘의 표현: Here’ →  직설적이지만 공격적이지 않고, 현실적인 핵심을 말할 때 써요.",
     tags: ["감정", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18098065681759433/",
+    reel_url: "https://www.instagram.com/reel/DQuRxy6gSDY/",
     date: "2025-11-06"
   },
   {
@@ -401,7 +437,7 @@ const REELS_DATA = [
     expression_en: "Focus",
     description_kr: "댓글로 퀴즈를 달아주시면 DM보내드립니다",
     tags: ["일상", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_17907159534255118/",
+    reel_url: "https://www.instagram.com/reel/DQotbAcgeFI/",
     date: "2025-11-04"
   },
   {
@@ -410,7 +446,7 @@ const REELS_DATA = [
     expression_en: "best case scenario",
     description_kr: "오늘의 표현:  / worst case scenario →  한국 학습자들이 자주 쓰는 번역투 대신, 가정된 ‘시나리오’ 느낌으로 써야 자연스러워요.",
     tags: ["뉘앙스", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_17927759568138455/",
+    reel_url: "https://www.instagram.com/reel/DQgyGjTAZSA/",
     date: "2025-11-01"
   },
   {
@@ -419,7 +455,7 @@ const REELS_DATA = [
     expression_en: "Throw on",
     description_kr: "TV나 음악을 “툭” 틀 때 쓰는 말. 가볍고 즉흥적인 느낌!",
     tags: ["일상", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_17975059553792354/",
+    reel_url: "https://www.instagram.com/reel/DQb48mVgdyg/",
     date: "2025-10-30"
   },
   {
@@ -428,7 +464,7 @@ const REELS_DATA = [
     expression_en: "ve been meaning to tell you",
     description_kr: "오늘의 표현: I’ →  단순한 “I want to tell you”보다 더 진심 있고 따뜻한 말투예요.",
     tags: ["감사", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18077735993466839/",
+    reel_url: "https://www.instagram.com/reel/DQX59h-EmFv/",
     date: "2025-10-29"
   },
   {
@@ -437,7 +473,7 @@ const REELS_DATA = [
     expression_en: "Let loose",
     description_kr: "긴장 풀고 마음껏 즐길 때 쓰는 말. 파티, 여행, 쉬는 날에 딱!",
     tags: ["여행", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18058543892548138/",
+    reel_url: "https://www.instagram.com/reel/DQOiZwcAajT/",
     date: "2025-10-25"
   },
   {
@@ -446,7 +482,7 @@ const REELS_DATA = [
     expression_en: "Not to my knowledge",
     description_kr: "오늘의 표현:  →  단순한 “I don’t know”보다 정중하고 객관적인 표현이에요.",
     tags: ["정중한표현", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_17990047994892245/",
+    reel_url: "https://www.instagram.com/reel/DQIu0icAbB9/",
     date: "2025-10-23"
   },
   {
@@ -455,7 +491,7 @@ const REELS_DATA = [
     expression_en: "Zone out",
     description_kr: "멍 때리거나 잠깐 정신 나간 상태.",
     tags: ["일상", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18088715599899172/",
+    reel_url: "https://www.instagram.com/reel/DQEmkUBAbTl/",
     date: "2025-10-21"
   },
   {
@@ -464,7 +500,7 @@ const REELS_DATA = [
     expression_en: "condition",
     description_kr: "오늘의 표현:  →  의학·기계·공식적인 맥락에서 주로 사용돼요.",
     tags: ["일상", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18090911497687463/",
+    reel_url: "https://www.instagram.com/reel/DP9Qfz7AbBt/",
     date: "2025-10-18"
   },
   {
@@ -473,7 +509,7 @@ const REELS_DATA = [
     expression_en: "",
     description_kr: "",
     tags: ["일상"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18048324047658578/",
+    reel_url: "https://www.instagram.com/reel/DP3tpIEARCY/",
     date: "2025-10-16"
   },
   {
@@ -482,7 +518,7 @@ const REELS_DATA = [
     expression_en: "btw",
     description_kr: "오늘의 표현:  → , 말 나온 김에) 대화 전환이나 가벼운 덧붙임에 자주 쓰여요.",
     tags: ["일상", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_17919610794189372/",
+    reel_url: "https://www.instagram.com/reel/DPyGWbwEWv3/",
     date: "2025-10-14"
   },
   {
@@ -491,7 +527,7 @@ const REELS_DATA = [
     expression_en: "I swear",
     description_kr: "“” = , 진짜야” 내 말이 사실임을 강하게 강조할 때 사용.",
     tags: ["일상", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_17975731712783306/",
+    reel_url: "https://www.instagram.com/reel/DPqwuNyAYHo/",
     date: "2025-10-11"
   },
   {
@@ -500,7 +536,7 @@ const REELS_DATA = [
     expression_en: "go awry",
     description_kr: "오늘의 표현:  → , 어긋나다, 계획대로 되지 않다 예: Our dinner plans went awry when it started raining / The project went awry d",
     tags: ["일상", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18063403592377936/",
+    reel_url: "https://www.instagram.com/reel/DPlsuC7AdRl/",
     date: "2025-10-09"
   },
   {
@@ -509,7 +545,7 @@ const REELS_DATA = [
     expression_en: "Right off the bat, I knew he was lying.",
     description_kr: "“” (처음부터 바로 그가 거짓말하는 걸 알았어) - 처음부터, 시작부터라는 의미",
     tags: ["전화", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18153285541400696/",
+    reel_url: "https://www.instagram.com/reel/DPgOwXagZYP/",
     date: "2025-10-07"
   },
   {
@@ -518,7 +554,7 @@ const REELS_DATA = [
     expression_en: "drive someone crazy",
     description_kr: "오늘의 표현:  → , 짜증나게 하다 예: That noise drives me crazy / His constant complaining drives every",
     tags: ["일상", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18240780796292536/",
+    reel_url: "https://www.instagram.com/reel/DPbTrA2AM7z/",
     date: "2025-10-05"
   },
   {
@@ -527,7 +563,7 @@ const REELS_DATA = [
     expression_en: "Come in",
     description_kr: "맥락: 집/공간으로 따뜻하게 초대할 때. 비슷·헷갈림: (중립), Step inside(조금 격식/안내 톤).",
     tags: ["정중한표현", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18055117520239055/",
+    reel_url: "https://www.instagram.com/reel/DPTCOqGgfNC/",
     date: "2025-10-02"
   },
   {
@@ -536,7 +572,7 @@ const REELS_DATA = [
     expression_en: "wear two hats",
     description_kr: "오늘의 표현:  →  예: I : teacher and coach / She wears many hats in this small compan",
     tags: ["일상", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18068050031194826/",
+    reel_url: "https://www.instagram.com/reel/DPOI9s6kcsp/",
     date: "2025-09-30"
   },
   {
@@ -545,7 +581,7 @@ const REELS_DATA = [
     expression_en: "I feel bad",
     description_kr: "고급 영어 퀴즈를 받고 싶은 사람은 ‘퀴즈‘라고 적어주세요  = , 미안하다, 안타깝다, 속상하다”",
     tags: ["사과", "감정"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18058609010570915/",
+    reel_url: "https://www.instagram.com/reel/DPJCp4NgT6A/",
     date: "2025-09-28"
   },
   {
@@ -554,7 +590,7 @@ const REELS_DATA = [
     expression_en: "but at least",
     description_kr: "even though → ~임에도 불구하고, 대조만 강조",
     tags: ["일상", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18292234714250396/",
+    reel_url: "https://www.instagram.com/reel/DPBXvDMAUO2/",
     date: "2025-09-25"
   },
   {
@@ -563,7 +599,7 @@ const REELS_DATA = [
     expression_en: "The public turned against the politician.",
     description_kr: "1. go against → , 기대에 어긋나다, 충돌하다 - I didn’t take the job because it goes against my values. → 그 일은 내 가치관에 어긋나서 하지",
     tags: ["일상", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18105826627572644/",
+    reel_url: "https://www.instagram.com/reel/DO-2XCwgQYX/",
     date: "2025-09-24"
   },
   {
@@ -572,7 +608,7 @@ const REELS_DATA = [
     expression_en: "istoriaapp",
     description_kr: "지금까지 여러 협업 제안이 들어왔지만, 진짜 괜찮은 영어 학습 어플이 아니면 따로 진행을 하지 않았는데요. 레벨 1~8까지, 영어 수준에 맞게 스토리나 책을 골라 읽기, 듣기, 단어, 퀴즈를 한 번에 진행할 수 있는",
     tags: ["일상", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_17979327938756272/",
+    reel_url: "https://www.instagram.com/reel/DO6i370DWEV/",
     date: "2025-09-22"
   },
   {
@@ -581,7 +617,7 @@ const REELS_DATA = [
     expression_en: "obsessive compulsive disorder",
     description_kr: "",
     tags: ["주문", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18100112170619661/",
+    reel_url: "https://www.instagram.com/reel/DO1S5z8AXne/",
     date: "2025-09-20"
   },
   {
@@ -590,7 +626,7 @@ const REELS_DATA = [
     expression_en: "",
     description_kr: "언제, 어떤 상황에서 쓰는 말일까? ✔ 상대가 이미 알아차려야 할 감정이나 사실을 못 보고 있을 때,",
     tags: ["감정", "뉘앙스"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18051632552257423/",
+    reel_url: "https://www.instagram.com/reel/DOuPCTzEqQ2/",
     date: "2025-09-17"
   },
   {
@@ -599,7 +635,7 @@ const REELS_DATA = [
     expression_en: "Focus",
     description_kr: "Attention → 순간에 주의",
     tags: ["일상", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_17974449869926958/",
+    reel_url: "https://www.instagram.com/reel/DOsysYEgQSK/",
     date: "2025-09-17"
   },
   {
@@ -608,7 +644,7 @@ const REELS_DATA = [
     expression_en: "Sorry to bother you",
     description_kr: "영어가 정말 어려운 이유  →",
     tags: ["회의", "사과", "인사"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18287288074259299/",
+    reel_url: "https://www.instagram.com/reel/DOlDUEPDh3C/",
     date: "2025-09-14"
   },
   {
@@ -617,7 +653,7 @@ const REELS_DATA = [
     expression_en: "The more you practice, the better you get.",
     description_kr: "The more ~, the more ~ → , 리듬감 있음, 구조: The more + S + V → the more + S + V 예: The more you practice, the better you",
     tags: ["문화", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18072367694158324/",
+    reel_url: "https://www.instagram.com/reel/DOfxKsRQpeO/",
     date: "2025-09-12"
   },
   {
@@ -626,7 +662,7 @@ const REELS_DATA = [
     expression_en: "With all due respect",
     description_kr: "격식 있는 자리에서 “실례지만”이라는 뜻으로, 존중하면서도 반대 의견을 말할 때 사용. 예: , I think your conclusion",
     tags: ["거절", "감정", "반대", "정중한표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_17890219935202478/",
+    reel_url: "https://www.instagram.com/reel/DOas79KAbKV/",
     date: "2025-09-10"
   },
   {
@@ -635,7 +671,7 @@ const REELS_DATA = [
     expression_en: "But",
     description_kr: "On (the) one hand / On the other hand → , 객관적 톤, 두 측면 나란히  → 단순 반전, 직설, 앞내용 뒤집기",
     tags: ["정중한표현", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18055070375622358/",
+    reel_url: "https://www.instagram.com/reel/DOS5LZHwpVX/",
     date: "2025-09-07"
   },
   {
@@ -644,7 +680,7 @@ const REELS_DATA = [
     expression_en: "for good or for worse",
     description_kr: "영어 표현 for good or for worse 는 상황이 좋든 나쁘든, 어떤 결과가 오더라도 끝까지 함께하겠다는 의미를 담고 있어요. 단순히 긍정적인 순간만이 아니라 힘든 순간까지도 끌어안겠다는 다짐이죠. 그래서",
     tags: ["일상", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18328623805230853/",
+    reel_url: "https://www.instagram.com/reel/DONzwotjNjA/",
     date: "2025-09-05"
   },
   {
@@ -653,7 +689,7 @@ const REELS_DATA = [
     expression_en: "🔹 It’s not my thing",
     description_kr: "예문: Camping’s not really my thing. →",
     tags: ["감사", "거절", "완곡표현", "뉘앙스"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18519487291011542/",
+    reel_url: "https://www.instagram.com/reel/DOIl_R-QjfR/",
     date: "2025-09-03"
   },
   {
@@ -662,7 +698,7 @@ const REELS_DATA = [
     expression_en: "clean sweep",
     description_kr: "한화 연승 영어로는? 표현:",
     tags: ["일상", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_17876111259392170/",
+    reel_url: "https://www.instagram.com/reel/DOA3tGWxa42/",
     date: "2025-08-31"
   },
   {
@@ -671,7 +707,7 @@ const REELS_DATA = [
     expression_en: "🔹 as you just said",
     description_kr: "예문: As you just said, this process takes time. → 방금 네가 말한 내용을 받아서 이어가거나 강조할 때. 회의·발표 등 포멀한 자리에서도 사용 가능",
     tags: ["회의", "완곡표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18056126069622202/",
+    reel_url: "https://www.instagram.com/reel/DN7uBHmQqkY/",
     date: "2025-08-29"
   },
   {
@@ -680,7 +716,7 @@ const REELS_DATA = [
     expression_en: "step by step",
     description_kr: "차근차근 영어로 모르시죠? 표현: as you go",
     tags: ["일상", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_17900701263122957/",
+    reel_url: "https://www.instagram.com/reel/DN2kfFtxiIg/",
     date: "2025-08-27"
   },
   {
@@ -689,7 +725,7 @@ const REELS_DATA = [
     expression_en: "🔹 Sorry to bother you",
     description_kr: "예문: Sorry to bother you, but I wanted to ask something. →",
     tags: ["사과", "정중한표현", "비즈니스"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_17887917393340152/",
+    reel_url: "https://www.instagram.com/reel/DNu2En9QmNj/",
     date: "2025-08-24"
   },
   {
@@ -698,7 +734,7 @@ const REELS_DATA = [
     expression_en: "big man",
     description_kr: "테토남을 영어로? 표현:",
     tags: ["일상", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18076757984066384/",
+    reel_url: "https://www.instagram.com/reel/DNpserixSRH/",
     date: "2025-08-22"
   },
   {
@@ -707,7 +743,7 @@ const REELS_DATA = [
     expression_en: "🟩 1. cheekbones",
     description_kr: "의미: 눈 아래 양쪽 볼에 위치한 뼈로 얼굴의 윤곽을 형성하는 데 중요한 역할 \udde0 기억 팁: ”cheek“ + ”bone“ =",
     tags: ["일상", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_17977363184744861/",
+    reel_url: "https://www.instagram.com/reel/DNki4S5TZlT/",
     date: "2025-08-20"
   },
   {
@@ -716,7 +752,7 @@ const REELS_DATA = [
     expression_en: "",
     description_kr: "",
     tags: ["일상"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18351231988090486/",
+    reel_url: "https://www.instagram.com/reel/DNfJ7PvRrlw/",
     date: "2025-08-18"
   },
   {
@@ -725,7 +761,7 @@ const REELS_DATA = [
     expression_en: "For now",
     description_kr: "원어민이 말하는 진짜 지금 지금은 그렇지만 나중엔 아닐 수도 있다는 뉘앙스",
     tags: ["사과", "정중한표현", "뉘앙스", "연애"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18093204370635859/",
+    reel_url: "https://www.instagram.com/reel/DNc0iqQR6iy/",
     date: "2025-08-17"
   },
   {
@@ -734,7 +770,7 @@ const REELS_DATA = [
     expression_en: "🎯 I’ve had a rough day. I need to [표현] and relax",
     description_kr: "(오늘 하루 너무 힘들었어. [표현]하면서 좀 쉬어야겠어)",
     tags: ["감정", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18078645232741445/",
+    reel_url: "https://www.instagram.com/reel/DNXq7TYzkLt/",
     date: "2025-08-15"
   },
   {
@@ -743,7 +779,7 @@ const REELS_DATA = [
     expression_en: "Vice versa",
     description_kr: "영어 간단하게 말하는 꿀팁 \"\"는 라틴어에서 유래된 표현으로, \"그 반대로도\", \"역으로도\" 라는 뜻입니다.",
     tags: ["반대", "문화"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18046143398305664/",
+    reel_url: "https://www.instagram.com/reel/DNS4zh4MUym/",
     date: "2025-08-13"
   },
   {
@@ -752,7 +788,7 @@ const REELS_DATA = [
     expression_en: "He kept correcting everyone in the meetin",
     description_kr: "\udccc 듣는 사람이 짜증날 정도로 잘난 척할 때",
     tags: ["회의", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_17853059724454205/",
+    reel_url: "https://www.instagram.com/reel/DNKy7qTzkaQ/",
     date: "2025-08-10"
   },
   {
@@ -761,7 +797,7 @@ const REELS_DATA = [
     expression_en: "1️⃣ Very simple → straightforward",
     description_kr: "어렵지만 도전 의식 느껴져.",
     tags: ["일상", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18114297970507884/",
+    reel_url: "https://www.instagram.com/reel/DNFyTUHxIn7/",
     date: "2025-08-08"
   },
   {
@@ -770,7 +806,7 @@ const REELS_DATA = [
     expression_en: "That video was so funny, I laughed.",
     description_kr: "이럴 땐 영어로 이렇게 말해요. 웃음의 강도와 순간에 따라 표현이 달라져요.",
     tags: ["일상", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18130739989444094/",
+    reel_url: "https://www.instagram.com/reel/DNAfugWTd4M/",
     date: "2025-08-06"
   },
   {
@@ -779,7 +815,7 @@ const REELS_DATA = [
     expression_en: "I can’t help it.",
     description_kr: "습관처럼 나와서 스스로 못 막는다는 뜻 강한 감정에 휩싸여 통제가 안 된다는 뜻",
     tags: ["감정", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18108876454529618/",
+    reel_url: "https://www.instagram.com/reel/DM40RbTsWaI/",
     date: "2025-08-03"
   },
   {
@@ -788,7 +824,7 @@ const REELS_DATA = [
     expression_en: "test the waters",
     description_kr: "본격적으로 시작하기 전에 반응이나 가능성을 살펴보는 표현 주장이나 논리가 논리적으로 타당할 때 쓰는 표현",
     tags: ["일상", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18049345544231834/",
+    reel_url: "https://www.instagram.com/reel/DMzoPdhxlg_/",
     date: "2025-08-01"
   },
   {
@@ -797,7 +833,7 @@ const REELS_DATA = [
     expression_en: "Whatnot? 뭐라고 한 거야…? 😮",
     description_kr: "Whatnot? 뭐라고 한 거야…? \ude2e 일상 대화에서 원어민들이 자주 쓰는 표현, “whatnot”! 이 표현 하나로 영어 실력 업그레이드할 수 있어요.",
     tags: ["뉘앙스", "문화"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_17860564683451808/",
+    reel_url: "https://www.instagram.com/reel/DMuf511xAAD/",
     date: "2025-07-30"
   },
   {
@@ -806,7 +842,7 @@ const REELS_DATA = [
     expression_en: "cool off",
     description_kr: "더위를 식히거나 몸의 열을 내리는 표현으로, 무더위에 잠시 시원함을 찾을 때 사용 수영장, 해변, 워터파크 등에서 잠깐 물에 들어가 몸을 식힐 때 쓰는 표현",
     tags: ["일상", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18357326362153584/",
+    reel_url: "https://www.instagram.com/reel/DMmv2U5xY0s/",
     date: "2025-07-27"
   },
   {
@@ -815,7 +851,7 @@ const REELS_DATA = [
     expression_en: "Third wheel",
     description_kr: "무리에서 소외된 느낌. 감정이 상했을 때 사용. 눈치 보며 따라간 상황. 겸손하게 말할 때 씀.",
     tags: ["감정", "뉘앙스"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_17913951384158211/",
+    reel_url: "https://www.instagram.com/reel/DMhmaRUxaLV/",
     date: "2025-07-25"
   },
   {
@@ -824,7 +860,7 @@ const REELS_DATA = [
     expression_en: "Lately, I",
     description_kr: "영어로는 이렇게 말해요. 탈모의 유형이나 진행 정도에 따라 표현이 조금씩 달라져요. 내 상황에 맞게 골라 써보세요.",
     tags: ["일상", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_17905338018206145/",
+    reel_url: "https://www.instagram.com/reel/DMcg2Tuxtvp/",
     date: "2025-07-23"
   },
   {
@@ -833,7 +869,7 @@ const REELS_DATA = [
     expression_en: "Get out of here",
     description_kr: "같은 표현이라도 상황에 따라 전혀 다른 의미로 쓰입니다. 놀람이나 믿기지 않을 때",
     tags: ["일상", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_17968294445923088/",
+    reel_url: "https://www.instagram.com/reel/DMUu49TxqM9/",
     date: "2025-07-20"
   },
   {
@@ -842,7 +878,7 @@ const REELS_DATA = [
     expression_en: "We just need a second.",
     description_kr: "영어로는 이렇게 말해요. 상황에 따라 조금씩 다른 말투, 그 뉘앙스를 익혀보세요.",
     tags: ["감정", "정중한표현", "뉘앙스"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18107960662521757/",
+    reel_url: "https://www.instagram.com/reel/DMPkqirTDXo/",
     date: "2025-07-18"
   },
   {
@@ -851,7 +887,7 @@ const REELS_DATA = [
     expression_en: "walk it off",
     description_kr: "\"걸으면서 털어내\"",
     tags: ["감정", "동의"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_17929439523082157/",
+    reel_url: "https://www.instagram.com/reel/DMKpyIYOjfq/",
     date: "2025-07-16"
   },
   {
@@ -860,7 +896,7 @@ const REELS_DATA = [
     expression_en: "wise, we",
     description_kr: "“~면에서는” 영어로 어떻게 말할까? 일상회화에 찰떡같이 붙는 **-wise 표현들**, 요렇게 써요\udc47",
     tags: ["돈", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18039269870643816/",
+    reel_url: "https://www.instagram.com/reel/DMCvUDFx3bK/",
     date: "2025-07-13"
   },
   {
@@ -869,7 +905,7 @@ const REELS_DATA = [
     expression_en: "Get it together",
     description_kr: "”정신 차려“ 영어에선 상황에 따라 다르게 표현합니다.",
     tags: ["감정", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18072870847809385/",
+    reel_url: "https://www.instagram.com/reel/DL9jJnIzS3W/",
     date: "2025-07-11"
   },
   {
@@ -878,7 +914,7 @@ const REELS_DATA = [
     expression_en: "Less necessary",
     description_kr: "회의 중, 아이디어 평가할 때 쓸 수 있는 표현들! 비판은 조심스럽게, 하지만 분명하게 \udc47",
     tags: ["회의", "거절", "뉘앙스"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18035031557670818/",
+    reel_url: "https://www.instagram.com/reel/DL4Zw-SRp6R/",
     date: "2025-07-09"
   },
   {
@@ -887,7 +923,7 @@ const REELS_DATA = [
     expression_en: "It’s about time",
     description_kr: "드디어 그럴 때가 됐다는 뜻. 기다림 끝에 말하는 “이제야!”의 뉘앙스.",
     tags: ["전화", "뉘앙스"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18072628735812772/",
+    reel_url: "https://www.instagram.com/reel/DLwrFe6xTkO/",
     date: "2025-07-06"
   },
   {
@@ -896,7 +932,7 @@ const REELS_DATA = [
     expression_en: "Sounds good to me",
     description_kr: "“좋은 생각이야!” 영어로 꼭 *That’s a good idea!*만 쓰라는 법은 없죠. 상황 따라 더 자연스럽게 말해보세요 \udc47",
     tags: ["동의", "반대"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18064193894140754/",
+    reel_url: "https://www.instagram.com/reel/DLrhfeCz8sA/",
     date: "2025-07-04"
   },
   {
@@ -905,7 +941,7 @@ const REELS_DATA = [
     expression_en: "m good for it.",
     description_kr: "“그 돈 진짜 갚을 거야?” “이번엔 믿어도 돼?”",
     tags: ["뉘앙스", "돈"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18048573641440277/",
+    reel_url: "https://www.instagram.com/reel/DLmYiqdxqkB/",
     date: "2025-07-02"
   },
   {
@@ -914,7 +950,7 @@ const REELS_DATA = [
     expression_en: "talk to the hand",
     description_kr: "말 섞기 싫을 때 쓰는 영어 표현 3가지 ✋ → , 얼굴은 안 듣거든?",
     tags: ["거절", "감정", "뉘앙스", "돈"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_17966176607919280/",
+    reel_url: "https://www.instagram.com/reel/DLephNzR1Z-/",
     date: "2025-06-29"
   },
   {
@@ -923,7 +959,7 @@ const REELS_DATA = [
     expression_en: "stop texting",
     description_kr: "연락 끊는 사람, 영어로? 단순히 “” 말고, 요즘은 이렇게 표현합니다:",
     tags: ["뉘앙스", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18033197279410312/",
+    reel_url: "https://www.instagram.com/reel/DLZgBD2RcYK/",
     date: "2025-06-27"
   },
   {
@@ -932,7 +968,7 @@ const REELS_DATA = [
     expression_en: "🔥 Tell me about it.",
     description_kr: "나도 똑같았어 / 완전 지긋지긋해",
     tags: ["회의", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_17981290601842568/",
+    reel_url: "https://www.instagram.com/reel/DLUWcWrzzTP/",
     date: "2025-06-25"
   },
   {
@@ -941,7 +977,7 @@ const REELS_DATA = [
     expression_en: "You look good",
     description_kr: "“옷 멋지게 입었네!” 단순히 “” 말고,",
     tags: ["칭찬", "비즈니스", "문화", "돈"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18097496797508939/",
+    reel_url: "https://www.instagram.com/reel/DLMoB0SRF-P/",
     date: "2025-06-22"
   },
   {
@@ -950,7 +986,7 @@ const REELS_DATA = [
     expression_en: "s on your face?",
     description_kr: "같은 말도 표현 하나로 느낌이 달라진다! \udc40 얼굴에 뭐 묻었을 때",
     tags: ["감정", "완곡표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18280252339280364/",
+    reel_url: "https://www.instagram.com/reel/DLHeY-vzKy-/",
     date: "2025-06-20"
   },
   {
@@ -959,7 +995,7 @@ const REELS_DATA = [
     expression_en: "Let me walk you through the steps.",
     description_kr: "\uddfa “explain”만 알고 있으면 영어가 건조해 보여요. 더 세련된 표현, 바로 이렇게 써보세요!",
     tags: ["일상", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18085294495736765/",
+    reel_url: "https://www.instagram.com/reel/DLCUyJQxs8y/",
     date: "2025-06-18"
   },
   {
@@ -968,7 +1004,7 @@ const REELS_DATA = [
     expression_en: "🎯 “Yeah, right.” – 안 믿겨! 비꼬는 영어 표현",
     description_kr: "상황: 누군가 한 말을 믿기 힘들 때",
     tags: ["일상", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_17863375566411687/",
+    reel_url: "https://www.instagram.com/reel/DK6md0iTG_d/",
     date: "2025-06-15"
   },
   {
@@ -977,7 +1013,7 @@ const REELS_DATA = [
     expression_en: "Once I drink coffee",
     description_kr: "변화의 흐름에 초점.",
     tags: ["카페", "뉘앙스", "문화"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_17929521162062313/",
+    reel_url: "https://www.instagram.com/reel/DK1c5aRRRoQ/",
     date: "2025-06-13"
   },
   {
@@ -986,7 +1022,7 @@ const REELS_DATA = [
     expression_en: "He didn",
     description_kr: "**“’t make it.” 단순 ‘안 왔어’가 아니에요!** 약속이나 목표에 못 도달했을 때, 원어민은 이렇게 말해요.",
     tags: ["회의", "정중한표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18311387782240263/",
+    reel_url: "https://www.instagram.com/reel/DKwTT-hTw8p/",
     date: "2025-06-11"
   },
   {
@@ -995,7 +1031,7 @@ const REELS_DATA = [
     expression_en: "want 대신에 crave, desire, yearn 같은 표현을 써보세요.",
     description_kr: "crave: 강렬한 갈망이나 식욕, 욕망을 표현할 때 desire: 격식 있고 진지한 욕구나 바람을 표현할 때",
     tags: ["정중한표현", "뉘앙스"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18087676399647499/",
+    reel_url: "https://www.instagram.com/reel/DKol3eoNgj7/",
     date: "2025-06-08"
   },
   {
@@ -1004,7 +1040,7 @@ const REELS_DATA = [
     expression_en: "🔹 “I’m lonely” vs “I feel lonely”",
     description_kr: "“I’m lonely”는 깊은 외로움, “I feel lonely”는 순간 감정! 대화에선 “I feel lonely”가 더 자연스럽고 부드러워요.",
     tags: ["감정", "완곡표현", "뉘앙스"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_17983851788692080/",
+    reel_url: "https://www.instagram.com/reel/DKjbpLOxO2W/",
     date: "2025-06-06"
   },
   {
@@ -1013,7 +1049,7 @@ const REELS_DATA = [
     expression_en: "I’m afraid so / I think so / I guess so",
     description_kr: "비슷해 보여도 뉘앙스는 다 달라요. •\tI’m afraid so: 유감이지만 그렇다는 뜻.",
     tags: ["감정", "동의", "뉘앙스"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18153216274334607/",
+    reel_url: "https://www.instagram.com/reel/DKeS1Yntrz4/",
     date: "2025-06-04"
   },
   {
@@ -1022,7 +1058,7 @@ const REELS_DATA = [
     expression_en: "Showboat",
     description_kr: "말보다 행동으로 과하게 튀는 사람",
     tags: ["거절", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_17985302465819596/",
+    reel_url: "https://www.instagram.com/reel/DKMQHyKz-Vm/",
     date: "2025-06-01"
   },
   {
@@ -1031,7 +1067,7 @@ const REELS_DATA = [
     expression_en: "“single-use”랑 “disposable”,",
     description_kr: "둘 다 일회용인데 뭐가 다른 걸까?",
     tags: ["뉘앙스", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_17909275353147448/",
+    reel_url: "https://www.instagram.com/reel/DKRdMVLRk2f/",
     date: "2025-05-30"
   },
   {
@@ -1040,7 +1076,7 @@ const REELS_DATA = [
     expression_en: "우승을 못한 팀을 말할 때 trophyless나 trophy drought 같은 표현을 많이 들어보셨죠?",
     description_kr: "trophyless는 말 그대로 “트로피가 없는”, trophy drought는 “우승 가뭄”이라는 뜻이에요. 그런데 실제 원어민들은 이렇게 단순히 상태만 말하지 않고,",
     tags: ["감정", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18060218021141097/",
+    reel_url: "https://www.instagram.com/reel/DKMQGECzZJM/",
     date: "2025-05-28"
   },
   {
@@ -1049,7 +1085,7 @@ const REELS_DATA = [
     expression_en: "Zodiac Sign",
     description_kr: "미국에서는 MBTI 대신 ‘(별자리)’로 성격을 보는 경우가 많다는 거, 알고 있었나요? 은 태어난 생일에 따라 정해지는 12개의 별자리예요.",
     tags: ["뉘앙스", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18048255173381866/",
+    reel_url: "https://www.instagram.com/reel/DKEimw5O_hK/",
     date: "2025-05-25"
   },
   {
@@ -1058,7 +1094,7 @@ const REELS_DATA = [
     expression_en: "I have a boyfriend",
     description_kr: "여러분 혹시 \"\"만 쓰고 있진 않나요? 사귄다고 다 같은 게 아니에요.",
     tags: ["뉘앙스", "연애"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18085721314647365/",
+    reel_url: "https://www.instagram.com/reel/DJ_YJ0yzZbT/",
     date: "2025-05-23"
   },
   {
@@ -1067,7 +1103,7 @@ const REELS_DATA = [
     expression_en: "just for the sake of it 이라는 표현, 들어본 적 있나요?",
     description_kr: "이 말은 어떤 행동을 특별한 이유 없이, 그냥 그 자체로 하는 걸 말해요. 왜 했냐고 물어보면, 그냥 했다고 말할 때 쓰는 표현이에요.",
     tags: ["거절", "뉘앙스"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18029125835459328/",
+    reel_url: "https://www.instagram.com/reel/DJyhAEcx3WA/",
     date: "2025-05-21"
   },
   {
@@ -1076,7 +1112,7 @@ const REELS_DATA = [
     expression_en: "She showed no emotion.",
     description_kr: "매일 영어 퀴즈 & 옥쌤 고퀄 무료 자료를 받을 수 있어요. 하루 1문제로 영어 루틴, 지금 시작해요.",
     tags: ["거절", "감정", "뉘앙스"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_17897481801092621/",
+    reel_url: "https://www.instagram.com/reel/DJtWki9zBDr/",
     date: "2025-05-18"
   },
   {
@@ -1085,7 +1121,7 @@ const REELS_DATA = [
     expression_en: "",
     description_kr: "댓글에 퀴즈만 남기시면 DM으로 곧 옥쌤 영어 공부방에서 무료 퀴즈  고급 영어 자료등이 제공됩니다!",
     tags: ["일상"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18059479427155404/",
+    reel_url: "https://www.instagram.com/reel/DJoNDpdxlCV/",
     date: "2025-05-16"
   },
   {
@@ -1094,7 +1130,7 @@ const REELS_DATA = [
     expression_en: "circle back!",
     description_kr: "회의 중에 ‘이건 나중에 다시 얘기하자’ 영어로 뭐라고 할까요? -> 바로",
     tags: ["회의", "이메일", "비즈니스"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18043043951618012/",
+    reel_url: "https://www.instagram.com/reel/DJgelUaRpLe/",
     date: "2025-05-14"
   },
   {
@@ -1103,7 +1139,7 @@ const REELS_DATA = [
     expression_en: "As far as I",
     description_kr: "“I think”만 쓰기엔… 뭔가 심심하죠? 영어로 생각을 말할 땐, 상황에 따라 더 어울리는 표현이 있어요.",
     tags: ["회의", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18029474357417135/",
+    reel_url: "https://www.instagram.com/reel/DJbVCeDz9Jy/",
     date: "2025-05-11"
   },
   {
@@ -1112,7 +1148,7 @@ const REELS_DATA = [
     expression_en: "m lonely",
     description_kr: "외롭다고 꼭 “I’”라고 해야 할까? 조금 더 부드럽고, 진짜처럼 들리는 표현을 소개할게요:",
     tags: ["감정", "완곡표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18032949182643411/",
+    reel_url: "https://www.instagram.com/reel/DJWLbuEx_3X/",
     date: "2025-05-09"
   },
   {
@@ -1121,7 +1157,7 @@ const REELS_DATA = [
     expression_en: "I mean",
     description_kr: "문장 사이사이에 자연스럽게 들어가는 이 표현들부터 써보세요! •\t: 말하면서 정정하거나, 강조할 때",
     tags: ["완곡표현", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18043263935193648/",
+    reel_url: "https://www.instagram.com/reel/DJOdF2RzrEV/",
     date: "2025-05-07"
   },
   {
@@ -1130,7 +1166,7 @@ const REELS_DATA = [
     expression_en: "Add to body",
     description_kr: "BD는 엉덩이처럼 생겼다 →  AD는 Add! → 안쪽으로 끌어당기는 근육!",
     tags: ["일상", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_17940254765991568/",
+    reel_url: "https://www.instagram.com/reel/DJJTclGzqhs/",
     date: "2025-05-04"
   },
   {
@@ -1139,7 +1175,7 @@ const REELS_DATA = [
     expression_en: "See you later",
     description_kr: "이제는 좀 더 자연스럽고 원어민처럼 인사해보세요! 오늘 소개하는 표현은 총 4가지입니다:",
     tags: ["인사", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18045381938148356/",
+    reel_url: "https://www.instagram.com/reel/DJBlG_0xG6O/",
     date: "2025-05-02"
   },
   {
@@ -1148,7 +1184,7 @@ const REELS_DATA = [
     expression_en: "first and foremost",
     description_kr: "오늘은 말할 때 순서를 강조하는 두 표현! →",
     tags: ["회의", "감사"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18220734292293730/",
+    reel_url: "https://www.instagram.com/reel/DI8z3oCzMz-/",
     date: "2025-04-29"
   },
   {
@@ -1157,7 +1193,7 @@ const REELS_DATA = [
     expression_en: "grow out of it",
     description_kr: "예: He was shy, but he grew out of it.",
     tags: ["일상", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_17887671153250324/",
+    reel_url: "https://www.instagram.com/reel/DI3R4zixqNQ/",
     date: "2025-04-27"
   },
   {
@@ -1166,7 +1202,7 @@ const REELS_DATA = [
     expression_en: "technically",
     description_kr: "오늘은 원어민이 말할 때 자주 쓰는 부드러운 시작 표현 2가지! →",
     tags: ["전화", "문화"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18111781279477775/",
+    reel_url: "https://www.instagram.com/reel/DIyIWb9TElc/",
     date: "2025-04-25"
   },
   {
@@ -1175,7 +1211,7 @@ const REELS_DATA = [
     expression_en: "tireless",
     description_kr: "\udccc 영어 단어 끝에 -less가 붙으면 무슨 뜻일까요? 쉽게 말하면",
     tags: ["감정", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18060411437487745/",
+    reel_url: "https://www.instagram.com/reel/DIs-wCQzCAq/",
     date: "2025-04-23"
   },
   {
@@ -1184,7 +1220,7 @@ const REELS_DATA = [
     expression_en: "Friend",
     description_kr: "의미: 남사친(남자 사람 친구)과 여사친(여자 사람 친구)을 모두 포함하는 통칭입니다. 서로 편하게 대화하고, 함께 시간을 보내지만 연애 감정 없이 지내는 관계를 말합니다.",
     tags: ["감정", "연애"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_17880577314184452/",
+    reel_url: "https://www.instagram.com/reel/DIoQDBBN345/",
     date: "2025-04-21"
   },
   {
@@ -1193,7 +1229,7 @@ const REELS_DATA = [
     expression_en: "make memories",
     description_kr: "영원히 기억될 순간을 만드는 중 물건보다 추억을 모으는 중",
     tags: ["연애", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_17901471621161717/",
+    reel_url: "https://www.instagram.com/reel/DIirg-WTQue/",
     date: "2025-04-19"
   },
   {
@@ -1202,7 +1238,7 @@ const REELS_DATA = [
     expression_en: "I think we lost him",
     description_kr: "걔 연결이 끊긴 것 같아요 / (화면에서) 사라졌어요 예) . Can someone check?",
     tags: ["회의", "비즈니스"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_17850396528428947/",
+    reel_url: "https://www.instagram.com/reel/DId54cEgDxG/",
     date: "2025-04-17"
   },
   {
@@ -1211,7 +1247,7 @@ const REELS_DATA = [
     expression_en: "soy milk",
     description_kr: "영어 단어, 뜻 하나만 있는 줄 알았죠? 근데 일상 단어 중에 뜻이 두 개 이상인 경우, 정말 많습니다!",
     tags: ["동의", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18043456118417275/",
+    reel_url: "https://www.instagram.com/reel/DIYYUxVTnTW/",
     date: "2025-04-15"
   },
   {
@@ -1220,7 +1256,7 @@ const REELS_DATA = [
     expression_en: "s it for today",
     description_kr: "오늘은 여기까지입니다 / 오늘 회의는 이걸로 마칩니다. 예) Alright, that’. Thanks, everyone!",
     tags: ["회의", "감사", "비즈니스"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18366292666193954/",
+    reel_url: "https://www.instagram.com/reel/DITaUF-tmZ_/",
     date: "2025-04-13"
   },
   {
@@ -1229,7 +1265,7 @@ const REELS_DATA = [
     expression_en: "Can you hear me?",
     description_kr: "소리가 잘 안 들릴 때, 아직도 이렇게 말하고 있진 않으신가요? 이 표현들, 문법은 맞지만 조금 어색하거나 너무 직설적으로 들릴 수 있어요.",
     tags: ["회의", "사과", "인사", "정중한표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18117946087454479/",
+    reel_url: "https://www.instagram.com/reel/DIOFLOWzlH_/",
     date: "2025-04-11"
   },
   {
@@ -1238,7 +1274,7 @@ const REELS_DATA = [
     expression_en: "Turn up vs. Turn down 쉽게 비교!",
     description_kr: "Turn up(볼륨·온도 등을) 올리다 / (사람이) 나타나다 예) Can you turn up the volume?",
     tags: ["거절", "뉘앙스"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18503438740001205/",
+    reel_url: "https://www.instagram.com/reel/DII_Kwfs4GC/",
     date: "2025-04-09"
   },
   {
@@ -1247,7 +1283,7 @@ const REELS_DATA = [
     expression_en: "Take something for granted – 헷갈리지 마세요!",
     description_kr: "",
     tags: ["감사", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18056840479913287/",
+    reel_url: "https://www.instagram.com/reel/DIDx9E-z8Lm/",
     date: "2025-04-07"
   },
   {
@@ -1256,7 +1292,7 @@ const REELS_DATA = [
     expression_en: "Could be worse",
     description_kr: "“괜찮아”라고 말할 때 쓰는 영어 표현 2가지! 더 나쁠 수도 있었어 →",
     tags: ["일상", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18046016672369172/",
+    reel_url: "https://www.instagram.com/reel/DH-oYfbzhmD/",
     date: "2025-04-05"
   },
   {
@@ -1265,7 +1301,7 @@ const REELS_DATA = [
     expression_en: "Hustler vs. Sandbagger – 의미가 완전 달라요!",
     description_kr: "Hustler열심히 사는 사람 →",
     tags: ["뉘앙스", "문화", "돈"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18071212921716369/",
+    reel_url: "https://www.instagram.com/reel/DH5e2nMRh73/",
     date: "2025-04-03"
   },
   {
@@ -1274,7 +1310,7 @@ const REELS_DATA = [
     expression_en: "Give in vs. Give up 차이점!",
     description_kr: "포기하다. 더 이상 노력하지 않을 때 씁니다. 예) I gave up studying. (공부하는 걸 포기했어.)",
     tags: ["거절", "뉘앙스"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_17879354901181865/",
+    reel_url: "https://www.instagram.com/reel/DH0VN2szqSn/",
     date: "2025-04-01"
   },
   {
@@ -1283,7 +1319,7 @@ const REELS_DATA = [
     expression_en: "t you like it?",
     description_kr: "Yes / No 대답, 한국식으로 하면 안 돼요! 한국어로는 “안 좋아해?” →",
     tags: ["카페", "거절"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18038957324407928/",
+    reel_url: "https://www.instagram.com/reel/DHvLsFyzOy3/",
     date: "2025-03-30"
   },
   {
@@ -1292,7 +1328,7 @@ const REELS_DATA = [
     expression_en: "I'm not kidding",
     description_kr: "“”은 장난이 아니라는 의미지만, 기가 막힐 정도로 좋거나 멋질 때도 쓸 수 있어요. “This pizza is amazing, I’m not kidding!” (이 피자 진짜 끝내줘, 장",
     tags: ["일상", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18074778148761188/",
+    reel_url: "https://www.instagram.com/reel/DHqCENSTEBI/",
     date: "2025-03-28"
   },
   {
@@ -1301,7 +1337,7 @@ const REELS_DATA = [
     expression_en: "Honestly",
     description_kr: "“literally”, “”… 그냥 단어 아니에요. 원어민들은 이 표현들을 한국어의 ‘진짜로’, ‘솔직히’, ‘와 진심’처럼",
     tags: ["감정", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_17963740091903377/",
+    reel_url: "https://www.instagram.com/reel/DHk4d-1TXqQ/",
     date: "2025-03-26"
   },
   {
@@ -1310,7 +1346,7 @@ const REELS_DATA = [
     expression_en: "This is so unfair.",
     description_kr: "영어에는 “억울하다”에 딱 맞는 단어가 없어요. 대신 상황에 따라 이렇게 표현할 수 있어요. “” (이거 정말 불공평해.)",
     tags: ["뉘앙스", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18068686156883055/",
+    reel_url: "https://www.instagram.com/reel/DHfu32RTbWF/",
     date: "2025-03-24"
   },
   {
@@ -1319,7 +1355,7 @@ const REELS_DATA = [
     expression_en: "Fine의 뜻 2가지",
     description_kr: "괜찮아요 / 좋아요 예: I’m fine, thank you!",
     tags: ["감사", "감정", "돈"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18272343754253508/",
+    reel_url: "https://www.instagram.com/reel/DHalR-Bz1Ci/",
     date: "2025-03-22"
   },
   {
@@ -1328,7 +1364,7 @@ const REELS_DATA = [
     expression_en: "Pretty",
     description_kr: "\"\"는 하나의 단어에 여러 의미가 있어요. 예쁘다 (형용사): “She looks  in that dress.”",
     tags: ["일상", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_17927523033019864/",
+    reel_url: "https://www.instagram.com/reel/DHVcPxzzbLJ/",
     date: "2025-03-20"
   },
   {
@@ -1337,7 +1373,7 @@ const REELS_DATA = [
     expression_en: "Badass",
     description_kr: "",
     tags: ["일상", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18055525621925558/",
+    reel_url: "https://www.instagram.com/reel/DHQSJrGznIl/",
     date: "2025-03-18"
   },
   {
@@ -1346,7 +1382,7 @@ const REELS_DATA = [
     expression_en: "Zip it",
     description_kr: "\"\" & \"Keep it down\" – 더 자연스럽게 조용히 하라고 말하는 법 \"Shut up\"만 쓰면 무례하게 들릴 수 있다. 상황에 따라 더 적절한 표현을 사용하자.",
     tags: ["회의", "정중한표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18063266869795225/",
+    reel_url: "https://www.instagram.com/reel/DHLIhoHx4S5/",
     date: "2025-03-16"
   },
   {
@@ -1355,7 +1391,7 @@ const REELS_DATA = [
     expression_en: "“I’m stuffed” – 원어민이 진짜 쓰는 배부름 표현",
     description_kr: "“I’m full”만 쓰면 초보 티 난다?!",
     tags: ["감사", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18040334216610651/",
+    reel_url: "https://www.instagram.com/reel/DHF-6BJTCD1/",
     date: "2025-03-14"
   },
   {
@@ -1364,7 +1400,7 @@ const REELS_DATA = [
     expression_en: "immature",
     description_kr: "뜻: 미성숙한, 유치한 성격이나 행동이 어른스럽지 못한 경우",
     tags: ["일상", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18048658448030390/",
+    reel_url: "https://www.instagram.com/reel/DHA1UCpzE2T/",
     date: "2025-03-12"
   },
   {
@@ -1373,7 +1409,7 @@ const REELS_DATA = [
     expression_en: "Even better",
     description_kr: "미국식 럭키비키(근데 대부분 모름)  = , 더 좋아질 수 있을 때",
     tags: ["주문", "여행"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18303678622228510/",
+    reel_url: "https://www.instagram.com/reel/DG7vI58xCMN/",
     date: "2025-03-10"
   },
   {
@@ -1382,7 +1418,7 @@ const REELS_DATA = [
     expression_en: "Turn on the light.",
     description_kr: "”on“의 기본 의미 → 위에, 붙다, 추가되다 ✔ ”“ →",
     tags: ["비즈니스", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18354155428181701/",
+    reel_url: "https://www.instagram.com/reel/DG2iJEhT-Iz/",
     date: "2025-03-08"
   },
   {
@@ -1391,7 +1427,7 @@ const REELS_DATA = [
     expression_en: "I have a lot of stress",
     description_kr: "한국인이 자주 쓰는 스트레스 관련 영어 표현 \udccc ”스트레스 받았어“ 영어로?",
     tags: ["일상", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18052805822127407/",
+    reel_url: "https://www.instagram.com/reel/DGxb9FYR_gu/",
     date: "2025-03-06"
   },
   {
@@ -1400,7 +1436,7 @@ const REELS_DATA = [
     expression_en: "Bored",
     description_kr: "\udd0d ” vs. Boring“ 차이 한눈에 정리! \udd0d ”“ (감정) →",
     tags: ["감정", "뉘앙스"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18490620064039223/",
+    reel_url: "https://www.instagram.com/reel/DGsO_c0TuR9/",
     date: "2025-03-04"
   },
   {
@@ -1409,7 +1445,7 @@ const REELS_DATA = [
     expression_en: "That tracks",
     description_kr: "Pov 일단 몰라도 맞장구 칠 때 유용한 표현 \udccc ”“ 뜻:",
     tags: ["동의", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18077894908658004/",
+    reel_url: "https://www.instagram.com/reel/DGnI3V1x01e/",
     date: "2025-03-02"
   },
   {
@@ -1418,7 +1454,7 @@ const REELS_DATA = [
     expression_en: "Affect",
     description_kr: "”“ (동사) →  ✔ ”Stress s my health.“ → 스트레스는 내 건강에 영향을 준다.",
     tags: ["동의", "건강"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18055836871881710/",
+    reel_url: "https://www.instagram.com/reel/DGh708wTvyc/",
     date: "2025-02-28"
   },
   {
@@ -1427,7 +1463,7 @@ const REELS_DATA = [
     expression_en: "Freak out",
     description_kr: "✈ ”“ 영어 표현 정리 ✈ 매우 당황하다, 놀라다, 충격받다",
     tags: ["감정", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18073050118756974/",
+    reel_url: "https://www.instagram.com/reel/DGc1rl6RW2e/",
     date: "2025-02-26"
   },
   {
@@ -1436,7 +1472,7 @@ const REELS_DATA = [
     expression_en: "❌ ”I’m so hot.“ → (X) ”나 너무 섹시해“ 로 들릴 수 있음! 😳",
     description_kr: "”I’m so hot.“ →  ”It‘s so hot in here.“ → (O) ”여기 너무 덥다“ (자연스러운 표현)",
     tags: ["일상", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18159137830339523/",
+    reel_url: "https://www.instagram.com/reel/DGXsUC_Ma6g/",
     date: "2025-02-24"
   },
   {
@@ -1445,7 +1481,7 @@ const REELS_DATA = [
     expression_en: "m gonna study.",
     description_kr: "미래에 할 일 예: I’ (공부할 거야)",
     tags: ["슬랭", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18035594501614632/",
+    reel_url: "https://www.instagram.com/reel/DGSmzzbTeIH/",
     date: "2025-02-22"
   },
   {
@@ -1454,7 +1490,7 @@ const REELS_DATA = [
     expression_en: "✔ how + look",
     description_kr: "• 전체적인 상태나 인상을 묻는 표현 • ”How do I look?“ → , 옷차림 등)",
     tags: ["일상", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_17900624832105869/",
+    reel_url: "https://www.instagram.com/reel/DGNVejbxoJ4/",
     date: "2025-02-20"
   },
   {
@@ -1463,7 +1499,7 @@ const REELS_DATA = [
     expression_en: "Hang Out",
     description_kr: "“? Grab a coffee? 뭐가 다를까?” ✔  =",
     tags: ["카페", "문화"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18067518031876159/",
+    reel_url: "https://www.instagram.com/reel/DGIPVBwxlSf/",
     date: "2025-02-18"
   },
   {
@@ -1472,7 +1508,7 @@ const REELS_DATA = [
     expression_en: "Farther",
     description_kr: "\udccc  →  \udccc Further → 비유적인 거리, 추가적인 발전 (거리뿐만 아니라 논의, 연구, 발전에도 사용)",
     tags: ["뉘앙스", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18052464124906376/",
+    reel_url: "https://www.instagram.com/reel/DGDIidjshBi/",
     date: "2025-02-16"
   },
   {
@@ -1481,7 +1517,7 @@ const REELS_DATA = [
     expression_en: "I was just hanging around",
     description_kr: "영어로 할 말 없을 때 미친 꿀팁! ✔  →",
     tags: ["일상", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18237897220303590/",
+    reel_url: "https://www.instagram.com/reel/DF98DygzhGa/",
     date: "2025-02-14"
   },
   {
@@ -1490,7 +1526,7 @@ const REELS_DATA = [
     expression_en: "Correct me if I",
     description_kr: "’m wrong =  ✔ 확신이 없을 때 조심스럽게 의견을 말할 때 사용",
     tags: ["완곡표현", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18031387361544445/",
+    reel_url: "https://www.instagram.com/reel/DF4wy6lAoyd/",
     date: "2025-02-12"
   },
   {
@@ -1499,7 +1535,7 @@ const REELS_DATA = [
     expression_en: "Cut it out",
     description_kr: "”과 “Knock it off”는 둘 다 상대방에게 어떤 행동을 그만두라고 할 때 쓰는 표현이에요. ✔  → 좀 더 가벼운 느낌. 친구들끼리 장난을 너무 심하게 칠 때 “그만해!“",
     tags: ["일상", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_17945893424943481/",
+    reel_url: "https://www.instagram.com/reel/DFzo8TVpyy8/",
     date: "2025-02-10"
   },
   {
@@ -1508,7 +1544,7 @@ const REELS_DATA = [
     expression_en: "Sometimes",
     description_kr: "\udccc ** → 가끔, 때때로 (규칙적이지 않은 반복적인 일) \udccc *Sometime* →",
     tags: ["카페", "문화"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_17867977233300878/",
+    reel_url: "https://www.instagram.com/reel/DFxEIpSzoLf/",
     date: "2025-02-08"
   },
   {
@@ -1517,7 +1553,7 @@ const REELS_DATA = [
     expression_en: "Chill",
     description_kr: "",
     tags: ["일상", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18049362752185994/",
+    reel_url: "https://www.instagram.com/reel/DFub8KNT4NR/",
     date: "2025-02-07"
   },
   {
@@ -1526,7 +1562,7 @@ const REELS_DATA = [
     expression_en: "Last",
     description_kr: "\udccc  → , 가장 최근의 (다음이 있을 수도 있음) \udccc Final → 진짜 끝, 최종적인 것 (더 이상 없음)",
     tags: ["일상", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18116466019436534/",
+    reel_url: "https://www.instagram.com/reel/DFpVwVQTOpH/",
     date: "2025-02-06"
   },
   {
@@ -1535,7 +1571,7 @@ const REELS_DATA = [
     expression_en: "Let me get this straight. You",
     description_kr: "\udccc 의미 →  \udccc 상황 → 혼동되거나 중요한 내용을 다시 정리할 때",
     tags: ["회의", "뉘앙스"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18037692647593936/",
+    reel_url: "https://www.instagram.com/reel/DFkJ2olgUsk/",
     date: "2025-02-04"
   },
   {
@@ -1544,7 +1580,7 @@ const REELS_DATA = [
     expression_en: "Your support means a lot to me.",
     description_kr: "\udccc \"It means a lot to me\" →  (감사, 감동, 고마움을 표현할 때 많이 사용)",
     tags: ["감사", "감정"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18051320501157289/",
+    reel_url: "https://www.instagram.com/reel/DFfCgl5z3wA/",
     date: "2025-02-02"
   },
   {
@@ -1553,7 +1589,7 @@ const REELS_DATA = [
     expression_en: "Later",
     description_kr: "\udccc  →  \udccc Latter → 둘 중에서 후자 (두 개 중에서 뒤에 오는 것)",
     tags: ["카페", "전화", "발음"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18154374211349219/",
+    reel_url: "https://www.instagram.com/reel/DFZ1k8PTre7/",
     date: "2025-01-31"
   },
   {
@@ -1562,7 +1598,7 @@ const REELS_DATA = [
     expression_en: "",
     description_kr: "",
     tags: ["발음"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18059624767777610/",
+    reel_url: "https://www.instagram.com/reel/DFUvYtKTTZD/",
     date: "2025-01-29"
   },
   {
@@ -1571,7 +1607,7 @@ const REELS_DATA = [
     expression_en: "",
     description_kr: "",
     tags: ["뉘앙스"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18034135433202010/",
+    reel_url: "https://www.instagram.com/reel/DFPtkklxho6/",
     date: "2025-01-27"
   },
   {
@@ -1580,7 +1616,7 @@ const REELS_DATA = [
     expression_en: "",
     description_kr: "",
     tags: ["일상"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18069440536770455/",
+    reel_url: "https://www.instagram.com/reel/DFKcMccJP3e/",
     date: "2025-01-25"
   },
   {
@@ -1589,7 +1625,7 @@ const REELS_DATA = [
     expression_en: "",
     description_kr: "",
     tags: ["뉘앙스"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18113335996445770/",
+    reel_url: "https://www.instagram.com/reel/DFFQ63jT7m1/",
     date: "2025-01-23"
   },
   {
@@ -1598,7 +1634,7 @@ const REELS_DATA = [
     expression_en: "In vs at 정확한 차이 아는 사람?",
     description_kr: "옥쌤과 함께하는 영어 표현 공부",
     tags: ["뉘앙스", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_17868435342214040/",
+    reel_url: "https://www.instagram.com/reel/DFAYcPcT16K/",
     date: "2025-01-21"
   },
   {
@@ -1607,7 +1643,7 @@ const REELS_DATA = [
     expression_en: "",
     description_kr: "",
     tags: ["일상"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18484502866040518/",
+    reel_url: "https://www.instagram.com/reel/DE69v8HTslJ/",
     date: "2025-01-19"
   },
   {
@@ -1616,7 +1652,7 @@ const REELS_DATA = [
     expression_en: "",
     description_kr: "",
     tags: ["일상"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18033395651575839/",
+    reel_url: "https://www.instagram.com/reel/DE2XY-xxDqx/",
     date: "2025-01-17"
   },
   {
@@ -1625,7 +1661,7 @@ const REELS_DATA = [
     expression_en: "",
     description_kr: "",
     tags: ["거절", "비즈니스"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18214242025290552/",
+    reel_url: "https://www.instagram.com/reel/DEwsTEFz8lL/",
     date: "2025-01-15"
   },
   {
@@ -1634,7 +1670,7 @@ const REELS_DATA = [
     expression_en: "",
     description_kr: "옥쌤과 함께 알아봅시다 By 표현의 중요성",
     tags: ["일상"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18046100396184161/",
+    reel_url: "https://www.instagram.com/reel/DErisGDTj95/",
     date: "2025-01-13"
   },
   {
@@ -1643,7 +1679,7 @@ const REELS_DATA = [
     expression_en: "",
     description_kr: "",
     tags: ["일상"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18129049717393482/",
+    reel_url: "https://www.instagram.com/reel/DEmXVDmTQBt/",
     date: "2025-01-11"
   },
   {
@@ -1652,7 +1688,7 @@ const REELS_DATA = [
     expression_en: "",
     description_kr: "",
     tags: ["일상"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18057117169792359/",
+    reel_url: "https://www.instagram.com/reel/DEhq-ByNd56/",
     date: "2025-01-09"
   },
   {
@@ -1661,7 +1697,7 @@ const REELS_DATA = [
     expression_en: "",
     description_kr: "",
     tags: ["일상"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_17994695168746743/",
+    reel_url: "https://www.instagram.com/reel/DEcR9t-txdn/",
     date: "2025-01-07"
   },
   {
@@ -1670,7 +1706,7 @@ const REELS_DATA = [
     expression_en: "",
     description_kr: "한국 사람들이 자주 틀리는 영어 표현, 옥쌤과 함께 알아봐요!",
     tags: ["일상"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18015907241467357/",
+    reel_url: "https://www.instagram.com/reel/DEW_xovzjSJ/",
     date: "2025-01-05"
   },
   {
@@ -1679,7 +1715,7 @@ const REELS_DATA = [
     expression_en: "",
     description_kr: "",
     tags: ["일상"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18081856420570255/",
+    reel_url: "https://www.instagram.com/reel/DERxDI_z295/",
     date: "2025-01-03"
   },
   {
@@ -1688,7 +1724,7 @@ const REELS_DATA = [
     expression_en: "병원가다 = go to hospital??",
     description_kr: "친구에게 병원가라고 할 때 한국인들이 가장 자주 틀리는 표현, 옥쌤과 함께 알아보시죠! 일상, 비즈니스 영어는 옥쌤과 함께!",
     tags: ["비즈니스", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18029576084564081/",
+    reel_url: "https://www.instagram.com/reel/DEMpLFNzNzd/",
     date: "2025-01-01"
   },
   {
@@ -1697,7 +1733,7 @@ const REELS_DATA = [
     expression_en: "",
     description_kr: "",
     tags: ["일상"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18055741639790076/",
+    reel_url: "https://www.instagram.com/reel/DEHlpQlMfbR/",
     date: "2024-12-30"
   },
   {
@@ -1706,7 +1742,7 @@ const REELS_DATA = [
     expression_en: "",
     description_kr: "틈.새.영어 공략하기 여러분도 이정재 인터뷰, 영어로 생각해보세요!",
     tags: ["면접", "문화"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_17917465884019738/",
+    reel_url: "https://www.instagram.com/reel/DEChlgMsED8/",
     date: "2024-12-28"
   },
   {
@@ -1715,7 +1751,7 @@ const REELS_DATA = [
     expression_en: "",
     description_kr: "",
     tags: ["면접"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_17906843372985035/",
+    reel_url: "https://www.instagram.com/reel/DD88lfwz_yj/",
     date: "2024-12-26"
   },
   {
@@ -1724,7 +1760,7 @@ const REELS_DATA = [
     expression_en: "",
     description_kr: "영어 인터뷰로 공부하기 with 옥쌤",
     tags: ["면접"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_17878614123210943/",
+    reel_url: "https://www.instagram.com/reel/DD4BCNmxgYe/",
     date: "2024-12-24"
   },
   {
@@ -1733,7 +1769,7 @@ const REELS_DATA = [
     expression_en: "FAKER팬 필수 영어!",
     description_kr: "",
     tags: ["일상", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18035696852367337/",
+    reel_url: "https://www.instagram.com/reel/DDzBzBrM_-r/",
     date: "2024-12-22"
   },
   {
@@ -1742,7 +1778,7 @@ const REELS_DATA = [
     expression_en: "warm up vs heat up",
     description_kr: "겨울에 알아두면 좋은 꿀팁영어! with 옥썜",
     tags: ["뉘앙스", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18047001493924462/",
+    reel_url: "https://www.instagram.com/reel/DDt-JliAt1P/",
     date: "2024-12-20"
   },
   {
@@ -1751,7 +1787,7 @@ const REELS_DATA = [
     expression_en: "",
     description_kr: "",
     tags: ["연애"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18033017741149273/",
+    reel_url: "https://www.instagram.com/reel/DDo5J8EzIK1/",
     date: "2024-12-18"
   },
   {
@@ -1760,7 +1796,7 @@ const REELS_DATA = [
     expression_en: "",
     description_kr: "",
     tags: ["일상"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18071616826636049/",
+    reel_url: "https://www.instagram.com/reel/DDjeQ4Ds8OZ/",
     date: "2024-12-16"
   },
   {
@@ -1769,7 +1805,7 @@ const REELS_DATA = [
     expression_en: "curveball",
     description_kr: "",
     tags: ["일상", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18041289743022373/",
+    reel_url: "https://www.instagram.com/reel/DDefSBGAs2U/",
     date: "2024-12-14"
   },
   {
@@ -1778,7 +1814,7 @@ const REELS_DATA = [
     expression_en: "",
     description_kr: "어떤 차이가 있을까요?",
     tags: ["뉘앙스"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18314737330165427/",
+    reel_url: "https://www.instagram.com/reel/DDMRR-pzPiT/",
     date: "2024-12-12"
   },
   {
@@ -1787,7 +1823,7 @@ const REELS_DATA = [
     expression_en: "",
     description_kr: "",
     tags: ["일상"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18024070667629393/",
+    reel_url: "https://www.instagram.com/reel/DDHXOUcuaSS/",
     date: "2024-12-05"
   },
   {
@@ -1796,7 +1832,7 @@ const REELS_DATA = [
     expression_en: "",
     description_kr: "들어보시죠~",
     tags: ["일상"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_17867557857254324/",
+    reel_url: "https://www.instagram.com/reel/DCy6cXOgx6A/",
     date: "2024-12-03"
   },
   {
@@ -1805,7 +1841,7 @@ const REELS_DATA = [
     expression_en: "",
     description_kr: "",
     tags: ["일상"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_17960507744714460/",
+    reel_url: "https://www.instagram.com/reel/DCeVUobOZPx/",
     date: "2024-11-25"
   },
   {
@@ -1814,7 +1850,7 @@ const REELS_DATA = [
     expression_en: "",
     description_kr: "",
     tags: ["일상"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_17888202366082126/",
+    reel_url: "https://www.instagram.com/reel/DCYrTXgM1_c/",
     date: "2024-11-17"
   },
   {
@@ -1823,7 +1859,7 @@ const REELS_DATA = [
     expression_en: "Some",
     description_kr: "",
     tags: ["일상", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18088796266513259/",
+    reel_url: "https://www.instagram.com/reel/DCTnwkZTYIs/",
     date: "2024-11-15"
   },
   {
@@ -1832,7 +1868,7 @@ const REELS_DATA = [
     expression_en: "",
     description_kr: "",
     tags: ["일상"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18145708465353623/",
+    reel_url: "https://www.instagram.com/reel/DCOaNvGuHAY/",
     date: "2024-11-13"
   },
   {
@@ -1841,7 +1877,7 @@ const REELS_DATA = [
     expression_en: "",
     description_kr: "",
     tags: ["일상"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18021268037315090/",
+    reel_url: "https://www.instagram.com/reel/DCJUj2lzuRT/",
     date: "2024-11-11"
   },
   {
@@ -1850,7 +1886,7 @@ const REELS_DATA = [
     expression_en: "",
     description_kr: "",
     tags: ["일상"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_17952338600849889/",
+    reel_url: "https://www.instagram.com/reel/DCEKguCswXc/",
     date: "2024-11-09"
   },
   {
@@ -1859,7 +1895,7 @@ const REELS_DATA = [
     expression_en: "",
     description_kr: "",
     tags: ["슬랭"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18046465049093150/",
+    reel_url: "https://www.instagram.com/reel/DB_E3LdzWVn/",
     date: "2024-11-07"
   },
   {
@@ -1868,7 +1904,7 @@ const REELS_DATA = [
     expression_en: "",
     description_kr: "",
     tags: ["일상"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18205678069288639/",
+    reel_url: "https://www.instagram.com/reel/DB6QHtfJIja/",
     date: "2024-11-05"
   },
   {
@@ -1877,7 +1913,7 @@ const REELS_DATA = [
     expression_en: "",
     description_kr: "",
     tags: ["비즈니스"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18037037909238278/",
+    reel_url: "https://www.instagram.com/reel/DB0q123zfEe/",
     date: "2024-11-03"
   },
   {
@@ -1886,7 +1922,7 @@ const REELS_DATA = [
     expression_en: "",
     description_kr: "",
     tags: ["일상"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18119473216394244/",
+    reel_url: "https://www.instagram.com/reel/DBvklquTNHs/",
     date: "2024-11-01"
   },
   {
@@ -1895,7 +1931,7 @@ const REELS_DATA = [
     expression_en: "",
     description_kr: "",
     tags: ["일상"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18011974841418684/",
+    reel_url: "https://www.instagram.com/reel/DBqeb1pTdJo/",
     date: "2024-10-30"
   },
   {
@@ -1904,7 +1940,7 @@ const REELS_DATA = [
     expression_en: "",
     description_kr: "옥쌤과 함께 알아보세요~",
     tags: ["일상"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18052716994928662/",
+    reel_url: "https://www.instagram.com/reel/DBlOAVOz3ii/",
     date: "2024-10-28"
   },
   {
@@ -1913,7 +1949,7 @@ const REELS_DATA = [
     expression_en: "",
     description_kr: "",
     tags: ["일상"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18048539965817836/",
+    reel_url: "https://www.instagram.com/reel/DBgEcBeT3Lk/",
     date: "2024-10-26"
   },
   {
@@ -1922,7 +1958,7 @@ const REELS_DATA = [
     expression_en: "",
     description_kr: "",
     tags: ["일상"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_17965588778682082/",
+    reel_url: "https://www.instagram.com/reel/DBa60AizH5I/",
     date: "2024-10-24"
   },
   {
@@ -1931,7 +1967,7 @@ const REELS_DATA = [
     expression_en: "",
     description_kr: "",
     tags: ["일상"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_17993155196550786/",
+    reel_url: "https://www.instagram.com/reel/DBV42nVu9Vo/",
     date: "2024-10-22"
   },
   {
@@ -1940,7 +1976,7 @@ const REELS_DATA = [
     expression_en: "",
     description_kr: "",
     tags: ["일상"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_17932143857945207/",
+    reel_url: "https://www.instagram.com/reel/DBQ2wygN3Cr/",
     date: "2024-10-20"
   },
   {
@@ -1949,7 +1985,7 @@ const REELS_DATA = [
     expression_en: "",
     description_kr: "",
     tags: ["일상"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18278679895171259/",
+    reel_url: "https://www.instagram.com/reel/DBLeEe6zgG8/",
     date: "2024-10-18"
   },
   {
@@ -1958,7 +1994,7 @@ const REELS_DATA = [
     expression_en: "",
     description_kr: "",
     tags: ["일상"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18327505741156986/",
+    reel_url: "https://www.instagram.com/reel/DBGaza0M7DZ/",
     date: "2024-10-16"
   },
   {
@@ -1967,7 +2003,7 @@ const REELS_DATA = [
     expression_en: "",
     description_kr: "주위에 T발놈 친구가 있으면 공유해주세요!!",
     tags: ["일상"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18074972788520766/",
+    reel_url: "https://www.instagram.com/reel/DBCQCSxshXs/",
     date: "2024-10-14"
   },
   {
@@ -1976,7 +2012,7 @@ const REELS_DATA = [
     expression_en: "",
     description_kr: "",
     tags: ["일상"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18133739548368870/",
+    reel_url: "https://www.instagram.com/reel/DA8DPrNuB6Z/",
     date: "2024-10-12"
   },
   {
@@ -1985,7 +2021,7 @@ const REELS_DATA = [
     expression_en: "",
     description_kr: "",
     tags: ["일상"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_17908034052018487/",
+    reel_url: "https://www.instagram.com/reel/DA2u-OBO8y_/",
     date: "2024-10-10"
   },
   {
@@ -1994,7 +2030,7 @@ const REELS_DATA = [
     expression_en: "",
     description_kr: "즐겁게 영어하자, 영어는 옥쌤!",
     tags: ["일상"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18128553103374082/",
+    reel_url: "https://www.instagram.com/reel/DAx78b1OJlE/",
     date: "2024-10-08"
   },
   {
@@ -2003,7 +2039,7 @@ const REELS_DATA = [
     expression_en: "",
     description_kr: "",
     tags: ["일상"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_17851262727265597/",
+    reel_url: "https://www.instagram.com/reel/DAs2XLdNPSR/",
     date: "2024-10-06"
   },
   {
@@ -2012,7 +2048,7 @@ const REELS_DATA = [
     expression_en: "",
     description_kr: "",
     tags: ["일상"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18053403229845251/",
+    reel_url: "https://www.instagram.com/reel/DAncBXtgXPb/",
     date: "2024-10-04"
   },
   {
@@ -2021,7 +2057,7 @@ const REELS_DATA = [
     expression_en: "help me",
     description_kr: "이제  대신 could you do me a favor? 써보세요!",
     tags: ["뉘앙스", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18327060499196420/",
+    reel_url: "https://www.instagram.com/reel/DAiRZsFT80U/",
     date: "2024-10-02"
   },
   {
@@ -2030,7 +2066,7 @@ const REELS_DATA = [
     expression_en: "",
     description_kr: "",
     tags: ["카페", "주문"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_17927049050843780/",
+    reel_url: "https://www.instagram.com/reel/DAdfvCMNyiX/",
     date: "2024-09-30"
   },
   {
@@ -2039,7 +2075,7 @@ const REELS_DATA = [
     expression_en: "ENFP",
     description_kr: "전국의 민지들에게 미리 죄송합니다..",
     tags: ["일상", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_17901687695963121/",
+    reel_url: "https://www.instagram.com/reel/DAX9nRxMVR4/",
     date: "2024-09-28"
   },
   {
@@ -2048,7 +2084,7 @@ const REELS_DATA = [
     expression_en: "",
     description_kr: "",
     tags: ["일상"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18052952878842177/",
+    reel_url: "https://www.instagram.com/reel/DAS18AeN8th/",
     date: "2024-09-26"
   },
   {
@@ -2057,7 +2093,7 @@ const REELS_DATA = [
     expression_en: "대부분 헷갈리는 Come vs Go",
     description_kr: "come here와 go away로 구별하면 쉽습니다!",
     tags: ["뉘앙스", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18054902716839233/",
+    reel_url: "https://www.instagram.com/reel/DANq86fTX_9/",
     date: "2024-09-24"
   },
   {
@@ -2066,7 +2102,7 @@ const REELS_DATA = [
     expression_en: "",
     description_kr: "",
     tags: ["일상"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18043028234052454/",
+    reel_url: "https://www.instagram.com/reel/DAIklO1NWvS/",
     date: "2024-09-22"
   },
   {
@@ -2075,7 +2111,7 @@ const REELS_DATA = [
     expression_en: "",
     description_kr: "",
     tags: ["일상"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18030874358255076/",
+    reel_url: "https://www.instagram.com/reel/DADXyTDTtRg/",
     date: "2024-09-20"
   },
   {
@@ -2084,7 +2120,7 @@ const REELS_DATA = [
     expression_en: "",
     description_kr: "",
     tags: ["일상"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_17903659977041595/",
+    reel_url: "https://www.instagram.com/reel/C_-Q9QKOqwk/",
     date: "2024-09-18"
   },
   {
@@ -2093,7 +2129,7 @@ const REELS_DATA = [
     expression_en: "",
     description_kr: "",
     tags: ["일상"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_17975954678716792/",
+    reel_url: "https://www.instagram.com/reel/C_5EoXeTJfq/",
     date: "2024-09-16"
   },
   {
@@ -2102,7 +2138,7 @@ const REELS_DATA = [
     expression_en: "",
     description_kr: "",
     tags: ["일상"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18138855826348269/",
+    reel_url: "https://www.instagram.com/reel/C_z_u4aN5PG/",
     date: "2024-09-14"
   },
   {
@@ -2111,7 +2147,7 @@ const REELS_DATA = [
     expression_en: "",
     description_kr: "",
     tags: ["일상"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18046533133787089/",
+    reel_url: "https://www.instagram.com/reel/C_uw2LbNw3b/",
     date: "2024-09-12"
   },
   {
@@ -2120,7 +2156,7 @@ const REELS_DATA = [
     expression_en: "",
     description_kr: "얼음 조절이 필요할 때~ 옥쌤!",
     tags: ["주문"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18015585725567219/",
+    reel_url: "https://www.instagram.com/reel/C_p5dcbRgq2/",
     date: "2024-09-10"
   },
   {
@@ -2129,7 +2165,7 @@ const REELS_DATA = [
     expression_en: "",
     description_kr: "",
     tags: ["일상"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18041381297065339/",
+    reel_url: "https://www.instagram.com/reel/C_e1IOxt1yR/",
     date: "2024-09-08"
   },
   {
@@ -2138,7 +2174,7 @@ const REELS_DATA = [
     expression_en: "",
     description_kr: "",
     tags: ["일상"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_17926607555936846/",
+    reel_url: "https://www.instagram.com/reel/C_aiUfOu-SN/",
     date: "2024-09-06"
   },
   {
@@ -2147,7 +2183,7 @@ const REELS_DATA = [
     expression_en: "",
     description_kr: "",
     tags: ["슬랭"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18036502316134849/",
+    reel_url: "https://www.instagram.com/reel/C_Vkp5iNrVB/",
     date: "2024-09-04"
   },
   {
@@ -2156,7 +2192,7 @@ const REELS_DATA = [
     expression_en: "",
     description_kr: "",
     tags: ["여행"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18058867180662795/",
+    reel_url: "https://www.instagram.com/reel/C_QRlotMlvd/",
     date: "2024-09-02"
   },
   {
@@ -2165,7 +2201,7 @@ const REELS_DATA = [
     expression_en: "",
     description_kr: "",
     tags: ["여행"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18158899477314699/",
+    reel_url: "https://www.instagram.com/reel/C_LQauPMNwS/",
     date: "2024-08-31"
   },
   {
@@ -2174,7 +2210,7 @@ const REELS_DATA = [
     expression_en: "",
     description_kr: "",
     tags: ["여행"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18036389158919353/",
+    reel_url: "https://www.instagram.com/reel/C_FXeiIxljy/",
     date: "2024-08-29"
   },
   {
@@ -2183,7 +2219,7 @@ const REELS_DATA = [
     expression_en: "",
     description_kr: "",
     tags: ["일상"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_17868179817123945/",
+    reel_url: "https://www.instagram.com/reel/C_BKzp8syeI/",
     date: "2024-08-27"
   },
   {
@@ -2192,7 +2228,7 @@ const REELS_DATA = [
     expression_en: "vs KT",
     description_kr: "롤 필수 영어 표현 (T1 )",
     tags: ["뉘앙스", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18274729036173347/",
+    reel_url: "https://www.instagram.com/reel/C-3_aBSscGZ/",
     date: "2024-08-25"
   },
   {
@@ -2201,7 +2237,7 @@ const REELS_DATA = [
     expression_en: "",
     description_kr: "",
     tags: ["일상"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18450964348010975/",
+    reel_url: "https://www.instagram.com/reel/C-1yna3xSoP/",
     date: "2024-08-23"
   },
   {
@@ -2210,7 +2246,7 @@ const REELS_DATA = [
     expression_en: "",
     description_kr: "",
     tags: ["일상"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18038751353092793/",
+    reel_url: "https://www.instagram.com/reel/C-x1R7UNu-n/",
     date: "2024-08-20"
   },
   {
@@ -2219,7 +2255,7 @@ const REELS_DATA = [
     expression_en: "",
     description_kr: "",
     tags: ["문화"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18024381344365307/",
+    reel_url: "https://www.instagram.com/reel/C-rzwzeRjul/",
     date: "2024-08-19"
   },
   {
@@ -2228,7 +2264,7 @@ const REELS_DATA = [
     expression_en: "",
     description_kr: "",
     tags: ["연애"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18453678019022596/",
+    reel_url: "https://www.instagram.com/reel/C-mkcAmRMIz/",
     date: "2024-08-17"
   },
   {
@@ -2237,7 +2273,7 @@ const REELS_DATA = [
     expression_en: "",
     description_kr: "",
     tags: ["일상"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_17943249422841976/",
+    reel_url: "https://www.instagram.com/reel/C-hjbXROOuZ/",
     date: "2024-08-15"
   },
   {
@@ -2246,7 +2282,7 @@ const REELS_DATA = [
     expression_en: "",
     description_kr: "",
     tags: ["일상"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18408554620079696/",
+    reel_url: "https://www.instagram.com/reel/C9eEU3suzzl/",
     date: "2024-08-13"
   },
   {
@@ -2255,7 +2291,7 @@ const REELS_DATA = [
     expression_en: "",
     description_kr: "",
     tags: ["일상"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18009740642560040/",
+    reel_url: "https://www.instagram.com/reel/C9KjGGhuDPg/",
     date: "2024-08-11"
   },
   {
@@ -2264,7 +2300,7 @@ const REELS_DATA = [
     expression_en: "english",
     description_kr: "",
     tags: ["면접", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18084656560482144/",
+    reel_url: "https://www.instagram.com/reel/C8_qm4XOW-M/",
     date: "2024-07-16"
   },
   {
@@ -2273,7 +2309,7 @@ const REELS_DATA = [
     expression_en: "english",
     description_kr: "",
     tags: ["면접", "표현"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_17996470736647179/",
+    reel_url: "https://www.instagram.com/reel/C81O1paOpM2/",
     date: "2024-07-08"
   },
   {
@@ -2282,7 +2318,7 @@ const REELS_DATA = [
     expression_en: "",
     description_kr: "",
     tags: ["연애"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18458115106063574/",
+    reel_url: "https://www.instagram.com/reel/C70TnK7tqBW/",
     date: "2024-07-04"
   },
   {
@@ -2291,7 +2327,7 @@ const REELS_DATA = [
     expression_en: "",
     description_kr: "",
     tags: ["문화"],
-    reel_url: "https://www.instagram.com/reel/UNKNOWN_18009807701592667/",
+    reel_url: "https://www.instagram.com/reel/C7xx9fbML6x/",
     date: "2024-06-30"
   },
   {
