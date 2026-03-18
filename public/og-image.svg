@@ -1,0 +1,8 @@
+<svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#1C1917"/>
+  <rect x="524" y="160" width="80" height="80" rx="16" fill="#44403C"/>
+  <text x="564" y="218" font-size="40" fill="#FAFAF8" font-family="sans-serif" font-weight="bold" text-anchor="middle">옥</text>
+  <text x="600" y="340" font-size="56" fill="#FAFAF8" font-family="sans-serif" font-weight="900" text-anchor="middle" letter-spacing="-1">영어는옥쌤 표현사전</text>
+  <text x="600" y="400" font-size="24" fill="#78716C" font-family="sans-serif" text-anchor="middle">상황별 영어 표현을 검색하고 바로 시청하세요</text>
+  <text x="600" y="460" font-size="20" fill="#A8A29E" font-family="sans-serif" text-anchor="middle">@ok.english.kr</text>
+</svg>
