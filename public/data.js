@@ -1311,48 +1311,74 @@ const REELS_DATA = [
   },
   {
     "id": 63,
-    "expression_en": "iStorya",
-    "expression_meaning_kr": "영어 학습 앱",
-    "situation_kr": "어플 추천할 때",
-    "description_kr": "iStorya로 스토리와 책을 통해 영어를 배워보세요.",
-    "category": "일상대화",
+    "expression_en": "OCD (Obsessive Compulsive Disorder)",
+    "expression_meaning_kr": "강박장애",
+    "situation_kr": "OCD 의미를 설명할 때",
+    "description_kr": "영어에서 자주 쓰이는 OCD의 정확한 의미와 사용법을 알아보세요.",
+    "category": "문화·뉘앙스",
     "search_keywords_kr": [
-      "영어 공부",
-      "어플 추천",
-      "해리포터",
-      "iStorya"
+      "강박",
+      "OCD",
+      "완벽주의",
+      "의미",
+      "약자"
     ],
     "search_keywords_en": [
-      "English learning",
-      "app recommendation"
+      "OCD",
+      "obsessive",
+      "compulsive",
+      "disorder",
+      "perfectionist"
     ],
-    "difficulty": "beginner",
+    "difficulty": "intermediate",
     "reel_url": "https://www.instagram.com/reel/DO6i370DWEV/",
     "date": "2025-09-22"
   },
   {
     "id": 64,
-    "expression_en": "obsessive compulsive disorder",
-    "expression_meaning_kr": "",
-    "situation_kr": "정신 건강에 대해 이야기할 때",
-    "description_kr": "강박 장애는 반복적인 생각이나 행동을 포함해요.",
-    "category": "일상대화",
-    "search_keywords_kr": [],
-    "search_keywords_en": [],
-    "difficulty": "",
+    "expression_en": "Can't you tell? vs Can you tell?",
+    "expression_meaning_kr": "모르겠어? vs 알겠어?",
+    "situation_kr": "상대방에게 눈치를 물을 때",
+    "description_kr": "can't you tell은 '티 안 나?', can you tell은 '알겠어?'로 뉘앙스가 달라요.",
+    "category": "문화·뉘앙스",
+    "search_keywords_kr": [
+      "눈치",
+      "티나다",
+      "알겠어",
+      "모르겠어",
+      "구분"
+    ],
+    "search_keywords_en": [
+      "can you tell",
+      "can't you tell",
+      "notice",
+      "difference"
+    ],
+    "difficulty": "intermediate",
     "reel_url": "https://www.instagram.com/reel/DO1S5z8AXne/",
     "date": "2025-09-20"
   },
   {
     "id": 65,
-    "expression_en": "",
-    "expression_meaning_kr": "",
-    "situation_kr": "감정이나 사실을 놓칠 때",
-    "description_kr": "상대방이 놓친 감정이나 사실을 지적할 때 유용해요.",
-    "category": "일상대화",
-    "search_keywords_kr": [],
-    "search_keywords_en": [],
-    "difficulty": "",
+    "expression_en": "Can't you tell? vs Can you tell?",
+    "expression_meaning_kr": "모르겠어? vs 알겠어?",
+    "situation_kr": "상대방에게 눈치를 물을 때",
+    "description_kr": "can't you tell은 '티 안 나?', can you tell은 '알겠어?'로 뉘앙스가 달라요.",
+    "category": "문화·뉘앙스",
+    "search_keywords_kr": [
+      "눈치",
+      "티나다",
+      "알겠어",
+      "모르겠어",
+      "구분"
+    ],
+    "search_keywords_en": [
+      "can you tell",
+      "can't you tell",
+      "notice",
+      "difference"
+    ],
+    "difficulty": "intermediate",
     "reel_url": "https://www.instagram.com/reel/DOuPCTzEqQ2/",
     "date": "2025-09-17"
   },
@@ -1615,49 +1641,6 @@ const REELS_DATA = [
   },
   {
     "id": 78,
-    "expression_en": "cheekbone",
-    "expression_meaning_kr": "광대뼈",
-    "situation_kr": "얼굴 윤곽을 설명할 때",
-    "description_kr": "눈 아래 양쪽에 있는 뼈로, 얼굴의 형태를 결정해요.",
-    "category": "일상대화",
-    "search_keywords_kr": [
-      "광대뼈",
-      "얼굴",
-      "윤곽",
-      "해부학"
-    ],
-    "search_keywords_en": [
-      "facial bone",
-      "cheek",
-      "anatomy"
-    ],
-    "difficulty": "beginner",
-    "reel_url": "https://www.instagram.com/reel/DNki4S5TZlT/",
-    "date": "2025-08-20"
-  },
-  {
-    "id": 79,
-    "expression_en": "",
-    "expression_meaning_kr": "",
-    "situation_kr": "퀴즈를 풀고 싶을 때",
-    "description_kr": "댓글에 ‘퀴즈’라고 남기면 링크가 전송돼요.",
-    "category": "일상대화",
-    "search_keywords_kr": [
-      "퀴즈",
-      "댓글",
-      "링크",
-      "전송"
-    ],
-    "search_keywords_en": [
-      "quiz",
-      "comment"
-    ],
-    "difficulty": "beginner",
-    "reel_url": "https://www.instagram.com/reel/DNfJ7PvRrlw/",
-    "date": "2025-08-18"
-  },
-  {
-    "id": 80,
     "expression_en": "currently",
     "expression_meaning_kr": "현재",
     "situation_kr": "현재 상황을 설명할 때",
@@ -1679,7 +1662,7 @@ const REELS_DATA = [
     "date": "2025-08-17"
   },
   {
-    "id": 81,
+    "id": 79,
     "expression_en": "chill out",
     "expression_meaning_kr": "편하게 쉬다",
     "situation_kr": "힘든 하루를 보낸 후에",
@@ -1700,7 +1683,7 @@ const REELS_DATA = [
     "date": "2025-08-15"
   },
   {
-    "id": 82,
+    "id": 80,
     "expression_en": "vice versa",
     "expression_meaning_kr": "반대로",
     "situation_kr": "상황을 반대로 설명할 때",
@@ -1721,7 +1704,7 @@ const REELS_DATA = [
     "date": "2025-08-13"
   },
   {
-    "id": 83,
+    "id": 81,
     "expression_en": "Mr. Know-it-all",
     "expression_meaning_kr": "모든 걸 아는 척하는 사람",
     "situation_kr": "회의 중에 잘난 척할 때",
@@ -1742,7 +1725,7 @@ const REELS_DATA = [
     "date": "2025-08-10"
   },
   {
-    "id": 84,
+    "id": 82,
     "expression_en": "laid back",
     "expression_meaning_kr": "편안한",
     "situation_kr": "편안한 분위기일 때",
@@ -1763,7 +1746,7 @@ const REELS_DATA = [
     "date": "2025-08-08"
   },
   {
-    "id": 85,
+    "id": 83,
     "expression_en": "I cracked up",
     "expression_meaning_kr": "빵 터졌다",
     "situation_kr": "너무 웃겨서 웃을 때",
@@ -1784,7 +1767,7 @@ const REELS_DATA = [
     "date": "2025-08-06"
   },
   {
-    "id": 86,
+    "id": 84,
     "expression_en": "I can't help it.",
     "expression_meaning_kr": "어쩔 수 없어",
     "situation_kr": "감정이 격해졌을 때",
@@ -1805,7 +1788,7 @@ const REELS_DATA = [
     "date": "2025-08-03"
   },
   {
-    "id": 87,
+    "id": 85,
     "expression_en": "test the waters",
     "expression_meaning_kr": "어떤 일을 시험해보다",
     "situation_kr": "새로운 시도를 하기 전",
@@ -1826,7 +1809,7 @@ const REELS_DATA = [
     "date": "2025-08-01"
   },
   {
-    "id": 88,
+    "id": 86,
     "expression_en": "whatnot",
     "expression_meaning_kr": "기타 등등",
     "situation_kr": "일상 대화할 때",
@@ -1847,7 +1830,7 @@ const REELS_DATA = [
     "date": "2025-07-30"
   },
   {
-    "id": 89,
+    "id": 87,
     "expression_en": "cool off",
     "expression_meaning_kr": "더위를 식히다",
     "situation_kr": "더위를 느낄 때",
@@ -1869,7 +1852,7 @@ const REELS_DATA = [
     "date": "2025-07-27"
   },
   {
-    "id": 90,
+    "id": 88,
     "expression_en": "I feel left out",
     "expression_meaning_kr": "소외감을 느끼다",
     "situation_kr": "친구들 사이에 낄 때",
@@ -1890,7 +1873,7 @@ const REELS_DATA = [
     "date": "2025-07-25"
   },
   {
-    "id": 91,
+    "id": 89,
     "expression_en": "I'm having a thinning hair",
     "expression_meaning_kr": "머리카락이 가늘어짐",
     "situation_kr": "탈모 초기 증세가 있을 때",
@@ -1912,7 +1895,7 @@ const REELS_DATA = [
     "date": "2025-07-23"
   },
   {
-    "id": 92,
+    "id": 90,
     "expression_en": "Get out of here",
     "expression_meaning_kr": "믿기지 않는 상황",
     "situation_kr": "놀라운 소식을 들었을 때",
@@ -1933,7 +1916,7 @@ const REELS_DATA = [
     "date": "2025-07-20"
   },
   {
-    "id": 93,
+    "id": 91,
     "expression_en": "We just need a second.",
     "expression_meaning_kr": "잠깐 필요해요",
     "situation_kr": "우리끼리 잠깐 얘기할 때",
@@ -1955,7 +1938,7 @@ const REELS_DATA = [
     "date": "2025-07-18"
   },
   {
-    "id": 94,
+    "id": 92,
     "expression_en": "walk it off",
     "expression_meaning_kr": "걷는 것으로 스트레스 해소",
     "situation_kr": "감정이나 통증을 해소할 때",
@@ -1977,7 +1960,7 @@ const REELS_DATA = [
     "date": "2025-07-16"
   },
   {
-    "id": 95,
+    "id": 93,
     "expression_en": "wise",
     "expression_meaning_kr": "현명한",
     "situation_kr": "시간에 대해 이야기할 때",
@@ -1998,7 +1981,7 @@ const REELS_DATA = [
     "date": "2025-07-13"
   },
   {
-    "id": 96,
+    "id": 94,
     "expression_en": "get it together",
     "expression_meaning_kr": "정신 차려",
     "situation_kr": "누군가가 집중이 필요할 때",
@@ -2020,7 +2003,7 @@ const REELS_DATA = [
     "date": "2025-07-11"
   },
   {
-    "id": 97,
+    "id": 95,
     "expression_en": "less necessary",
     "expression_meaning_kr": "덜 필요하다",
     "situation_kr": "회의 중 아이디어 평가할 때",
@@ -2041,7 +2024,7 @@ const REELS_DATA = [
     "date": "2025-07-09"
   },
   {
-    "id": 98,
+    "id": 96,
     "expression_en": "It's about time",
     "expression_meaning_kr": "이제야",
     "situation_kr": "기다리던 사람에게 전화할 때",
@@ -2062,7 +2045,7 @@ const REELS_DATA = [
     "date": "2025-07-06"
   },
   {
-    "id": 99,
+    "id": 97,
     "expression_en": "I'm down",
     "expression_meaning_kr": "같이 하고 싶어",
     "situation_kr": "친한 친구와 대화할 때",
@@ -2084,7 +2067,7 @@ const REELS_DATA = [
     "date": "2025-07-04"
   },
   {
-    "id": 100,
+    "id": 98,
     "expression_en": "I'm good for it.",
     "expression_meaning_kr": "믿을 수 있다는 뜻",
     "situation_kr": "돈을 갚겠다고 할 때",
@@ -2105,7 +2088,7 @@ const REELS_DATA = [
     "date": "2025-07-02"
   },
   {
-    "id": 101,
+    "id": 99,
     "expression_en": "save it",
     "expression_meaning_kr": "그만해",
     "situation_kr": "말하고 싶지 않을 때",
@@ -2126,7 +2109,7 @@ const REELS_DATA = [
     "date": "2025-06-29"
   },
   {
-    "id": 102,
+    "id": 100,
     "expression_en": "ghosting",
     "expression_meaning_kr": "연락을 끊는 것",
     "situation_kr": "이유 없이 잠수할 때",
@@ -2147,7 +2130,7 @@ const REELS_DATA = [
     "date": "2025-06-27"
   },
   {
-    "id": 103,
+    "id": 101,
     "expression_en": "Tell me about it.",
     "expression_meaning_kr": "공감할 때 쓰는 표현",
     "situation_kr": "상대방의 말에 공감할 때",
@@ -2168,7 +2151,7 @@ const REELS_DATA = [
     "date": "2025-06-25"
   },
   {
-    "id": 104,
+    "id": 102,
     "expression_en": "You look dapper",
     "expression_meaning_kr": "깔끔하게 보인다",
     "situation_kr": "잘 차려입은 남성에게",
@@ -2190,7 +2173,7 @@ const REELS_DATA = [
     "date": "2025-06-22"
   },
   {
-    "id": 105,
+    "id": 103,
     "expression_en": "You've got a little something here.",
     "expression_meaning_kr": "여기 뭐가 묻었어.",
     "situation_kr": "옷이나 얼굴에 뭐가 묻었을 때",
@@ -2212,7 +2195,7 @@ const REELS_DATA = [
     "date": "2025-06-20"
   },
   {
-    "id": 106,
+    "id": 104,
     "expression_en": "Let me walk you through",
     "expression_meaning_kr": "차근차근 설명하다",
     "situation_kr": "무언가를 설명할 때",
@@ -2233,7 +2216,7 @@ const REELS_DATA = [
     "date": "2025-06-18"
   },
   {
-    "id": 107,
+    "id": 105,
     "expression_en": "Yeah, right.",
     "expression_meaning_kr": "비꼬는 표현",
     "situation_kr": "누군가의 말을 믿기 힘들 때",
@@ -2254,7 +2237,7 @@ const REELS_DATA = [
     "date": "2025-06-15"
   },
   {
-    "id": 108,
+    "id": 106,
     "expression_en": "as soon as I drink coffee",
     "expression_meaning_kr": "커피 마자마자",
     "situation_kr": "커피를 마신 후 정신이 맑아질 때",
@@ -2275,7 +2258,7 @@ const REELS_DATA = [
     "date": "2025-06-13"
   },
   {
-    "id": 109,
+    "id": 107,
     "expression_en": "I couldn't make it.",
     "expression_meaning_kr": "못 갔다는 뜻",
     "situation_kr": "약속에 못 갔을 때",
@@ -2297,7 +2280,7 @@ const REELS_DATA = [
     "date": "2025-06-11"
   },
   {
-    "id": 110,
+    "id": 108,
     "expression_en": "crave",
     "expression_meaning_kr": "강렬한 갈망",
     "situation_kr": "원하는 것이 깊을 때",
@@ -2318,7 +2301,7 @@ const REELS_DATA = [
     "date": "2025-06-08"
   },
   {
-    "id": 111,
+    "id": 109,
     "expression_en": "I feel lonely",
     "expression_meaning_kr": "나는 외로움을 느껴",
     "situation_kr": "외로움을 표현하고 싶을 때",
@@ -2339,7 +2322,7 @@ const REELS_DATA = [
     "date": "2025-06-06"
   },
   {
-    "id": 112,
+    "id": 110,
     "expression_en": "I'm afraid so",
     "expression_meaning_kr": "유감스럽지만 그렇다",
     "situation_kr": "공휴일 없을 때",
@@ -2360,7 +2343,7 @@ const REELS_DATA = [
     "date": "2025-06-04"
   },
   {
-    "id": 113,
+    "id": 111,
     "expression_en": "showboat",
     "expression_meaning_kr": "잘난체하다",
     "situation_kr": "과시하고 싶을 때",
@@ -2381,7 +2364,7 @@ const REELS_DATA = [
     "date": "2025-06-01"
   },
   {
-    "id": 114,
+    "id": 112,
     "expression_en": "single-use",
     "expression_meaning_kr": "한 번 쓰는",
     "situation_kr": "일회용품을 말할 때",
@@ -2402,7 +2385,7 @@ const REELS_DATA = [
     "date": "2025-05-30"
   },
   {
-    "id": 115,
+    "id": 113,
     "expression_en": "break the curse",
     "expression_meaning_kr": "저주를 깨다",
     "situation_kr": "오랜 실패를 극복할 때",
@@ -2424,7 +2407,7 @@ const REELS_DATA = [
     "date": "2025-05-28"
   },
   {
-    "id": 116,
+    "id": 114,
     "expression_en": "Zodiac Sign",
     "expression_meaning_kr": "별자리",
     "situation_kr": "별자리로 성격을 이야기할 때",
@@ -2446,7 +2429,7 @@ const REELS_DATA = [
     "date": "2025-05-25"
   },
   {
-    "id": 117,
+    "id": 115,
     "expression_en": "I'm seeing someone",
     "expression_meaning_kr": "누군가를 만나고 있어요",
     "situation_kr": "연애 초기 단계일 때",
@@ -2467,28 +2450,7 @@ const REELS_DATA = [
     "date": "2025-05-23"
   },
   {
-    "id": 118,
-    "expression_en": "emotional",
-    "expression_meaning_kr": "감정적인",
-    "situation_kr": "감정을 표현할 때",
-    "description_kr": "감정적으로 행동할 때 쓰는 표현이에요.",
-    "category": "감정·리액션",
-    "search_keywords_kr": [
-      "감정",
-      "감정적",
-      "emotion",
-      "emotional"
-    ],
-    "search_keywords_en": [
-      "feelings",
-      "sentimental"
-    ],
-    "difficulty": "beginner",
-    "reel_url": "https://www.instagram.com/reel/DJyhAEcx3WA/",
-    "date": "2025-05-21"
-  },
-  {
-    "id": 119,
+    "id": 116,
     "expression_en": "She showed no emotion.",
     "expression_meaning_kr": "",
     "situation_kr": "감정을 표현하고 싶지 않을 때",
@@ -2501,7 +2463,7 @@ const REELS_DATA = [
     "date": "2025-05-18"
   },
   {
-    "id": 120,
+    "id": 117,
     "expression_en": "Circle back",
     "expression_meaning_kr": "다시 돌아가다",
     "situation_kr": "회의 후 다시 이야기할 때",
@@ -2522,7 +2484,7 @@ const REELS_DATA = [
     "date": "2025-05-16"
   },
   {
-    "id": 121,
+    "id": 118,
     "expression_en": "as far as I'm concerned",
     "expression_meaning_kr": "내 생각에는",
     "situation_kr": "회의 중 의견을 말할 때",
@@ -2543,7 +2505,7 @@ const REELS_DATA = [
     "date": "2025-05-14"
   },
   {
-    "id": 122,
+    "id": 119,
     "expression_en": "I feel lonely",
     "expression_meaning_kr": "외롭다",
     "situation_kr": "외로움을 느낄 때",
@@ -2564,7 +2526,7 @@ const REELS_DATA = [
     "date": "2025-05-11"
   },
   {
-    "id": 123,
+    "id": 120,
     "expression_en": "you know",
     "expression_meaning_kr": "너 알지",
     "situation_kr": "상대방의 반응을 원할 때",
@@ -2586,7 +2548,7 @@ const REELS_DATA = [
     "date": "2025-05-09"
   },
   {
-    "id": 124,
+    "id": 121,
     "expression_en": "I mean",
     "expression_meaning_kr": "내 말은",
     "situation_kr": "말하면서 정정할 때",
@@ -2607,7 +2569,7 @@ const REELS_DATA = [
     "date": "2025-05-07"
   },
   {
-    "id": 125,
+    "id": 122,
     "expression_en": "catch you later",
     "expression_meaning_kr": "다음에 보자",
     "situation_kr": "헤어질 때",
@@ -2628,7 +2590,7 @@ const REELS_DATA = [
     "date": "2025-05-04"
   },
   {
-    "id": 126,
+    "id": 123,
     "expression_en": "first and foremost",
     "expression_meaning_kr": "가장 중요한 것",
     "situation_kr": "발표할 때",
@@ -2649,7 +2611,7 @@ const REELS_DATA = [
     "date": "2025-05-02"
   },
   {
-    "id": 127,
+    "id": 124,
     "expression_en": "grow out of it",
     "expression_meaning_kr": "철이 든다",
     "situation_kr": "어린 시절을 그리워할 때",
@@ -2670,7 +2632,7 @@ const REELS_DATA = [
     "date": "2025-04-29"
   },
   {
-    "id": 128,
+    "id": 125,
     "expression_en": "basically",
     "expression_meaning_kr": "기본적으로",
     "situation_kr": "간단히 설명할 때",
@@ -2691,7 +2653,7 @@ const REELS_DATA = [
     "date": "2025-04-27"
   },
   {
-    "id": 129,
+    "id": 126,
     "expression_en": "less",
     "expression_meaning_kr": "부정의 접미사",
     "situation_kr": "단어의 의미를 반대로 할 때",
@@ -2712,7 +2674,7 @@ const REELS_DATA = [
     "date": "2025-04-25"
   },
   {
-    "id": 130,
+    "id": 127,
     "expression_en": "friend in despise",
     "expression_meaning_kr": "위장 친구",
     "situation_kr": "위장 친구가 있을 때",
@@ -2733,7 +2695,7 @@ const REELS_DATA = [
     "date": "2025-04-23"
   },
   {
-    "id": 131,
+    "id": 128,
     "expression_en": "spend quality time",
     "expression_meaning_kr": "질적으로 좋은 시간 보내다",
     "situation_kr": "가족과 시간을 보낼 때",
@@ -2756,7 +2718,7 @@ const REELS_DATA = [
     "date": "2025-04-21"
   },
   {
-    "id": 132,
+    "id": 129,
     "expression_en": "I think we lost him.",
     "expression_meaning_kr": "우리를 잃어버린 것 같아.",
     "situation_kr": "연결이 끊겼을 때",
@@ -2778,7 +2740,7 @@ const REELS_DATA = [
     "date": "2025-04-19"
   },
   {
-    "id": 133,
+    "id": 130,
     "expression_en": "jam",
     "expression_meaning_kr": "잼, 막히다",
     "situation_kr": "교통체증을 표현할 때",
@@ -2799,7 +2761,7 @@ const REELS_DATA = [
     "date": "2025-04-17"
   },
   {
-    "id": 134,
+    "id": 131,
     "expression_en": "That's it for today",
     "expression_meaning_kr": "오늘은 여기까지",
     "situation_kr": "미팅이나 수업 끝낼 때",
@@ -2820,7 +2782,7 @@ const REELS_DATA = [
     "date": "2025-04-15"
   },
   {
-    "id": 135,
+    "id": 132,
     "expression_en": "can you hear me",
     "expression_meaning_kr": "잘 들리나요",
     "situation_kr": "상대방에게 소리 확인할 때",
@@ -2841,7 +2803,7 @@ const REELS_DATA = [
     "date": "2025-04-13"
   },
   {
-    "id": 136,
+    "id": 133,
     "expression_en": "turn down",
     "expression_meaning_kr": "소리를 낮추다/거절하다",
     "situation_kr": "제안을 거절할 때",
@@ -2862,7 +2824,7 @@ const REELS_DATA = [
     "date": "2025-04-11"
   },
   {
-    "id": 137,
+    "id": 134,
     "expression_en": "take for granted",
     "expression_meaning_kr": "당연하게 여기다",
     "situation_kr": "누리는 것에 감사할 때",
@@ -2883,7 +2845,7 @@ const REELS_DATA = [
     "date": "2025-04-09"
   },
   {
-    "id": 138,
+    "id": 135,
     "expression_en": "Could be worse",
     "expression_meaning_kr": "더 나쁠 수도 있다",
     "situation_kr": "상황이 안 좋을 때",
@@ -2904,7 +2866,7 @@ const REELS_DATA = [
     "date": "2025-04-07"
   },
   {
-    "id": 139,
+    "id": 136,
     "expression_en": "hustler",
     "expression_meaning_kr": "사기꾼",
     "situation_kr": "사기꾼을 설명할 때",
@@ -2925,7 +2887,7 @@ const REELS_DATA = [
     "date": "2025-04-05"
   },
   {
-    "id": 140,
+    "id": 137,
     "expression_en": "give up",
     "expression_meaning_kr": "포기하다",
     "situation_kr": "다이어트를 포기할 때",
@@ -2946,7 +2908,7 @@ const REELS_DATA = [
     "date": "2025-04-03"
   },
   {
-    "id": 141,
+    "id": 138,
     "expression_en": "thirsty",
     "expression_meaning_kr": "목이 마른",
     "situation_kr": "목이 마를 때",
@@ -2967,7 +2929,7 @@ const REELS_DATA = [
     "date": "2025-04-01"
   },
   {
-    "id": 142,
+    "id": 139,
     "expression_en": "I'm not kidding",
     "expression_meaning_kr": "농담 아니야",
     "situation_kr": "진심을 전할 때",
@@ -2988,7 +2950,7 @@ const REELS_DATA = [
     "date": "2025-03-30"
   },
   {
-    "id": 143,
+    "id": 140,
     "expression_en": "I literally died laughing",
     "expression_meaning_kr": "정말 웃겼어",
     "situation_kr": "너무 웃길 때",
@@ -3009,7 +2971,7 @@ const REELS_DATA = [
     "date": "2025-03-28"
   },
   {
-    "id": 144,
+    "id": 141,
     "expression_en": "This is so unfair",
     "expression_meaning_kr": "너무 불공평해",
     "situation_kr": "부당한 대우를 받을 때",
@@ -3030,7 +2992,7 @@ const REELS_DATA = [
     "date": "2025-03-26"
   },
   {
-    "id": 145,
+    "id": 142,
     "expression_en": "fine for parking",
     "expression_meaning_kr": "주차 벌금",
     "situation_kr": "주차할 때",
@@ -3051,7 +3013,7 @@ const REELS_DATA = [
     "date": "2025-03-24"
   },
   {
-    "id": 146,
+    "id": 143,
     "expression_en": "pretty",
     "expression_meaning_kr": "꽤, 상당히",
     "situation_kr": "상대방의 안부를 물을 때",
@@ -3072,7 +3034,7 @@ const REELS_DATA = [
     "date": "2025-03-22"
   },
   {
-    "id": 147,
+    "id": 144,
     "expression_en": "badass",
     "expression_meaning_kr": "멋진 사람",
     "situation_kr": "위험한 사람을 묘사할 때",
@@ -3093,7 +3055,7 @@ const REELS_DATA = [
     "date": "2025-03-20"
   },
   {
-    "id": 148,
+    "id": 145,
     "expression_en": "Keep it down",
     "expression_meaning_kr": "조용히 해",
     "situation_kr": "시끄러울 때",
@@ -3114,7 +3076,7 @@ const REELS_DATA = [
     "date": "2025-03-18"
   },
   {
-    "id": 149,
+    "id": 146,
     "expression_en": "I'm stuffed",
     "expression_meaning_kr": "배가 부르다",
     "situation_kr": "식사 후 배부를 때",
@@ -3135,7 +3097,7 @@ const REELS_DATA = [
     "date": "2025-03-16"
   },
   {
-    "id": 150,
+    "id": 147,
     "expression_en": "I'm immature",
     "expression_meaning_kr": "어린애 같다",
     "situation_kr": "자신의 미성숙함을 표현할 때",
@@ -3156,7 +3118,7 @@ const REELS_DATA = [
     "date": "2025-03-14"
   },
   {
-    "id": 151,
+    "id": 148,
     "expression_en": "Even better",
     "expression_meaning_kr": "더 나은 상황",
     "situation_kr": "예상치 못한 상황일 때",
@@ -3177,29 +3139,30 @@ const REELS_DATA = [
     "date": "2025-03-12"
   },
   {
-    "id": 152,
-    "expression_en": "take on",
-    "expression_meaning_kr": "떠맡다",
-    "situation_kr": "책임을 맡을 때",
-    "description_kr": "일이나 책임을 내가 맡을 때 쓰는 표현이에요.",
-    "category": "비즈니스",
+    "id": 149,
+    "expression_en": "I'm under a lot of stress",
+    "expression_meaning_kr": "스트레스를 많이 받고 있어",
+    "situation_kr": "스트레스 표현할 때",
+    "description_kr": "'I have stress'가 아니라 'I'm under stress'가 자연스러운 표현이에요.",
+    "category": "문화·뉘앙스",
     "search_keywords_kr": [
-      "책임",
-      "맡다",
-      "일",
-      "take on"
+      "스트레스",
+      "힘들다",
+      "지치다",
+      "압박",
+      "받다"
     ],
     "search_keywords_en": [
-      "take on",
-      "assume",
-      "accept"
+      "stress",
+      "stressed out",
+      "under pressure"
     ],
-    "difficulty": "intermediate",
+    "difficulty": "beginner",
     "reel_url": "https://www.instagram.com/reel/DG7vI58xCMN/",
     "date": "2025-03-10"
   },
   {
-    "id": 153,
+    "id": 150,
     "expression_en": "Turn on the light.",
     "expression_meaning_kr": "",
     "situation_kr": "어두운 방에서 불을 켤 때",
@@ -3212,7 +3175,7 @@ const REELS_DATA = [
     "date": "2025-03-08"
   },
   {
-    "id": 154,
+    "id": 151,
     "expression_en": "I am bored",
     "expression_meaning_kr": "지루하다",
     "situation_kr": "지루함을 느낄 때",
@@ -3233,28 +3196,31 @@ const REELS_DATA = [
     "date": "2025-03-06"
   },
   {
-    "id": 155,
-    "expression_en": "that tracks",
-    "expression_meaning_kr": "그렇더라",
-    "situation_kr": "상황이 이해될 때",
-    "description_kr": "'that tracks'는 상황이 맞아떨어질 때 쓰는 표현이야.",
-    "category": "일상대화",
+    "id": 152,
+    "expression_en": "affect vs effect",
+    "expression_meaning_kr": "영향을 주다 vs 영향(결과)",
+    "situation_kr": "헷갈리는 단어 구분할 때",
+    "description_kr": "affect는 동사(영향을 주다), effect는 명사(결과)로 기억하세요!",
+    "category": "문화·뉘앙스",
     "search_keywords_kr": [
-      "그렇다",
-      "이해하다",
-      "상황",
-      "일상"
+      "영향",
+      "헷갈리는",
+      "단어",
+      "차이",
+      "구분"
     ],
     "search_keywords_en": [
-      "that makes sense",
-      "it adds up"
+      "affect",
+      "effect",
+      "difference",
+      "confusing words"
     ],
     "difficulty": "intermediate",
     "reel_url": "https://www.instagram.com/reel/DGsO_c0TuR9/",
     "date": "2025-03-04"
   },
   {
-    "id": 156,
+    "id": 153,
     "expression_en": "That tracks",
     "expression_meaning_kr": "",
     "situation_kr": "상대방의 말에 동의할 때",
@@ -3267,7 +3233,7 @@ const REELS_DATA = [
     "date": "2025-03-02"
   },
   {
-    "id": 157,
+    "id": 154,
     "expression_en": "freak out",
     "expression_meaning_kr": "멘탈 붕괴",
     "situation_kr": "큰 감정이 드는 경우",
@@ -3289,7 +3255,7 @@ const REELS_DATA = [
     "date": "2025-02-28"
   },
   {
-    "id": 158,
+    "id": 155,
     "expression_en": "It's so hot in here",
     "expression_meaning_kr": "여기가 너무 덥다",
     "situation_kr": "더운 공간에서",
@@ -3310,28 +3276,31 @@ const REELS_DATA = [
     "date": "2025-02-26"
   },
   {
-    "id": 159,
-    "expression_en": "I gotta go now.",
-    "expression_meaning_kr": "나 지금 가야 돼.",
-    "situation_kr": "급하게 떠날 때",
-    "description_kr": "누군가와의 대화 중 급히 떠날 때 쓰는 표현이에요.",
+    "id": 156,
+    "expression_en": "What does she look like?",
+    "expression_meaning_kr": "그녀는 어떻게 생겼어?",
+    "situation_kr": "외모를 물어볼 때",
+    "description_kr": "'How does she look?'은 컨디션을 묻는 말이에요. 외모는 'What does she look like?'이 맞아요.",
     "category": "일상대화",
     "search_keywords_kr": [
-      "가야 돼",
-      "급하게",
-      "떠나다",
-      "영어 표현"
+      "외모",
+      "생김새",
+      "어떻게 생겼어",
+      "묻다",
+      "look"
     ],
     "search_keywords_en": [
-      "I have to go",
-      "leave quickly"
+      "look like",
+      "appearance",
+      "what does she look like",
+      "how does she look"
     ],
     "difficulty": "beginner",
     "reel_url": "https://www.instagram.com/reel/DGXsUC_Ma6g/",
     "date": "2025-02-24"
   },
   {
-    "id": 160,
+    "id": 157,
     "expression_en": "I'm gonna study.",
     "expression_meaning_kr": "",
     "situation_kr": "미래에 할 일을 말할 때",
@@ -3344,28 +3313,31 @@ const REELS_DATA = [
     "date": "2025-02-22"
   },
   {
-    "id": 161,
-    "expression_en": "Do you wanna hang out sometime?",
-    "expression_meaning_kr": "같이 시간을 보내고 싶어",
-    "situation_kr": "가볍게 만날 때",
-    "description_kr": "친구나 이성과 가볍게 만날 때 쓰는 표현이에요.",
-    "category": "일상대화",
+    "id": 158,
+    "expression_en": "farther vs further",
+    "expression_meaning_kr": "더 먼(물리적) vs 더 나아가(추상적)",
+    "situation_kr": "헷갈리는 단어 구분할 때",
+    "description_kr": "물리적 거리는 farther, 추상적 의미는 further를 쓰세요.",
+    "category": "문화·뉘앙스",
     "search_keywords_kr": [
-      "데이트",
-      "친구",
-      "가볍게",
-      "만남"
+      "거리",
+      "멀다",
+      "헷갈리는",
+      "차이",
+      "더"
     ],
     "search_keywords_en": [
-      "hang out",
-      "meet up"
+      "farther",
+      "further",
+      "distance",
+      "difference"
     ],
-    "difficulty": "beginner",
+    "difficulty": "intermediate",
     "reel_url": "https://www.instagram.com/reel/DGNVejbxoJ4/",
     "date": "2025-02-20"
   },
   {
-    "id": 162,
+    "id": 159,
     "expression_en": "Hang Out",
     "expression_meaning_kr": "",
     "situation_kr": "친구와 시간을 보낼 때",
@@ -3378,7 +3350,7 @@ const REELS_DATA = [
     "date": "2025-02-18"
   },
   {
-    "id": 163,
+    "id": 160,
     "expression_en": "zoning out",
     "expression_meaning_kr": "멍해지다",
     "situation_kr": "집중이 안 될 때",
@@ -3399,7 +3371,7 @@ const REELS_DATA = [
     "date": "2025-02-16"
   },
   {
-    "id": 164,
+    "id": 161,
     "expression_en": "Correct me if I'm wrong",
     "expression_meaning_kr": "틀리면 정정해줘",
     "situation_kr": "내 의견을 말할 때",
@@ -3420,7 +3392,7 @@ const REELS_DATA = [
     "date": "2025-02-14"
   },
   {
-    "id": 165,
+    "id": 162,
     "expression_en": "Correct me if I",
     "expression_meaning_kr": "내가 틀리면 고쳐줘",
     "situation_kr": "내 의견이 틀릴 때",
@@ -3441,7 +3413,7 @@ const REELS_DATA = [
     "date": "2025-02-12"
   },
   {
-    "id": 166,
+    "id": 163,
     "expression_en": "sometimes",
     "expression_meaning_kr": "때때로",
     "situation_kr": "일상적인 행동을 표현할 때",
@@ -3462,7 +3434,7 @@ const REELS_DATA = [
     "date": "2025-02-10"
   },
   {
-    "id": 167,
+    "id": 164,
     "expression_en": "Sometimes",
     "expression_meaning_kr": "가끔",
     "situation_kr": "불규칙한 일이 있을 때",
@@ -3483,7 +3455,7 @@ const REELS_DATA = [
     "date": "2025-02-08"
   },
   {
-    "id": 168,
+    "id": 165,
     "expression_en": "last",
     "expression_meaning_kr": "마지막",
     "situation_kr": "순서상 마지막일 때",
@@ -3504,7 +3476,7 @@ const REELS_DATA = [
     "date": "2025-02-07"
   },
   {
-    "id": 169,
+    "id": 166,
     "expression_en": "let me get this straight",
     "expression_meaning_kr": "내가 이해한 게 맞나요",
     "situation_kr": "대화 중 이해 확인할 때",
@@ -3525,7 +3497,7 @@ const REELS_DATA = [
     "date": "2025-02-06"
   },
   {
-    "id": 170,
+    "id": 167,
     "expression_en": "It means everything to me.",
     "expression_meaning_kr": "나에게 모든 것",
     "situation_kr": "극적인 감사할 때",
@@ -3546,7 +3518,7 @@ const REELS_DATA = [
     "date": "2025-02-04"
   },
   {
-    "id": 171,
+    "id": 168,
     "expression_en": "letter",
     "expression_meaning_kr": "전자, 후자",
     "situation_kr": "선택지를 말할 때",
@@ -3567,7 +3539,7 @@ const REELS_DATA = [
     "date": "2025-02-02"
   },
   {
-    "id": 172,
+    "id": 169,
     "expression_en": "Herb",
     "expression_meaning_kr": "허브",
     "situation_kr": "영어 발음할 때",
@@ -3588,7 +3560,7 @@ const REELS_DATA = [
     "date": "2025-01-31"
   },
   {
-    "id": 173,
+    "id": 170,
     "expression_en": "afterworld",
     "expression_meaning_kr": "직후에",
     "situation_kr": "사건이 바로 일어날 때",
@@ -3609,7 +3581,7 @@ const REELS_DATA = [
     "date": "2025-01-29"
   },
   {
-    "id": 174,
+    "id": 171,
     "expression_en": "for a good 4 days",
     "expression_meaning_kr": "4일 동안",
     "situation_kr": "기간을 강조할 때",
@@ -3630,7 +3602,7 @@ const REELS_DATA = [
     "date": "2025-01-27"
   },
   {
-    "id": 175,
+    "id": 172,
     "expression_en": "pick and choose",
     "expression_meaning_kr": "선택하다",
     "situation_kr": "여러 옵션 중에서 선택할 때",
@@ -3652,7 +3624,7 @@ const REELS_DATA = [
     "date": "2025-01-25"
   },
   {
-    "id": 176,
+    "id": 173,
     "expression_en": "in the elevator",
     "expression_meaning_kr": "엘리베이터 안에",
     "situation_kr": "엘리베이터에 있을 때",
@@ -3673,7 +3645,7 @@ const REELS_DATA = [
     "date": "2025-01-23"
   },
   {
-    "id": 177,
+    "id": 174,
     "expression_en": "the thing is",
     "expression_meaning_kr": "사실은",
     "situation_kr": "잘못된 주문을 말할 때",
@@ -3695,7 +3667,7 @@ const REELS_DATA = [
     "date": "2025-01-21"
   },
   {
-    "id": 178,
+    "id": 175,
     "expression_en": "by my side",
     "expression_meaning_kr": "내 곁에",
     "situation_kr": "친구와 함께할 때",
@@ -3717,7 +3689,7 @@ const REELS_DATA = [
     "date": "2025-01-19"
   },
   {
-    "id": 179,
+    "id": 176,
     "expression_en": "I don't want to go to the office.",
     "expression_meaning_kr": "사무실 가기 싫어",
     "situation_kr": "회사에 가기 싫을 때",
@@ -3739,7 +3711,7 @@ const REELS_DATA = [
     "date": "2025-01-17"
   },
   {
-    "id": 180,
+    "id": 177,
     "expression_en": "I did it by myself",
     "expression_meaning_kr": "혼자서 했다",
     "situation_kr": "혼자서 무언가 할 때",
@@ -3760,7 +3732,7 @@ const REELS_DATA = [
     "date": "2025-01-15"
   },
   {
-    "id": 181,
+    "id": 178,
     "expression_en": "super green",
     "expression_meaning_kr": "모든 일이 순조로운",
     "situation_kr": "로켓 발사 성공할 때",
@@ -3781,7 +3753,7 @@ const REELS_DATA = [
     "date": "2025-01-13"
   },
   {
-    "id": 182,
+    "id": 179,
     "expression_en": "greenhouse",
     "expression_meaning_kr": "온실",
     "situation_kr": "농작물을 기를 때",
@@ -3802,7 +3774,7 @@ const REELS_DATA = [
     "date": "2025-01-11"
   },
   {
-    "id": 183,
+    "id": 180,
     "expression_en": "look on the bright side",
     "expression_meaning_kr": "긍정적으로 생각하다",
     "situation_kr": "실패했을 때 긍정적으로 할 때",
@@ -3823,7 +3795,7 @@ const REELS_DATA = [
     "date": "2025-01-09"
   },
   {
-    "id": 184,
+    "id": 181,
     "expression_en": "sunscreen",
     "expression_meaning_kr": "자외선 차단제",
     "situation_kr": "햇볕을 피하고 싶을 때",
@@ -3844,7 +3816,7 @@ const REELS_DATA = [
     "date": "2025-01-07"
   },
   {
-    "id": 185,
+    "id": 182,
     "expression_en": "in a heartbeat",
     "expression_meaning_kr": "즉시, 바로",
     "situation_kr": "주저하지 않고 바로 할 때",
@@ -3865,7 +3837,7 @@ const REELS_DATA = [
     "date": "2025-01-05"
   },
   {
-    "id": 186,
+    "id": 183,
     "expression_en": "Go to the doctor",
     "expression_meaning_kr": "병원에 가다",
     "situation_kr": "아플 때 병원에 갈 때",
@@ -3886,7 +3858,7 @@ const REELS_DATA = [
     "date": "2025-01-03"
   },
   {
-    "id": 187,
+    "id": 184,
     "expression_en": "What brings you here?",
     "expression_meaning_kr": "왜 여기 왔어?",
     "situation_kr": "친구에게 물어볼 때",
@@ -3907,7 +3879,7 @@ const REELS_DATA = [
     "date": "2025-01-01"
   },
   {
-    "id": 188,
+    "id": 185,
     "expression_en": "whether or not",
     "expression_meaning_kr": "여부",
     "situation_kr": "결정을 내릴 때",
@@ -3928,7 +3900,7 @@ const REELS_DATA = [
     "date": "2024-12-30"
   },
   {
-    "id": 189,
+    "id": 186,
     "expression_en": "blow up",
     "expression_meaning_kr": "갑자기 인기를 얻다",
     "situation_kr": "코인이 인기를 얻을 때",
@@ -3949,7 +3921,7 @@ const REELS_DATA = [
     "date": "2024-12-28"
   },
   {
-    "id": 190,
+    "id": 187,
     "expression_en": "do my best",
     "expression_meaning_kr": "최선을 다하다",
     "situation_kr": "무언가를 할 때",
@@ -3970,7 +3942,7 @@ const REELS_DATA = [
     "date": "2024-12-26"
   },
   {
-    "id": 191,
+    "id": 188,
     "expression_en": "unkillable",
     "expression_meaning_kr": "불사의",
     "situation_kr": "극적인 상황에서",
@@ -3991,7 +3963,7 @@ const REELS_DATA = [
     "date": "2024-12-24"
   },
   {
-    "id": 192,
+    "id": 189,
     "expression_en": "keep warm",
     "expression_meaning_kr": "따뜻하게 유지하다",
     "situation_kr": "추운 날씨에 따뜻할 때",
@@ -4012,7 +3984,7 @@ const REELS_DATA = [
     "date": "2024-12-22"
   },
   {
-    "id": 193,
+    "id": 190,
     "expression_en": "attractive",
     "expression_meaning_kr": "매력적인",
     "situation_kr": "누군가를 칭찬할 때",
@@ -4033,7 +4005,7 @@ const REELS_DATA = [
     "date": "2024-12-20"
   },
   {
-    "id": 194,
+    "id": 191,
     "expression_en": "I apologize",
     "expression_meaning_kr": "사죄드립니다",
     "situation_kr": "격식 있는 자리에서",
@@ -4055,7 +4027,7 @@ const REELS_DATA = [
     "date": "2024-12-18"
   },
   {
-    "id": 195,
+    "id": 192,
     "expression_en": "unexpected situation",
     "expression_meaning_kr": "예상치 못한 상황",
     "situation_kr": "예상치 못한 일이 발생할 때",
@@ -4076,7 +4048,7 @@ const REELS_DATA = [
     "date": "2024-12-16"
   },
   {
-    "id": 196,
+    "id": 193,
     "expression_en": "Secret Santa",
     "expression_meaning_kr": "비밀 산타",
     "situation_kr": "선물을 주고받는 경우",
@@ -4097,7 +4069,7 @@ const REELS_DATA = [
     "date": "2024-12-14"
   },
   {
-    "id": 197,
+    "id": 194,
     "expression_en": "skyrocket",
     "expression_meaning_kr": "급등하다",
     "situation_kr": "가격이 급격히 오를 때",
@@ -4118,7 +4090,7 @@ const REELS_DATA = [
     "date": "2024-12-12"
   },
   {
-    "id": 198,
+    "id": 195,
     "expression_en": "very badly",
     "expression_meaning_kr": "매우 절실하게",
     "situation_kr": "상황이 급할 때",
@@ -4139,7 +4111,7 @@ const REELS_DATA = [
     "date": "2024-12-05"
   },
   {
-    "id": 199,
+    "id": 196,
     "expression_en": "I'm running a bit late.",
     "expression_meaning_kr": "조금 늦을 것 같아",
     "situation_kr": "약속에 늦을 때",
@@ -4161,7 +4133,7 @@ const REELS_DATA = [
     "date": "2024-12-03"
   },
   {
-    "id": 200,
+    "id": 197,
     "expression_en": "I appreciate your patience",
     "expression_meaning_kr": "인내에 감사해요",
     "situation_kr": "기다려줄 때",
@@ -4182,7 +4154,7 @@ const REELS_DATA = [
     "date": "2024-11-25"
   },
   {
-    "id": 201,
+    "id": 198,
     "expression_en": "fling",
     "expression_meaning_kr": "짧은 썸",
     "situation_kr": "썸을 타고 있을 때",
@@ -4203,7 +4175,7 @@ const REELS_DATA = [
     "date": "2024-11-17"
   },
   {
-    "id": 202,
+    "id": 199,
     "expression_en": "landlord",
     "expression_meaning_kr": "집주인",
     "situation_kr": "집을 빌릴 때 하는 경우",
@@ -4224,7 +4196,7 @@ const REELS_DATA = [
     "date": "2024-11-15"
   },
   {
-    "id": 203,
+    "id": 200,
     "expression_en": "indecisive person",
     "expression_meaning_kr": "결정을 못하는 사람",
     "situation_kr": "결정을 내릴 때",
@@ -4245,7 +4217,7 @@ const REELS_DATA = [
     "date": "2024-11-13"
   },
   {
-    "id": 204,
+    "id": 201,
     "expression_en": "show me some affection",
     "expression_meaning_kr": "애정 표현해줘",
     "situation_kr": "애정 표현이 필요할 때",
@@ -4266,7 +4238,7 @@ const REELS_DATA = [
     "date": "2024-11-11"
   },
   {
-    "id": 205,
+    "id": 202,
     "expression_en": "What do you do for fun?",
     "expression_meaning_kr": "취미가 뭐예요?",
     "situation_kr": "친구에게 취미 물어볼 때",
@@ -4288,7 +4260,7 @@ const REELS_DATA = [
     "date": "2024-11-09"
   },
   {
-    "id": 206,
+    "id": 203,
     "expression_en": "buy one, get one free",
     "expression_meaning_kr": "하나 사면 하나 무료",
     "situation_kr": "편의점에서 할인할 때",
@@ -4309,7 +4281,7 @@ const REELS_DATA = [
     "date": "2024-11-07"
   },
   {
-    "id": 207,
+    "id": 204,
     "expression_en": "touch base",
     "expression_meaning_kr": "연락하다",
     "situation_kr": "업무 진행 상황을 확인할 때",
@@ -4330,7 +4302,7 @@ const REELS_DATA = [
     "date": "2024-11-05"
   },
   {
-    "id": 208,
+    "id": 205,
     "expression_en": "I'm craving for a late night snack",
     "expression_meaning_kr": "야식이 땡겨",
     "situation_kr": "늦은 밤 간식 먹고 싶을 때",
@@ -4351,7 +4323,7 @@ const REELS_DATA = [
     "date": "2024-11-03"
   },
   {
-    "id": 209,
+    "id": 206,
     "expression_en": "Any good places to eat near here?",
     "expression_meaning_kr": "주변 맛집 질문",
     "situation_kr": "택시에서 스몰토크할 때",
@@ -4372,7 +4344,7 @@ const REELS_DATA = [
     "date": "2024-11-01"
   },
   {
-    "id": 210,
+    "id": 207,
     "expression_en": "I will dress up as a vampire",
     "expression_meaning_kr": "뱀파이어로 분장할 거다",
     "situation_kr": "할로윈 때 분장할 때",
@@ -4393,7 +4365,7 @@ const REELS_DATA = [
     "date": "2024-10-30"
   },
   {
-    "id": 211,
+    "id": 208,
     "expression_en": "is this even real?",
     "expression_meaning_kr": "이게 진짜야?",
     "situation_kr": "맛있는 음식을 먹을 때",
@@ -4414,7 +4386,7 @@ const REELS_DATA = [
     "date": "2024-10-28"
   },
   {
-    "id": 212,
+    "id": 209,
     "expression_en": "I struck out",
     "expression_meaning_kr": "실패했다",
     "situation_kr": "면접에서 떨어졌을 때",
@@ -4435,7 +4407,7 @@ const REELS_DATA = [
     "date": "2024-10-26"
   },
   {
-    "id": 213,
+    "id": 210,
     "expression_en": "I'm a ____ person",
     "expression_meaning_kr": "나는 ~한 사람이다",
     "situation_kr": "자신의 취향을 말할 때",
@@ -4456,7 +4428,7 @@ const REELS_DATA = [
     "date": "2024-10-24"
   },
   {
-    "id": 214,
+    "id": 211,
     "expression_en": "appointment",
     "expression_meaning_kr": "약속",
     "situation_kr": "약속이 있을 때",
@@ -4477,7 +4449,7 @@ const REELS_DATA = [
     "date": "2024-10-22"
   },
   {
-    "id": 215,
+    "id": 212,
     "expression_en": "she won the Nobel prize",
     "expression_meaning_kr": "노벨상을 수상했다",
     "situation_kr": "수상 소식을 전할 때",
@@ -4499,7 +4471,7 @@ const REELS_DATA = [
     "date": "2024-10-20"
   },
   {
-    "id": 216,
+    "id": 213,
     "expression_en": "kick",
     "expression_meaning_kr": "강렬한 맛",
     "situation_kr": "강렬한 맛을 표현할 때",
@@ -4520,7 +4492,7 @@ const REELS_DATA = [
     "date": "2024-10-18"
   },
   {
-    "id": 217,
+    "id": 214,
     "expression_en": "take it back",
     "expression_meaning_kr": "철회하다",
     "situation_kr": "말실수했을 때",
@@ -4541,7 +4513,7 @@ const REELS_DATA = [
     "date": "2024-10-16"
   },
   {
-    "id": 218,
+    "id": 215,
     "expression_en": "Let's split the bill",
     "expression_meaning_kr": "비용을 나누자",
     "situation_kr": "비용을 나눌 때",
@@ -4562,7 +4534,7 @@ const REELS_DATA = [
     "date": "2024-10-14"
   },
   {
-    "id": 219,
+    "id": 216,
     "expression_en": "go for it",
     "expression_meaning_kr": "해보세요",
     "situation_kr": "친구에게 응원할 때",
@@ -4584,7 +4556,7 @@ const REELS_DATA = [
     "date": "2024-10-12"
   },
   {
-    "id": 220,
+    "id": 217,
     "expression_en": "It's easy",
     "expression_meaning_kr": "쉽다",
     "situation_kr": "말로는 쉽다고 할 때",
@@ -4606,7 +4578,7 @@ const REELS_DATA = [
     "date": "2024-10-10"
   },
   {
-    "id": 221,
+    "id": 218,
     "expression_en": "I will treat you well",
     "expression_meaning_kr": "잘 대할게요",
     "situation_kr": "친구와 외식할 때",
@@ -4627,7 +4599,7 @@ const REELS_DATA = [
     "date": "2024-10-08"
   },
   {
-    "id": 222,
+    "id": 219,
     "expression_en": "I have feelings for you",
     "expression_meaning_kr": "당신에게 감정이 있어요",
     "situation_kr": "사랑 고백할 때",
@@ -4648,7 +4620,7 @@ const REELS_DATA = [
     "date": "2024-10-06"
   },
   {
-    "id": 223,
+    "id": 220,
     "expression_en": "Can you do me a favor?",
     "expression_meaning_kr": "호의로 부탁하다",
     "situation_kr": "부탁할 때",
@@ -4669,7 +4641,7 @@ const REELS_DATA = [
     "date": "2024-10-04"
   },
   {
-    "id": 224,
+    "id": 221,
     "expression_en": "extra",
     "expression_meaning_kr": "추가의",
     "situation_kr": "더 필요한 것을 요청할 때",
@@ -4690,7 +4662,7 @@ const REELS_DATA = [
     "date": "2024-10-02"
   },
   {
-    "id": 225,
+    "id": 222,
     "expression_en": "Don't get ahead of yourself",
     "expression_meaning_kr": "너무 앞서가지 마",
     "situation_kr": "고백하기 전 마음 다잡을 때",
@@ -4711,7 +4683,7 @@ const REELS_DATA = [
     "date": "2024-09-30"
   },
   {
-    "id": 226,
+    "id": 223,
     "expression_en": "Can you give me a ride?",
     "expression_meaning_kr": "나 태워줄 수 있어?",
     "situation_kr": "차를 태워줄 때",
@@ -4732,7 +4704,7 @@ const REELS_DATA = [
     "date": "2024-09-28"
   },
   {
-    "id": 227,
+    "id": 224,
     "expression_en": "I'm coming",
     "expression_meaning_kr": "가고 있어",
     "situation_kr": "누군가에게 가는 경우",
@@ -4753,7 +4725,7 @@ const REELS_DATA = [
     "date": "2024-09-26"
   },
   {
-    "id": 228,
+    "id": 225,
     "expression_en": "quarter life crisis",
     "expression_meaning_kr": "25세 위기",
     "situation_kr": "25세 전후에 느낄 때",
@@ -4774,29 +4746,29 @@ const REELS_DATA = [
     "date": "2024-09-24"
   },
   {
-    "id": 229,
-    "expression_en": "I'll take the next one",
-    "expression_meaning_kr": "다음 엘리베이터 타겠어요",
-    "situation_kr": "엘리베이터를 탈 때",
-    "description_kr": "엘리베이터를 기다릴 때 다음 것을 타겠다고 할 때 써요.",
-    "category": "일상대화",
+    "id": 226,
+    "expression_en": "Happy Thanksgiving",
+    "expression_meaning_kr": "추수감사절을 축하해요",
+    "situation_kr": "미국 명절 문화 이해할 때",
+    "description_kr": "미국의 추수감사절 문화를 이해하면 미국인과의 대화가 훨씬 자연스러워져요.",
+    "category": "문화·뉘앙스",
     "search_keywords_kr": [
-      "엘리베이터",
-      "다음",
-      "타다",
-      "영어 표현"
+      "추수감사절",
+      "명절",
+      "미국문화",
+      "thanksgiving"
     ],
     "search_keywords_en": [
-      "elevator",
-      "next",
-      "ride"
+      "thanksgiving",
+      "holiday",
+      "american culture"
     ],
     "difficulty": "beginner",
     "reel_url": "https://www.instagram.com/reel/DAIklO1NWvS/",
     "date": "2024-09-22"
   },
   {
-    "id": 230,
+    "id": 227,
     "expression_en": "would like to make a reservation",
     "expression_meaning_kr": "예약하고 싶어요",
     "situation_kr": "호텔 방 예약할 때",
@@ -4817,20 +4789,31 @@ const REELS_DATA = [
     "date": "2024-09-20"
   },
   {
-    "id": 231,
-    "expression_en": "Speak English with elegance",
-    "expression_meaning_kr": "",
-    "situation_kr": "격식 있는 자리에서 영어할 때",
-    "description_kr": "정중하고 세련되게 영어를 사용할 때 유용해요.",
-    "category": "일상대화",
-    "search_keywords_kr": [],
-    "search_keywords_en": [],
-    "difficulty": "",
+    "id": 228,
+    "expression_en": "What was your first impression of SNU?",
+    "expression_meaning_kr": "서울대 첫인상이 어땠어?",
+    "situation_kr": "첫인상에 대해 물어볼 때",
+    "description_kr": "외국인 유학생에게 서울대 첫인상을 묻는 인터뷰. 자연스러운 질문 표현을 배울 수 있어요.",
+    "category": "인터뷰",
+    "search_keywords_kr": [
+      "첫인상",
+      "서울대",
+      "유학생",
+      "인터뷰",
+      "질문"
+    ],
+    "search_keywords_en": [
+      "first impression",
+      "SNU",
+      "interview",
+      "study abroad"
+    ],
+    "difficulty": "intermediate",
     "reel_url": "https://www.instagram.com/reel/C_-Q9QKOqwk/",
     "date": "2024-09-18"
   },
   {
-    "id": 232,
+    "id": 229,
     "expression_en": "when are the breakfast hours?",
     "expression_meaning_kr": "조식 시간은 언제인가요?",
     "situation_kr": "호텔 조식 시간 물어볼 때",
@@ -4852,7 +4835,7 @@ const REELS_DATA = [
     "date": "2024-09-16"
   },
   {
-    "id": 233,
+    "id": 230,
     "expression_en": "Can I get a...",
     "expression_meaning_kr": "",
     "situation_kr": "호텔에서 체크인할 때",
@@ -4865,7 +4848,7 @@ const REELS_DATA = [
     "date": "2024-09-14"
   },
   {
-    "id": 234,
+    "id": 231,
     "expression_en": "Can you do me a coffee with easy ice?",
     "expression_meaning_kr": "얼음 적게 해줄래?",
     "situation_kr": "커피 주문할 때",
@@ -4887,7 +4870,7 @@ const REELS_DATA = [
     "date": "2024-09-12"
   },
   {
-    "id": 235,
+    "id": 232,
     "expression_en": "I'm really into",
     "expression_meaning_kr": "정말 관심 있어",
     "situation_kr": "상대방의 관심사에 대해 이야기할 때",
@@ -4908,7 +4891,7 @@ const REELS_DATA = [
     "date": "2024-09-10"
   },
   {
-    "id": 236,
+    "id": 233,
     "expression_en": "You can call me",
     "expression_meaning_kr": "내 이름은 ~라고 불러줘",
     "situation_kr": "친구처럼 지낼 때",
@@ -4930,7 +4913,7 @@ const REELS_DATA = [
     "date": "2024-09-08"
   },
   {
-    "id": 237,
+    "id": 234,
     "expression_en": "I like Busan",
     "expression_meaning_kr": "부산이 좋아요",
     "situation_kr": "여행지 추천할 때",
@@ -4952,7 +4935,7 @@ const REELS_DATA = [
     "date": "2024-09-06"
   },
   {
-    "id": 238,
+    "id": 235,
     "expression_en": "go to spot",
     "expression_meaning_kr": "자주 가는 곳",
     "situation_kr": "자주 가는 장소를 설명할 때",
@@ -4973,7 +4956,7 @@ const REELS_DATA = [
     "date": "2024-09-04"
   },
   {
-    "id": 239,
+    "id": 236,
     "expression_en": "Bon voyage",
     "expression_meaning_kr": "좋은 여행",
     "situation_kr": "여행을 떠날 때",
@@ -4994,28 +4977,32 @@ const REELS_DATA = [
     "date": "2024-09-02"
   },
   {
-    "id": 240,
-    "expression_en": "I'm here to travel",
-    "expression_meaning_kr": "나는 여행 중이다",
-    "situation_kr": "여행 계획을 세울 때",
-    "description_kr": "여행 중에 내가 왜 여기 있는지 설명할 때 사용해요.",
-    "category": "여행·외출",
+    "id": 237,
+    "expression_en": "Did you have any stereotypes?",
+    "expression_meaning_kr": "편견이 있었어?",
+    "situation_kr": "고정관념에 대해 이야기할 때",
+    "description_kr": "외국인이 한국에 대해 가졌던 기대와 현실의 차이를 이야기하는 인터뷰예요.",
+    "category": "인터뷰",
     "search_keywords_kr": [
-      "여행",
-      "목적",
-      "입국심사",
-      "영어"
+      "편견",
+      "고정관념",
+      "한국",
+      "외국인",
+      "기대"
     ],
     "search_keywords_en": [
-      "travel",
-      "purpose"
+      "stereotype",
+      "expectation",
+      "reality",
+      "Korea",
+      "foreigner"
     ],
-    "difficulty": "beginner",
+    "difficulty": "intermediate",
     "reel_url": "https://www.instagram.com/reel/C_LQauPMNwS/",
     "date": "2024-08-31"
   },
   {
-    "id": 241,
+    "id": 238,
     "expression_en": "driving me crazy",
     "expression_meaning_kr": "미치게 한다",
     "situation_kr": "누군가 때문에 힘들 때",
@@ -5036,7 +5023,7 @@ const REELS_DATA = [
     "date": "2024-08-29"
   },
   {
-    "id": 242,
+    "id": 239,
     "expression_en": "Do you have anything to declare?",
     "expression_meaning_kr": "",
     "situation_kr": "입국심사할 때",
@@ -5049,28 +5036,31 @@ const REELS_DATA = [
     "date": "2024-08-27"
   },
   {
-    "id": 243,
-    "expression_en": "push over",
-    "expression_meaning_kr": "만만한 사람",
-    "situation_kr": "누군가에게 쉽게 넘어갈 때",
-    "description_kr": "상대방의 요구에 쉽게 응하는 사람을 뜻해요.",
-    "category": "관용구·슬랭",
+    "id": 240,
+    "expression_en": "What stereotypes did you have?",
+    "expression_meaning_kr": "어떤 고정관념이 있었어?",
+    "situation_kr": "서울대생 고정관념을 물을 때",
+    "description_kr": "서울대생에 대한 고정관념(smart, busy, productive)을 이야기하는 인터뷰예요.",
+    "category": "인터뷰",
     "search_keywords_kr": [
-      "push over",
-      "만만한",
-      "쉽게 넘어가는",
-      "사람"
+      "서울대",
+      "고정관념",
+      "편견",
+      "스마트",
+      "인터뷰"
     ],
     "search_keywords_en": [
-      "push over",
-      "easy target"
+      "stereotype",
+      "SNU students",
+      "smart",
+      "productive"
     ],
-    "difficulty": "beginner",
+    "difficulty": "intermediate",
     "reel_url": "https://www.instagram.com/reel/C-3_aBSscGZ/",
     "date": "2024-08-25"
   },
   {
-    "id": 244,
+    "id": 241,
     "expression_en": "neither",
     "expression_meaning_kr": "둘 다 아니다",
     "situation_kr": "둘 중 하나를 선택할 때",
@@ -5091,7 +5081,7 @@ const REELS_DATA = [
     "date": "2024-08-23"
   },
   {
-    "id": 245,
+    "id": 242,
     "expression_en": "If I had to choose one",
     "expression_meaning_kr": "",
     "situation_kr": "투표할 때",
@@ -5104,7 +5094,7 @@ const REELS_DATA = [
     "date": "2024-08-20"
   },
   {
-    "id": 246,
+    "id": 243,
     "expression_en": "You're in great shape.",
     "expression_meaning_kr": "몸 상태가 좋다",
     "situation_kr": "몸이 좋아졌을 때",
@@ -5125,7 +5115,7 @@ const REELS_DATA = [
     "date": "2024-08-19"
   },
   {
-    "id": 247,
+    "id": 244,
     "expression_en": "it reeks",
     "expression_meaning_kr": "악취가 나다",
     "situation_kr": "땀냄새가 날 때",
@@ -5146,28 +5136,31 @@ const REELS_DATA = [
     "date": "2024-08-17"
   },
   {
-    "id": 248,
-    "expression_en": "one of a kind",
-    "expression_meaning_kr": "독보적인",
-    "situation_kr": "특별한 대상을 설명할 때",
-    "description_kr": "유일무이한 대상을 표현할 때 사용해요.",
-    "category": "의견·토론",
+    "id": 245,
+    "expression_en": "Why did you come to Korea to teach English?",
+    "expression_meaning_kr": "왜 한국에 와서 영어를 가르쳐?",
+    "situation_kr": "한국에 온 이유를 물을 때",
+    "description_kr": "한국에서 영어를 가르치는 외국인 교사와의 짧은 인터뷰예요.",
+    "category": "인터뷰",
     "search_keywords_kr": [
-      "독보적",
-      "유일무이",
-      "특별한",
-      "양궁"
+      "한국",
+      "영어교사",
+      "이유",
+      "외국인",
+      "인터뷰"
     ],
     "search_keywords_en": [
-      "unique",
-      "exclusive"
+      "teach English",
+      "Korea",
+      "reason",
+      "interview"
     ],
-    "difficulty": "beginner",
+    "difficulty": "intermediate",
     "reel_url": "https://www.instagram.com/reel/C-hjbXROOuZ/",
     "date": "2024-08-15"
   },
   {
-    "id": 249,
+    "id": 246,
     "expression_en": "whatever comes to my mind",
     "expression_meaning_kr": "마음 가는 대로",
     "situation_kr": "즉흥적으로 행동할 때",
@@ -5188,7 +5181,7 @@ const REELS_DATA = [
     "date": "2024-08-13"
   },
   {
-    "id": 250,
+    "id": 247,
     "expression_en": "to worship",
     "expression_meaning_kr": "",
     "situation_kr": "한국 양궁을 이야기할 때",
@@ -5201,7 +5194,7 @@ const REELS_DATA = [
     "date": "2024-08-11"
   },
   {
-    "id": 251,
+    "id": 248,
     "expression_en": "people that are most similar to me",
     "expression_meaning_kr": "가장 비슷한 사람들",
     "situation_kr": "비슷한 사람을 언급할 때",
@@ -5222,7 +5215,7 @@ const REELS_DATA = [
     "date": "2024-07-16"
   },
   {
-    "id": 252,
+    "id": 249,
     "expression_en": "I prefer someone different from me.",
     "expression_meaning_kr": "나는 나와 다른 사람을 선호해.",
     "situation_kr": "데이트 상대를 고를 때",
@@ -5243,7 +5236,7 @@ const REELS_DATA = [
     "date": "2024-07-08"
   },
   {
-    "id": 253,
+    "id": 250,
     "expression_en": "your English is very good",
     "expression_meaning_kr": "영어가 매우 잘한다",
     "situation_kr": "칭찬할 때",
@@ -5264,7 +5257,7 @@ const REELS_DATA = [
     "date": "2024-07-04"
   },
   {
-    "id": 254,
+    "id": 251,
     "expression_en": "I don't know",
     "expression_meaning_kr": "모르겠어요",
     "situation_kr": "모르는 것을 말할 때",
@@ -5285,7 +5278,7 @@ const REELS_DATA = [
     "date": "2024-06-30"
   },
   {
-    "id": 255,
+    "id": 252,
     "expression_en": "I'm afraid",
     "expression_meaning_kr": "미안하지만",
     "situation_kr": "상대방에게 미안할 때",
@@ -5306,7 +5299,7 @@ const REELS_DATA = [
     "date": ""
   },
   {
-    "id": 256,
+    "id": 253,
     "expression_en": "just for the sake of it",
     "expression_meaning_kr": "그냥 그런 이유로",
     "situation_kr": "특별한 이유 없이 할 때",
@@ -5327,7 +5320,7 @@ const REELS_DATA = [
     "date": ""
   },
   {
-    "id": 257,
+    "id": 254,
     "expression_en": "I was wondering",
     "expression_meaning_kr": "궁금했어요",
     "situation_kr": "질문할 때 하는 경우",
@@ -5349,7 +5342,7 @@ const REELS_DATA = [
     "date": ""
   },
   {
-    "id": 258,
+    "id": 255,
     "expression_en": "Get comfortable being uncomfortable.",
     "expression_meaning_kr": "불편함에 익숙해져라.",
     "situation_kr": "새로운 도전을 할 때",
@@ -5421,5 +5414,10 @@ const CATEGORIES = [
     "id": "문화·뉘앙스",
     "emoji": "🌏",
     "label": "문화·뉘앙스"
+  },
+  {
+    "id": "인터뷰",
+    "emoji": "🎤",
+    "label": "인터뷰"
   }
 ];
