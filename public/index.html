@@ -2,640 +2,1435 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <title>영어는옥쌤 표현사전 — 상황별 영어 표현 검색</title>
-  <meta name="description" content="상황별 영어 표현을 검색하고 바로 시청하세요. @ok.english.kr의 영어 표현 릴스 모음.">
-  <meta name="theme-color" content="#1A1814">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="theme-color" content="#1A1814" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#FAF9F6" media="(prefers-color-scheme: light)">
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="영어는옥쌤 표현사전">
+  <title>옥모닝 표현 사전 — 상황별 영어 표현 검색</title>
+  <meta name="description" content="상황별 영어 표현을 검색하고 바로 시청하세요. 260개+ 영어 표현을 상황, 카테고리, AI 검색으로 찾아보세요.">
+
+  <meta property="og:title" content="옥모닝 표현 사전">
   <meta property="og:description" content="상황별 영어 표현을 검색하고 바로 시청하세요">
   <meta property="og:type" content="website">
   <meta property="og:image" content="/og-image.svg">
 
-  <!-- Favicon -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231A1814'/><text x='50' y='68' font-size='50' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='bold'>옥</text></svg>">
 
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+
+  <!-- Fonts -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@500&display=swap" rel="stylesheet">
 
   <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      touch-action: manipulation;
+    }
+
+    button:active, a:active, [onclick]:active, .tag-pill:active, .card:active {
+      opacity: 0.7;
+      transition: opacity 0.1s;
+    }
+
+    button, a, [onclick], .tag-pill, .card {
+      transition: opacity 0.15s;
+    }
+
     :root {
-      --bg-primary: #FAF9F6;
+      --bg: #FAF9F6;
       --bg-card: #FFFFFF;
-      --bg-card-hover: #FEFDFB;
-      --surface-subtle: #F5F3EF;
-      --surface-accent: #FFF8F0;
+      --bg-warm: #FFF8F0;
+      --bg-subtle: #F5F3EF;
       --text-primary: #1A1814;
       --text-secondary: #6B6560;
       --text-tertiary: #A09A93;
-      --border-light: #EDEAE5;
-      --border-default: #DBD7D0;
-      --accent-warm: #C2785C;
-      --accent-warm-soft: #F0DDD3;
+      --border: #EDEAE5;
+      --border-hover: #DBD7D0;
+      --accent: #C2785C;
+      --accent-soft: #F0DDD3;
       --accent-dark: #2C2825;
-      --difficulty-beginner: #5B8C5A;
-      --difficulty-intermediate: #C2785C;
-      --difficulty-advanced: #8B5A6B;
+      --diff-beginner: #5B8C5A;
+      --diff-intermediate: #C2785C;
+      --diff-advanced: #8B5A6B;
+      --success: #5B8C5A;
     }
 
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #1A1814;
+        --bg-card: #242220;
+        --bg-warm: #2A2520;
+        --bg-subtle: #2E2B27;
+        --text-primary: #EAE7E1;
+        --text-secondary: #A09A93;
+        --text-tertiary: #6B6560;
+        --border: #3A3733;
+        --border-hover: #4A4743;
+        --accent: #D4916F;
+        --accent-soft: #3A2E28;
+        --accent-dark: #EAE7E1;
+      }
+    }
 
     body {
       font-family: 'Pretendard Variable', system-ui, -apple-system, sans-serif;
-      background: var(--bg-primary);
+      background-color: var(--bg);
       color: var(--text-primary);
       -webkit-font-smoothing: antialiased;
-      scroll-behavior: smooth;
+      -moz-osx-font-smoothing: grayscale;
+      position: relative;
+    }
+
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      opacity: 0.025;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 9999;
     }
 
     .container {
       max-width: 480px;
       margin: 0 auto;
-      padding: 0 20px 60px;
+      padding: 0 20px 40px;
     }
 
-    /* === HEADER === */
+    /* Header */
     .header {
       display: flex;
       align-items: center;
       gap: 12px;
-      padding: 20px 0 16px;
+      padding: 24px 0 20px;
     }
+
     .logo {
-      width: 44px; height: 44px;
+      width: 44px;
+      height: 44px;
       border-radius: 12px;
-      background: linear-gradient(135deg, #1A1814, #3D3832);
-      display: flex; align-items: center; justify-content: center;
+      background: linear-gradient(135deg, #1A1814, #3A3733);
+      display: flex;
+      align-items: center;
+      justify-content: center;
       flex-shrink: 0;
     }
-    .logo span { font-family: 'DM Mono', monospace; font-weight: 500; font-size: 18px; color: #FFF; }
-    .header-text h1 { font-size: 20px; font-weight: 800; letter-spacing: -0.02em; }
-    .header-text a {
-      font-size: 12px; color: var(--text-tertiary); text-decoration: none;
-      transition: color 0.2s;
-    }
-    .header-text a:hover { color: var(--accent-warm); }
 
-    /* === DAILY FEATURE === */
-    .daily-card {
-      background: var(--surface-accent);
-      border-left: 4px solid var(--accent-warm);
-      border-radius: 16px;
-      padding: 18px 20px;
-      margin-bottom: 20px;
+    .logo span {
+      font-family: 'DM Mono', monospace;
+      font-weight: 500;
+      font-size: 18px;
+      color: #FFFFFF;
+    }
+
+    .header-info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .header-info h1 {
+      font-size: 20px;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+
+    .header-info p {
+      font-size: 12px;
+      color: var(--text-tertiary);
+      margin-top: 2px;
+    }
+
+    .header-info a {
+      color: var(--text-tertiary);
       text-decoration: none;
-      color: inherit;
-      display: block;
-      animation: fadeSlideIn 0.6s ease-out;
-    }
-    .daily-label {
-      font-size: 12px; font-weight: 600; color: var(--accent-warm);
-      margin-bottom: 8px; display: flex; align-items: center; gap: 4px;
-    }
-    .daily-expression {
-      font-family: 'DM Mono', monospace; font-weight: 500;
-      font-size: 20px; color: var(--text-primary); margin-bottom: 4px;
-    }
-    .daily-meaning {
-      font-size: 14px; color: var(--accent-warm); margin-bottom: 8px;
-    }
-    .daily-situation {
-      font-size: 14px; font-weight: 600; color: var(--text-primary); margin-bottom: 10px;
-    }
-    .daily-quote {
-      font-size: 12px; color: var(--text-tertiary); font-style: italic;
-      text-align: center; padding-top: 10px;
-      border-top: 1px solid var(--border-light);
     }
 
-    /* === SEARCH === */
+    .header-info a:hover {
+      color: var(--accent);
+    }
+
+    .header-bookmark-btn {
+      width: 44px;
+      height: 44px;
+      border: none;
+      background: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 12px;
+      transition: background 0.2s;
+      flex-shrink: 0;
+      color: var(--text-tertiary);
+    }
+
+    .header-bookmark-btn:hover {
+      background: var(--bg-subtle);
+    }
+
+    .header-bookmark-btn.active {
+      color: var(--accent);
+    }
+
+    .header-bookmark-btn svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    /* Daily Feature */
+    .daily-card {
+      background: var(--bg-warm);
+      border-left: 4px solid var(--accent);
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 12px;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .daily-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    }
+
+    .daily-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+
+    .daily-label {
+      font-size: 12px;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .daily-expression {
+      font-family: 'DM Mono', monospace;
+      font-weight: 500;
+      font-size: 19px;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+    }
+
+    .daily-meaning {
+      font-size: 14px;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+
+    .daily-situation {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 6px;
+    }
+
+    .daily-description {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 12px;
+    }
+
+    .daily-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .daily-watch {
+      font-size: 12px;
+      color: var(--accent);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    /* Daily Quote */
+    .daily-quote {
+      text-align: center;
+      padding: 16px 20px;
+      margin-bottom: 20px;
+    }
+
+    .daily-quote p {
+      font-style: italic;
+      font-size: 13px;
+      color: var(--text-tertiary);
+      max-width: 320px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* Search */
     .search-wrap {
       position: relative;
-      margin-bottom: 14px;
+      margin-bottom: 8px;
     }
+
     .search-icon {
-      position: absolute; left: 16px; top: 50%;
-      transform: translateY(-50%); color: var(--text-tertiary);
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-tertiary);
       pointer-events: none;
     }
+
     .search-input {
-      width: 100%; height: 52px;
-      border: 2px solid var(--border-default);
-      border-radius: 16px;
-      background: #FFF;
-      padding: 0 80px 0 48px;
+      width: 100%;
+      height: 52px;
+      border: 2px solid var(--border);
+      border-radius: 14px;
+      background: var(--bg-card);
+      padding: 0 48px;
       font-size: 16px;
-      font-family: inherit;
+      font-family: 'Pretendard Variable', system-ui, -apple-system, sans-serif;
       color: var(--text-primary);
       outline: none;
       transition: border-color 0.2s;
     }
-    .search-input::placeholder { color: var(--text-tertiary); }
-    .search-input:focus { border-color: var(--text-primary); }
+
+    .search-input::placeholder {
+      color: var(--text-tertiary);
+    }
+
+    .search-input:focus {
+      border-color: var(--accent);
+    }
+
     .search-clear {
-      position: absolute; right: 12px; top: 50%;
+      position: absolute;
+      right: 8px;
+      top: 50%;
       transform: translateY(-50%);
-      width: 28px; height: 28px;
-      border-radius: 8px; background: var(--surface-subtle);
-      border: none; cursor: pointer;
-      display: none; align-items: center; justify-content: center;
-      color: var(--text-secondary); font-size: 14px;
+      min-width: 36px;
+      min-height: 36px;
+      border-radius: 50%;
+      background: var(--bg-subtle);
+      border: none;
+      cursor: pointer;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-secondary);
+      font-size: 14px;
+      line-height: 1;
+      -webkit-tap-highlight-color: rgba(0,0,0,0.05);
     }
-    .search-clear.visible { display: flex; }
-    .search-loading {
-      position: absolute; right: 46px; top: 50%;
-      transform: translateY(-50%);
-      font-size: 12px; color: var(--accent-warm);
-      display: none; align-items: center; gap: 4px;
+
+    .search-clear.visible {
+      display: flex;
     }
-    .search-loading.visible { display: flex; }
-    .search-loading .dot {
-      width: 4px; height: 4px; border-radius: 50%;
-      background: var(--accent-warm);
-      animation: pulse 1s infinite;
+
+    .llm-indicator {
+      font-size: 13px;
+      color: var(--accent);
+      padding: 6px 0;
+      display: none;
+      align-items: center;
+      gap: 6px;
     }
-    .search-loading .dot:nth-child(2) { animation-delay: 0.2s; }
-    .search-loading .dot:nth-child(3) { animation-delay: 0.4s; }
+
+    .llm-indicator.visible {
+      display: flex;
+    }
+
+    .llm-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      animation: pulse 1.2s ease-in-out infinite;
+    }
 
     @keyframes pulse {
       0%, 100% { opacity: 0.3; }
       50% { opacity: 1; }
     }
 
-    /* === CATEGORY FILTER === */
-    .category-row {
-      display: flex; gap: 8px;
-      overflow-x: auto; padding-bottom: 4px;
-      margin-bottom: 12px;
-      -ms-overflow-style: none; scrollbar-width: none;
+    /* Category Filter */
+    .tags-row {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 4px;
+      margin-top: 12px;
+      margin-bottom: 4px;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
     }
-    .category-row::-webkit-scrollbar { display: none; }
-    .cat-pill {
+
+    .tags-row::-webkit-scrollbar {
+      display: none;
+    }
+
+    .tag-pill {
       flex-shrink: 0;
-      padding: 8px 14px;
+      padding: 10px 18px;
       border-radius: 20px;
-      border: 1.5px solid var(--border-default);
+      border: 1.5px solid var(--border);
       background: transparent;
-      font-size: 13px; font-weight: 500;
+      font-size: 14px;
+      font-weight: 500;
       color: var(--text-secondary);
-      cursor: pointer; font-family: inherit;
-      transition: all 0.2s; white-space: nowrap;
+      cursor: pointer;
+      font-family: 'Pretendard Variable', system-ui, -apple-system, sans-serif;
+      transition: all 0.2s;
+      white-space: nowrap;
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      -webkit-tap-highlight-color: rgba(0,0,0,0.05);
     }
-    .cat-pill.active {
-      background: var(--accent-dark); color: #FFF;
+
+    .tag-pill.active {
+      background: var(--accent-dark);
+      color: #FFFFFF;
       border-color: var(--accent-dark);
     }
 
-    /* === RESULT COUNT === */
-    .result-info {
-      font-size: 13px; color: var(--text-tertiary);
-      margin-bottom: 12px;
-    }
-    .result-info strong {
-      font-size: 15px; font-weight: 700; color: var(--text-primary);
+    .category-count {
+      font-size: 13px;
+      color: var(--text-tertiary);
+      padding: 8px 0;
+      display: none;
     }
 
-    /* === CARDS === */
-    .card-list { display: flex; flex-direction: column; gap: 10px; }
+    .category-count.visible {
+      display: block;
+    }
+
+    /* Result count & sort */
+    .result-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+
+    .result-count {
+      font-size: 13px;
+      color: var(--text-secondary);
+    }
+
+    .result-count strong {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .sort-toggle {
+      font-size: 13px;
+      color: var(--text-tertiary);
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: 'Pretendard Variable', system-ui, -apple-system, sans-serif;
+      padding: 8px 14px;
+      min-height: 40px;
+      -webkit-tap-highlight-color: rgba(0,0,0,0.05);
+    }
+
+    .sort-toggle span.active {
+      color: var(--text-primary);
+      font-weight: 700;
+    }
+
+    /* Cards */
+    .card-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
 
     .card {
-      display: block; text-decoration: none; color: inherit;
       background: var(--bg-card);
-      border: 1px solid var(--border-light);
+      border: 1px solid var(--border);
       border-radius: 16px;
-      padding: 18px;
+      padding: 20px;
       box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.03);
       transition: transform 0.2s, box-shadow 0.2s;
-      animation: slideUp 0.4s ease-out both;
+      animation: cardIn 0.4s ease-out both;
     }
+
     .card:hover {
       transform: translateY(-2px);
-      box-shadow: 0 4px 8px rgba(0,0,0,0.06), 0 12px 32px rgba(0,0,0,0.08);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
     }
 
-    @keyframes slideUp {
-      from { opacity: 0; transform: translateY(16px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes fadeSlideIn {
-      from { opacity: 0; transform: translateY(8px); }
+    @keyframes cardIn {
+      from { opacity: 0; transform: translateY(12px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
-    .card-top {
-      display: flex; align-items: center;
-      justify-content: space-between; gap: 8px;
-      margin-bottom: 10px;
+    .card-action-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
     }
-    .difficulty {
-      display: flex; align-items: center; gap: 5px;
-      font-size: 11px; font-weight: 500; color: var(--text-tertiary);
+
+    .difficulty-badge {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 500;
     }
+
     .difficulty-dot {
-      width: 7px; height: 7px; border-radius: 50%;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
     }
-    .difficulty-dot.beginner { background: var(--difficulty-beginner); }
-    .difficulty-dot.intermediate { background: var(--difficulty-intermediate); }
-    .difficulty-dot.advanced { background: var(--difficulty-advanced); }
 
-    .play-badge {
-      display: inline-flex; align-items: center; gap: 4px;
-      background: var(--accent-dark); color: #FFF;
-      border-radius: 8px; padding: 4px 10px 4px 8px; flex-shrink: 0;
+    .diff-beginner .difficulty-dot { background: var(--diff-beginner); }
+    .diff-beginner { color: var(--diff-beginner); }
+    .diff-intermediate .difficulty-dot { background: var(--diff-intermediate); }
+    .diff-intermediate { color: var(--diff-intermediate); }
+    .diff-advanced .difficulty-dot { background: var(--diff-advanced); }
+    .diff-advanced { color: var(--diff-advanced); }
+
+    .card-actions {
+      display: flex;
+      gap: 8px;
     }
-    .play-badge svg { width: 14px; height: 14px; fill: #FFF; }
-    .play-badge span { font-size: 11px; font-weight: 700; }
+
+    .card-action-btn {
+      min-width: 44px;
+      min-height: 44px;
+      border: none;
+      background: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      transition: background 0.2s;
+      color: var(--text-tertiary);
+      -webkit-tap-highlight-color: rgba(0,0,0,0.05);
+    }
+
+    .card-action-btn:hover {
+      background: var(--bg-subtle);
+    }
+
+    .card-action-btn svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .card-action-btn.bookmarked {
+      color: var(--accent);
+    }
+
+    .card-action-btn.watch-btn {
+      color: var(--accent);
+      gap: 4px;
+      width: auto;
+      padding: 8px 16px;
+      min-height: 44px;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 700;
+      font-family: 'Pretendard Variable', system-ui, -apple-system, sans-serif;
+    }
 
     .card-expression {
-      font-family: 'DM Mono', monospace; font-weight: 500;
-      font-size: 17px; color: var(--text-primary);
-      line-height: 1.3; margin-bottom: 3px; word-break: break-word;
-    }
-    .card-meaning {
-      font-size: 14px; color: var(--accent-warm);
-      margin-bottom: 10px;
-    }
-    .card-situation {
-      font-size: 15px; font-weight: 700;
-      color: var(--text-primary); margin-bottom: 4px;
-    }
-    .card-description {
-      font-size: 13px; color: var(--text-secondary);
-      line-height: 1.6; margin-bottom: 12px;
-    }
-    .card-category {
-      font-size: 12px; color: var(--text-tertiary);
+      font-family: 'DM Mono', monospace;
+      font-weight: 500;
+      font-size: 17px;
+      color: var(--text-primary);
+      line-height: 1.4;
+      margin-bottom: 4px;
+      word-break: break-word;
     }
 
-    /* === EMPTY STATE === */
-    .empty-state {
-      text-align: center; padding: 50px 0;
+    .card-meaning {
+      font-size: 14px;
+      color: var(--accent);
+      margin-bottom: 12px;
     }
-    .empty-state p:first-child {
-      font-size: 16px; font-weight: 700; color: var(--text-secondary);
+
+    .card-situation {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text-primary);
       margin-bottom: 6px;
     }
-    .empty-state p:nth-child(2) {
-      font-size: 13px; color: var(--text-tertiary);
-      margin-bottom: 16px;
-    }
-    .suggestions { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
-    .suggestion-pill {
-      padding: 8px 14px; border-radius: 20px;
-      background: var(--surface-subtle); border: 1px solid var(--border-light);
-      font-size: 13px; color: var(--text-secondary);
-      cursor: pointer; font-family: inherit;
-      transition: all 0.2s;
-    }
-    .suggestion-pill:hover {
-      background: var(--accent-warm-soft); border-color: var(--accent-warm);
-      color: var(--accent-warm);
+
+    .card-description {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 12px;
     }
 
-    /* === FOOTER === */
+    .card-category-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 12px;
+      color: var(--text-tertiary);
+      background: var(--bg-subtle);
+      border-radius: 12px;
+      padding: 4px 10px;
+    }
+
+    /* CTA Banner */
+    .cta-banner {
+      background: var(--accent-dark);
+      border-radius: 16px;
+      padding: 24px 20px;
+      color: #FFFFFF;
+      text-align: center;
+    }
+
+    .cta-banner h3 {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .cta-banner p {
+      font-size: 13px;
+      opacity: 0.7;
+      margin-bottom: 16px;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: var(--accent);
+      color: #FFFFFF;
+      border-radius: 10px;
+      padding: 10px 20px;
+      font-weight: 700;
+      font-size: 14px;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+
+    .cta-button:hover {
+      opacity: 0.9;
+    }
+
+    /* Bottom CTA Bar */
+    .bottom-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 56px;
+      background: var(--accent-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      z-index: 100;
+      transform: translateY(100%);
+      transition: transform 0.4s ease;
+    }
+
+    .bottom-bar.visible {
+      transform: translateY(0);
+    }
+
+    .bottom-bar a {
+      color: #FFFFFF;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .bottom-bar-close {
+      position: absolute;
+      right: 12px;
+      min-width: 44px;
+      min-height: 44px;
+      border: none;
+      background: rgba(255,255,255,0.15);
+      color: #FFFFFF;
+      border-radius: 8px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+    }
+
+    /* Empty State */
+    .empty-state {
+      text-align: center;
+      padding: 60px 0;
+    }
+
+    .empty-state .empty-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text-secondary);
+      margin-bottom: 8px;
+    }
+
+    .empty-state .empty-subtitle {
+      font-size: 13px;
+      color: var(--text-tertiary);
+      margin-bottom: 20px;
+    }
+
+    .suggested-searches {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+    }
+
+    .suggested-pill {
+      padding: 8px 16px;
+      border-radius: 20px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 500;
+      border: none;
+      cursor: pointer;
+      font-family: 'Pretendard Variable', system-ui, -apple-system, sans-serif;
+      transition: opacity 0.2s;
+      min-height: 44px;
+      display: flex;
+      align-items: center;
+    }
+
+    .suggested-pill:hover {
+      opacity: 0.8;
+    }
+
+    /* Highlight pulse */
+    @keyframes highlightPulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(194, 120, 92, 0); }
+      50% { box-shadow: 0 0 0 6px rgba(194, 120, 92, 0.25); }
+    }
+
+    .highlight-pulse {
+      animation: highlightPulse 0.8s ease-in-out 2;
+    }
+
+    /* Toast */
+    .toast {
+      position: fixed;
+      bottom: 80px;
+      left: 50%;
+      transform: translateX(-50%) translateY(20px);
+      background: var(--accent-dark);
+      color: #FFFFFF;
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 600;
+      opacity: 0;
+      transition: opacity 0.3s, transform 0.3s;
+      z-index: 1000;
+      pointer-events: none;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .toast {
+        background: #EAE7E1;
+        color: #1A1814;
+      }
+    }
+
+    /* Footer */
     .footer {
-      text-align: center; padding: 36px 0 16px;
+      text-align: center;
+      padding: 40px 0 20px;
     }
+
     .footer p {
-      font-size: 12px; color: var(--text-tertiary); margin-bottom: 8px;
+      font-size: 12px;
+      color: var(--text-tertiary);
+      margin-bottom: 10px;
     }
+
     .footer a {
-      color: var(--text-tertiary); transition: color 0.2s;
+      color: var(--text-tertiary);
+      transition: color 0.2s;
     }
-    .footer a:hover { color: var(--text-primary); }
-    .footer-icon svg { width: 16px; height: 16px; }
-    .footer-count {
-      font-size: 11px; color: var(--text-tertiary); margin-top: 6px;
+
+    .footer a:hover {
+      color: var(--accent);
+    }
+
+    .footer-icon svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    /* Bottom bar spacing */
+    .bottom-bar.visible ~ .container,
+    body.has-bottom-bar .container {
+      padding-bottom: 80px;
     }
   </style>
 </head>
 <body>
-<div class="container">
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <div class="logo"><span>옥</span></div>
+      <div class="header-info">
+        <h1>표현 사전</h1>
+        <p>상황별 영어 표현 · <a href="https://www.instagram.com/ok.english.kr/" target="_blank" rel="noopener noreferrer">@ok.english.kr</a></p>
+      </div>
+      <button class="header-bookmark-btn" id="headerBookmarkBtn" aria-label="저장한 표현 보기">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+        </svg>
+      </button>
+    </header>
 
-  <!-- Header -->
-  <header class="header">
-    <div class="logo"><span>옥</span></div>
-    <div class="header-text">
-      <h1>영어는옥쌤 표현사전</h1>
-      <a href="https://www.instagram.com/ok.english.kr/" target="_blank" rel="noopener noreferrer">@ok.english.kr</a>
+    <!-- Daily Feature -->
+    <div class="daily-card" id="dailyCard">
+      <div class="daily-top">
+        <span class="daily-label">✨ 오늘의 표현</span>
+        <span class="difficulty-badge" id="dailyDifficulty"></span>
+      </div>
+      <div class="daily-expression" id="dailyExpression"></div>
+      <div class="daily-meaning" id="dailyMeaning"></div>
+      <div class="daily-situation" id="dailySituation"></div>
+      <div class="daily-description" id="dailyDescription"></div>
+      <div class="daily-bottom">
+        <span class="card-category-pill" id="dailyCategory"></span>
+        <span class="daily-watch">시청하기 →</span>
+      </div>
     </div>
-  </header>
 
-  <!-- Daily Feature -->
-  <a class="daily-card" id="dailyCard" href="#" target="_blank" rel="noopener noreferrer">
-    <div class="daily-label">✨ 오늘의 표현</div>
-    <div class="daily-expression" id="dailyExpr"></div>
-    <div class="daily-meaning" id="dailyMeaning"></div>
-    <div class="daily-situation" id="dailySituation"></div>
-    <div class="daily-quote" id="dailyQuote"></div>
-  </a>
-
-  <!-- Search -->
-  <div class="search-wrap">
-    <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-    <input type="text" class="search-input" id="searchInput" placeholder="어떤 상황에서 뭐라고 하면 될까요?">
-    <div class="search-loading" id="searchLoading">
-      <span>AI 검색</span>
-      <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+    <!-- Daily Quote -->
+    <div class="daily-quote">
+      <p id="dailyQuote"></p>
     </div>
-    <button class="search-clear" id="clearBtn" aria-label="지우기">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-    </button>
+
+    <!-- Search -->
+    <div class="search-wrap">
+      <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+      </svg>
+      <input type="text" class="search-input" id="searchInput" placeholder="어떤 상황에서 뭐라고 하면 될까요?">
+      <button class="search-clear" id="clearBtn" aria-label="검색어 지우기">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+          <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+    </div>
+    <div class="llm-indicator" id="llmIndicator">
+      <span class="llm-dot"></span>
+      <span>AI가 찾고 있어요...</span>
+    </div>
+
+    <!-- Category Filter -->
+    <div class="tags-row" id="tagsRow"></div>
+    <div class="category-count" id="categoryCount"></div>
+
+    <!-- Result Count & Sort -->
+    <div class="result-bar">
+      <div class="result-count" id="resultCount"></div>
+      <button class="sort-toggle" id="sortToggle">
+        <span class="active">최신순</span> / <span>가나다순</span>
+      </button>
+    </div>
+
+    <!-- Card List -->
+    <div class="card-list" id="cardList"></div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>&copy; 옥모닝 · 매일 아침, 영어로 깨어나다</p>
+      <a href="https://www.instagram.com/ok.english.kr/" target="_blank" rel="noopener noreferrer" class="footer-icon" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+      </a>
+      <p id="footerCount"></p>
+    </footer>
   </div>
 
-  <!-- Category Filter -->
-  <div class="category-row" id="categoryRow"></div>
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
 
-  <!-- Result Info -->
-  <div class="result-info" id="resultInfo"></div>
+  <!-- Bottom CTA Bar -->
+  <div class="bottom-bar" id="bottomBar">
+    <a href="https://www.instagram.com/ok.english.kr/" target="_blank" rel="noopener noreferrer" onclick="trackCTA('bottom_bar')">영어는옥쌤 인스타 팔로우하기 →</a>
+    <button class="bottom-bar-close" id="bottomBarClose" aria-label="닫기">✕</button>
+  </div>
 
-  <!-- Card List -->
-  <div class="card-list" id="cardList"></div>
+  <script src="data.js"></script>
+  <script>
+    // ─── State ───
+    let activeCategory = null;
+    let bookmarkMode = false;
+    let sortMode = 'date'; // 'date' or 'alpha'
+    let llmTimer = null;
+    let currentResults = null;
 
-  <!-- Footer -->
-  <footer class="footer">
-    <p>&copy; 영어는옥쌤 &middot; 매일 아침, 영어로 깨어나다</p>
-    <a href="https://www.instagram.com/ok.english.kr/" target="_blank" rel="noopener noreferrer" class="footer-icon" aria-label="Instagram">
-      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-    </a>
-    <div class="footer-count" id="footerCount"></div>
-  </footer>
+    // ─── DOM ───
+    const searchInput = document.getElementById('searchInput');
+    const clearBtn = document.getElementById('clearBtn');
+    const tagsRow = document.getElementById('tagsRow');
+    const cardList = document.getElementById('cardList');
+    const resultCount = document.getElementById('resultCount');
+    const categoryCountEl = document.getElementById('categoryCount');
+    const sortToggle = document.getElementById('sortToggle');
+    const llmIndicator = document.getElementById('llmIndicator');
+    const headerBookmarkBtn = document.getElementById('headerBookmarkBtn');
+    const bottomBar = document.getElementById('bottomBar');
+    const bottomBarClose = document.getElementById('bottomBarClose');
 
-</div>
+    // ─── Daily Quotes ───
+    const DAILY_QUOTES = [
+      "완벽하지 않아도 괜찮아요. 말하는 것 자체가 이미 용기예요.",
+      "매일 한 표현씩, 6개월이면 180개의 무기가 생겨요.",
+      "원어민도 실수해요. 당신은 두 개 언어를 하잖아요.",
+      "영어는 근육이에요. 매일 조금씩 쓰면 강해져요.",
+      "틀리는 건 배우는 거예요. 안 하는 게 진짜 실패.",
+      "오늘 외운 한 문장이 내일의 자신감이 돼요.",
+      "발음보다 중요한 건 말하려는 용기예요.",
+      "영어 잘하는 사람도 처음엔 서툴렀어요.",
+      "완벽한 문장보다 자연스러운 한마디가 더 멋져요.",
+      "단어를 외우지 말고, 상황을 외우세요.",
+      "영어는 시험이 아니라 소통 도구예요.",
+      "하루 5분이면 충분해요. 꾸준함이 전부예요.",
+      "실수한 표현은 절대 안 잊혀요. 그게 진짜 학습이에요.",
+      "드라마 한 편이 교과서 열 권보다 나을 때가 있어요.",
+      "입으로 말해야 내 것이 돼요. 눈으로만 보면 남의 것.",
+      "영어 공부에 늦은 때는 없어요. 지금이 가장 빠른 때.",
+      "오늘 한 표현이라도 실제로 써보세요.",
+      "문법보다 감정이 먼저예요. 느끼면서 말하세요.",
+      "자신감은 연습에서 나와요. 연습은 반복에서 나오고요.",
+      "영어로 생각하는 순간이 오면, 그게 실력이에요.",
+      "모르면 물어보세요. 그게 가장 빠른 길이에요.",
+      "어제의 나보다 한 문장 더 아는 오늘의 내가 대단해요.",
+      "유창함은 속도가 아니라 편안함이에요.",
+      "재미있어야 오래 해요. 재미를 찾으세요.",
+      "세상에 어려운 언어는 없어요. 익숙하지 않을 뿐.",
+      "한국어도 3년 걸렸잖아요. 영어에게도 시간을 주세요.",
+      "들리기 시작하면 말하기도 따라와요.",
+      "표현 하나가 대화의 분위기를 바꿀 수 있어요.",
+      "영어는 혼자 하는 게 아니에요. 함께 배워요.",
+      "오늘도 한 걸음. 내일도 한 걸음. 그게 전부예요."
+    ];
 
-<script src="/data.js"></script>
-<script>
-// === Daily quotes ===
-const QUOTES = [
-  "완벽하지 않아도 돼요. 말하는 것 자체가 이미 용기예요.",
-  "매일 한 표현씩, 6개월이면 180개의 무기가 생겨요.",
-  "원어민도 실수해요. 당신은 두 개 언어를 하잖아요.",
-  "영어는 근육이에요. 매일 조금씩 움직여야 늘어요.",
-  "틀려도 괜찮아요. 틀려봐야 기억에 남거든요.",
-  "오늘 배운 한 문장이 내일의 자신감이 돼요.",
-  "완벽한 발음보다 전하고 싶은 마음이 먼저예요.",
-  "어색한 게 당연해요. 새로운 걸 배우는 중이니까요.",
-  "작은 표현 하나가 대화의 분위기를 바꿔요.",
-  "영어는 도구예요. 도구는 쓸수록 손에 익어요.",
-  "모르는 게 부끄러운 게 아니라, 안 배우는 게 아까운 거예요.",
-  "한 문장을 제대로 쓰는 게 열 문장 외우는 것보다 낫죠.",
-  "오늘 망설인 그 한마디, 내일은 자연스럽게 나올 거예요.",
-  "영어 잘하는 사람은 많이 틀려본 사람이에요.",
-  "3초만 용기 내면, 대화가 시작돼요.",
-  "언어는 연결이에요. 한마디로 세상이 넓어져요.",
-  "꾸준히 하는 사람을 이길 재능은 없어요.",
-  "유창함은 목표가 아니라 과정이에요.",
-  "오늘의 한 표현이 여행을 더 즐겁게 만들어요.",
-  "실수는 배움의 증거예요. 자랑스러워하세요.",
-  "영어는 시험이 아니에요. 소통이에요.",
-  "매일 5분이면 충분해요. 중요한 건 멈추지 않는 거예요.",
-  "표현 하나에 삶이 편해지는 순간이 와요.",
-  "자막 없이 한 문장 알아들은 날, 잊지 못할 거예요.",
-  "두려움은 첫 마디에서 가장 크고, 두 번째부터 줄어요.",
-  "문법보다 맥락이에요. 상황 속에서 배워야 진짜예요.",
-  "오늘 배운 표현, 내일 한번 써보세요. 그게 실력이에요.",
-  "누구나 처음은 서툴러요. 그게 시작이에요.",
-  "영어를 잘 못해도 돼요. '잘하려고 노력 중'이면 멋진 거예요.",
-  "이 페이지를 연 당신, 이미 반은 한 거예요."
-];
-
-// === Daily rotation ===
-function getDayOfYear() {
-  const now = new Date();
-  const start = new Date(now.getFullYear(), 0, 0);
-  return Math.floor((now - start) / 86400000);
-}
-
-function initDaily() {
-  const day = getDayOfYear();
-  const reel = REELS_DATA.filter(r => r.expression_en)[day % REELS_DATA.filter(r => r.expression_en).length];
-  const quote = QUOTES[day % QUOTES.length];
-
-  if (reel) {
-    document.getElementById('dailyCard').href = reel.reel_url;
-    document.getElementById('dailyExpr').textContent = reel.expression_en;
-    document.getElementById('dailyMeaning').textContent = reel.expression_meaning_kr;
-    document.getElementById('dailySituation').textContent = reel.situation_kr;
-  }
-  document.getElementById('dailyQuote').textContent = `"${quote}"`;
-}
-
-// === State ===
-const searchInput = document.getElementById('searchInput');
-const clearBtn = document.getElementById('clearBtn');
-const cardList = document.getElementById('cardList');
-const resultInfo = document.getElementById('resultInfo');
-const searchLoading = document.getElementById('searchLoading');
-
-let activeCategory = null;
-let searchTimeout = null;
-let currentResults = null;
-
-// === Category pills ===
-const categoryRow = document.getElementById('categoryRow');
-CATEGORIES.forEach(cat => {
-  const pill = document.createElement('button');
-  pill.className = 'cat-pill';
-  pill.textContent = `${cat.emoji} ${cat.label}`;
-  pill.addEventListener('click', () => {
-    if (activeCategory === cat.id) {
-      activeCategory = null;
-      pill.classList.remove('active');
-    } else {
-      activeCategory = cat.id;
-      document.querySelectorAll('.cat-pill').forEach(p => p.classList.remove('active'));
-      pill.classList.add('active');
+    // ─── Helpers ───
+    function getDailyIndex(arrayLength) {
+      const today = new Date();
+      const start = new Date(today.getFullYear(), 0, 0);
+      const dayOfYear = Math.floor((today - start) / 86400000);
+      return dayOfYear % arrayLength;
     }
-    currentResults = null;
-    render();
-  });
-  categoryRow.appendChild(pill);
-});
 
-// === Local search ===
-function localSearch(query) {
-  const q = query.toLowerCase().trim();
-  return REELS_DATA.map(entry => {
-    let score = 0;
-    if (entry.expression_en.toLowerCase().includes(q)) score += 10;
-    if (entry.situation_kr.includes(q)) score += 10;
-    if ((entry.expression_meaning_kr || '').includes(q)) score += 8;
-    const allKw = [...(entry.search_keywords_kr || []), ...(entry.search_keywords_en || [])];
-    const kwMatch = allKw.filter(kw => kw.toLowerCase().includes(q) || q.includes(kw.toLowerCase()));
-    score += kwMatch.length * 5;
-    if (entry.description_kr.includes(q)) score += 3;
-    return { ...entry, _score: score };
-  }).filter(e => e._score > 0).sort((a, b) => b._score - a._score);
-}
+    function getCategoryInfo(categoryId) {
+      const cat = CATEGORIES.find(c => c.id === categoryId);
+      return cat || { emoji: '', label: categoryId || '' };
+    }
 
-// === LLM search ===
-async function llmSearch(query) {
-  const entries = REELS_DATA.map(r => ({
-    id: r.id,
-    e: r.expression_en,
-    s: r.situation_kr,
-    k: [...(r.search_keywords_kr || []), ...(r.search_keywords_en || [])]
-  }));
+    function escapeHtml(str) {
+      if (!str) return '';
+      return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
 
-  try {
-    const res = await fetch("/api/search", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ query, entries })
-    });
-    if (!res.ok) return null;
-    const { results } = await res.json();
-    return results.map(id => REELS_DATA.find(r => r.id === id)).filter(Boolean);
-  } catch {
-    return null;
-  }
-}
+    // ─── Bookmarks ───
+    function getBookmarks() {
+      try { return JSON.parse(localStorage.getItem('ok_english_bookmarks') || '[]'); }
+      catch { return []; }
+    }
 
-function shouldUseLLM(query) {
-  if (query.length < 3) return false;
-  const hasKorean = /[\uAC00-\uD7AF]/.test(query);
-  const hasQuestion = /할 때|하고 싶|어떻게|뭐라고|표현|싶을 때|하는 법|영어로/.test(query);
-  return hasKorean && hasQuestion;
-}
+    function toggleBookmark(id) {
+      const bm = getBookmarks();
+      const idx = bm.indexOf(id);
+      const isAdding = idx === -1;
+      if (isAdding) bm.push(id); else bm.splice(idx, 1);
+      localStorage.setItem('ok_english_bookmarks', JSON.stringify(bm));
+      const entry = REELS_DATA.find(r => r.id === id);
+      if (entry) trackBookmark(entry, isAdding);
+      showToast(isAdding ? '표현을 저장했어요!' : '저장을 해제했어요');
+      updateBookmarkUI();
+      render();
+    }
 
-// === Render ===
-function escHtml(str) {
-  const d = document.createElement('div');
-  d.textContent = str || '';
-  return d.innerHTML;
-}
+    function isBookmarked(id) {
+      return getBookmarks().includes(id);
+    }
 
-function renderCards(results) {
-  if (results.length === 0) {
-    cardList.innerHTML = `
-      <div class="empty-state">
-        <p>검색 결과가 없어요</p>
-        <p>다른 표현으로 검색하거나, 카테고리를 둘러보세요</p>
-        <div class="suggestions">
-          <button class="suggestion-pill" data-q="정중하게 거절할 때">정중하게 거절할 때</button>
-          <button class="suggestion-pill" data-q="카페 주문">카페 주문</button>
-          <button class="suggestion-pill" data-q="비즈니스 이메일">비즈니스 이메일</button>
-        </div>
-      </div>`;
-    cardList.querySelectorAll('.suggestion-pill').forEach(btn => {
-      btn.addEventListener('click', () => {
-        searchInput.value = btn.dataset.q;
-        handleSearch();
+    function updateBookmarkUI() {
+      const bm = getBookmarks();
+      headerBookmarkBtn.classList.toggle('active', bookmarkMode);
+      if (bookmarkMode) {
+        headerBookmarkBtn.querySelector('svg').setAttribute('fill', 'currentColor');
+      } else {
+        headerBookmarkBtn.querySelector('svg').setAttribute('fill', 'none');
+      }
+      document.querySelectorAll('.card-bookmark-btn').forEach(btn => {
+        const id = parseInt(btn.dataset.id);
+        btn.classList.toggle('bookmarked', bm.includes(id));
+        const svg = btn.querySelector('svg');
+        svg.setAttribute('fill', bm.includes(id) ? 'currentColor' : 'none');
       });
-    });
-    return;
-  }
-
-  cardList.innerHTML = results.map((entry, i) => {
-    const diff = entry.difficulty || 'beginner';
-    const diffLabel = { beginner: 'beginner', intermediate: 'intermediate', advanced: 'advanced' }[diff];
-    const catObj = CATEGORIES.find(c => c.id === entry.category);
-    const catDisplay = catObj ? `${catObj.emoji} ${catObj.label}` : entry.category;
-
-    return `
-      <a class="card" href="${escHtml(entry.reel_url)}" target="_blank" rel="noopener noreferrer" style="animation-delay:${i * 40}ms">
-        <div class="card-top">
-          <div class="difficulty">
-            <span class="difficulty-dot ${diff}"></span>
-            <span>${diffLabel}</span>
-          </div>
-          <span class="play-badge">
-            <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
-            <span>시청</span>
-          </span>
-        </div>
-        ${entry.expression_en ? `<div class="card-expression">${escHtml(entry.expression_en)}</div>` : ''}
-        ${entry.expression_meaning_kr ? `<div class="card-meaning">${escHtml(entry.expression_meaning_kr)}</div>` : ''}
-        <div class="card-situation">${escHtml(entry.situation_kr)}</div>
-        ${entry.description_kr ? `<div class="card-description">${escHtml(entry.description_kr)}</div>` : ''}
-        <div class="card-category">${catDisplay}</div>
-      </a>`;
-  }).join('');
-}
-
-function render() {
-  const query = searchInput.value.trim();
-  clearBtn.classList.toggle('visible', query.length > 0);
-
-  let results;
-  if (currentResults) {
-    results = currentResults;
-  } else if (query) {
-    results = localSearch(query);
-  } else {
-    results = [...REELS_DATA].sort((a, b) => {
-      if (!a.date && !b.date) return 0;
-      if (!a.date) return 1;
-      if (!b.date) return -1;
-      return b.date.localeCompare(a.date);
-    });
-  }
-
-  if (activeCategory) {
-    results = results.filter(r => r.category === activeCategory);
-  }
-
-  // Result info
-  let info = `<strong>${results.length}</strong>개 표현`;
-  const filters = [];
-  if (activeCategory) {
-    const cat = CATEGORIES.find(c => c.id === activeCategory);
-    filters.push(cat ? `${cat.emoji} ${cat.label}` : activeCategory);
-  }
-  if (query) filters.push(`"${query}"`);
-  if (filters.length) info += ` · ${filters.join(' · ')}`;
-  resultInfo.innerHTML = info;
-
-  renderCards(results);
-}
-
-async function handleSearch() {
-  const query = searchInput.value.trim();
-  currentResults = null;
-
-  if (shouldUseLLM(query)) {
-    searchLoading.classList.add('visible');
-    const llmResults = await llmSearch(query);
-    searchLoading.classList.remove('visible');
-    if (llmResults && llmResults.length > 0) {
-      currentResults = llmResults;
     }
-  }
 
-  render();
-}
+    // ─── Toast ───
+    function showToast(message, duration = 1500) {
+      const el = document.getElementById('toast');
+      el.textContent = message;
+      el.classList.add('show');
+      setTimeout(() => el.classList.remove('show'), duration);
+    }
 
-// === Events ===
-searchInput.addEventListener('input', () => {
-  clearTimeout(searchTimeout);
-  const query = searchInput.value.trim();
+    // ─── GA4 Tracking ───
+    function trackSearch(query, resultCount, method) {
+      gtag('event', 'search', { search_term: query, result_count: resultCount, search_method: method });
+    }
 
-  // Instant local render
-  currentResults = null;
-  render();
+    function trackWatch(entry) {
+      gtag('event', 'watch_reel', { expression: entry.expression_en, category: entry.category, difficulty: entry.difficulty, entry_id: entry.id });
+    }
 
-  // Debounced LLM search
-  if (shouldUseLLM(query)) {
-    searchTimeout = setTimeout(() => handleSearch(), 800);
-  }
-});
+    function trackShare(entry) {
+      gtag('event', 'share', { content_type: 'expression', item_id: entry.id, expression: entry.expression_en });
+    }
 
-clearBtn.addEventListener('click', () => {
-  searchInput.value = '';
-  activeCategory = null;
-  currentResults = null;
-  document.querySelectorAll('.cat-pill').forEach(p => p.classList.remove('active'));
-  searchInput.focus();
-  render();
-});
+    function trackBookmark(entry, isAdding) {
+      gtag('event', isAdding ? 'bookmark_add' : 'bookmark_remove', { expression: entry.expression_en, entry_id: entry.id });
+    }
 
-// === Init ===
-document.getElementById('footerCount').textContent = `총 ${REELS_DATA.length}개 표현 수록`;
-initDaily();
-render();
-</script>
+    function trackCategoryFilter(category) {
+      gtag('event', 'filter_category', { category: category });
+    }
+
+    function trackCTA(location) {
+      gtag('event', 'cta_click', { cta_type: 'okmorning_app', cta_location: location });
+    }
+
+    function trackDailyView(entry) {
+      gtag('event', 'daily_expression_view', { expression: entry.expression_en, entry_id: entry.id });
+    }
+
+    // ─── Local Search ───
+    function localSearch(query) {
+      const q = query.toLowerCase().trim();
+      if (!q) return REELS_DATA;
+
+      return REELS_DATA
+        .map(entry => {
+          let score = 0;
+          if (entry.expression_en.toLowerCase().includes(q)) score += 10;
+          if (entry.situation_kr.includes(q)) score += 10;
+          if (entry.expression_meaning_kr && entry.expression_meaning_kr.includes(q)) score += 8;
+          if (entry.description_kr.includes(q)) score += 3;
+
+          const allKeywords = [
+            ...(entry.search_keywords_kr || []),
+            ...(entry.search_keywords_en || [])
+          ];
+          const kwMatch = allKeywords.filter(kw =>
+            kw.toLowerCase().includes(q) || q.includes(kw.toLowerCase())
+          );
+          score += kwMatch.length * 5;
+
+          const words = q.split(/\s+/);
+          if (words.length > 1) {
+            const allText = [entry.expression_en, entry.situation_kr, entry.expression_meaning_kr, entry.description_kr, ...allKeywords].join(' ').toLowerCase();
+            const matched = words.filter(w => allText.includes(w)).length;
+            score += (matched / words.length) * 8;
+          }
+
+          return { ...entry, _score: score };
+        })
+        .filter(e => e._score > 0)
+        .sort((a, b) => b._score - a._score);
+    }
+
+    // ─── LLM Search ───
+    async function llmSearch(query) {
+      const entries = REELS_DATA.map(r => ({
+        id: r.id,
+        e: r.expression_en,
+        s: r.situation_kr,
+        m: r.expression_meaning_kr || '',
+        k: [...(r.search_keywords_kr || []), ...(r.search_keywords_en || [])]
+      }));
+
+      try {
+        const res = await fetch('/api/search', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ query, entries })
+        });
+
+        if (!res.ok) throw new Error('API error');
+        const { results } = await res.json();
+        return results.map(id => REELS_DATA.find(r => r.id === id)).filter(Boolean);
+      } catch (err) {
+        console.error('LLM search failed, using local:', err);
+        return null;
+      }
+    }
+
+    function isKoreanNaturalLanguage(query) {
+      const hangulMatch = query.match(/[\uAC00-\uD7AF]/g);
+      return hangulMatch && hangulMatch.length > 2;
+    }
+
+    // ─── Share ───
+    function shareCard(entry) {
+      const url = `${location.origin}${location.pathname}?id=${entry.id}`;
+      const text = `${entry.expression_en} — ${entry.expression_meaning_kr}\n${entry.situation_kr}`;
+
+      if (navigator.share) {
+        navigator.share({ title: entry.expression_en, text, url });
+      } else {
+        navigator.clipboard.writeText(url).then(() => {
+          showToast('링크가 복사됐어요!');
+        });
+      }
+      trackShare(entry);
+    }
+
+    // ─── Render ───
+    function render() {
+      const query = searchInput.value.trim();
+      clearBtn.classList.toggle('visible', query.length > 0);
+
+      let results;
+      if (currentResults && query) {
+        results = currentResults;
+      } else if (query) {
+        results = localSearch(query);
+      } else {
+        results = [...REELS_DATA];
+      }
+
+      // Apply category filter
+      if (activeCategory) {
+        results = results.filter(r => r.category === activeCategory);
+      }
+
+      // Apply bookmark filter
+      if (bookmarkMode) {
+        const bm = getBookmarks();
+        results = results.filter(r => bm.includes(r.id));
+      }
+
+      // Sort
+      if (!query || !currentResults) {
+        if (sortMode === 'alpha') {
+          results.sort((a, b) => a.expression_en.localeCompare(b.expression_en));
+        } else {
+          results.sort((a, b) => {
+            const dateA = a.date || '';
+            const dateB = b.date || '';
+            return dateB.localeCompare(dateA);
+          });
+        }
+      }
+
+      // Result count
+      let countText = '';
+      if (bookmarkMode) {
+        countText = `저장한 표현 <strong>${results.length}</strong>개`;
+      } else {
+        countText = `<strong>${results.length}</strong>개 표현`;
+        const filters = [];
+        if (activeCategory) {
+          const cat = getCategoryInfo(activeCategory);
+          filters.push(`${cat.emoji} ${cat.label}`);
+        }
+        if (query) filters.push(`"${escapeHtml(query)}"`);
+        if (filters.length) countText += ' · ' + filters.join(' · ');
+      }
+      resultCount.innerHTML = countText;
+
+      // Category count
+      if (activeCategory && !bookmarkMode) {
+        const cat = getCategoryInfo(activeCategory);
+        const catCount = REELS_DATA.filter(r => r.category === activeCategory).length;
+        categoryCountEl.innerHTML = `${cat.emoji} ${cat.label} ${catCount}개 표현`;
+        categoryCountEl.classList.add('visible');
+      } else {
+        categoryCountEl.classList.remove('visible');
+      }
+
+      // Empty state
+      if (results.length === 0) {
+        if (bookmarkMode) {
+          cardList.innerHTML = `
+            <div class="empty-state">
+              <p class="empty-title">아직 저장한 표현이 없어요</p>
+              <p class="empty-subtitle">♡를 눌러 표현을 저장하세요</p>
+            </div>`;
+        } else {
+          cardList.innerHTML = `
+            <div class="empty-state">
+              <p class="empty-title">검색 결과가 없어요</p>
+              <p class="empty-subtitle">다른 표현으로 검색하거나, 카테고리를 둘러보세요</p>
+              <div class="suggested-searches">
+                <button class="suggested-pill" data-query="정중하게 거절할 때">정중하게 거절할 때</button>
+                <button class="suggested-pill" data-query="카페 주문 표현">카페 주문 표현</button>
+                <button class="suggested-pill" data-query="비즈니스 이메일">비즈니스 이메일</button>
+              </div>
+            </div>`;
+          document.querySelectorAll('.suggested-pill').forEach(btn => {
+            btn.addEventListener('click', () => {
+              searchInput.value = btn.dataset.query;
+              handleSearchInput();
+            });
+          });
+        }
+        return;
+      }
+
+      // Build cards HTML
+      const cardsHtml = [];
+      results.forEach((item, i) => {
+        // Insert CTA banner after 5th card
+        if (i === 5) {
+          cardsHtml.push(`
+            <div class="cta-banner">
+              <h3>📱 더 많은 영어 표현을 만나보세요</h3>
+              <p>영어는옥쌤 인스타그램에서 매일 새로운 표현을 배워요</p>
+              <a href="https://www.instagram.com/ok.english.kr/" target="_blank" rel="noopener noreferrer" class="cta-button" onclick="trackCTA('inline_banner')">인스타그램 팔로우 →</a>
+            </div>`);
+        }
+
+        const cat = getCategoryInfo(item.category);
+        const diffClass = `diff-${item.difficulty || 'beginner'}`;
+        const bookmarkedClass = isBookmarked(item.id) ? 'bookmarked' : '';
+        const bookmarkedFill = isBookmarked(item.id) ? 'currentColor' : 'none';
+
+        cardsHtml.push(`
+          <div class="card" id="card-${item.id}" style="animation-delay: ${i * 0.03}s">
+            <div class="card-action-row">
+              <span class="difficulty-badge ${diffClass}">
+                <span class="difficulty-dot"></span>
+                ${escapeHtml(item.difficulty || 'beginner')}
+              </span>
+              <div class="card-actions">
+                <button class="card-action-btn card-bookmark-btn ${bookmarkedClass}" data-id="${item.id}" aria-label="저장" onclick="toggleBookmark(${item.id})">
+                  <svg viewBox="0 0 24 24" fill="${bookmarkedFill}" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                  </svg>
+                </button>
+                <button class="card-action-btn" aria-label="공유" onclick="shareCard(REELS_DATA.find(r=>r.id===${item.id}))">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/>
+                  </svg>
+                </button>
+                <button class="card-action-btn watch-btn" aria-label="시청" onclick="window.open('${escapeHtml(item.reel_url)}','_blank');trackWatch(REELS_DATA.find(r=>r.id===${item.id}))">
+                  <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><polygon points="5,3 19,12 5,21"/></svg>
+                  시청
+                </button>
+              </div>
+            </div>
+            <div class="card-expression">${escapeHtml(item.expression_en)}</div>
+            <div class="card-meaning">${escapeHtml(item.expression_meaning_kr)}</div>
+            <div class="card-situation">${escapeHtml(item.situation_kr)}</div>
+            <div class="card-description">${escapeHtml(item.description_kr)}</div>
+            <span class="card-category-pill">${cat.emoji} ${escapeHtml(cat.label)}</span>
+          </div>`);
+      });
+
+      cardList.innerHTML = cardsHtml.join('');
+    }
+
+    // ─── Search Input Handler ───
+    let localDebounce = null;
+    function handleSearchInput() {
+      const query = searchInput.value.trim();
+      clearTimeout(localDebounce);
+      clearTimeout(llmTimer);
+
+      if (!query) {
+        currentResults = null;
+        llmIndicator.classList.remove('visible');
+        render();
+        return;
+      }
+
+      // Local search with 100ms debounce
+      localDebounce = setTimeout(() => {
+        currentResults = localSearch(query);
+        render();
+        trackSearch(query, currentResults.length, 'local');
+      }, 100);
+
+      // LLM search for Korean natural language
+      if (query.length >= 3 && isKoreanNaturalLanguage(query)) {
+        llmTimer = setTimeout(async () => {
+          llmIndicator.classList.add('visible');
+          const llmResults = await llmSearch(query);
+          llmIndicator.classList.remove('visible');
+          if (llmResults && searchInput.value.trim() === query) {
+            currentResults = llmResults;
+            render();
+            trackSearch(query, llmResults.length, 'llm');
+          }
+        }, 800);
+      }
+    }
+
+    searchInput.addEventListener('input', handleSearchInput);
+
+    clearBtn.addEventListener('click', () => {
+      searchInput.value = '';
+      currentResults = null;
+      activeCategory = null;
+      llmIndicator.classList.remove('visible');
+      document.querySelectorAll('.tag-pill').forEach(p => p.classList.remove('active'));
+      categoryCountEl.classList.remove('visible');
+      searchInput.focus();
+      render();
+    });
+
+    // ─── Category Filter ───
+    CATEGORIES.forEach(cat => {
+      const pill = document.createElement('button');
+      pill.className = 'tag-pill';
+      pill.textContent = `${cat.emoji} ${cat.label}`;
+      pill.dataset.category = cat.id;
+      pill.addEventListener('click', () => {
+        if (activeCategory === cat.id) {
+          activeCategory = null;
+          pill.classList.remove('active');
+        } else {
+          activeCategory = cat.id;
+          document.querySelectorAll('.tag-pill').forEach(p => p.classList.remove('active'));
+          pill.classList.add('active');
+          trackCategoryFilter(cat.id);
+        }
+        render();
+      });
+      tagsRow.appendChild(pill);
+    });
+
+    // ─── Sort Toggle ───
+    sortToggle.addEventListener('click', () => {
+      sortMode = sortMode === 'date' ? 'alpha' : 'date';
+      const spans = sortToggle.querySelectorAll('span');
+      spans[0].classList.toggle('active', sortMode === 'date');
+      spans[1].classList.toggle('active', sortMode === 'alpha');
+      render();
+    });
+
+    // ─── Header Bookmark Toggle ───
+    headerBookmarkBtn.addEventListener('click', () => {
+      bookmarkMode = !bookmarkMode;
+      updateBookmarkUI();
+      render();
+    });
+
+    // ─── Daily Feature ───
+    function initDaily() {
+      const dailyIdx = getDailyIndex(REELS_DATA.length);
+      const entry = REELS_DATA[dailyIdx];
+
+      document.getElementById('dailyExpression').textContent = entry.expression_en;
+      document.getElementById('dailyMeaning').textContent = entry.expression_meaning_kr || '';
+      document.getElementById('dailySituation').textContent = entry.situation_kr;
+      document.getElementById('dailyDescription').textContent = entry.description_kr;
+
+      const cat = getCategoryInfo(entry.category);
+      document.getElementById('dailyCategory').innerHTML = `${cat.emoji} ${escapeHtml(cat.label)}`;
+
+      const diffClass = `diff-${entry.difficulty || 'beginner'}`;
+      document.getElementById('dailyDifficulty').className = `difficulty-badge ${diffClass}`;
+      document.getElementById('dailyDifficulty').innerHTML = `<span class="difficulty-dot"></span>${entry.difficulty || 'beginner'}`;
+
+      document.getElementById('dailyCard').addEventListener('click', () => {
+        window.open(entry.reel_url, '_blank');
+        trackWatch(entry);
+      });
+
+      trackDailyView(entry);
+
+      // Daily quote
+      const quoteIdx = getDailyIndex(DAILY_QUOTES.length);
+      document.getElementById('dailyQuote').textContent = `"${DAILY_QUOTES[quoteIdx]}"`;
+    }
+
+    // ─── Bottom Bar ───
+    function initBottomBar() {
+      const dismissed = localStorage.getItem('ok_bottom_bar_dismissed');
+      if (dismissed) {
+        const dismissedAt = parseInt(dismissed);
+        if (Date.now() - dismissedAt < 7 * 24 * 60 * 60 * 1000) return;
+      }
+      setTimeout(() => {
+        bottomBar.classList.add('visible');
+        document.body.classList.add('has-bottom-bar');
+      }, 3000);
+    }
+
+    bottomBarClose.addEventListener('click', () => {
+      bottomBar.classList.remove('visible');
+      document.body.classList.remove('has-bottom-bar');
+      localStorage.setItem('ok_bottom_bar_dismissed', Date.now().toString());
+    });
+
+    // ─── Deep Linking ───
+    function handleDeepLinks() {
+      const params = new URLSearchParams(location.search);
+
+      if (params.get('q')) {
+        searchInput.value = params.get('q');
+        handleSearchInput();
+      }
+
+      if (params.get('cat')) {
+        const catId = params.get('cat');
+        activeCategory = catId;
+        const pill = document.querySelector(`.tag-pill[data-category="${catId}"]`);
+        if (pill) pill.classList.add('active');
+        render();
+      }
+
+      if (params.get('id')) {
+        setTimeout(() => {
+          const target = document.getElementById('card-' + params.get('id'));
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            target.classList.add('highlight-pulse');
+            setTimeout(() => target.classList.remove('highlight-pulse'), 2000);
+          }
+        }, 500);
+      }
+    }
+
+    // ─── Footer ───
+    document.getElementById('footerCount').textContent = `총 ${REELS_DATA.length}개 표현 수록`;
+
+    // ─── Init ───
+    initDaily();
+    render();
+    handleDeepLinks();
+    initBottomBar();
+  </script>
 </body>
 </html>

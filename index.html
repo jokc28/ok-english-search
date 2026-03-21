@@ -36,6 +36,16 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      touch-action: manipulation;
+    }
+
+    button:active, a:active, [onclick]:active, .tag-pill:active, .card:active {
+      opacity: 0.7;
+      transition: opacity 0.1s;
+    }
+
+    button, a, [onclick], .tag-pill, .card {
+      transition: opacity 0.15s;
     }
 
     :root {
@@ -305,11 +315,11 @@
 
     .search-clear {
       position: absolute;
-      right: 12px;
+      right: 8px;
       top: 50%;
       transform: translateY(-50%);
-      width: 28px;
-      height: 28px;
+      min-width: 36px;
+      min-height: 36px;
       border-radius: 50%;
       background: var(--bg-subtle);
       border: none;
@@ -320,6 +330,7 @@
       color: var(--text-secondary);
       font-size: 14px;
       line-height: 1;
+      -webkit-tap-highlight-color: rgba(0,0,0,0.05);
     }
 
     .search-clear.visible {
@@ -370,11 +381,11 @@
 
     .tag-pill {
       flex-shrink: 0;
-      padding: 8px 16px;
+      padding: 10px 18px;
       border-radius: 20px;
       border: 1.5px solid var(--border);
       background: transparent;
-      font-size: 13px;
+      font-size: 14px;
       font-weight: 500;
       color: var(--text-secondary);
       cursor: pointer;
@@ -382,8 +393,10 @@
       transition: all 0.2s;
       white-space: nowrap;
       min-height: 44px;
-      display: flex;
+      display: inline-flex;
       align-items: center;
+      gap: 6px;
+      -webkit-tap-highlight-color: rgba(0,0,0,0.05);
     }
 
     .tag-pill.active {
@@ -425,13 +438,15 @@
     }
 
     .sort-toggle {
-      font-size: 12px;
+      font-size: 13px;
       color: var(--text-tertiary);
       background: none;
       border: none;
       cursor: pointer;
       font-family: 'Pretendard Variable', system-ui, -apple-system, sans-serif;
-      padding: 4px 0;
+      padding: 8px 14px;
+      min-height: 40px;
+      -webkit-tap-highlight-color: rgba(0,0,0,0.05);
     }
 
     .sort-toggle span.active {
@@ -496,21 +511,22 @@
 
     .card-actions {
       display: flex;
-      gap: 4px;
+      gap: 8px;
     }
 
     .card-action-btn {
-      width: 36px;
-      height: 36px;
+      min-width: 44px;
+      min-height: 44px;
       border: none;
       background: none;
       cursor: pointer;
-      display: flex;
+      display: inline-flex;
       align-items: center;
       justify-content: center;
       border-radius: 10px;
       transition: background 0.2s;
       color: var(--text-tertiary);
+      -webkit-tap-highlight-color: rgba(0,0,0,0.05);
     }
 
     .card-action-btn:hover {
@@ -518,8 +534,8 @@
     }
 
     .card-action-btn svg {
-      width: 16px;
-      height: 16px;
+      width: 18px;
+      height: 18px;
     }
 
     .card-action-btn.bookmarked {
@@ -528,10 +544,12 @@
 
     .card-action-btn.watch-btn {
       color: var(--accent);
-      gap: 2px;
+      gap: 4px;
       width: auto;
-      padding: 0 10px;
-      font-size: 12px;
+      padding: 8px 16px;
+      min-height: 44px;
+      border-radius: 10px;
+      font-size: 13px;
       font-weight: 700;
       font-family: 'Pretendard Variable', system-ui, -apple-system, sans-serif;
     }
@@ -644,9 +662,9 @@
 
     .bottom-bar-close {
       position: absolute;
-      right: 16px;
-      width: 32px;
-      height: 32px;
+      right: 12px;
+      min-width: 44px;
+      min-height: 44px;
       border: none;
       background: rgba(255,255,255,0.15);
       color: #FFFFFF;
@@ -861,7 +879,7 @@
 
   <!-- Bottom CTA Bar -->
   <div class="bottom-bar" id="bottomBar">
-    <a href="https://okmorning.app" target="_blank" rel="noopener noreferrer" onclick="trackCTA('bottom_bar')">옥모닝으로 매일 복습하기 →</a>
+    <a href="https://www.instagram.com/ok.english.kr/" target="_blank" rel="noopener noreferrer" onclick="trackCTA('bottom_bar')">영어는옥쌤 인스타 팔로우하기 →</a>
     <button class="bottom-bar-close" id="bottomBarClose" aria-label="닫기">✕</button>
   </div>
 
@@ -1196,9 +1214,9 @@
         if (i === 5) {
           cardsHtml.push(`
             <div class="cta-banner">
-              <h3>📱 이 표현, 매일 아침 알람으로 복습하세요</h3>
-              <p>옥모닝 — 영어로 잠에서 깨는 알람앱</p>
-              <a href="https://okmorning.app" target="_blank" rel="noopener noreferrer" class="cta-button" onclick="trackCTA('inline_banner')">앱 다운로드 →</a>
+              <h3>📱 더 많은 영어 표현을 만나보세요</h3>
+              <p>영어는옥쌤 인스타그램에서 매일 새로운 표현을 배워요</p>
+              <a href="https://www.instagram.com/ok.english.kr/" target="_blank" rel="noopener noreferrer" class="cta-button" onclick="trackCTA('inline_banner')">인스타그램 팔로우 →</a>
             </div>`);
         }
 
