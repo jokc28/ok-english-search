@@ -61,12 +61,13 @@ const CATEGORIES = [
   { id: "문화·뉘앙스", emoji: "🌏", label: "문화·뉘앙스" }
 ];"""
 
-with open('public/data.js', 'w', encoding='utf-8') as f:
-    f.write('const REELS_DATA = ')
-    json.dump(result, f, ensure_ascii=False, indent=2)
-    f.write(';\n')
-    f.write(categories_js)
-    f.write('\n')
+for output_path in ('data.js', 'public/data.js'):
+    with open(output_path, 'w', encoding='utf-8') as f:
+        f.write('const REELS_DATA = ')
+        json.dump(result, f, ensure_ascii=False, indent=2)
+        f.write(';\n')
+        f.write(categories_js)
+        f.write('\n')
 
 # Report
 cat_counts = {}
