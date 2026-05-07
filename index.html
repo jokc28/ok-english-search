@@ -129,7 +129,7 @@
       top: 0;
       z-index: 50;
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 6px;
       padding: 6px;
       margin: 0 -4px 16px;
@@ -159,6 +159,10 @@
 
     .hub-tab[data-hub="quiz"].active {
       background: var(--quiz);
+    }
+
+    .hub-tab[data-hub="situation"].active {
+      background: var(--study);
     }
 
     .hub-panel.hidden {
@@ -253,7 +257,6 @@
       border-radius: 16px;
       padding: 20px;
       margin-bottom: 12px;
-      cursor: pointer;
       transition: transform 0.2s, box-shadow 0.2s;
     }
 
@@ -303,6 +306,87 @@
       margin-bottom: 12px;
     }
 
+    .daily-lesson-grid {
+      display: grid;
+      gap: 10px;
+      margin: 14px 0;
+    }
+
+    .daily-lesson-block {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--bg-card);
+      padding: 12px;
+    }
+
+    .daily-lesson-block strong {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--text-primary);
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .daily-lesson-block p {
+      color: var(--text-secondary);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .daily-mini-quiz {
+      display: grid;
+      gap: 8px;
+      margin: 14px 0;
+    }
+
+    .daily-mini-quiz-label {
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    #dailyQuizOptions {
+      display: grid;
+      gap: 8px;
+    }
+
+    .daily-quiz-option {
+      border: 1.5px solid var(--border);
+      border-radius: 12px;
+      background: var(--bg-card);
+      color: var(--text-primary);
+      padding: 11px 12px;
+      font-family: 'Pretendard Variable', system-ui, -apple-system, sans-serif;
+      font-size: 13px;
+      font-weight: 800;
+      text-align: left;
+      cursor: pointer;
+    }
+
+    .daily-quiz-option.correct {
+      border-color: var(--success);
+      color: var(--success);
+      background: color-mix(in srgb, var(--success) 12%, var(--bg-card));
+    }
+
+    .daily-quiz-option.wrong {
+      border-color: var(--danger);
+      color: var(--danger);
+      background: color-mix(in srgb, var(--danger) 10%, var(--bg-card));
+    }
+
+    .daily-quiz-feedback {
+      display: none;
+      color: var(--text-secondary);
+      font-size: 13px;
+      line-height: 1.5;
+      margin-top: 4px;
+    }
+
+    .daily-quiz-feedback.visible {
+      display: block;
+    }
+
     .daily-bottom {
       display: flex;
       align-items: center;
@@ -314,6 +398,10 @@
       color: var(--accent);
       font-weight: 700;
       text-decoration: none;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      font-family: 'Pretendard Variable', system-ui, -apple-system, sans-serif;
     }
 
     /* Daily Quote */
@@ -1083,6 +1171,125 @@
       margin-bottom: 14px;
     }
 
+    /* Situation Practice */
+    .situation-shell {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .situation-intro,
+    .situation-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 18px;
+      box-shadow: var(--shadow-card);
+    }
+
+    .situation-intro h2 {
+      font-size: 20px;
+      line-height: 1.25;
+      margin-bottom: 8px;
+    }
+
+    .situation-intro p,
+    .situation-copy {
+      color: var(--text-secondary);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .situation-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .situation-chip {
+      min-height: 50px;
+      border: 1.5px solid var(--border);
+      border-radius: 12px;
+      background: var(--bg-subtle);
+      color: var(--text-primary);
+      padding: 8px 10px;
+      font-family: 'Pretendard Variable', system-ui, -apple-system, sans-serif;
+      font-size: 12px;
+      font-weight: 900;
+      text-align: left;
+      cursor: pointer;
+    }
+
+    .situation-chip span {
+      display: block;
+      color: var(--text-tertiary);
+      font-size: 11px;
+      font-weight: 700;
+      margin-top: 2px;
+    }
+
+    .situation-chip.active {
+      border-color: var(--study);
+      background: var(--study-soft);
+      color: var(--study);
+    }
+
+    .situation-card {
+      display: grid;
+      gap: 10px;
+    }
+
+    .situation-card-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .situation-expression {
+      font-family: 'DM Mono', monospace;
+      font-size: 18px;
+      line-height: 1.35;
+      word-break: break-word;
+    }
+
+    .situation-dialogue {
+      border-radius: 12px;
+      background: var(--bg-subtle);
+      padding: 12px;
+      color: var(--text-secondary);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    .situation-dialogue strong {
+      color: var(--text-primary);
+    }
+
+    .situation-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    .situation-action-btn {
+      min-height: 44px;
+      border: none;
+      border-radius: 12px;
+      background: var(--study-soft);
+      color: var(--study);
+      font-family: 'Pretendard Variable', system-ui, -apple-system, sans-serif;
+      font-size: 13px;
+      font-weight: 900;
+      cursor: pointer;
+    }
+
+    .situation-action-btn.primary {
+      background: var(--study);
+      color: #FFFFFF;
+    }
+
     .product-note {
       border-color: color-mix(in srgb, var(--study) 30%, var(--border));
       background: color-mix(in srgb, var(--study-soft) 56%, var(--bg-card));
@@ -1192,9 +1399,24 @@
       <div class="daily-meaning" id="dailyMeaning"></div>
       <div class="daily-situation" id="dailySituation"></div>
       <div class="daily-description" id="dailyDescription"></div>
+      <div class="daily-lesson-grid">
+        <div class="daily-lesson-block">
+          <strong>사용 예문</strong>
+          <p id="dailyExample"></p>
+        </div>
+        <div class="daily-lesson-block">
+          <strong>직역 주의</strong>
+          <p id="dailyAvoid"></p>
+        </div>
+      </div>
+      <div class="daily-mini-quiz">
+        <div class="daily-mini-quiz-label">오늘의 10초 퀴즈</div>
+        <div id="dailyQuizOptions"></div>
+        <div class="daily-quiz-feedback" id="dailyQuizFeedback"></div>
+      </div>
       <div class="daily-bottom">
         <span class="card-category-pill" id="dailyCategory"></span>
-        <span class="daily-watch">시청하기 →</span>
+        <button class="daily-watch" id="dailyWatchBtn" type="button">릴스 보기 →</button>
       </div>
     </div>
 
@@ -1204,9 +1426,22 @@
     </div>
 
     <div class="hub-tabs" role="tablist" aria-label="학습 허브">
+      <button class="hub-tab" data-hub="situation" role="tab" aria-selected="false">상황 연습</button>
       <button class="hub-tab active" data-hub="dictionary" role="tab" aria-selected="true">표현 사전</button>
       <button class="hub-tab" data-hub="quiz" role="tab" aria-selected="false">퀴즈 허브</button>
     </div>
+
+    <section class="hub-panel hidden" id="situationHub">
+      <div class="situation-shell">
+        <div class="situation-intro">
+          <h2>상황에서 바로 꺼내 쓰는 표현</h2>
+          <p>실제 말할 장면을 먼저 고르면, 그 상황에 맞는 릴스 표현과 짧은 대화 연습을 모아 보여줍니다.</p>
+          <div class="situation-grid" id="situationGrid"></div>
+        </div>
+        <div class="situation-copy" id="situationSummary"></div>
+        <div class="situation-shell" id="situationList"></div>
+      </div>
+    </section>
 
     <section class="hub-panel" id="dictionaryHub">
       <!-- Search -->
@@ -1306,6 +1541,7 @@
     let llmTimer = null;
     let currentResults = null;
     let activeHub = 'dictionary';
+    let activeSituationId = 'comfort';
     let quizState = {
       deck: [],
       index: 0,
@@ -1319,6 +1555,10 @@
 
     // ─── DOM ───
     const hubTabs = document.querySelectorAll('.hub-tab');
+    const situationHub = document.getElementById('situationHub');
+    const situationGrid = document.getElementById('situationGrid');
+    const situationSummary = document.getElementById('situationSummary');
+    const situationList = document.getElementById('situationList');
     const dictionaryHub = document.getElementById('dictionaryHub');
     const quizHub = document.getElementById('quizHub');
     const searchInput = document.getElementById('searchInput');
@@ -1376,6 +1616,57 @@
       "오늘도 한 걸음. 내일도 한 걸음. 그게 전부예요."
     ];
 
+    const SITUATION_GROUPS = [
+      {
+        id: 'comfort',
+        label: '위로·감정',
+        prompt: '상대가 힘들어하거나 내 감정을 말해야 할 때',
+        keywords: ['위로', '감정', '외로', '괜찮', '스트레스', '기분', '힘들', '용기', 'lonely', 'stress']
+      },
+      {
+        id: 'request',
+        label: '부탁·요청',
+        prompt: '정중하게 부탁하거나 도움을 요청할 때',
+        keywords: ['부탁', '요청', '도움', '해줄', 'favor', 'ride', 'can you', 'can i']
+      },
+      {
+        id: 'food',
+        label: '카페·식당',
+        prompt: '주문하거나 맛집을 물어볼 때',
+        keywords: ['커피', '카페', '식당', '맛집', '음식', '주문', 'ice', 'eat', 'breakfast']
+      },
+      {
+        id: 'travel',
+        label: '여행·호텔',
+        prompt: '호텔, 입국심사, 이동 중 필요한 말을 할 때',
+        keywords: ['호텔', '입국', '조식', '예약', '여행', '외출', 'declare', 'reservation']
+      },
+      {
+        id: 'opinion',
+        label: '의견·맞장구',
+        prompt: '동의, 반대, 의견을 자연스럽게 말할 때',
+        keywords: ['동의', '의견', '토론', '맞장구', '믿', 'respect', 'right', 'tracks']
+      },
+      {
+        id: 'nuance',
+        label: '헷갈리는 표현',
+        prompt: '비슷한 단어와 뉘앙스를 구분해야 할 때',
+        keywords: ['헷갈', '구분', '차이', '뉘앙스', '발음', '문법', 'vs', 'difference']
+      },
+      {
+        id: 'smalltalk',
+        label: '스몰토크',
+        prompt: '처음 만난 사람과 가볍게 질문을 이어갈 때',
+        keywords: ['취미', '첫인상', '왜', '물어볼', '친구에게', '스몰토크', 'question', 'impression']
+      },
+      {
+        id: 'reaction',
+        label: '칭찬·리액션',
+        prompt: '놀람, 칭찬, 반응을 짧게 표현할 때',
+        keywords: ['칭찬', '매력', '리액션', '놀랄', '진짜', '대박', 'confident', 'attractive']
+      }
+    ];
+
     // ─── Helpers ───
     function getDailyIndex(arrayLength) {
       const today = new Date();
@@ -1410,8 +1701,10 @@
         tab.classList.toggle('active', isActive);
         tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
       });
+      situationHub.classList.toggle('hidden', hub !== 'situation');
       dictionaryHub.classList.toggle('hidden', hub !== 'dictionary');
       quizHub.classList.toggle('hidden', hub !== 'quiz');
+      if (hub === 'situation') renderSituationPractice();
       if (hub === 'quiz') renderQuiz();
     }
 
@@ -1963,6 +2256,128 @@
       renderQuiz();
     }
 
+    // ─── Situation Practice ───
+    function getQuizReadyEntries() {
+      return REELS_DATA.filter(entry => entry.expression_en && entry.expression_meaning_kr && entry.situation_kr);
+    }
+
+    function getSituationScore(entry, group) {
+      const haystack = [
+        entry.expression_en,
+        entry.expression_meaning_kr,
+        entry.situation_kr,
+        entry.description_kr,
+        entry.category,
+        ...(entry.search_keywords_kr || []),
+        ...(entry.search_keywords_en || [])
+      ].join(' ').toLowerCase();
+
+      return group.keywords.reduce((score, keyword) => {
+        return haystack.includes(keyword.toLowerCase()) ? score + 1 : score;
+      }, 0);
+    }
+
+    function getSituationMatches(group) {
+      return getQuizReadyEntries()
+        .map(entry => ({ entry, score: getSituationScore(entry, group) }))
+        .filter(item => item.score > 0)
+        .sort((a, b) => b.score - a.score || (b.entry.date || '').localeCompare(a.entry.date || ''))
+        .map(item => item.entry);
+    }
+
+    function buildSituationDialogue(entry, group) {
+      if (entry.expression_en.trim().endsWith('?')) {
+        return `<strong>A</strong> ${escapeHtml(entry.expression_en)}<br><strong>B</strong> 자연스럽게 답하면서 대화를 이어가세요.`;
+      }
+
+      return `<strong>상황</strong> ${escapeHtml(group.prompt)}<br><strong>말하기</strong> ${escapeHtml(entry.expression_en)}`;
+    }
+
+    function showEntryInDictionary(entryId) {
+      const entry = REELS_DATA.find(item => item.id === entryId);
+      if (!entry) return;
+      searchInput.value = entry.expression_en;
+      activeCategory = null;
+      currentResults = [entry];
+      document.querySelectorAll('.tag-pill').forEach(pill => pill.classList.remove('active'));
+      switchHub('dictionary');
+      render();
+      setTimeout(() => {
+        const target = document.getElementById(`card-${entryId}`);
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          target.classList.add('highlight-pulse');
+          setTimeout(() => target.classList.remove('highlight-pulse'), 1800);
+        }
+      }, 80);
+    }
+
+    function renderSituationPractice() {
+      const groupsWithCounts = SITUATION_GROUPS.map(group => ({
+        ...group,
+        matches: getSituationMatches(group)
+      }));
+
+      situationGrid.innerHTML = groupsWithCounts.map(group => `
+        <button class="situation-chip ${group.id === activeSituationId ? 'active' : ''}" data-situation="${group.id}" type="button">
+          ${escapeHtml(group.label)}
+          <span>${group.matches.length}개 표현</span>
+        </button>
+      `).join('');
+
+      situationGrid.querySelectorAll('.situation-chip').forEach(button => {
+        button.addEventListener('click', () => {
+          activeSituationId = button.dataset.situation;
+          renderSituationPractice();
+        });
+      });
+
+      const activeGroup = groupsWithCounts.find(group => group.id === activeSituationId) || groupsWithCounts[0];
+      const matches = activeGroup.matches.slice(0, 8);
+      situationSummary.textContent = `${activeGroup.prompt} · ${activeGroup.matches.length}개 표현`;
+
+      if (!matches.length) {
+        situationList.innerHTML = `
+          <div class="situation-card">
+            <div class="situation-copy">이 상황에 맞는 표현이 아직 충분하지 않습니다.</div>
+          </div>`;
+        return;
+      }
+
+      situationList.innerHTML = matches.map(entry => {
+        const cat = getCategoryInfo(entry.category);
+        return `
+          <article class="situation-card">
+            <div class="situation-card-top">
+              <div>
+                <div class="situation-expression">${escapeHtml(entry.expression_en)}</div>
+                <div class="daily-meaning">${escapeHtml(entry.expression_meaning_kr)}</div>
+              </div>
+              <span class="card-category-pill">${cat.emoji} ${escapeHtml(cat.label)}</span>
+            </div>
+            <div class="situation-dialogue">${buildSituationDialogue(entry, activeGroup)}</div>
+            <div class="situation-copy">${escapeHtml(entry.description_kr)}</div>
+            <div class="situation-actions">
+              <button class="situation-action-btn" data-action="dictionary" data-id="${entry.id}" type="button">사전 보기</button>
+              <button class="situation-action-btn primary" data-action="watch" data-id="${entry.id}" type="button">릴스 보기</button>
+            </div>
+          </article>`;
+      }).join('');
+
+      situationList.querySelectorAll('.situation-action-btn').forEach(button => {
+        button.addEventListener('click', () => {
+          const entry = REELS_DATA.find(item => item.id === parseInt(button.dataset.id));
+          if (!entry) return;
+          if (button.dataset.action === 'watch') {
+            window.open(entry.reel_url, '_blank');
+            trackWatch(entry);
+          } else {
+            showEntryInDictionary(entry.id);
+          }
+        });
+      });
+    }
+
     // ─── Render ───
     function render() {
       const query = searchInput.value.trim();
@@ -2196,14 +2611,56 @@
     });
 
     // ─── Daily Feature ───
+    function buildDailyExample(entry) {
+      if (entry.expression_en.trim().endsWith('?')) {
+        return `A: ${entry.expression_en}  B: 자연스럽게 답하면서 대화를 이어가세요.`;
+      }
+      return `A: ${entry.situation_kr}  B: ${entry.expression_en}`;
+    }
+
+    function buildDailyAvoidNote(entry) {
+      if (isContrastLesson(entry)) {
+        return `${entry.expression_en}처럼 비교형 표현은 두 단어의 역할 차이를 먼저 구분하세요.`;
+      }
+      return `한국어 뜻을 단어별로 직역하기보다, "${entry.situation_kr}" 상황에서 통째로 꺼내 쓰세요.`;
+    }
+
+    function buildDailyQuizOptions(entry) {
+      const pool = getQuizReadyEntries();
+      const distractors = getDistractorCandidates(entry, pool, 'expression_meaning_kr').slice(0, 2);
+      return shuffle([entry.expression_meaning_kr, ...distractors.map(item => item.expression_meaning_kr)]);
+    }
+
+    function answerDailyQuiz(button, entry, options) {
+      const selected = options[parseInt(button.dataset.index)];
+      const correct = entry.expression_meaning_kr;
+      const isCorrect = selected === correct;
+
+      document.querySelectorAll('.daily-quiz-option').forEach(optionBtn => {
+        const option = options[parseInt(optionBtn.dataset.index)];
+        optionBtn.disabled = true;
+        optionBtn.classList.toggle('correct', option === correct);
+        optionBtn.classList.toggle('wrong', option === selected && !isCorrect);
+      });
+
+      const feedback = document.getElementById('dailyQuizFeedback');
+      feedback.classList.add('visible');
+      feedback.textContent = isCorrect
+        ? '정답입니다. 아래 릴스로 실제 설명을 다시 확인해보세요.'
+        : `정답은 "${correct}" 입니다.`;
+    }
+
     function initDaily() {
-      const dailyIdx = getDailyIndex(REELS_DATA.length);
-      const entry = REELS_DATA[dailyIdx];
+      const dailyEntries = getQuizReadyEntries();
+      const dailyIdx = getDailyIndex(dailyEntries.length);
+      const entry = dailyEntries[dailyIdx];
 
       document.getElementById('dailyExpression').textContent = entry.expression_en;
       document.getElementById('dailyMeaning').textContent = entry.expression_meaning_kr || '';
       document.getElementById('dailySituation').textContent = entry.situation_kr;
       document.getElementById('dailyDescription').textContent = entry.description_kr;
+      document.getElementById('dailyExample').textContent = buildDailyExample(entry);
+      document.getElementById('dailyAvoid').textContent = buildDailyAvoidNote(entry);
 
       const cat = getCategoryInfo(entry.category);
       document.getElementById('dailyCategory').innerHTML = `${cat.emoji} ${escapeHtml(cat.label)}`;
@@ -2212,7 +2669,15 @@
       document.getElementById('dailyDifficulty').className = `difficulty-badge ${diffClass}`;
       document.getElementById('dailyDifficulty').innerHTML = `<span class="difficulty-dot"></span>${entry.difficulty || 'beginner'}`;
 
-      document.getElementById('dailyCard').addEventListener('click', () => {
+      const dailyOptions = buildDailyQuizOptions(entry);
+      document.getElementById('dailyQuizOptions').innerHTML = dailyOptions.map((option, index) => `
+        <button class="daily-quiz-option" data-index="${index}" type="button">${escapeHtml(option)}</button>
+      `).join('');
+      document.querySelectorAll('.daily-quiz-option').forEach(button => {
+        button.addEventListener('click', () => answerDailyQuiz(button, entry, dailyOptions));
+      });
+
+      document.getElementById('dailyWatchBtn').addEventListener('click', () => {
         window.open(entry.reel_url, '_blank');
         trackWatch(entry);
       });
@@ -2303,6 +2768,7 @@
     // ─── Init ───
     initQuizCategorySelect();
     updateQuizMissedCount();
+    renderSituationPractice();
     initDaily();
     render();
     renderQuiz();

@@ -21,8 +21,9 @@ The app now exposes two hubs:
 
 - **Dictionary Hub:** keeps the existing situation-first search, AI search fallback, category filters, saved expressions, sharing, and Reel links.
 - **Quiz Hub:** creates a short mobile quiz from the same expression catalog. Users choose all expressions, a category, or their saved 오답 queue, then answer mixed meaning, situation, and typed-recall questions before jumping back to the source Reel.
+- **Situation Practice Hub:** groups the expression catalog by real-use scenarios such as 위로·감정, 부탁·요청, 카페·식당, 여행·호텔, 의견·맞장구, 헷갈리는 표현, 스몰토크, and 칭찬·리액션.
 
-This keeps the current content pipeline intact while converting the same Instagram archive into an active study product.
+The top daily card is now a compact daily lesson: expression, meaning, situation, use example, anti-direct-translation note, a 10-second meaning quiz, and the source Reel link. This keeps the current content pipeline intact while converting the same Instagram archive into an active study product.
 
 ## Quiz Learning Strategy
 
@@ -44,7 +45,7 @@ Relevant sources:
 ## Recommended Next Features
 
 1. **Story Share Result Card:** Generate a quiz result image sized for Instagram Stories. This strengthens brand spread because learners can share scores back to Instagram.
-2. **Daily Mission:** Store a local daily completion state and surface one dictionary save plus one quiz completion per day.
+2. **Daily Mission Progress:** The daily lesson exists; the next step is to store local completion state and streaks for daily lesson plus quiz completion.
 3. **Weak Expression Queue Sync:** The local 오답 queue now exists in-browser; the next step is optional account/device sync if learners expect continuity across phones.
 4. **Creator CTA Context:** For expressions added from recent Reels, show a subtle "new this week" marker and prioritize them in daily cards.
 5. **Content Ops Dashboard:** Add a small local/admin report showing new public Instagram clips, skipped clips, and entries requiring review before deployment.
