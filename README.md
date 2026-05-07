@@ -70,7 +70,7 @@ AI 검색 API와 Daily Quiz 생성/검증 API까지 확인하려면 Vercel 환�
 
 ## Sponsorship Setup
 
-The web app includes alias-only sponsor links for creator support. Use a third-party creator platform such as Buy Me a Coffee or Patreon, and create the creator profile with the public alias only, for example `옥쌤`.
+The web app includes alias-only sponsor links for creator support. The current production link uses Patreon Shop for one-time purchases under the public alias `옥쌤`.
 
 Do not connect direct bank transfers, Toss links, or wire-transfer routing in this app. Those payment paths can expose the creator's legal name due to financial compliance requirements.
 
@@ -79,12 +79,12 @@ Update this block in `public/index.html`, then sync `index.html` from it:
 ```html
 <script>
   // Sponsorship privacy settings:
-  // 1. Create a creator profile on Buy Me a Coffee, Patreon, or a similar platform using only the public alias.
-  // 2. Replace SPONSOR_URL with that platform profile URL, for example:
-  //    'https://www.buymeacoffee.com/ok_sam' or 'https://www.patreon.com/ok_sam'
+  // 1. Create a Patreon Shop one-time purchase under the public alias.
+  // 2. Link to the creator shop URL or a specific one-time product URL.
+  //    Patreon shop format: 'https://www.patreon.com/[creator]/shop'
   // 3. Do not use direct bank, Toss, or wire-transfer links here because they can expose the creator's legal name.
   const SPONSOR_ALIAS = '옥쌤';
-  const SPONSOR_URL = 'https://www.buymeacoffee.com/YOUR_BUYMEACOFFEE_ID';
+  const SPONSOR_URL = 'https://www.patreon.com/okenglishkr/shop';
   const SPONSOR_URL_IS_CONFIGURED = !/YOUR_|example\.com|PLACEHOLDER/i.test(SPONSOR_URL);
 </script>
 ```
@@ -93,14 +93,14 @@ The custom button markup is:
 
 ```html
 <a class="sponsor-link" id="headerSponsorLink"
-   href="https://www.buymeacoffee.com/YOUR_BUYMEACOFFEE_ID"
+   href="https://www.patreon.com/okenglishkr/shop"
    target="_blank" rel="noopener noreferrer"
-   aria-label="옥쌤 후원하기">
-  <span>옥쌤 후원</span>
+   aria-label="옥쌤 1회 후원하기">
+  <span>옥쌤 1회 후원</span>
 </a>
 ```
 
-If you prefer the official Buy Me a Coffee widget script instead of the custom button, place this before `</body>` and replace only the slug/id with the alias-based creator ID:
+If you later prefer the official Buy Me a Coffee widget instead of Patreon, first confirm that payouts are supported for your country. Then place this before `</body>` and replace only the slug/id with the alias-based creator ID:
 
 ```html
 <!-- Replace YOUR_BUYMEACOFFEE_ID with the creator platform ID created under the public alias. -->

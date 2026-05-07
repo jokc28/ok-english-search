@@ -1455,7 +1455,7 @@
         <h1>옥쌤 영어 허브</h1>
         <p>퀴즈와 표현 사전 · <a href="https://www.instagram.com/ok.english.kr/" target="_blank" rel="noopener noreferrer">@ok.english.kr</a></p>
       </div>
-      <a class="sponsor-link" id="headerSponsorLink" href="https://www.buymeacoffee.com/YOUR_BUYMEACOFFEE_ID" target="_blank" rel="noopener noreferrer" aria-label="옥쌤 후원하기">
+      <a class="sponsor-link" id="headerSponsorLink" href="https://www.patreon.com/okenglishkr/shop" target="_blank" rel="noopener noreferrer" aria-label="옥쌤 1회 후원하기">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <path d="M17 8h1a4 4 0 0 1 0 8h-1"/>
           <path d="M3 8h14v6a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5Z"/>
@@ -1463,7 +1463,7 @@
           <path d="M10 2v2"/>
           <path d="M14 2v2"/>
         </svg>
-        <span>옥쌤 후원</span>
+        <span>옥쌤 1회 후원</span>
       </a>
       <button class="header-bookmark-btn" id="headerBookmarkBtn" aria-label="저장한 표현 보기">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -1598,7 +1598,7 @@
         <a href="https://www.instagram.com/ok.english.kr/" target="_blank" rel="noopener noreferrer" class="footer-icon" aria-label="Instagram">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
         </a>
-        <a class="footer-sponsor" id="footerSponsorLink" href="https://www.buymeacoffee.com/YOUR_BUYMEACOFFEE_ID" target="_blank" rel="noopener noreferrer">옥쌤 후원하기</a>
+        <a class="footer-sponsor" id="footerSponsorLink" href="https://www.patreon.com/okenglishkr/shop" target="_blank" rel="noopener noreferrer">옥쌤 1회 후원하기</a>
       </div>
       <p id="footerCount"></p>
     </footer>
@@ -1616,12 +1616,12 @@
   <script src="data.js"></script>
   <script>
     // Sponsorship privacy settings:
-    // 1. Create a creator profile on Buy Me a Coffee, Patreon, or a similar platform using only the public alias.
-    // 2. Replace SPONSOR_URL with that platform profile URL, for example:
-    //    'https://www.buymeacoffee.com/ok_sam' or 'https://www.patreon.com/ok_sam'
+    // 1. Create a Patreon Shop one-time purchase under the public alias.
+    // 2. Link to the creator shop URL or a specific one-time product URL.
+    //    Patreon shop format: 'https://www.patreon.com/[creator]/shop'
     // 3. Do not use direct bank, Toss, or wire-transfer links here because they can expose the creator's legal name.
     const SPONSOR_ALIAS = '옥쌤';
-    const SPONSOR_URL = 'https://www.buymeacoffee.com/YOUR_BUYMEACOFFEE_ID';
+    const SPONSOR_URL = 'https://www.patreon.com/okenglishkr/shop';
     const SPONSOR_URL_IS_CONFIGURED = !/YOUR_|example\.com|PLACEHOLDER/i.test(SPONSOR_URL);
 
     // ─── State ───
@@ -2653,7 +2653,7 @@
             <div class="cta-banner sponsor-banner">
               <h3>${escapeHtml(SPONSOR_ALIAS)} 후원하기</h3>
               <p>이 표현 허브가 계속 운영될 수 있게 익명 후원 플랫폼에서 응원할 수 있어요.</p>
-              <a href="${escapeHtml(SPONSOR_URL)}" target="_blank" rel="noopener noreferrer" class="cta-button" onclick="handleSponsorClick(event, 'inline_banner')">Buy Me a Coffee →</a>
+              <a href="${escapeHtml(SPONSOR_URL)}" target="_blank" rel="noopener noreferrer" class="cta-button" onclick="handleSponsorClick(event, 'inline_banner')">1회 후원하러 가기 →</a>
             </div>`);
         }
 
@@ -3113,13 +3113,13 @@
       [headerSponsorLink, footerSponsorLink].forEach(link => {
         if (!link) return;
         link.href = SPONSOR_URL;
-        link.setAttribute('aria-label', `${SPONSOR_ALIAS} 후원하기`);
+        link.setAttribute('aria-label', `${SPONSOR_ALIAS} 1회 후원하기`);
         link.addEventListener('click', event => {
           handleSponsorClick(event, link.id === 'headerSponsorLink' ? 'header' : 'footer');
         });
       });
-      if (headerSponsorLink) headerSponsorLink.querySelector('span').textContent = `${SPONSOR_ALIAS} 후원`;
-      if (footerSponsorLink) footerSponsorLink.textContent = `${SPONSOR_ALIAS} 후원하기`;
+      if (headerSponsorLink) headerSponsorLink.querySelector('span').textContent = `${SPONSOR_ALIAS} 1회 후원`;
+      if (footerSponsorLink) footerSponsorLink.textContent = `${SPONSOR_ALIAS} 1회 후원하기`;
     }
 
     bottomBarClose.addEventListener('click', () => {
