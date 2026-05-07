@@ -933,6 +933,17 @@
       margin-bottom: 16px;
     }
 
+    .quiz-contrast-pair {
+      display: inline-flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-bottom: 12px;
+      color: var(--text-secondary);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
     .quiz-hint-stack {
       display: grid;
       gap: 8px;
@@ -1646,6 +1657,28 @@
       return quizState.mode;
     }
 
+    function splitVsParts(value) {
+      return String(value || '')
+        .split(/\s+(?:vs\.?|versus)\s+|(?:\s*)[／/](?:\s*)/i)
+        .map(part => part.trim())
+        .filter(Boolean);
+    }
+
+    function isContrastLesson(entry) {
+      const haystack = [
+        entry.expression_en,
+        entry.expression_meaning_kr,
+        entry.situation_kr,
+        entry.description_kr,
+        ...(entry.search_keywords_kr || []),
+        ...(entry.search_keywords_en || [])
+      ].join(' ').toLowerCase();
+
+      return /\bvs\.?\b|versus|차이|구분|헷갈/.test(haystack) &&
+        splitVsParts(entry.expression_en).length >= 2 &&
+        splitVsParts(entry.expression_meaning_kr).length >= 2;
+    }
+
     function getDistractorCandidates(entry, pool, field) {
       const seen = new Set([entry[field]]);
       const tiers = [
@@ -1667,13 +1700,61 @@
       return candidates;
     }
 
+    function getContrastOptionPool(entry, pool) {
+      const seen = new Set(splitVsParts(entry.expression_meaning_kr));
+      const options = [];
+
+      pool.filter(item => item.id !== entry.id && isContrastLesson(item)).forEach(item => {
+        splitVsParts(item.expression_meaning_kr).forEach(part => {
+          if (!part || seen.has(part) || options.length >= 4) return;
+          seen.add(part);
+          options.push(part);
+        });
+      });
+
+      pool.filter(item => item.id !== entry.id).forEach(item => {
+        if (!item.expression_meaning_kr || seen.has(item.expression_meaning_kr) || options.length >= 4) return;
+        seen.add(item.expression_meaning_kr);
+        options.push(item.expression_meaning_kr);
+      });
+
+      return options;
+    }
+
     function buildRecallQuestion(entry, index) {
-      const cueType = index % 2 === 0 ? 'meaning' : 'situation';
+      const cueType = isContrastLesson(entry) || index % 2 === 0 ? 'meaning' : 'situation';
       const cueText = cueType === 'meaning' ? entry.expression_meaning_kr : entry.situation_kr;
       return { entry, type: 'recall', options: [], cueType, cueText };
     }
 
-    function buildMultipleChoiceQuestion(entry, pool, type) {
+    function buildContrastQuestion(entry, pool, index) {
+      const terms = splitVsParts(entry.expression_en);
+      const meanings = splitVsParts(entry.expression_meaning_kr);
+      const targetIndex = index % Math.min(terms.length, meanings.length);
+      const correct = meanings[targetIndex];
+      const pairedIndex = targetIndex === 0 ? 1 : 0;
+      const pairedTerm = terms[pairedIndex] || '';
+      const pairedMeaning = meanings[pairedIndex] || '';
+      const distractors = [pairedMeaning, ...getContrastOptionPool(entry, pool)]
+        .filter(option => option && option !== correct)
+        .slice(0, 3);
+
+      return {
+        entry,
+        type: 'contrast',
+        term: terms[targetIndex],
+        correct,
+        pairedTerm,
+        pairedMeaning,
+        options: shuffle([correct, ...distractors])
+      };
+    }
+
+    function buildMultipleChoiceQuestion(entry, pool, type, index) {
+      if (isContrastLesson(entry)) {
+        return buildContrastQuestion(entry, pool, index);
+      }
+
       const field = type === 'situation' ? 'situation_kr' : 'expression_meaning_kr';
       const distractors = getDistractorCandidates(entry, pool, field);
       const options = shuffle([entry, ...distractors].map(item => item[field]));
@@ -1692,7 +1773,7 @@
         deck: selected.map((entry, index) => {
           const type = getQuizQuestionType(index);
           if (type === 'recall') return buildRecallQuestion(entry, index);
-          return buildMultipleChoiceQuestion(entry, pool, type);
+          return buildMultipleChoiceQuestion(entry, pool, type, index);
         }),
         index: 0,
         score: 0,
@@ -1774,13 +1855,17 @@
         return;
       }
 
-      const label = current.type === 'situation' ? '쓸 수 있는 상황을 고르세요' : '뜻을 고르세요';
-      const cueNote = current.type === 'situation'
+      const isContrast = current.type === 'contrast';
+      const label = isContrast ? '차이를 고르세요' : current.type === 'situation' ? '쓸 수 있는 상황을 고르세요' : '뜻을 고르세요';
+      const cueNote = isContrast
+        ? `${current.term}의 뜻이나 역할을 고르세요.`
+        : current.type === 'situation'
         ? '표현만 보고 어느 상황에서 쓰는지 먼저 떠올린 뒤 고르세요.'
         : '표현만 보고 한국어 뜻을 먼저 떠올린 뒤 고르세요.';
       quizCard.innerHTML = `
         <div class="quiz-prompt-label">${label}</div>
-        <div class="quiz-expression">${escapeHtml(entry.expression_en)}</div>
+        <div class="quiz-expression">${escapeHtml(isContrast ? current.term : entry.expression_en)}</div>
+        ${isContrast ? `<div class="quiz-contrast-pair">비교 대상: ${escapeHtml(current.pairedTerm)}</div>` : ''}
         <div class="quiz-cue-note">${escapeHtml(cueNote)}</div>
         <div class="quiz-options">
           ${current.options.map((option, index) => `
@@ -1800,7 +1885,7 @@
       const current = quizState.deck[quizState.index];
       const selected = current.options[parseInt(button.dataset.index)];
       const field = current.type === 'situation' ? 'situation_kr' : 'expression_meaning_kr';
-      const correct = current.entry[field];
+      const correct = current.type === 'contrast' ? current.correct : current.entry[field];
       const isCorrect = selected === correct;
       if (isCorrect) quizState.score += 1;
       recordQuizResult(current.entry.id, isCorrect);
@@ -1811,7 +1896,7 @@
         optionBtn.classList.toggle('wrong', option === selected && !isCorrect);
       });
 
-      showQuizFeedback(isCorrect, correct, current.entry);
+      showQuizFeedback(isCorrect, correct, current.entry, current);
     }
 
     function answerRecallQuiz(answer) {
@@ -1826,15 +1911,19 @@
       const recallInput = document.getElementById('quizRecallInput');
       recallInput.disabled = true;
       recallInput.classList.add(isCorrect ? 'correct' : 'wrong');
-      showQuizFeedback(isCorrect, correct, current.entry);
+      showQuizFeedback(isCorrect, correct, current.entry, current);
     }
 
-    function showQuizFeedback(isCorrect, correct, entry) {
+    function showQuizFeedback(isCorrect, correct, entry, current = null) {
+      const contrastLine = current && current.type === 'contrast' && current.pairedTerm
+        ? `<div class="quiz-hint"><strong>비교</strong><br>${escapeHtml(current.term)} = ${escapeHtml(current.correct)}<br>${escapeHtml(current.pairedTerm)} = ${escapeHtml(current.pairedMeaning)}</div>`
+        : '';
       const feedback = document.getElementById('quizFeedback');
       feedback.classList.add('visible');
       feedback.innerHTML = `
         <strong>${isCorrect ? '정답입니다.' : `정답은 ${escapeHtml(correct)} 입니다.`}</strong><br>
         <div class="quiz-hint-stack">
+          ${contrastLine}
           <div class="quiz-hint"><strong>뜻</strong><br>${escapeHtml(entry.expression_meaning_kr)}</div>
           <div class="quiz-hint"><strong>상황</strong><br>${escapeHtml(entry.situation_kr)}</div>
         </div>

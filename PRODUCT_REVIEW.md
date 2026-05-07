@@ -33,6 +33,7 @@ The optimized quiz flow is based on three learning-science patterns:
 3. **Interleaving:** 혼합 mode rotates typed recall, meaning recognition, and situation recognition so users do not memorize one cue shape only.
 4. **No answer leakage:** recognition questions now show only the English expression before answer selection. Meaning and situation details are revealed after the attempt, because showing "big man" with "용서할 때" turns the question into guessing from a giveaway cue.
 5. **Plausible distractors:** multiple-choice options are pulled first from the same category and difficulty, then widened only when needed. This follows common MCQ design guidance: distractors should be plausible, homogeneous, and free of giveaway clues.
+6. **Contrast lessons:** `affect vs effect`, `farther vs further`, and similar "vs / 차이 / 구분" Reels now generate contrast questions. The learner chooses the meaning or role of one side of the pair instead of being asked for a generic use situation.
 
 Relevant sources:
 
