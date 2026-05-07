@@ -1771,6 +1771,7 @@
       quizState = {
         ...quizState,
         deck: selected.map((entry, index) => {
+          if (isContrastLesson(entry)) return buildContrastQuestion(entry, pool, index);
           const type = getQuizQuestionType(index);
           if (type === 'recall') return buildRecallQuestion(entry, index);
           return buildMultipleChoiceQuestion(entry, pool, type, index);
