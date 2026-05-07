@@ -2651,8 +2651,8 @@
         if (i === 10) {
           cardsHtml.push(`
             <div class="cta-banner sponsor-banner">
-              <h3>${escapeHtml(SPONSOR_ALIAS)} 후원하기</h3>
-              <p>이 표현 허브가 계속 운영될 수 있게 익명 후원 플랫폼에서 응원할 수 있어요.</p>
+              <h3>옥쌤 후원하기</h3>
+              <p>이 표현 허브가 계속 운영될 수 있게 Patreon 1회 후원으로 응원할 수 있어요.</p>
               <a href="${escapeHtml(SPONSOR_URL)}" target="_blank" rel="noopener noreferrer" class="cta-button" onclick="handleSponsorClick(event, 'inline_banner')">1회 후원하러 가기 →</a>
             </div>`);
         }
@@ -3118,8 +3118,8 @@
           handleSponsorClick(event, link.id === 'headerSponsorLink' ? 'header' : 'footer');
         });
       });
-      if (headerSponsorLink) headerSponsorLink.querySelector('span').textContent = `${SPONSOR_ALIAS} 1회 후원`;
-      if (footerSponsorLink) footerSponsorLink.textContent = `${SPONSOR_ALIAS} 1회 후원하기`;
+      if (headerSponsorLink) headerSponsorLink.querySelector('span').textContent = '옥쌤 1회 후원';
+      if (footerSponsorLink) footerSponsorLink.textContent = '옥쌤 1회 후원하기';
     }
 
     bottomBarClose.addEventListener('click', () => {

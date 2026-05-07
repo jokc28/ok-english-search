@@ -1,5 +1,8 @@
 {
   "name": "ok-english-search",
   "version": "2.0.0",
-  "private": true
+  "private": true,
+  "scripts": {
+    "configure:sponsor": "node scripts/configure-sponsor.js"
+  }
 }

@@ -74,30 +74,26 @@ The web app includes alias-only sponsor links for creator support. The current p
 
 Do not connect direct bank transfers, Toss links, or wire-transfer routing in this app. Those payment paths can expose the creator's legal name due to financial compliance requirements.
 
-Update this block in `public/index.html`, then sync `index.html` from it:
+The setup is automated. The default config already points to the Patreon Shop for `okenglishkr`:
 
-```html
-<script>
-  // Sponsorship privacy settings:
-  // 1. Create a Patreon Shop one-time purchase under the public alias.
-  // 2. Link to the creator shop URL or a specific one-time product URL.
-  //    Patreon shop format: 'https://www.patreon.com/[creator]/shop'
-  // 3. Do not use direct bank, Toss, or wire-transfer links here because they can expose the creator's legal name.
-  const SPONSOR_ALIAS = '옥쌤';
-  const SPONSOR_URL = 'https://www.patreon.com/okenglishkr/shop';
-  const SPONSOR_URL_IS_CONFIGURED = !/YOUR_|example\.com|PLACEHOLDER/i.test(SPONSOR_URL);
-</script>
+```bash
+npm run configure:sponsor
 ```
 
-The custom button markup is:
+The command reads `sponsor.config.json`, updates `public/index.html`, and syncs `index.html` automatically. No manual HTML editing is needed.
 
-```html
-<a class="sponsor-link" id="headerSponsorLink"
-   href="https://www.patreon.com/okenglishkr/shop"
-   target="_blank" rel="noopener noreferrer"
-   aria-label="옥쌤 1회 후원하기">
-  <span>옥쌤 1회 후원</span>
-</a>
+Current default config:
+
+```json
+{
+  "alias": "옥쌤",
+  "url": "https://www.patreon.com/okenglishkr/shop",
+  "headerLabel": "옥쌤 1회 후원",
+  "footerLabel": "옥쌤 1회 후원하기",
+  "bannerTitle": "옥쌤 후원하기",
+  "bannerBody": "이 표현 허브가 계속 운영될 수 있게 Patreon 1회 후원으로 응원할 수 있어요.",
+  "bannerCta": "1회 후원하러 가기 →"
+}
 ```
 
 If you later prefer the official Buy Me a Coffee widget instead of Patreon, first confirm that payouts are supported for your country. Then place this before `</body>` and replace only the slug/id with the alias-based creator ID:
