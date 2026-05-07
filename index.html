@@ -2755,7 +2755,7 @@
         const correctExample = buildContrastUsageExample(question.term, question.correct, true);
         const wrongExample = buildContrastUsageExample(question.pairedTerm || question.term, question.pairedMeaning || question.correct, false);
         return {
-          prompt: `${question.term}를 가장 자연스럽게 쓴 문장은 무엇인가요?`,
+          prompt: formatDailySentences(`${question.term}가 빈칸에 가장 자연스럽게 들어갈 문장을 고르세요.`),
           options: shuffle([
             { text: correctExample, correct: true },
             { text: wrongExample, correct: false },
@@ -2768,37 +2768,37 @@
       const distractors = getDailyScenarioDistractors(entry, pool);
 
       const options = shuffle([
-        { text: buildDailyScenarioOption(entry), correct: true },
-        ...distractors.map(item => ({ text: buildDailyScenarioOption(item), correct: false }))
+        { text: buildDailyBlankDialogue(entry), correct: true },
+        ...distractors.map(item => ({ text: buildDailyBlankDialogue(item), correct: false }))
       ]);
 
       return {
-        prompt: formatDailySentences(`오늘 표현은 어떤 새 상황에서 자연스럽게 쓰일까요? 아래 선택지를 읽고 가장 자연스러운 상황을 고르세요.`),
+        prompt: formatDailySentences(`오늘 표현이 빈칸에 가장 자연스럽게 들어갈 대화를 고르세요.`),
         options,
         explanation: formatDailySentences(`"${entry.expression_en}" fits this kind of situation. ${context.scene}`)
       };
     }
 
-    function buildDailyScenarioOption(entry) {
+    function buildDailyBlankDialogue(entry) {
       const context = getDailyContext(entry);
-      return formatDailySentences(`${context.scene} ${context.setup}`);
+      return formatDailySentences(`${context.setup}\nB: ____`);
     }
 
     function getDailyScenarioDistractors(entry, pool) {
-      const correctText = buildDailyScenarioOption(entry);
+      const correctText = buildDailyBlankDialogue(entry);
       const primary = shuffle(pool.filter(item =>
         item.id !== entry.id &&
         item.category !== entry.category &&
-        buildDailyScenarioOption(item) !== correctText
+        buildDailyBlankDialogue(item) !== correctText
       ));
       const fallback = shuffle(pool.filter(item =>
         item.id !== entry.id &&
-        buildDailyScenarioOption(item) !== correctText
+        buildDailyBlankDialogue(item) !== correctText
       ));
 
       const seen = new Set([correctText]);
       return [...primary, ...fallback].filter(item => {
-        const text = buildDailyScenarioOption(item);
+        const text = buildDailyBlankDialogue(item);
         if (seen.has(text)) return false;
         seen.add(text);
         return true;
