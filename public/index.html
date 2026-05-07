@@ -815,6 +815,35 @@
       margin-top: 16px;
     }
 
+    .quiz-mode-row {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 6px;
+    }
+
+    .quiz-mode-btn {
+      min-height: 42px;
+      border-radius: 11px;
+      border: 1.5px solid var(--border);
+      background: var(--bg-subtle);
+      color: var(--text-secondary);
+      font-family: 'Pretendard Variable', system-ui, -apple-system, sans-serif;
+      font-size: 12px;
+      font-weight: 900;
+      cursor: pointer;
+    }
+
+    .quiz-mode-btn.active {
+      border-color: var(--quiz);
+      background: var(--quiz-soft);
+      color: var(--quiz);
+    }
+
+    .quiz-mode-btn:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+    }
+
     .quiz-select {
       width: 100%;
       min-height: 48px;
@@ -897,6 +926,51 @@
       margin-bottom: 16px;
     }
 
+    .quiz-hint-stack {
+      display: grid;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .quiz-hint {
+      border-radius: 12px;
+      background: var(--bg-subtle);
+      padding: 12px;
+      color: var(--text-secondary);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .quiz-hint strong {
+      color: var(--text-primary);
+    }
+
+    .quiz-recall-input {
+      width: 100%;
+      min-height: 52px;
+      border: 1.5px solid var(--border);
+      border-radius: 12px;
+      background: var(--bg-subtle);
+      color: var(--text-primary);
+      padding: 0 14px;
+      font-family: 'DM Mono', monospace;
+      font-size: 16px;
+      outline: none;
+    }
+
+    .quiz-recall-input:focus {
+      border-color: var(--quiz);
+      box-shadow: 0 0 0 4px color-mix(in srgb, var(--quiz) 16%, transparent);
+    }
+
+    .quiz-recall-input.correct {
+      border-color: var(--success);
+    }
+
+    .quiz-recall-input.wrong {
+      border-color: var(--danger);
+    }
+
     .quiz-options {
       display: grid;
       gap: 10px;
@@ -943,6 +1017,30 @@
       display: block;
     }
 
+    .quiz-action-row {
+      margin-top: 12px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    .quiz-stat-row {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+      color: var(--text-secondary);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .quiz-stat-pill {
+      border-radius: 999px;
+      background: var(--bg-subtle);
+      padding: 7px 10px;
+    }
+
     .quiz-result {
       text-align: center;
       padding: 26px 16px;
@@ -953,6 +1051,13 @@
       font-weight: 900;
       color: var(--quiz);
       margin-bottom: 8px;
+    }
+
+    .quiz-result p {
+      color: var(--text-secondary);
+      font-size: 14px;
+      line-height: 1.5;
+      margin-bottom: 14px;
     }
 
     .product-note {
@@ -1117,11 +1222,21 @@
     <section class="hub-panel hidden" id="quizHub">
       <div class="quiz-shell">
         <div class="quiz-intro">
-          <h2>지난 릴스 표현을 바로 테스트하세요</h2>
-          <p>표현을 찾아보는 흐름에서 한 단계 더 나아가, 의미를 맞히고 바로 릴스로 복습하는 모바일 퀴즈 허브입니다.</p>
+          <h2>릴스 표현을 기억에서 꺼내보세요</h2>
+          <p>뜻 고르기, 상황 고르기, 직접 입력을 섞어 짧게 풀고 틀린 표현은 오답 큐에 남깁니다.</p>
           <div class="quiz-controls">
             <select class="quiz-select" id="quizCategorySelect" aria-label="퀴즈 카테고리"></select>
-            <button class="quiz-primary-btn" id="quizStartBtn">5문제 시작</button>
+            <div class="quiz-mode-row" role="group" aria-label="퀴즈 모드">
+              <button class="quiz-mode-btn active" data-mode="mixed" type="button">혼합</button>
+              <button class="quiz-mode-btn" data-mode="meaning" type="button">뜻</button>
+              <button class="quiz-mode-btn" data-mode="situation" type="button">상황</button>
+              <button class="quiz-mode-btn" data-mode="recall" type="button">입력</button>
+              <button class="quiz-mode-btn" data-mode="missed" type="button">오답</button>
+            </div>
+            <div class="quiz-stat-row">
+              <span class="quiz-stat-pill" id="quizMissedCount">오답 0개</span>
+            </div>
+            <button class="quiz-primary-btn" id="quizStartBtn">7문제 시작</button>
           </div>
         </div>
 
@@ -1134,8 +1249,8 @@
         <div class="quiz-card" id="quizCard"></div>
 
         <div class="product-note">
-          <h3>다음 성장 포인트</h3>
-          <p>퀴즈 결과를 인스타 스토리 공유 이미지로 만들면, 학습 성취와 브랜드 노출이 동시에 일어납니다.</p>
+          <h3>퀴즈 설계</h3>
+          <p>혼합 모드는 쉬운 선택형과 어려운 입력형을 번갈아 내고, 정답 직후 설명과 릴스 링크를 보여줘 바로 복습하게 만듭니다.</p>
         </div>
       </div>
     </section>
@@ -1172,8 +1287,12 @@
       deck: [],
       index: 0,
       score: 0,
-      answered: false
+      answered: false,
+      mode: 'mixed',
+      missedThisRound: []
     };
+    const QUIZ_MISSED_KEY = 'ok_quiz_missed_ids';
+    const QUIZ_LENGTH = 7;
 
     // ─── DOM ───
     const hubTabs = document.querySelectorAll('.hub-tab');
@@ -1191,6 +1310,8 @@
     const bottomBar = document.getElementById('bottomBar');
     const bottomBarClose = document.getElementById('bottomBarClose');
     const quizCategorySelect = document.getElementById('quizCategorySelect');
+    const quizModeButtons = document.querySelectorAll('.quiz-mode-btn');
+    const quizMissedCount = document.getElementById('quizMissedCount');
     const quizStartBtn = document.getElementById('quizStartBtn');
     const quizProgress = document.getElementById('quizProgress');
     const quizStepText = document.getElementById('quizStepText');
@@ -1429,6 +1550,58 @@
     }
 
     // ─── Quiz Hub ───
+    function getMissedIds() {
+      try {
+        const parsed = JSON.parse(localStorage.getItem(QUIZ_MISSED_KEY) || '[]');
+        return Array.isArray(parsed) ? parsed.map(String) : [];
+      } catch {
+        return [];
+      }
+    }
+
+    function setMissedIds(ids) {
+      const unique = [...new Set(ids.map(String))];
+      localStorage.setItem(QUIZ_MISSED_KEY, JSON.stringify(unique));
+      updateQuizMissedCount();
+    }
+
+    function updateQuizMissedCount() {
+      const count = getMissedIds().filter(id => REELS_DATA.some(entry => String(entry.id) === id)).length;
+      quizMissedCount.textContent = `오답 ${count}개`;
+      quizModeButtons.forEach(button => {
+        if (button.dataset.mode === 'missed') button.disabled = count === 0;
+      });
+    }
+
+    function recordQuizResult(entryId, isCorrect) {
+      const id = String(entryId);
+      const missed = getMissedIds();
+      if (isCorrect) {
+        setMissedIds(missed.filter(itemId => itemId !== id));
+      } else {
+        setMissedIds([id, ...missed]);
+        if (!quizState.missedThisRound.includes(id)) {
+          quizState.missedThisRound.push(id);
+        }
+      }
+    }
+
+    function normalizeQuizAnswer(value) {
+      return value
+        .toLowerCase()
+        .replace(/[’']/g, '')
+        .replace(/[^a-z0-9\s]/g, ' ')
+        .replace(/\s+/g, ' ')
+        .trim();
+    }
+
+    function isRecallCorrect(answer, correct) {
+      const normalizedAnswer = normalizeQuizAnswer(answer);
+      const normalizedCorrect = normalizeQuizAnswer(correct);
+      return normalizedAnswer === normalizedCorrect ||
+        normalizedAnswer.replace(/\s/g, '') === normalizedCorrect.replace(/\s/g, '');
+    }
+
     function initQuizCategorySelect() {
       const options = [
         '<option value="">전체 표현</option>',
@@ -1440,54 +1613,97 @@
     function getQuizPool() {
       const category = quizCategorySelect.value;
       return REELS_DATA.filter(entry => {
-        if (!entry.expression_en || !entry.expression_meaning_kr) return false;
+        if (!entry.expression_en || !entry.expression_meaning_kr || !entry.situation_kr) return false;
         if (category && entry.category !== category) return false;
         return true;
       });
     }
 
-    function buildQuizDeck() {
+    function getActiveQuizPool() {
       const pool = getQuizPool();
-      const selected = shuffle(pool).slice(0, Math.min(5, pool.length));
+      if (quizState.mode !== 'missed') return pool;
+
+      const missedIds = new Set(getMissedIds());
+      return pool.filter(entry => missedIds.has(String(entry.id)));
+    }
+
+    function getQuizQuestionType(index) {
+      if (quizState.mode === 'mixed' || quizState.mode === 'missed') {
+        return ['recall', 'meaning', 'situation'][index % 3];
+      }
+      return quizState.mode;
+    }
+
+    function buildMultipleChoiceQuestion(entry, pool, type) {
+      const field = type === 'situation' ? 'situation_kr' : 'expression_meaning_kr';
+      const distractors = shuffle(pool.filter(item =>
+        item.id !== entry.id && item[field] && item[field] !== entry[field]
+      )).slice(0, 3);
+      const options = shuffle([entry, ...distractors].map(item => item[field]));
+
+      if (options.length < 2) {
+        return { entry, type: 'recall', options: [] };
+      }
+      return { entry, type, options };
+    }
+
+    function buildQuizDeck() {
+      const pool = getActiveQuizPool();
+      const selected = shuffle(pool).slice(0, Math.min(QUIZ_LENGTH, pool.length));
       quizState = {
-        deck: selected.map(entry => {
-          const distractors = shuffle(pool.filter(item =>
-            item.id !== entry.id && item.expression_meaning_kr && item.expression_meaning_kr !== entry.expression_meaning_kr
-          )).slice(0, 3);
-          const options = shuffle([entry, ...distractors].map(item => item.expression_meaning_kr));
-          return { entry, options };
+        ...quizState,
+        deck: selected.map((entry, index) => {
+          const type = getQuizQuestionType(index);
+          if (type === 'recall') return { entry, type, options: [] };
+          return buildMultipleChoiceQuestion(entry, pool, type);
         }),
         index: 0,
         score: 0,
-        answered: false
+        answered: false,
+        missedThisRound: []
       };
       renderQuiz();
     }
 
     function renderQuiz() {
-      const pool = getQuizPool();
+      const pool = getActiveQuizPool();
       if (!quizState.deck.length) {
         quizProgress.hidden = true;
+        const isMissedMode = quizState.mode === 'missed';
         quizCard.innerHTML = `
           <div class="quiz-result">
             <div class="quiz-result-score">${pool.length}</div>
-            <p>선택한 범위에서 퀴즈로 풀 수 있는 표현입니다.</p>
+            <p>${isMissedMode ? '오답 큐에 남아 있는 표현입니다.' : '선택한 범위에서 퀴즈로 풀 수 있는 표현입니다.'}</p>
           </div>`;
-        quizStartBtn.disabled = pool.length < 4;
-        quizStartBtn.textContent = pool.length < 4 ? '표현이 부족해요' : '5문제 시작';
+        quizStartBtn.disabled = pool.length === 0;
+        quizStartBtn.textContent = pool.length === 0 ? '표현이 부족해요' : `${Math.min(QUIZ_LENGTH, pool.length)}문제 시작`;
+        updateQuizMissedCount();
         return;
       }
 
       if (quizState.index >= quizState.deck.length) {
         const percent = Math.round((quizState.score / quizState.deck.length) * 100);
+        const missedCount = quizState.missedThisRound.length;
         quizProgress.hidden = true;
         quizCard.innerHTML = `
           <div class="quiz-result">
             <div class="quiz-result-score">${quizState.score}/${quizState.deck.length}</div>
-            <p>${percent >= 80 ? '잘 기억하고 있어요.' : '릴스로 한 번 더 복습해보세요.'}</p>
+            <p>${percent >= 80 ? '기억에서 잘 꺼내고 있어요.' : '오답 표현을 짧게 다시 꺼내보세요.'}</p>
+            <div class="quiz-stat-row">
+              <span class="quiz-stat-pill">정답률 ${percent}%</span>
+              <span class="quiz-stat-pill">이번 오답 ${missedCount}개</span>
+            </div>
             <button class="quiz-primary-btn" id="quizRestartBtn">다시 풀기</button>
+            ${getMissedIds().length ? '<button class="quiz-secondary-btn" id="quizMissedBtn" style="margin-top:8px;">틀린 표현 다시 풀기</button>' : ''}
           </div>`;
         document.getElementById('quizRestartBtn').addEventListener('click', buildQuizDeck);
+        const missedBtn = document.getElementById('quizMissedBtn');
+        if (missedBtn) {
+          missedBtn.addEventListener('click', () => {
+            setQuizMode('missed');
+            buildQuizDeck();
+          });
+        }
         return;
       }
 
@@ -1498,10 +1714,35 @@
       quizScoreText.textContent = `${quizState.score}점`;
       quizMeterFill.style.width = `${(quizState.index / quizState.deck.length) * 100}%`;
 
+      if (current.type === 'recall') {
+        quizCard.innerHTML = `
+          <div class="quiz-prompt-label">영어 표현을 직접 입력하세요</div>
+          <div class="quiz-hint-stack">
+            <div class="quiz-hint"><strong>뜻</strong><br>${escapeHtml(entry.expression_meaning_kr)}</div>
+            <div class="quiz-hint"><strong>상황</strong><br>${escapeHtml(entry.situation_kr)}</div>
+          </div>
+          <input class="quiz-recall-input" id="quizRecallInput" autocomplete="off" autocapitalize="none" spellcheck="false" placeholder="English expression">
+          <div class="quiz-action-row">
+            <button class="quiz-secondary-btn" id="quizSkipBtn">모르겠어요</button>
+            <button class="quiz-primary-btn" id="quizSubmitBtn">확인</button>
+          </div>
+          <div class="quiz-feedback" id="quizFeedback"></div>`;
+        const recallInput = document.getElementById('quizRecallInput');
+        document.getElementById('quizSubmitBtn').addEventListener('click', () => answerRecallQuiz(recallInput.value));
+        document.getElementById('quizSkipBtn').addEventListener('click', () => answerRecallQuiz(''));
+        recallInput.addEventListener('keydown', event => {
+          if (event.key === 'Enter') answerRecallQuiz(recallInput.value);
+        });
+        setTimeout(() => recallInput.focus(), 0);
+        return;
+      }
+
+      const label = current.type === 'situation' ? '쓸 수 있는 상황을 고르세요' : '뜻을 고르세요';
+      const support = current.type === 'situation' ? entry.expression_meaning_kr : entry.situation_kr;
       quizCard.innerHTML = `
-        <div class="quiz-prompt-label">뜻을 고르세요</div>
+        <div class="quiz-prompt-label">${label}</div>
         <div class="quiz-expression">${escapeHtml(entry.expression_en)}</div>
-        <div class="quiz-situation">${escapeHtml(entry.situation_kr)}</div>
+        <div class="quiz-situation">${escapeHtml(support)}</div>
         <div class="quiz-options">
           ${current.options.map((option, index) => `
             <button class="quiz-option" data-index="${index}">${escapeHtml(option)}</button>
@@ -1510,18 +1751,20 @@
         <div class="quiz-feedback" id="quizFeedback"></div>`;
 
       quizCard.querySelectorAll('.quiz-option').forEach(button => {
-        button.addEventListener('click', () => answerQuiz(button));
+        button.addEventListener('click', () => answerChoiceQuiz(button));
       });
     }
 
-    function answerQuiz(button) {
+    function answerChoiceQuiz(button) {
       if (quizState.answered) return;
       quizState.answered = true;
       const current = quizState.deck[quizState.index];
       const selected = current.options[parseInt(button.dataset.index)];
-      const correct = current.entry.expression_meaning_kr;
+      const field = current.type === 'situation' ? 'situation_kr' : 'expression_meaning_kr';
+      const correct = current.entry[field];
       const isCorrect = selected === correct;
       if (isCorrect) quizState.score += 1;
+      recordQuizResult(current.entry.id, isCorrect);
 
       quizCard.querySelectorAll('.quiz-option').forEach(optionBtn => {
         const option = current.options[parseInt(optionBtn.dataset.index)];
@@ -1529,18 +1772,37 @@
         optionBtn.classList.toggle('wrong', option === selected && !isCorrect);
       });
 
+      showQuizFeedback(isCorrect, correct, current.entry);
+    }
+
+    function answerRecallQuiz(answer) {
+      if (quizState.answered) return;
+      quizState.answered = true;
+      const current = quizState.deck[quizState.index];
+      const correct = current.entry.expression_en;
+      const isCorrect = isRecallCorrect(answer, correct);
+      if (isCorrect) quizState.score += 1;
+      recordQuizResult(current.entry.id, isCorrect);
+
+      const recallInput = document.getElementById('quizRecallInput');
+      recallInput.disabled = true;
+      recallInput.classList.add(isCorrect ? 'correct' : 'wrong');
+      showQuizFeedback(isCorrect, correct, current.entry);
+    }
+
+    function showQuizFeedback(isCorrect, correct, entry) {
       const feedback = document.getElementById('quizFeedback');
       feedback.classList.add('visible');
       feedback.innerHTML = `
         <strong>${isCorrect ? '정답입니다.' : `정답은 ${escapeHtml(correct)} 입니다.`}</strong><br>
-        ${escapeHtml(current.entry.description_kr)}
-        <div style="margin-top:12px;display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+        ${escapeHtml(entry.description_kr)}
+        <div class="quiz-action-row">
           <button class="quiz-secondary-btn" id="quizWatchBtn">릴스 보기</button>
           <button class="quiz-primary-btn" id="quizNextBtn">${quizState.index + 1 === quizState.deck.length ? '결과 보기' : '다음 문제'}</button>
         </div>`;
       document.getElementById('quizWatchBtn').addEventListener('click', () => {
-        window.open(current.entry.reel_url, '_blank');
-        trackWatch(current.entry);
+        window.open(entry.reel_url, '_blank');
+        trackWatch(entry);
       });
       document.getElementById('quizNextBtn').addEventListener('click', () => {
         quizState.index += 1;
@@ -1550,6 +1812,22 @@
         }
         renderQuiz();
       });
+    }
+
+    function setQuizMode(mode) {
+      quizState = {
+        ...quizState,
+        mode,
+        deck: [],
+        index: 0,
+        score: 0,
+        answered: false,
+        missedThisRound: []
+      };
+      quizModeButtons.forEach(button => {
+        button.classList.toggle('active', button.dataset.mode === mode);
+      });
+      renderQuiz();
     }
 
     // ─── Render ───
@@ -1838,8 +2116,22 @@
 
     quizStartBtn.addEventListener('click', buildQuizDeck);
 
+    quizModeButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        if (button.disabled) return;
+        setQuizMode(button.dataset.mode);
+      });
+    });
+
     quizCategorySelect.addEventListener('change', () => {
-      quizState = { deck: [], index: 0, score: 0, answered: false };
+      quizState = {
+        ...quizState,
+        deck: [],
+        index: 0,
+        score: 0,
+        answered: false,
+        missedThisRound: []
+      };
       renderQuiz();
     });
 
@@ -1877,6 +2169,7 @@
 
     // ─── Init ───
     initQuizCategorySelect();
+    updateQuizMissedCount();
     initDaily();
     render();
     renderQuiz();

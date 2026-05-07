@@ -20,15 +20,28 @@ The `awesome-design-md` local references are mostly pointer README files, not fu
 The app now exposes two hubs:
 
 - **Dictionary Hub:** keeps the existing situation-first search, AI search fallback, category filters, saved expressions, sharing, and Reel links.
-- **Quiz Hub:** creates a 5-question mobile quiz from the same expression catalog. Users choose all expressions or a category, answer meaning-based questions, and can jump back to the source Reel after each answer.
+- **Quiz Hub:** creates a short mobile quiz from the same expression catalog. Users choose all expressions, a category, or their saved 오답 queue, then answer mixed meaning, situation, and typed-recall questions before jumping back to the source Reel.
 
 This keeps the current content pipeline intact while converting the same Instagram archive into an active study product.
+
+## Quiz Learning Strategy
+
+The optimized quiz flow is based on three learning-science patterns:
+
+1. **Retrieval practice:** the learner has to recall or choose an answer before seeing the explanation. Roediger and Karpicke found delayed retention was stronger after testing than after repeated study.
+2. **Distributed review:** missed expressions are stored locally and can be replayed later through the 오답 mode instead of being forgotten after one session.
+3. **Interleaving:** 혼합 mode rotates typed recall, meaning recognition, and situation recognition so users do not memorize one cue shape only.
+
+Relevant sources:
+
+- Roediger & Karpicke, 2006, "Test-enhanced learning: taking memory tests improves long-term retention" (`https://pubmed.ncbi.nlm.nih.gov/16507066/`)
+- Dunlosky et al., 2013, "Improving Students' Learning With Effective Learning Techniques" (`https://www.psychologicalscience.org/publications/journals/pspi/learning-techniques.html`)
 
 ## Recommended Next Features
 
 1. **Story Share Result Card:** Generate a quiz result image sized for Instagram Stories. This strengthens brand spread because learners can share scores back to Instagram.
 2. **Daily Mission:** Store a local daily completion state and surface one dictionary save plus one quiz completion per day.
-3. **Weak Expression Queue:** Track missed quiz IDs in localStorage and offer a "틀린 표현 다시 풀기" quiz.
+3. **Weak Expression Queue Sync:** The local 오답 queue now exists in-browser; the next step is optional account/device sync if learners expect continuity across phones.
 4. **Creator CTA Context:** For expressions added from recent Reels, show a subtle "new this week" marker and prioritize them in daily cards.
 5. **Content Ops Dashboard:** Add a small local/admin report showing new public Instagram clips, skipped clips, and entries requiring review before deployment.
 
