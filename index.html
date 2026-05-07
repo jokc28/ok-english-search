@@ -1582,6 +1582,9 @@
     const quizScoreText = document.getElementById('quizScoreText');
     const quizMeterFill = document.getElementById('quizMeterFill');
     const quizCard = document.getElementById('quizCard');
+    const dailyQuizLabel = document.querySelector('.daily-mini-quiz-label');
+    const dailyQuizOptions = document.getElementById('dailyQuizOptions');
+    const dailyQuizFeedback = document.getElementById('dailyQuizFeedback');
 
     // ─── Daily Quotes ───
     const DAILY_QUOTES = [
@@ -2851,7 +2854,43 @@
         : quiz.explanation;
     }
 
-    function initDaily() {
+    async function fetchDailyQuiz(entry) {
+      const todayKey = `${new Date().toISOString().slice(0, 10)}:${entry.id}`;
+      try {
+        const cached = JSON.parse(localStorage.getItem(`ok_daily_quiz_${todayKey}`) || 'null');
+        if (cached?.quiz) return cached.quiz;
+      } catch {}
+
+      try {
+        const res = await fetch('/api/daily-quiz', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ entry })
+        });
+        if (!res.ok) throw new Error('Daily quiz API error');
+        const data = await res.json();
+        if (!data?.quiz) throw new Error('Missing quiz payload');
+        localStorage.setItem(`ok_daily_quiz_${todayKey}`, JSON.stringify(data));
+        return data.quiz;
+      } catch (err) {
+        console.error('Daily quiz API failed, using local fallback:', err);
+        return buildDailyQuiz(entry);
+      }
+    }
+
+    function renderDailyQuiz(quiz) {
+      dailyQuizFeedback.classList.remove('visible');
+      dailyQuizFeedback.textContent = '';
+      dailyQuizLabel.textContent = quiz.prompt;
+      dailyQuizOptions.innerHTML = quiz.options.map((option, index) => `
+        <button class="daily-quiz-option" data-index="${index}" type="button">${escapeHtml(option.text)}</button>
+      `).join('');
+      document.querySelectorAll('.daily-quiz-option').forEach(button => {
+        button.addEventListener('click', () => answerDailyQuiz(button, quiz));
+      });
+    }
+
+    async function initDaily() {
       const dailyEntries = getQuizReadyEntries();
       const dailyIdx = getDailyIndex(dailyEntries.length);
       const entry = normalizeExpressionEntry(dailyEntries[dailyIdx]);
@@ -2869,14 +2908,14 @@
       document.getElementById('dailyDifficulty').className = `difficulty-badge ${diffClass}`;
       document.getElementById('dailyDifficulty').innerHTML = `<span class="difficulty-dot"></span>${entry.difficulty || 'beginner'}`;
 
-      const dailyQuiz = buildDailyQuiz(entry);
-      document.querySelector('.daily-mini-quiz-label').textContent = dailyQuiz.prompt;
-      document.getElementById('dailyQuizOptions').innerHTML = dailyQuiz.options.map((option, index) => `
-        <button class="daily-quiz-option" data-index="${index}" type="button">${escapeHtml(option.text)}</button>
-      `).join('');
-      document.querySelectorAll('.daily-quiz-option').forEach(button => {
-        button.addEventListener('click', () => answerDailyQuiz(button, dailyQuiz));
-      });
+      dailyQuizLabel.textContent = '오늘의 10초 퀴즈를 불러오는 중입니다.';
+      dailyQuizOptions.innerHTML = `
+        <button class="daily-quiz-option" type="button" disabled>짧은 대화를 검토하고 있어요.</button>
+        <button class="daily-quiz-option" type="button" disabled>자연스러운 빈칸 문제를 준비 중입니다.</button>
+        <button class="daily-quiz-option" type="button" disabled>잠시만 기다려 주세요.</button>
+      `;
+      const dailyQuiz = await fetchDailyQuiz(entry);
+      renderDailyQuiz(dailyQuiz);
 
       document.getElementById('dailyWatchBtn').addEventListener('click', () => {
         window.open(entry.reel_url, '_blank');

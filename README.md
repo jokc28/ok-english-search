@@ -66,7 +66,7 @@ python3 -m http.server 8001 -d public
 
 확인 URL: `http://localhost:8001/`
 
-AI 검색 API까지 확인하려면 Vercel 환경변수 `OPENAI_API_KEY`가 설정된 상태에서 Vercel 배포본 또는 `vercel dev`를 사용하세요.
+AI 검색 API와 Daily Quiz 생성/검증 API까지 확인하려면 Vercel 환경변수 `OPENAI_API_KEY`가 설정된 상태에서 Vercel 배포본 또는 `vercel dev`를 사용하세요. GitHub Pages처럼 정적 호스팅만 있는 환경에서는 Daily Quiz가 로컬 fallback 로직으로 동작합니다.
 
 ## Tag Convention
 
