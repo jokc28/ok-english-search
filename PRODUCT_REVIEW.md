@@ -31,11 +31,14 @@ The optimized quiz flow is based on three learning-science patterns:
 1. **Retrieval practice:** the learner has to recall or choose an answer before seeing the explanation. Roediger and Karpicke found delayed retention was stronger after testing than after repeated study.
 2. **Distributed review:** missed expressions are stored locally and can be replayed later through the 오답 mode instead of being forgotten after one session.
 3. **Interleaving:** 혼합 mode rotates typed recall, meaning recognition, and situation recognition so users do not memorize one cue shape only.
+4. **No answer leakage:** recognition questions now show only the English expression before answer selection. Meaning and situation details are revealed after the attempt, because showing "big man" with "용서할 때" turns the question into guessing from a giveaway cue.
+5. **Plausible distractors:** multiple-choice options are pulled first from the same category and difficulty, then widened only when needed. This follows common MCQ design guidance: distractors should be plausible, homogeneous, and free of giveaway clues.
 
 Relevant sources:
 
 - Roediger & Karpicke, 2006, "Test-enhanced learning: taking memory tests improves long-term retention" (`https://pubmed.ncbi.nlm.nih.gov/16507066/`)
 - Dunlosky et al., 2013, "Improving Students' Learning With Effective Learning Techniques" (`https://www.psychologicalscience.org/publications/journals/pspi/learning-techniques.html`)
+- NC State DELTA, "Best Practices for Creating Multiple-Choice Questions" (`https://teaching-resources.delta.ncsu.edu/multiplechoice/`)
 
 ## Recommended Next Features
 

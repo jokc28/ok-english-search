@@ -926,6 +926,13 @@
       margin-bottom: 16px;
     }
 
+    .quiz-cue-note {
+      color: var(--text-secondary);
+      font-size: 13px;
+      line-height: 1.45;
+      margin-bottom: 16px;
+    }
+
     .quiz-hint-stack {
       display: grid;
       gap: 8px;
@@ -1015,6 +1022,11 @@
 
     .quiz-feedback.visible {
       display: block;
+    }
+
+    .quiz-feedback .quiz-hint-stack {
+      margin-top: 10px;
+      margin-bottom: 10px;
     }
 
     .quiz-action-row {
@@ -1223,7 +1235,7 @@
       <div class="quiz-shell">
         <div class="quiz-intro">
           <h2>릴스 표현을 기억에서 꺼내보세요</h2>
-          <p>뜻 고르기, 상황 고르기, 직접 입력을 섞어 짧게 풀고 틀린 표현은 오답 큐에 남깁니다.</p>
+          <p>문제 안에서 답을 흘리지 않도록 한 번에 하나의 단서만 보고 풀고, 틀린 표현은 오답 큐에 남깁니다.</p>
           <div class="quiz-controls">
             <select class="quiz-select" id="quizCategorySelect" aria-label="퀴즈 카테고리"></select>
             <div class="quiz-mode-row" role="group" aria-label="퀴즈 모드">
@@ -1250,7 +1262,7 @@
 
         <div class="product-note">
           <h3>퀴즈 설계</h3>
-          <p>혼합 모드는 쉬운 선택형과 어려운 입력형을 번갈아 내고, 정답 직후 설명과 릴스 링크를 보여줘 바로 복습하게 만듭니다.</p>
+          <p>혼합 모드는 입력형과 선택형을 번갈아 내고, 선택지는 같은 카테고리와 난이도에서 먼저 골라 찍기보다 기억을 쓰게 만듭니다.</p>
         </div>
       </div>
     </section>
@@ -1634,15 +1646,40 @@
       return quizState.mode;
     }
 
+    function getDistractorCandidates(entry, pool, field) {
+      const seen = new Set([entry[field]]);
+      const tiers = [
+        pool.filter(item => item.id !== entry.id && item.category === entry.category && item.difficulty === entry.difficulty),
+        pool.filter(item => item.id !== entry.id && item.category === entry.category),
+        pool.filter(item => item.id !== entry.id && item.difficulty === entry.difficulty),
+        pool.filter(item => item.id !== entry.id)
+      ];
+      const candidates = [];
+
+      tiers.forEach(tier => {
+        shuffle(tier).forEach(item => {
+          if (!item[field] || seen.has(item[field]) || candidates.length >= 3) return;
+          seen.add(item[field]);
+          candidates.push(item);
+        });
+      });
+
+      return candidates;
+    }
+
+    function buildRecallQuestion(entry, index) {
+      const cueType = index % 2 === 0 ? 'meaning' : 'situation';
+      const cueText = cueType === 'meaning' ? entry.expression_meaning_kr : entry.situation_kr;
+      return { entry, type: 'recall', options: [], cueType, cueText };
+    }
+
     function buildMultipleChoiceQuestion(entry, pool, type) {
       const field = type === 'situation' ? 'situation_kr' : 'expression_meaning_kr';
-      const distractors = shuffle(pool.filter(item =>
-        item.id !== entry.id && item[field] && item[field] !== entry[field]
-      )).slice(0, 3);
+      const distractors = getDistractorCandidates(entry, pool, field);
       const options = shuffle([entry, ...distractors].map(item => item[field]));
 
       if (options.length < 2) {
-        return { entry, type: 'recall', options: [] };
+        return buildRecallQuestion(entry, 0);
       }
       return { entry, type, options };
     }
@@ -1654,7 +1691,7 @@
         ...quizState,
         deck: selected.map((entry, index) => {
           const type = getQuizQuestionType(index);
-          if (type === 'recall') return { entry, type, options: [] };
+          if (type === 'recall') return buildRecallQuestion(entry, index);
           return buildMultipleChoiceQuestion(entry, pool, type);
         }),
         index: 0,
@@ -1715,11 +1752,11 @@
       quizMeterFill.style.width = `${(quizState.index / quizState.deck.length) * 100}%`;
 
       if (current.type === 'recall') {
+        const cueLabel = current.cueType === 'meaning' ? '뜻' : '상황';
         quizCard.innerHTML = `
           <div class="quiz-prompt-label">영어 표현을 직접 입력하세요</div>
           <div class="quiz-hint-stack">
-            <div class="quiz-hint"><strong>뜻</strong><br>${escapeHtml(entry.expression_meaning_kr)}</div>
-            <div class="quiz-hint"><strong>상황</strong><br>${escapeHtml(entry.situation_kr)}</div>
+            <div class="quiz-hint"><strong>${cueLabel}</strong><br>${escapeHtml(current.cueText)}</div>
           </div>
           <input class="quiz-recall-input" id="quizRecallInput" autocomplete="off" autocapitalize="none" spellcheck="false" placeholder="English expression">
           <div class="quiz-action-row">
@@ -1738,11 +1775,13 @@
       }
 
       const label = current.type === 'situation' ? '쓸 수 있는 상황을 고르세요' : '뜻을 고르세요';
-      const support = current.type === 'situation' ? entry.expression_meaning_kr : entry.situation_kr;
+      const cueNote = current.type === 'situation'
+        ? '표현만 보고 어느 상황에서 쓰는지 먼저 떠올린 뒤 고르세요.'
+        : '표현만 보고 한국어 뜻을 먼저 떠올린 뒤 고르세요.';
       quizCard.innerHTML = `
         <div class="quiz-prompt-label">${label}</div>
         <div class="quiz-expression">${escapeHtml(entry.expression_en)}</div>
-        <div class="quiz-situation">${escapeHtml(support)}</div>
+        <div class="quiz-cue-note">${escapeHtml(cueNote)}</div>
         <div class="quiz-options">
           ${current.options.map((option, index) => `
             <button class="quiz-option" data-index="${index}">${escapeHtml(option)}</button>
@@ -1795,6 +1834,10 @@
       feedback.classList.add('visible');
       feedback.innerHTML = `
         <strong>${isCorrect ? '정답입니다.' : `정답은 ${escapeHtml(correct)} 입니다.`}</strong><br>
+        <div class="quiz-hint-stack">
+          <div class="quiz-hint"><strong>뜻</strong><br>${escapeHtml(entry.expression_meaning_kr)}</div>
+          <div class="quiz-hint"><strong>상황</strong><br>${escapeHtml(entry.situation_kr)}</div>
+        </div>
         ${escapeHtml(entry.description_kr)}
         <div class="quiz-action-row">
           <button class="quiz-secondary-btn" id="quizWatchBtn">릴스 보기</button>
