@@ -62,7 +62,10 @@ Return ONLY a valid JSON object (no markdown, no backticks):
   "confidence": "high if transcript clearly shows the expression, low if guessing"
 }}
 
-CRITICAL: The transcript is the TRUTH. Follow it over the caption. Do NOT hallucinate expressions."""
+CRITICAL: The transcript is the TRUTH. Follow it over the caption. Do NOT hallucinate expressions.
+QUALITY: Double-check exact spelling, idiom wording, and standard usage before returning expression_en.
+QUALITY: Do not confuse similar-looking words. For hidden identity/appearance, use "disguise", never "despise".
+QUALITY: If the expression is an idiom, return the standard native-speaker form exactly."""
 
     try:
         response = client.chat.completions.create(

@@ -2722,10 +2722,10 @@ const REELS_DATA = [
   },
   {
     "id": 129,
-    "expression_en": "friend in despise",
+    "expression_en": "friend in disguise",
     "expression_meaning_kr": "위장 친구",
     "situation_kr": "위장 친구가 있을 때",
-    "description_kr": "'despise'는 경멸하다라는 뜻이야. 위장 친구를 표현할 때 유용해.",
+    "description_kr": "friend in disguise는 겉으로는 친구처럼 보이지만 실제 의도나 정체가 다른 사람을 말할 때 써요.",
     "category": "일상대화",
     "search_keywords_kr": [
       "위장 친구",
@@ -2735,7 +2735,9 @@ const REELS_DATA = [
     ],
     "search_keywords_en": [
       "fake friend",
-      "friend zone"
+      "friend zone",
+      "friend in disguise",
+      "disguise"
     ],
     "difficulty": "intermediate",
     "reel_url": "https://www.instagram.com/reel/DIs-wCQzCAq/",

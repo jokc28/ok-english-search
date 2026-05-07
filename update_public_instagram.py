@@ -159,6 +159,12 @@ If this Reel teaches a specific English expression, return only JSON:
 
 If it is promotional, app recommendation, subscriber intro, or not an expression lesson, return:
 {{"include": false}}
+
+Quality rules:
+- Double-check exact spelling, idiom wording, and standard English usage before returning expression_en.
+- Do not confuse similar-looking words. For example, use "disguise" for hidden identity/appearance, never "despise".
+- If the expression is an idiom, return the standard idiom exactly as native speakers use it.
+- Keep descriptions practical and natural; do not explain the wrong word or a typo.
 """
     data = http_json(
         "https://api.openai.com/v1/chat/completions",

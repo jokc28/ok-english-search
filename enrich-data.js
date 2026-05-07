@@ -67,7 +67,10 @@ Return ONLY a valid JSON object (no markdown, no backticks, no explanation) with
 Important:
 - If the raw data is too vague to determine the English expression (e.g. just a Korean teaser like "이건 영어로 뭐라고 할까?"), try to infer from context. If truly impossible, set expression_en to "" and note the original caption in description_kr.
 - search_keywords should include words a real Korean person would type when they're stuck and looking for this expression.
-- Keep all Korean text natural and concise. No formal/stiff language.`;
+- Keep all Korean text natural and concise. No formal/stiff language.
+- Validate exact spelling, idiom wording, and standard English usage before returning expression_en.
+- Do not confuse similar-looking words. For hidden identity/appearance, use "disguise", never "despise".
+- If expression_en is an idiom, return the standard native-speaker form exactly and do not explain a typo or nonstandard phrase.`;
 
   const response = await fetch(API_URL, {
     method: 'POST',

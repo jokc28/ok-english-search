@@ -331,6 +331,7 @@
       color: var(--text-secondary);
       font-size: 13px;
       line-height: 1.5;
+      white-space: pre-line;
     }
 
     .daily-mini-quiz {
@@ -344,6 +345,7 @@
       font-size: 13px;
       font-weight: 900;
       line-height: 1.45;
+      white-space: pre-line;
     }
 
     #dailyQuizOptions {
@@ -362,6 +364,7 @@
       font-weight: 800;
       text-align: left;
       cursor: pointer;
+      white-space: pre-line;
     }
 
     .daily-quiz-option.correct {
@@ -382,6 +385,7 @@
       font-size: 13px;
       line-height: 1.5;
       margin-top: 4px;
+      white-space: pre-line;
     }
 
     .daily-quiz-feedback.visible {
@@ -1405,10 +1409,6 @@
           <strong>사용 예문</strong>
           <p id="dailyExample"></p>
         </div>
-        <div class="daily-lesson-block">
-          <strong>직역 주의</strong>
-          <p id="dailyAvoid"></p>
-        </div>
       </div>
       <div class="daily-mini-quiz">
         <div class="daily-mini-quiz-label">오늘의 10초 퀴즈</div>
@@ -2259,7 +2259,9 @@
 
     // ─── Situation Practice ───
     function getQuizReadyEntries() {
-      return REELS_DATA.filter(entry => entry.expression_en && entry.expression_meaning_kr && entry.situation_kr);
+      return REELS_DATA
+        .filter(entry => entry.expression_en && entry.expression_meaning_kr && entry.situation_kr)
+        .map(normalizeExpressionEntry);
     }
 
     function getSituationScore(entry, group) {
@@ -2612,6 +2614,27 @@
     });
 
     // ─── Daily Feature ───
+    function normalizeExpressionEntry(entry) {
+      const normalized = { ...entry };
+      const expression = (normalized.expression_en || '').trim();
+
+      if (/friend in despise/i.test(expression)) {
+        normalized.expression_en = expression.replace(/friend in despise/ig, 'friend in disguise');
+        normalized.expression_meaning_kr = normalized.expression_meaning_kr || '위장 친구';
+        normalized.description_kr = 'friend in disguise는 겉으로는 친구처럼 보이지만 실제 의도나 정체가 다른 사람을 말할 때 써요.';
+        normalized.search_keywords_en = [...new Set([...(normalized.search_keywords_en || []), 'friend in disguise', 'disguise'])];
+      }
+
+      return normalized;
+    }
+
+    function formatDailySentences(text) {
+      return String(text || '')
+        .replace(/\s+/g, ' ')
+        .replace(/([.!?])\s+(?=[A-Z"“])/g, '$1\n')
+        .trim();
+    }
+
     function getDailyContext(entry) {
       const haystack = [
         entry.expression_en,
@@ -2627,8 +2650,7 @@
         return {
           scene: 'You are ordering with a friend during a busy lunch break.',
           setup: 'A: The line is moving fast. What should I say?',
-          response: `B: Keep it simple: "${entry.expression_en}"`,
-          avoid: 'Do not translate the Korean order word by word. Use the whole phrase in the moment.'
+          response: `B: Keep it simple: "${entry.expression_en}"`
         };
       }
 
@@ -2636,8 +2658,7 @@
         return {
           scene: 'You are speaking to staff while traveling.',
           setup: 'A: I need to sound clear and polite here.',
-          response: `B: This is the kind of line you can use: "${entry.expression_en}"`,
-          avoid: 'Avoid over-explaining. Travel English works best when the request is short and direct.'
+          response: `B: This is the kind of line you can use: "${entry.expression_en}"`
         };
       }
 
@@ -2645,8 +2666,7 @@
         return {
           scene: 'You need to ask someone for help without sounding too demanding.',
           setup: 'A: I do not want to sound pushy.',
-          response: `B: Open with "${entry.expression_en}" and then add the specific request.`,
-          avoid: 'Do not make the request too blunt. Let the expression soften the ask first.'
+          response: `B: Open with "${entry.expression_en}" and then add the specific request.`
         };
       }
 
@@ -2654,8 +2674,7 @@
         return {
           scene: 'A friend is opening up about how they feel.',
           setup: 'A: I want to respond naturally, not like a textbook.',
-          response: `B: You could say, "${entry.expression_en}", then ask one follow-up question.`,
-          avoid: 'Do not flatten the emotion into a literal Korean translation. Match the feeling first.'
+          response: `B: You could say, "${entry.expression_en}", then ask one follow-up question.`
         };
       }
 
@@ -2663,8 +2682,7 @@
         return {
           scene: 'You are reacting to someone’s opinion in a real conversation.',
           setup: 'A: I want my response to sound natural, not stiff.',
-          response: `B: "${entry.expression_en}" works when the tone matches the situation.`,
-          avoid: 'Pay attention to tone. Some reactions sound sincere, sarcastic, or dismissive depending on delivery.'
+          response: `B: "${entry.expression_en}" works when the tone matches the situation.`
         };
       }
 
@@ -2672,8 +2690,7 @@
         return {
           scene: 'You are choosing between similar English words or expressions.',
           setup: 'A: These look similar, but I need the right one.',
-          response: `B: Focus on the difference first: "${entry.expression_en}"`,
-          avoid: 'Do not memorize the pair as one chunk. Separate the role or nuance of each side.'
+          response: `B: Focus on the difference first: "${entry.expression_en}"`
         };
       }
 
@@ -2681,16 +2698,14 @@
         return {
           scene: 'You are trying to keep a casual conversation going.',
           setup: 'A: I want to ask something that sounds friendly.',
-          response: `B: Try "${entry.expression_en}" and keep your tone light.`,
-          avoid: 'Do not turn small talk into an interview. Ask it casually and be ready to share your answer too.'
+          response: `B: Try "${entry.expression_en}" and keep your tone light.`
         };
       }
 
       return {
         scene: `A real conversation where this situation comes up: ${entry.situation_kr}`,
         setup: 'A: I need a natural English line here.',
-        response: `B: "${entry.expression_en}" fits this moment.`,
-        avoid: 'Avoid translating each Korean word separately. Learn the expression as a full conversational move.'
+        response: `B: "${entry.expression_en}" fits this moment.`
       };
     }
 
@@ -2700,35 +2715,35 @@
 
       if (isContrastLesson(entry)) {
         const question = buildContrastQuestion(entry, getQuizReadyEntries(), getDailyIndex(2));
-        return `${buildContrastUsageExample(question.term, question.correct, true)} ${question.pairedTerm ? buildContrastUsageExample(question.pairedTerm, question.pairedMeaning, true) : ''}`.trim();
+        return formatDailySentences(`${buildContrastUsageExample(question.term, question.correct, true)} ${question.pairedTerm ? buildContrastUsageExample(question.pairedTerm, question.pairedMeaning, true) : ''}`.trim());
+      }
+
+      if (/friend in disguise/i.test(expression)) {
+        return 'A: I thought he was just being friendly.\nB: Be careful. He might be a friend in disguise.';
       }
 
       if (expression.endsWith('?')) {
-        return `${context.setup} B: "${expression}"`;
+        return formatDailySentences(`${context.setup} B: "${expression}"`);
       }
 
       if (/^(i|i'm|i’ve|we|she|he|they|that|it|it's|there)\b/i.test(expression)) {
-        return `A: What would sound natural here? B: "${expression}"`;
+        return formatDailySentences(`A: What would sound natural here? B: "${expression}"`);
       }
 
       if (/^[a-z]+$/i.test(expression)) {
-        return `A: How would you describe it? B: Honestly, "${expression}" is the word I’d use.`;
+        return formatDailySentences(`A: How would you describe it? B: Honestly, "${expression}" is the word I’d use.`);
       }
 
       if (/^(for|with|to|at|on|in|by|from|whether)\b/i.test(expression)) {
-        return `A: What phrase would fit this moment? B: "${expression}"`;
+        return formatDailySentences(`A: What phrase would fit this moment? B: "${expression}"`);
       }
 
       if (/^[a-z]/.test(expression)) {
         const adapted = expression.replace(/\byourself\b/i, 'myself');
-        return `I’m trying to ${adapted} before the day gets too busy.`;
+        return formatDailySentences(`I’m trying to ${adapted} before the day gets too busy.`);
       }
 
-      return `${context.setup} B: "${expression}"`;
-    }
-
-    function buildDailyAvoidNote(entry) {
-      return getDailyContext(entry).avoid;
+      return formatDailySentences(`${context.setup} B: "${expression}"`);
     }
 
     function buildDailyQuiz(entry) {
@@ -2758,15 +2773,15 @@
       ]);
 
       return {
-        prompt: `오늘 표현은 어떤 새 상황에서 가장 자연스럽게 쓰일까요?`,
+        prompt: formatDailySentences(`오늘 표현은 어떤 새 상황에서 자연스럽게 쓰일까요? 아래 선택지를 읽고 가장 자연스러운 상황을 고르세요.`),
         options,
-        explanation: `"${entry.expression_en}" fits this kind of situation: ${context.scene}`
+        explanation: formatDailySentences(`"${entry.expression_en}" fits this kind of situation. ${context.scene}`)
       };
     }
 
     function buildDailyScenarioOption(entry) {
       const context = getDailyContext(entry);
-      return `${context.scene} ${context.setup}`;
+      return formatDailySentences(`${context.scene} ${context.setup}`);
     }
 
     function getDailyScenarioDistractors(entry, pool) {
@@ -2832,21 +2847,20 @@
       const feedback = document.getElementById('dailyQuizFeedback');
       feedback.classList.add('visible');
       feedback.textContent = isCorrect
-        ? `정답입니다. ${quiz.explanation}`
+        ? formatDailySentences(`정답입니다. ${quiz.explanation}`)
         : quiz.explanation;
     }
 
     function initDaily() {
       const dailyEntries = getQuizReadyEntries();
       const dailyIdx = getDailyIndex(dailyEntries.length);
-      const entry = dailyEntries[dailyIdx];
+      const entry = normalizeExpressionEntry(dailyEntries[dailyIdx]);
 
       document.getElementById('dailyExpression').textContent = entry.expression_en;
       document.getElementById('dailyMeaning').textContent = entry.expression_meaning_kr || '';
       document.getElementById('dailySituation').textContent = entry.situation_kr;
       document.getElementById('dailyDescription').textContent = entry.description_kr;
       document.getElementById('dailyExample').textContent = buildDailyExample(entry);
-      document.getElementById('dailyAvoid').textContent = buildDailyAvoidNote(entry);
 
       const cat = getCategoryInfo(entry.category);
       document.getElementById('dailyCategory').innerHTML = `${cat.emoji} ${escapeHtml(cat.label)}`;
