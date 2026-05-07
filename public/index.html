@@ -61,10 +61,16 @@
       --accent: #C2785C;
       --accent-soft: #F0DDD3;
       --accent-dark: #2C2825;
+      --study: #2F7D7E;
+      --study-soft: #E3F1F1;
+      --quiz: #5C65C2;
+      --quiz-soft: #EAECFF;
       --diff-beginner: #5B8C5A;
       --diff-intermediate: #C2785C;
       --diff-advanced: #8B5A6B;
       --success: #5B8C5A;
+      --danger: #B45A5A;
+      --shadow-card: 0 1px 3px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.03);
     }
 
     @media (prefers-color-scheme: dark) {
@@ -81,12 +87,21 @@
         --accent: #D4916F;
         --accent-soft: #3A2E28;
         --accent-dark: #EAE7E1;
+        --study: #7CC7C8;
+        --study-soft: #213333;
+        --quiz: #9CA4FF;
+        --quiz-soft: #282B48;
+        --danger: #E28D8D;
+        --shadow-card: 0 1px 3px rgba(0,0,0,0.25), 0 8px 24px rgba(0,0,0,0.18);
       }
     }
 
     body {
       font-family: 'Pretendard Variable', system-ui, -apple-system, sans-serif;
-      background-color: var(--bg);
+      background:
+        radial-gradient(circle at 16% -8%, rgba(47, 125, 126, 0.10), transparent 28%),
+        radial-gradient(circle at 92% 8%, rgba(92, 101, 194, 0.10), transparent 24%),
+        var(--bg);
       color: var(--text-primary);
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
@@ -107,6 +122,47 @@
       max-width: 480px;
       margin: 0 auto;
       padding: 0 20px 40px;
+    }
+
+    .hub-tabs {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+      padding: 6px;
+      margin: 0 -4px 16px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: color-mix(in srgb, var(--bg-card) 92%, transparent);
+      box-shadow: var(--shadow-card);
+      backdrop-filter: blur(16px);
+    }
+
+    .hub-tab {
+      min-height: 48px;
+      border: none;
+      border-radius: 12px;
+      background: transparent;
+      color: var(--text-secondary);
+      font-family: 'Pretendard Variable', system-ui, -apple-system, sans-serif;
+      font-size: 14px;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .hub-tab.active {
+      color: #FFFFFF;
+      background: var(--accent-dark);
+    }
+
+    .hub-tab[data-hub="quiz"].active {
+      background: var(--quiz);
+    }
+
+    .hub-panel.hidden {
+      display: none;
     }
 
     /* Header */
@@ -466,7 +522,7 @@
       border: 1px solid var(--border);
       border-radius: 16px;
       padding: 20px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.03);
+      box-shadow: var(--shadow-card);
       transition: transform 0.2s, box-shadow 0.2s;
       animation: cardIn 0.4s ease-out both;
     }
@@ -722,6 +778,193 @@
       opacity: 0.8;
     }
 
+    /* Quiz Hub */
+    .quiz-shell {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .quiz-intro,
+    .quiz-card,
+    .product-note {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 18px;
+      box-shadow: var(--shadow-card);
+    }
+
+    .quiz-intro h2 {
+      font-size: 20px;
+      line-height: 1.25;
+      margin-bottom: 8px;
+    }
+
+    .quiz-intro p,
+    .product-note p {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    .quiz-controls {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .quiz-select {
+      width: 100%;
+      min-height: 48px;
+      border: 1.5px solid var(--border);
+      border-radius: 12px;
+      background: var(--bg-subtle);
+      color: var(--text-primary);
+      padding: 0 12px;
+      font-family: 'Pretendard Variable', system-ui, -apple-system, sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .quiz-primary-btn,
+    .quiz-secondary-btn {
+      min-height: 48px;
+      border-radius: 12px;
+      border: none;
+      font-family: 'Pretendard Variable', system-ui, -apple-system, sans-serif;
+      font-size: 14px;
+      font-weight: 900;
+      cursor: pointer;
+    }
+
+    .quiz-primary-btn {
+      background: var(--quiz);
+      color: #FFFFFF;
+    }
+
+    .quiz-secondary-btn {
+      background: var(--quiz-soft);
+      color: var(--quiz);
+    }
+
+    .quiz-progress {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      font-size: 13px;
+      color: var(--text-secondary);
+      font-weight: 700;
+    }
+
+    .quiz-meter {
+      height: 8px;
+      flex: 1;
+      border-radius: 999px;
+      background: var(--bg-subtle);
+      overflow: hidden;
+    }
+
+    .quiz-meter-fill {
+      height: 100%;
+      width: 0;
+      border-radius: inherit;
+      background: var(--quiz);
+      transition: width 0.25s ease;
+    }
+
+    .quiz-prompt-label {
+      font-size: 12px;
+      color: var(--quiz);
+      font-weight: 900;
+      margin-bottom: 10px;
+    }
+
+    .quiz-expression {
+      font-family: 'DM Mono', monospace;
+      font-size: 22px;
+      line-height: 1.35;
+      margin-bottom: 10px;
+      word-break: break-word;
+    }
+
+    .quiz-situation {
+      color: var(--text-secondary);
+      font-size: 14px;
+      line-height: 1.5;
+      margin-bottom: 16px;
+    }
+
+    .quiz-options {
+      display: grid;
+      gap: 10px;
+    }
+
+    .quiz-option {
+      min-height: 52px;
+      border-radius: 12px;
+      border: 1.5px solid var(--border);
+      background: var(--bg-subtle);
+      color: var(--text-primary);
+      padding: 12px 14px;
+      text-align: left;
+      font-family: 'Pretendard Variable', system-ui, -apple-system, sans-serif;
+      font-size: 14px;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .quiz-option.correct {
+      border-color: var(--success);
+      background: color-mix(in srgb, var(--success) 14%, var(--bg-card));
+      color: var(--success);
+    }
+
+    .quiz-option.wrong {
+      border-color: var(--danger);
+      background: color-mix(in srgb, var(--danger) 12%, var(--bg-card));
+      color: var(--danger);
+    }
+
+    .quiz-feedback {
+      display: none;
+      margin-top: 14px;
+      padding: 14px;
+      border-radius: 12px;
+      background: var(--bg-warm);
+      color: var(--text-secondary);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .quiz-feedback.visible {
+      display: block;
+    }
+
+    .quiz-result {
+      text-align: center;
+      padding: 26px 16px;
+    }
+
+    .quiz-result-score {
+      font-size: 34px;
+      font-weight: 900;
+      color: var(--quiz);
+      margin-bottom: 8px;
+    }
+
+    .product-note {
+      border-color: color-mix(in srgb, var(--study) 30%, var(--border));
+      background: color-mix(in srgb, var(--study-soft) 56%, var(--bg-card));
+    }
+
+    .product-note h3 {
+      font-size: 15px;
+      margin-bottom: 6px;
+    }
+
     /* Highlight pulse */
     @keyframes highlightPulse {
       0%, 100% { box-shadow: 0 0 0 0 rgba(194, 120, 92, 0); }
@@ -801,8 +1044,8 @@
     <header class="header">
       <div class="logo"><span>옥</span></div>
       <div class="header-info">
-        <h1>표현 사전</h1>
-        <p>상황별 영어 표현 · <a href="https://www.instagram.com/ok.english.kr/" target="_blank" rel="noopener noreferrer">@ok.english.kr</a></p>
+        <h1>옥쌤 영어 허브</h1>
+        <p>퀴즈와 표현 사전 · <a href="https://www.instagram.com/ok.english.kr/" target="_blank" rel="noopener noreferrer">@ok.english.kr</a></p>
       </div>
       <button class="header-bookmark-btn" id="headerBookmarkBtn" aria-label="저장한 표현 보기">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -832,37 +1075,70 @@
       <p id="dailyQuote"></p>
     </div>
 
-    <!-- Search -->
-    <div class="search-wrap">
-      <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
-      </svg>
-      <input type="text" class="search-input" id="searchInput" placeholder="어떤 상황에서 뭐라고 하면 될까요?">
-      <button class="search-clear" id="clearBtn" aria-label="검색어 지우기">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
-          <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+    <div class="hub-tabs" role="tablist" aria-label="학습 허브">
+      <button class="hub-tab active" data-hub="dictionary" role="tab" aria-selected="true">표현 사전</button>
+      <button class="hub-tab" data-hub="quiz" role="tab" aria-selected="false">퀴즈 허브</button>
+    </div>
+
+    <section class="hub-panel" id="dictionaryHub">
+      <!-- Search -->
+      <div class="search-wrap">
+        <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
         </svg>
-      </button>
-    </div>
-    <div class="llm-indicator" id="llmIndicator">
-      <span class="llm-dot"></span>
-      <span>AI가 찾고 있어요...</span>
-    </div>
+        <input type="text" class="search-input" id="searchInput" placeholder="어떤 상황에서 뭐라고 하면 될까요?">
+        <button class="search-clear" id="clearBtn" aria-label="검색어 지우기">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+            <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+      </div>
+      <div class="llm-indicator" id="llmIndicator">
+        <span class="llm-dot"></span>
+        <span>AI가 찾고 있어요...</span>
+      </div>
 
-    <!-- Category Filter -->
-    <div class="tags-row" id="tagsRow"></div>
-    <div class="category-count" id="categoryCount"></div>
+      <!-- Category Filter -->
+      <div class="tags-row" id="tagsRow"></div>
+      <div class="category-count" id="categoryCount"></div>
 
-    <!-- Result Count & Sort -->
-    <div class="result-bar">
-      <div class="result-count" id="resultCount"></div>
-      <button class="sort-toggle" id="sortToggle">
-        <span class="active">최신순</span> / <span>가나다순</span>
-      </button>
-    </div>
+      <!-- Result Count & Sort -->
+      <div class="result-bar">
+        <div class="result-count" id="resultCount"></div>
+        <button class="sort-toggle" id="sortToggle">
+          <span class="active">최신순</span> / <span>가나다순</span>
+        </button>
+      </div>
 
-    <!-- Card List -->
-    <div class="card-list" id="cardList"></div>
+      <!-- Card List -->
+      <div class="card-list" id="cardList"></div>
+    </section>
+
+    <section class="hub-panel hidden" id="quizHub">
+      <div class="quiz-shell">
+        <div class="quiz-intro">
+          <h2>지난 릴스 표현을 바로 테스트하세요</h2>
+          <p>표현을 찾아보는 흐름에서 한 단계 더 나아가, 의미를 맞히고 바로 릴스로 복습하는 모바일 퀴즈 허브입니다.</p>
+          <div class="quiz-controls">
+            <select class="quiz-select" id="quizCategorySelect" aria-label="퀴즈 카테고리"></select>
+            <button class="quiz-primary-btn" id="quizStartBtn">5문제 시작</button>
+          </div>
+        </div>
+
+        <div class="quiz-progress" id="quizProgress" hidden>
+          <span id="quizStepText"></span>
+          <div class="quiz-meter" aria-hidden="true"><div class="quiz-meter-fill" id="quizMeterFill"></div></div>
+          <span id="quizScoreText"></span>
+        </div>
+
+        <div class="quiz-card" id="quizCard"></div>
+
+        <div class="product-note">
+          <h3>다음 성장 포인트</h3>
+          <p>퀴즈 결과를 인스타 스토리 공유 이미지로 만들면, 학습 성취와 브랜드 노출이 동시에 일어납니다.</p>
+        </div>
+      </div>
+    </section>
 
     <!-- Footer -->
     <footer class="footer">
@@ -891,8 +1167,18 @@
     let sortMode = 'date'; // 'date' or 'alpha'
     let llmTimer = null;
     let currentResults = null;
+    let activeHub = 'dictionary';
+    let quizState = {
+      deck: [],
+      index: 0,
+      score: 0,
+      answered: false
+    };
 
     // ─── DOM ───
+    const hubTabs = document.querySelectorAll('.hub-tab');
+    const dictionaryHub = document.getElementById('dictionaryHub');
+    const quizHub = document.getElementById('quizHub');
     const searchInput = document.getElementById('searchInput');
     const clearBtn = document.getElementById('clearBtn');
     const tagsRow = document.getElementById('tagsRow');
@@ -904,6 +1190,13 @@
     const headerBookmarkBtn = document.getElementById('headerBookmarkBtn');
     const bottomBar = document.getElementById('bottomBar');
     const bottomBarClose = document.getElementById('bottomBarClose');
+    const quizCategorySelect = document.getElementById('quizCategorySelect');
+    const quizStartBtn = document.getElementById('quizStartBtn');
+    const quizProgress = document.getElementById('quizProgress');
+    const quizStepText = document.getElementById('quizStepText');
+    const quizScoreText = document.getElementById('quizScoreText');
+    const quizMeterFill = document.getElementById('quizMeterFill');
+    const quizCard = document.getElementById('quizCard');
 
     // ─── Daily Quotes ───
     const DAILY_QUOTES = [
@@ -955,6 +1248,27 @@
     function escapeHtml(str) {
       if (!str) return '';
       return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
+
+    function shuffle(items) {
+      const arr = [...items];
+      for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+      }
+      return arr;
+    }
+
+    function switchHub(hub) {
+      activeHub = hub;
+      hubTabs.forEach(tab => {
+        const isActive = tab.dataset.hub === hub;
+        tab.classList.toggle('active', isActive);
+        tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
+      });
+      dictionaryHub.classList.toggle('hidden', hub !== 'dictionary');
+      quizHub.classList.toggle('hidden', hub !== 'quiz');
+      if (hub === 'quiz') renderQuiz();
     }
 
     // ─── Bookmarks ───
@@ -1112,6 +1426,130 @@
         });
       }
       trackShare(entry);
+    }
+
+    // ─── Quiz Hub ───
+    function initQuizCategorySelect() {
+      const options = [
+        '<option value="">전체 표현</option>',
+        ...CATEGORIES.map(cat => `<option value="${escapeHtml(cat.id)}">${cat.emoji} ${escapeHtml(cat.label)}</option>`)
+      ];
+      quizCategorySelect.innerHTML = options.join('');
+    }
+
+    function getQuizPool() {
+      const category = quizCategorySelect.value;
+      return REELS_DATA.filter(entry => {
+        if (!entry.expression_en || !entry.expression_meaning_kr) return false;
+        if (category && entry.category !== category) return false;
+        return true;
+      });
+    }
+
+    function buildQuizDeck() {
+      const pool = getQuizPool();
+      const selected = shuffle(pool).slice(0, Math.min(5, pool.length));
+      quizState = {
+        deck: selected.map(entry => {
+          const distractors = shuffle(pool.filter(item =>
+            item.id !== entry.id && item.expression_meaning_kr && item.expression_meaning_kr !== entry.expression_meaning_kr
+          )).slice(0, 3);
+          const options = shuffle([entry, ...distractors].map(item => item.expression_meaning_kr));
+          return { entry, options };
+        }),
+        index: 0,
+        score: 0,
+        answered: false
+      };
+      renderQuiz();
+    }
+
+    function renderQuiz() {
+      const pool = getQuizPool();
+      if (!quizState.deck.length) {
+        quizProgress.hidden = true;
+        quizCard.innerHTML = `
+          <div class="quiz-result">
+            <div class="quiz-result-score">${pool.length}</div>
+            <p>선택한 범위에서 퀴즈로 풀 수 있는 표현입니다.</p>
+          </div>`;
+        quizStartBtn.disabled = pool.length < 4;
+        quizStartBtn.textContent = pool.length < 4 ? '표현이 부족해요' : '5문제 시작';
+        return;
+      }
+
+      if (quizState.index >= quizState.deck.length) {
+        const percent = Math.round((quizState.score / quizState.deck.length) * 100);
+        quizProgress.hidden = true;
+        quizCard.innerHTML = `
+          <div class="quiz-result">
+            <div class="quiz-result-score">${quizState.score}/${quizState.deck.length}</div>
+            <p>${percent >= 80 ? '잘 기억하고 있어요.' : '릴스로 한 번 더 복습해보세요.'}</p>
+            <button class="quiz-primary-btn" id="quizRestartBtn">다시 풀기</button>
+          </div>`;
+        document.getElementById('quizRestartBtn').addEventListener('click', buildQuizDeck);
+        return;
+      }
+
+      const current = quizState.deck[quizState.index];
+      const entry = current.entry;
+      quizProgress.hidden = false;
+      quizStepText.textContent = `${quizState.index + 1}/${quizState.deck.length}`;
+      quizScoreText.textContent = `${quizState.score}점`;
+      quizMeterFill.style.width = `${(quizState.index / quizState.deck.length) * 100}%`;
+
+      quizCard.innerHTML = `
+        <div class="quiz-prompt-label">뜻을 고르세요</div>
+        <div class="quiz-expression">${escapeHtml(entry.expression_en)}</div>
+        <div class="quiz-situation">${escapeHtml(entry.situation_kr)}</div>
+        <div class="quiz-options">
+          ${current.options.map((option, index) => `
+            <button class="quiz-option" data-index="${index}">${escapeHtml(option)}</button>
+          `).join('')}
+        </div>
+        <div class="quiz-feedback" id="quizFeedback"></div>`;
+
+      quizCard.querySelectorAll('.quiz-option').forEach(button => {
+        button.addEventListener('click', () => answerQuiz(button));
+      });
+    }
+
+    function answerQuiz(button) {
+      if (quizState.answered) return;
+      quizState.answered = true;
+      const current = quizState.deck[quizState.index];
+      const selected = current.options[parseInt(button.dataset.index)];
+      const correct = current.entry.expression_meaning_kr;
+      const isCorrect = selected === correct;
+      if (isCorrect) quizState.score += 1;
+
+      quizCard.querySelectorAll('.quiz-option').forEach(optionBtn => {
+        const option = current.options[parseInt(optionBtn.dataset.index)];
+        optionBtn.classList.toggle('correct', option === correct);
+        optionBtn.classList.toggle('wrong', option === selected && !isCorrect);
+      });
+
+      const feedback = document.getElementById('quizFeedback');
+      feedback.classList.add('visible');
+      feedback.innerHTML = `
+        <strong>${isCorrect ? '정답입니다.' : `정답은 ${escapeHtml(correct)} 입니다.`}</strong><br>
+        ${escapeHtml(current.entry.description_kr)}
+        <div style="margin-top:12px;display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+          <button class="quiz-secondary-btn" id="quizWatchBtn">릴스 보기</button>
+          <button class="quiz-primary-btn" id="quizNextBtn">${quizState.index + 1 === quizState.deck.length ? '결과 보기' : '다음 문제'}</button>
+        </div>`;
+      document.getElementById('quizWatchBtn').addEventListener('click', () => {
+        window.open(current.entry.reel_url, '_blank');
+        trackWatch(current.entry);
+      });
+      document.getElementById('quizNextBtn').addEventListener('click', () => {
+        quizState.index += 1;
+        quizState.answered = false;
+        if (quizState.index >= quizState.deck.length) {
+          quizMeterFill.style.width = '100%';
+        }
+        renderQuiz();
+      });
     }
 
     // ─── Render ───
@@ -1394,6 +1832,17 @@
       localStorage.setItem('ok_bottom_bar_dismissed', Date.now().toString());
     });
 
+    hubTabs.forEach(tab => {
+      tab.addEventListener('click', () => switchHub(tab.dataset.hub));
+    });
+
+    quizStartBtn.addEventListener('click', buildQuizDeck);
+
+    quizCategorySelect.addEventListener('change', () => {
+      quizState = { deck: [], index: 0, score: 0, answered: false };
+      renderQuiz();
+    });
+
     // ─── Deep Linking ───
     function handleDeepLinks() {
       const params = new URLSearchParams(location.search);
@@ -1427,8 +1876,10 @@
     document.getElementById('footerCount').textContent = `총 ${REELS_DATA.length}개 표현 수록`;
 
     // ─── Init ───
+    initQuizCategorySelect();
     initDaily();
     render();
+    renderQuiz();
     handleDeepLinks();
     initBottomBar();
   </script>
