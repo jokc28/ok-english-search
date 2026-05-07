@@ -340,9 +340,10 @@
     }
 
     .daily-mini-quiz-label {
-      color: var(--accent);
-      font-size: 12px;
+      color: var(--text-primary);
+      font-size: 13px;
       font-weight: 900;
+      line-height: 1.45;
     }
 
     #dailyQuizOptions {
@@ -2611,43 +2612,228 @@
     });
 
     // ─── Daily Feature ───
-    function buildDailyExample(entry) {
-      if (entry.expression_en.trim().endsWith('?')) {
-        return `A: ${entry.expression_en}  B: 자연스럽게 답하면서 대화를 이어가세요.`;
+    function getDailyContext(entry) {
+      const haystack = [
+        entry.expression_en,
+        entry.expression_meaning_kr,
+        entry.situation_kr,
+        entry.description_kr,
+        entry.category,
+        ...(entry.search_keywords_kr || []),
+        ...(entry.search_keywords_en || [])
+      ].join(' ').toLowerCase();
+
+      if (/커피|카페|식당|맛집|음식|주문|ice|eat|breakfast/.test(haystack)) {
+        return {
+          scene: 'You are ordering with a friend during a busy lunch break.',
+          setup: 'A: The line is moving fast. What should I say?',
+          response: `B: Keep it simple: "${entry.expression_en}"`,
+          avoid: 'Do not translate the Korean order word by word. Use the whole phrase in the moment.'
+        };
       }
-      return `A: ${entry.situation_kr}  B: ${entry.expression_en}`;
+
+      if (/호텔|입국|조식|예약|여행|외출|declare|reservation/.test(haystack)) {
+        return {
+          scene: 'You are speaking to staff while traveling.',
+          setup: 'A: I need to sound clear and polite here.',
+          response: `B: This is the kind of line you can use: "${entry.expression_en}"`,
+          avoid: 'Avoid over-explaining. Travel English works best when the request is short and direct.'
+        };
+      }
+
+      if (/부탁|요청|도움|해줄|favor|ride|can you|can i/.test(haystack)) {
+        return {
+          scene: 'You need to ask someone for help without sounding too demanding.',
+          setup: 'A: I do not want to sound pushy.',
+          response: `B: Open with "${entry.expression_en}" and then add the specific request.`,
+          avoid: 'Do not make the request too blunt. Let the expression soften the ask first.'
+        };
+      }
+
+      if (/위로|감정|외로|괜찮|스트레스|기분|힘들|용기|lonely|stress/.test(haystack)) {
+        return {
+          scene: 'A friend is opening up about how they feel.',
+          setup: 'A: I want to respond naturally, not like a textbook.',
+          response: `B: You could say, "${entry.expression_en}", then ask one follow-up question.`,
+          avoid: 'Do not flatten the emotion into a literal Korean translation. Match the feeling first.'
+        };
+      }
+
+      if (/동의|의견|토론|맞장구|믿|respect|right|tracks/.test(haystack)) {
+        return {
+          scene: 'You are reacting to someone’s opinion in a real conversation.',
+          setup: 'A: I want my response to sound natural, not stiff.',
+          response: `B: "${entry.expression_en}" works when the tone matches the situation.`,
+          avoid: 'Pay attention to tone. Some reactions sound sincere, sarcastic, or dismissive depending on delivery.'
+        };
+      }
+
+      if (/헷갈|구분|차이|뉘앙스|발음|문법|vs|difference/.test(haystack) || isContrastLesson(entry)) {
+        return {
+          scene: 'You are choosing between similar English words or expressions.',
+          setup: 'A: These look similar, but I need the right one.',
+          response: `B: Focus on the difference first: "${entry.expression_en}"`,
+          avoid: 'Do not memorize the pair as one chunk. Separate the role or nuance of each side.'
+        };
+      }
+
+      if (/취미|첫인상|왜|물어볼|친구에게|스몰토크|question|impression/.test(haystack)) {
+        return {
+          scene: 'You are trying to keep a casual conversation going.',
+          setup: 'A: I want to ask something that sounds friendly.',
+          response: `B: Try "${entry.expression_en}" and keep your tone light.`,
+          avoid: 'Do not turn small talk into an interview. Ask it casually and be ready to share your answer too.'
+        };
+      }
+
+      return {
+        scene: `A real conversation where this situation comes up: ${entry.situation_kr}`,
+        setup: 'A: I need a natural English line here.',
+        response: `B: "${entry.expression_en}" fits this moment.`,
+        avoid: 'Avoid translating each Korean word separately. Learn the expression as a full conversational move.'
+      };
+    }
+
+    function buildDailyExample(entry) {
+      const context = getDailyContext(entry);
+      const expression = entry.expression_en.trim();
+
+      if (isContrastLesson(entry)) {
+        const question = buildContrastQuestion(entry, getQuizReadyEntries(), getDailyIndex(2));
+        return `${buildContrastUsageExample(question.term, question.correct, true)} ${question.pairedTerm ? buildContrastUsageExample(question.pairedTerm, question.pairedMeaning, true) : ''}`.trim();
+      }
+
+      if (expression.endsWith('?')) {
+        return `${context.setup} B: "${expression}"`;
+      }
+
+      if (/^(i|i'm|i’ve|we|she|he|they|that|it|it's|there)\b/i.test(expression)) {
+        return `A: What would sound natural here? B: "${expression}"`;
+      }
+
+      if (/^[a-z]+$/i.test(expression)) {
+        return `A: How would you describe it? B: Honestly, "${expression}" is the word I’d use.`;
+      }
+
+      if (/^(for|with|to|at|on|in|by|from|whether)\b/i.test(expression)) {
+        return `A: What phrase would fit this moment? B: "${expression}"`;
+      }
+
+      if (/^[a-z]/.test(expression)) {
+        const adapted = expression.replace(/\byourself\b/i, 'myself');
+        return `I’m trying to ${adapted} before the day gets too busy.`;
+      }
+
+      return `${context.setup} B: "${expression}"`;
     }
 
     function buildDailyAvoidNote(entry) {
-      if (isContrastLesson(entry)) {
-        return `${entry.expression_en}처럼 비교형 표현은 두 단어의 역할 차이를 먼저 구분하세요.`;
-      }
-      return `한국어 뜻을 단어별로 직역하기보다, "${entry.situation_kr}" 상황에서 통째로 꺼내 쓰세요.`;
+      return getDailyContext(entry).avoid;
     }
 
-    function buildDailyQuizOptions(entry) {
+    function buildDailyQuiz(entry) {
       const pool = getQuizReadyEntries();
-      const distractors = getDistractorCandidates(entry, pool, 'expression_meaning_kr').slice(0, 2);
-      return shuffle([entry.expression_meaning_kr, ...distractors.map(item => item.expression_meaning_kr)]);
+      const context = getDailyContext(entry);
+
+      if (isContrastLesson(entry)) {
+        const question = buildContrastQuestion(entry, pool, getDailyIndex(2));
+        const correctExample = buildContrastUsageExample(question.term, question.correct, true);
+        const wrongExample = buildContrastUsageExample(question.pairedTerm || question.term, question.pairedMeaning || question.correct, false);
+        return {
+          prompt: `${question.term}를 가장 자연스럽게 쓴 문장은 무엇인가요?`,
+          options: shuffle([
+            { text: correctExample, correct: true },
+            { text: wrongExample, correct: false },
+            { text: `I use "${question.term}" whenever two words look similar.`, correct: false }
+          ]),
+          explanation: `${question.term} = ${question.correct}${question.pairedTerm ? ` / ${question.pairedTerm} = ${question.pairedMeaning}` : ''}`
+        };
+      }
+
+      const distractors = getDailyScenarioDistractors(entry, pool);
+
+      const options = shuffle([
+        { text: buildDailyScenarioOption(entry), correct: true },
+        ...distractors.map(item => ({ text: buildDailyScenarioOption(item), correct: false }))
+      ]);
+
+      return {
+        prompt: `오늘 표현은 어떤 새 상황에서 가장 자연스럽게 쓰일까요?`,
+        options,
+        explanation: `"${entry.expression_en}" fits this kind of situation: ${context.scene}`
+      };
     }
 
-    function answerDailyQuiz(button, entry, options) {
-      const selected = options[parseInt(button.dataset.index)];
-      const correct = entry.expression_meaning_kr;
-      const isCorrect = selected === correct;
+    function buildDailyScenarioOption(entry) {
+      const context = getDailyContext(entry);
+      return `${context.scene} ${context.setup}`;
+    }
+
+    function getDailyScenarioDistractors(entry, pool) {
+      const correctText = buildDailyScenarioOption(entry);
+      const primary = shuffle(pool.filter(item =>
+        item.id !== entry.id &&
+        item.category !== entry.category &&
+        buildDailyScenarioOption(item) !== correctText
+      ));
+      const fallback = shuffle(pool.filter(item =>
+        item.id !== entry.id &&
+        buildDailyScenarioOption(item) !== correctText
+      ));
+
+      const seen = new Set([correctText]);
+      return [...primary, ...fallback].filter(item => {
+        const text = buildDailyScenarioOption(item);
+        if (seen.has(text)) return false;
+        seen.add(text);
+        return true;
+      }).slice(0, 2);
+    }
+
+    function buildContrastUsageExample(term, meaning, isTarget) {
+      const lowerMeaning = (meaning || '').toLowerCase();
+      const lowerTerm = (term || '').toLowerCase();
+
+      if (/affect/.test(lowerTerm) || /영향을 주다|동사/.test(lowerMeaning)) {
+        return `The new schedule can ${term} our weekend plans.`;
+      }
+      if (/effect/.test(lowerTerm) || /영향\\(결과\\)|결과|명사/.test(lowerMeaning)) {
+        return `The ${term} of the change was obvious right away.`;
+      }
+      if (/farther/.test(lowerTerm) || /물리|먼/.test(lowerMeaning)) {
+        return `The station is ${term} than I expected.`;
+      }
+      if (/further/.test(lowerTerm) || /추상|나아가/.test(lowerMeaning)) {
+        return `Let's discuss this ${term} after the meeting.`;
+      }
+      if (/can't you tell/.test(lowerTerm)) {
+        return `I got a haircut. Can't you tell?`;
+      }
+      if (/can you tell/.test(lowerTerm)) {
+        return `I changed the font a little. Can you tell?`;
+      }
+
+      return isTarget
+        ? `This is a natural place to use "${term}".`
+        : `This sentence sounds less natural with "${term}".`;
+    }
+
+    function answerDailyQuiz(button, quiz) {
+      const selected = quiz.options[parseInt(button.dataset.index)];
+      const isCorrect = selected.correct;
 
       document.querySelectorAll('.daily-quiz-option').forEach(optionBtn => {
-        const option = options[parseInt(optionBtn.dataset.index)];
+        const option = quiz.options[parseInt(optionBtn.dataset.index)];
         optionBtn.disabled = true;
-        optionBtn.classList.toggle('correct', option === correct);
+        optionBtn.classList.toggle('correct', option.correct);
         optionBtn.classList.toggle('wrong', option === selected && !isCorrect);
       });
 
       const feedback = document.getElementById('dailyQuizFeedback');
       feedback.classList.add('visible');
       feedback.textContent = isCorrect
-        ? '정답입니다. 아래 릴스로 실제 설명을 다시 확인해보세요.'
-        : `정답은 "${correct}" 입니다.`;
+        ? `정답입니다. ${quiz.explanation}`
+        : quiz.explanation;
     }
 
     function initDaily() {
@@ -2669,12 +2855,13 @@
       document.getElementById('dailyDifficulty').className = `difficulty-badge ${diffClass}`;
       document.getElementById('dailyDifficulty').innerHTML = `<span class="difficulty-dot"></span>${entry.difficulty || 'beginner'}`;
 
-      const dailyOptions = buildDailyQuizOptions(entry);
-      document.getElementById('dailyQuizOptions').innerHTML = dailyOptions.map((option, index) => `
-        <button class="daily-quiz-option" data-index="${index}" type="button">${escapeHtml(option)}</button>
+      const dailyQuiz = buildDailyQuiz(entry);
+      document.querySelector('.daily-mini-quiz-label').textContent = dailyQuiz.prompt;
+      document.getElementById('dailyQuizOptions').innerHTML = dailyQuiz.options.map((option, index) => `
+        <button class="daily-quiz-option" data-index="${index}" type="button">${escapeHtml(option.text)}</button>
       `).join('');
       document.querySelectorAll('.daily-quiz-option').forEach(button => {
-        button.addEventListener('click', () => answerDailyQuiz(button, entry, dailyOptions));
+        button.addEventListener('click', () => answerDailyQuiz(button, dailyQuiz));
       });
 
       document.getElementById('dailyWatchBtn').addEventListener('click', () => {

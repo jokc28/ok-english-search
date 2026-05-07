@@ -23,7 +23,7 @@ The app now exposes two hubs:
 - **Quiz Hub:** creates a short mobile quiz from the same expression catalog. Users choose all expressions, a category, or their saved 오답 queue, then answer mixed meaning, situation, and typed-recall questions before jumping back to the source Reel.
 - **Situation Practice Hub:** groups the expression catalog by real-use scenarios such as 위로·감정, 부탁·요청, 카페·식당, 여행·호텔, 의견·맞장구, 헷갈리는 표현, 스몰토크, and 칭찬·리액션.
 
-The top daily card is now a compact daily lesson: expression, meaning, situation, use example, anti-direct-translation note, a 10-second meaning quiz, and the source Reel link. This keeps the current content pipeline intact while converting the same Instagram archive into an active study product.
+The top daily card is now a compact daily lesson: expression, meaning, situation, use example, anti-direct-translation note, a 10-second comprehension quiz, and the source Reel link. The daily quiz avoids asking for the already visible definition; it asks which fresh scenario or usage example best fits the expression. This keeps the current content pipeline intact while converting the same Instagram archive into an active study product.
 
 ## Quiz Learning Strategy
 
