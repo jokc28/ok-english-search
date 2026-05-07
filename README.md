@@ -68,6 +68,55 @@ python3 -m http.server 8001 -d public
 
 AI 검색 API와 Daily Quiz 생성/검증 API까지 확인하려면 Vercel 환경변수 `OPENAI_API_KEY`가 설정된 상태에서 Vercel 배포본 또는 `vercel dev`를 사용하세요. GitHub Pages처럼 정적 호스팅만 있는 환경에서는 Daily Quiz가 로컬 fallback 로직으로 동작합니다.
 
+## Sponsorship Setup
+
+The web app includes alias-only sponsor links for creator support. Use a third-party creator platform such as Buy Me a Coffee or Patreon, and create the creator profile with the public alias only, for example `Ok-sam`.
+
+Do not connect direct bank transfers, Toss links, or wire-transfer routing in this app. Those payment paths can expose the creator's legal name due to financial compliance requirements.
+
+Update this block in `public/index.html`, then sync `index.html` from it:
+
+```html
+<script>
+  // Sponsorship privacy settings:
+  // 1. Create a creator profile on Buy Me a Coffee, Patreon, or a similar platform using only the public alias.
+  // 2. Replace SPONSOR_URL with that platform profile URL, for example:
+  //    'https://www.buymeacoffee.com/ok_sam' or 'https://www.patreon.com/ok_sam'
+  // 3. Do not use direct bank, Toss, or wire-transfer links here because they can expose the creator's legal name.
+  const SPONSOR_ALIAS = 'Ok-sam';
+  const SPONSOR_URL = 'https://www.buymeacoffee.com/YOUR_BUYMEACOFFEE_ID';
+</script>
+```
+
+The custom button markup is:
+
+```html
+<a class="sponsor-link" id="headerSponsorLink"
+   href="https://www.buymeacoffee.com/YOUR_BUYMEACOFFEE_ID"
+   target="_blank" rel="noopener noreferrer"
+   aria-label="Ok-sam 후원하기">
+  <span>Ok-sam 후원</span>
+</a>
+```
+
+If you prefer the official Buy Me a Coffee widget script instead of the custom button, place this before `</body>` and replace only the slug/id with the alias-based creator ID:
+
+```html
+<!-- Replace YOUR_BUYMEACOFFEE_ID with the creator platform ID created under the public alias. -->
+<script
+  data-name="BMC-Widget"
+  data-cfasync="false"
+  src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"
+  data-id="YOUR_BUYMEACOFFEE_ID"
+  data-description="Support Ok-sam"
+  data-message="옥쌤 영어 허브를 응원해 주세요."
+  data-color="#1F6F68"
+  data-position="Right"
+  data-x_margin="18"
+  data-y_margin="18">
+</script>
+```
+
 ## Tag Convention
 
 | 태그 | 용도 |
