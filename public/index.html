@@ -1099,6 +1099,7 @@
       font-size: 14px;
       font-weight: 800;
       cursor: pointer;
+      white-space: pre-line;
     }
 
     .quiz-option.correct {
@@ -1481,14 +1482,13 @@
     <section class="hub-panel hidden" id="quizHub">
       <div class="quiz-shell">
         <div class="quiz-intro">
-          <h2>릴스 표현을 기억에서 꺼내보세요</h2>
-          <p>문제 안에서 답을 흘리지 않도록 한 번에 하나의 단서만 보고 풀고, 틀린 표현은 오답 큐에 남깁니다.</p>
+          <h2>릴스 표현을 실제 대화에 연결해 보세요</h2>
+          <p>검토된 대화형 빈칸 문제와 직접 입력 문제로 표현을 다시 꺼내보고, 틀린 표현은 오답 큐에 남깁니다.</p>
           <div class="quiz-controls">
             <select class="quiz-select" id="quizCategorySelect" aria-label="퀴즈 카테고리"></select>
             <div class="quiz-mode-row" role="group" aria-label="퀴즈 모드">
               <button class="quiz-mode-btn active" data-mode="mixed" type="button">혼합</button>
-              <button class="quiz-mode-btn" data-mode="meaning" type="button">뜻</button>
-              <button class="quiz-mode-btn" data-mode="situation" type="button">상황</button>
+              <button class="quiz-mode-btn" data-mode="dialogue" type="button">대화</button>
               <button class="quiz-mode-btn" data-mode="recall" type="button">입력</button>
               <button class="quiz-mode-btn" data-mode="missed" type="button">오답</button>
             </div>
@@ -1549,7 +1549,9 @@
       score: 0,
       answered: false,
       mode: 'mixed',
-      missedThisRound: []
+      missedThisRound: [],
+      loading: false,
+      buildToken: 0
     };
     const QUIZ_MISSED_KEY = 'ok_quiz_missed_ids';
     const QUIZ_LENGTH = 7;
@@ -1949,7 +1951,7 @@
 
     function getQuizQuestionType(index) {
       if (quizState.mode === 'mixed' || quizState.mode === 'missed') {
-        return ['recall', 'meaning', 'situation'][index % 3];
+        return ['dialogue', 'recall', 'dialogue'][index % 3];
       }
       return quizState.mode;
     }
@@ -2062,27 +2064,64 @@
       return { entry, type, options };
     }
 
-    function buildQuizDeck() {
+    function buildDialogueQuizQuestion(entry, quiz) {
+      return {
+        entry,
+        type: 'dialogue',
+        prompt: quiz.prompt,
+        options: quiz.options,
+        explanation: quiz.explanation
+      };
+    }
+
+    async function buildQuizDeck() {
       const pool = getActiveQuizPool();
       const selected = shuffle(pool).slice(0, Math.min(QUIZ_LENGTH, pool.length));
+      const buildToken = Date.now();
       quizState = {
         ...quizState,
-        deck: selected.map((entry, index) => {
-          if (isContrastLesson(entry)) return buildContrastQuestion(entry, pool, index);
-          const type = getQuizQuestionType(index);
-          if (type === 'recall') return buildRecallQuestion(entry, index);
-          return buildMultipleChoiceQuestion(entry, pool, type, index);
-        }),
+        deck: [],
         index: 0,
         score: 0,
         answered: false,
-        missedThisRound: []
+        missedThisRound: [],
+        loading: true,
+        buildToken
+      };
+      renderQuiz();
+
+      const deck = await Promise.all(selected.map(async (entry, index) => {
+        if (isContrastLesson(entry)) return buildContrastQuestion(entry, pool, index);
+        const type = getQuizQuestionType(index);
+        if (type === 'recall') return buildRecallQuestion(entry, index);
+        const quiz = await fetchValidatedExpressionQuiz(entry, 'dialogue');
+        return buildDialogueQuizQuestion(entry, quiz);
+      }));
+
+      if (quizState.buildToken !== buildToken) return;
+
+      quizState = {
+        ...quizState,
+        deck,
+        loading: false
       };
       renderQuiz();
     }
 
     function renderQuiz() {
       const pool = getActiveQuizPool();
+      if (quizState.loading) {
+        quizProgress.hidden = true;
+        quizCard.innerHTML = `
+          <div class="quiz-result">
+            <div class="quiz-result-score">...</div>
+            <p>대화형 문제를 검토하고 있어요.</p>
+          </div>`;
+        quizStartBtn.disabled = true;
+        quizStartBtn.textContent = '문제 준비 중';
+        return;
+      }
+
       if (!quizState.deck.length) {
         quizProgress.hidden = true;
         const isMissedMode = quizState.mode === 'missed';
@@ -2154,8 +2193,11 @@
       }
 
       const isContrast = current.type === 'contrast';
-      const label = isContrast ? '차이를 고르세요' : current.type === 'situation' ? '쓸 수 있는 상황을 고르세요' : '뜻을 고르세요';
-      const cueNote = isContrast
+      const isDialogue = current.type === 'dialogue';
+      const label = isDialogue ? '가장 자연스러운 대화를 고르세요' : isContrast ? '차이를 고르세요' : current.type === 'situation' ? '쓸 수 있는 상황을 고르세요' : '뜻을 고르세요';
+      const cueNote = isDialogue
+        ? current.prompt
+        : isContrast
         ? `${current.term}의 뜻이나 역할을 고르세요.`
         : current.type === 'situation'
         ? '표현만 보고 어느 상황에서 쓰는지 먼저 떠올린 뒤 고르세요.'
@@ -2167,7 +2209,7 @@
         <div class="quiz-cue-note">${escapeHtml(cueNote)}</div>
         <div class="quiz-options">
           ${current.options.map((option, index) => `
-            <button class="quiz-option" data-index="${index}">${escapeHtml(option)}</button>
+            <button class="quiz-option" data-index="${index}">${escapeHtml(isDialogue ? option.text : option)}</button>
           `).join('')}
         </div>
         <div class="quiz-feedback" id="quizFeedback"></div>`;
@@ -2182,16 +2224,22 @@
       quizState.answered = true;
       const current = quizState.deck[quizState.index];
       const selected = current.options[parseInt(button.dataset.index)];
+      const isDialogue = current.type === 'dialogue';
       const field = current.type === 'situation' ? 'situation_kr' : 'expression_meaning_kr';
-      const correct = current.type === 'contrast' ? current.correct : current.entry[field];
-      const isCorrect = selected === correct;
+      const correct = current.type === 'contrast' ? current.correct : isDialogue ? current.options.find(option => option.correct)?.text : current.entry[field];
+      const isCorrect = isDialogue ? !!selected.correct : selected === correct;
       if (isCorrect) quizState.score += 1;
       recordQuizResult(current.entry.id, isCorrect);
 
       quizCard.querySelectorAll('.quiz-option').forEach(optionBtn => {
         const option = current.options[parseInt(optionBtn.dataset.index)];
-        optionBtn.classList.toggle('correct', option === correct);
-        optionBtn.classList.toggle('wrong', option === selected && !isCorrect);
+        if (isDialogue) {
+          optionBtn.classList.toggle('correct', !!option.correct);
+          optionBtn.classList.toggle('wrong', option === selected && !isCorrect);
+        } else {
+          optionBtn.classList.toggle('correct', option === correct);
+          optionBtn.classList.toggle('wrong', option === selected && !isCorrect);
+        }
       });
 
       showQuizFeedback(isCorrect, correct, current.entry, current);
@@ -2216,12 +2264,16 @@
       const contrastLine = current && current.type === 'contrast' && current.pairedTerm
         ? `<div class="quiz-hint"><strong>비교</strong><br>${escapeHtml(current.term)} = ${escapeHtml(current.correct)}<br>${escapeHtml(current.pairedTerm)} = ${escapeHtml(current.pairedMeaning)}</div>`
         : '';
+      const dialogueLine = current && current.type === 'dialogue' && current.explanation
+        ? `<div class="quiz-hint"><strong>설명</strong><br>${escapeHtml(current.explanation)}</div>`
+        : '';
       const feedback = document.getElementById('quizFeedback');
       feedback.classList.add('visible');
       feedback.innerHTML = `
-        <strong>${isCorrect ? '정답입니다.' : `정답은 ${escapeHtml(correct)} 입니다.`}</strong><br>
+        <strong>${isCorrect ? '정답입니다.' : current && current.type === 'dialogue' ? '정답은 이 표현이 가장 자연스럽게 들어가는 대화입니다.' : `정답은 ${escapeHtml(correct)} 입니다.`}</strong><br>
         <div class="quiz-hint-stack">
           ${contrastLine}
+          ${dialogueLine}
           <div class="quiz-hint"><strong>뜻</strong><br>${escapeHtml(entry.expression_meaning_kr)}</div>
           <div class="quiz-hint"><strong>상황</strong><br>${escapeHtml(entry.situation_kr)}</div>
         </div>
@@ -2252,7 +2304,9 @@
         index: 0,
         score: 0,
         answered: false,
-        missedThisRound: []
+        missedThisRound: [],
+        loading: false,
+        buildToken: Date.now()
       };
       quizModeButtons.forEach(button => {
         button.classList.toggle('active', button.dataset.mode === mode);
@@ -2854,10 +2908,10 @@
         : quiz.explanation;
     }
 
-    async function fetchDailyQuiz(entry) {
-      const todayKey = `${new Date().toISOString().slice(0, 10)}:${entry.id}`;
+    async function fetchValidatedExpressionQuiz(entry, variant = 'dialogue') {
+      const todayKey = `${new Date().toISOString().slice(0, 10)}:${variant}:${entry.id}`;
       try {
-        const cached = JSON.parse(localStorage.getItem(`ok_daily_quiz_${todayKey}`) || 'null');
+        const cached = JSON.parse(localStorage.getItem(`ok_expression_quiz_${todayKey}`) || 'null');
         if (cached?.quiz) return cached.quiz;
       } catch {}
 
@@ -2865,12 +2919,12 @@
         const res = await fetch('/api/daily-quiz', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ entry })
+          body: JSON.stringify({ entry, variant })
         });
         if (!res.ok) throw new Error('Daily quiz API error');
         const data = await res.json();
         if (!data?.quiz) throw new Error('Missing quiz payload');
-        localStorage.setItem(`ok_daily_quiz_${todayKey}`, JSON.stringify(data));
+        localStorage.setItem(`ok_expression_quiz_${todayKey}`, JSON.stringify(data));
         return data.quiz;
       } catch (err) {
         console.error('Daily quiz API failed, using local fallback:', err);
@@ -2914,7 +2968,7 @@
         <button class="daily-quiz-option" type="button" disabled>자연스러운 빈칸 문제를 준비 중입니다.</button>
         <button class="daily-quiz-option" type="button" disabled>잠시만 기다려 주세요.</button>
       `;
-      const dailyQuiz = await fetchDailyQuiz(entry);
+      const dailyQuiz = await fetchValidatedExpressionQuiz(entry, 'dialogue');
       renderDailyQuiz(dailyQuiz);
 
       document.getElementById('dailyWatchBtn').addEventListener('click', () => {
@@ -2968,7 +3022,9 @@
         index: 0,
         score: 0,
         answered: false,
-        missedThisRound: []
+        missedThisRound: [],
+        loading: false,
+        buildToken: Date.now()
       };
       renderQuiz();
     });

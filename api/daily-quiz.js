@@ -74,7 +74,7 @@ async function callOpenAI(apiKey, prompt) {
 }
 
 function buildGenerationPrompt(entry) {
-  return `You generate a 10-second quiz for a Korean English-learning app.
+  return `You generate a short English quiz for a Korean English-learning app.
 
 Target expression:
 - expression_en: "${entry.expression_en}"
@@ -116,7 +116,7 @@ Return ONLY valid JSON:
 }
 
 function buildValidationPrompt(entry, candidate) {
-  return `You validate and repair a daily English quiz for a Korean learning app.
+  return `You validate and repair a short English quiz for a Korean learning app.
 
 Target expression:
 - expression_en: "${entry.expression_en}"
@@ -167,7 +167,7 @@ export default async function handler(req, res) {
   const ip = req.headers['x-forwarded-for']?.split(',')[0] || 'unknown';
   const now = Date.now();
   const WINDOW = 60000;
-  const MAX = 10;
+  const MAX = 20;
   if (!rateLimit[ip]) rateLimit[ip] = [];
   rateLimit[ip] = rateLimit[ip].filter(t => now - t < WINDOW);
   if (rateLimit[ip].length >= MAX) {
@@ -185,7 +185,8 @@ export default async function handler(req, res) {
     return res.status(500).json({ error: 'API key not configured' });
   }
 
-  const cacheKey = `${entry.id || entry.expression_en}:${entry.date || ''}`;
+  const variant = req.body?.variant || 'dialogue';
+  const cacheKey = `${variant}:${entry.id || entry.expression_en}:${entry.date || ''}`;
   const cache = globalThis._dailyQuizCache || (globalThis._dailyQuizCache = new Map());
   if (cache.has(cacheKey)) {
     return res.status(200).json(cache.get(cacheKey));
