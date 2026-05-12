@@ -52,7 +52,7 @@ python3 update_public_instagram.py
 6. `python3 transcribe_reels.py`로 새 오디오를 전사합니다. `.env`에 `OPENAI_API_KEY`가 필요합니다.
 7. `python3 enrich_with_transcripts.py`로 표현/뜻/검색 키워드를 보강합니다.
 8. `python3 generate_data.py`로 `data.js`와 `public/data.js`를 동시에 재생성합니다.
-9. `npm run audit:targets`로 transcript 기반 target-expression 검증을 적용합니다. 이 단계에서 `X보다는 Y` 패턴처럼 영상의 실제 교육 포인트가 Y인 경우 X를 daily/quiz 후보에서 제외합니다.
+9. `npm run audit:targets`로 transcript 기반 target-expression/context 검증을 적용합니다. 이 단계에서 `X보다는 Y` 패턴처럼 영상의 실제 교육 포인트가 Y인 경우 X를 daily/quiz 후보에서 제외하고, 뜻은 맞지만 사용 상황이 transcript와 맞지 않는 항목도 daily/quiz 후보에서 제외합니다.
 10. `python3 -m http.server 8001 -d public`로 로컬 확인 후 커밋/푸시합니다.
 
 ## How to Deploy

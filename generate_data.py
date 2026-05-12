@@ -34,8 +34,12 @@ for entry in entries:
         'source_reel_id': entry['id'],
         'target_source': 'transcript' if e else 'caption',
         'target_confidence': 'verified' if e.get('confidence') == 'high' and e.get('expression_en') else 'review',
+        'context_confidence': 'review',
         'target_audit_note': 'Transcript enrichment marked this as high confidence.' if e.get('confidence') == 'high' else 'Needs manual target-expression review.',
+        'context_audit_note': 'Run npm run audit:targets to validate usage context against transcripts.',
         'target_evidence': e.get('target_evidence', ''),
+        'usage_example_en': e.get('usage_example_en', ''),
+        'usage_context_kr': e.get('usage_context_kr', e.get('situation_kr', '')),
         'rejected_phrases': e.get('rejected_phrases', []),
         'excluded_from_daily': not (e.get('confidence') == 'high' and e.get('expression_en'))
     }

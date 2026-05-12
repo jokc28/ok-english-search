@@ -1796,6 +1796,7 @@
         entry &&
         entry.source_type === 'instagram_reel' &&
         entry.target_confidence === 'verified' &&
+        entry.context_confidence === 'verified' &&
         entry.excluded_from_daily !== true &&
         String(entry.expression_en || '').trim() &&
         String(entry.expression_meaning_kr || '').trim() &&
@@ -2897,6 +2898,10 @@
       const context = getDailyContext(entry);
       const expression = entry.expression_en.trim();
 
+      if (entry.usage_example_en) {
+        return formatDailySentences(entry.usage_example_en);
+      }
+
       if (isContrastLesson(entry)) {
         const question = buildContrastQuestion(entry, getQuizReadyEntries(), getDailyIndex(2));
         return formatDailySentences(`${buildContrastUsageExample(question.term, question.correct, true)} ${question.pairedTerm ? buildContrastUsageExample(question.pairedTerm, question.pairedMeaning, true) : ''}`.trim());
@@ -2907,27 +2912,26 @@
       }
 
       if (expression.endsWith('?')) {
-        return formatDailySentences(`${context.setup} B: "${expression}"`);
+        return expression;
       }
 
       if (/^(i|i'm|i’ve|we|she|he|they|that|it|it's|there)\b/i.test(expression)) {
-        return formatDailySentences(`A: What would sound natural here? B: "${expression}"`);
+        return expression;
       }
 
       if (/^[a-z]+$/i.test(expression)) {
-        return formatDailySentences(`A: How would you describe it? B: Honestly, "${expression}" is the word I’d use.`);
+        return expression;
       }
 
       if (/^(for|with|to|at|on|in|by|from|whether)\b/i.test(expression)) {
-        return formatDailySentences(`A: What phrase would fit this moment? B: "${expression}"`);
+        return expression;
       }
 
       if (/^[a-z]/.test(expression)) {
-        const adapted = expression.replace(/\byourself\b/i, 'myself');
-        return formatDailySentences(`I’m trying to ${adapted} before the day gets too busy.`);
+        return expression;
       }
 
-      return formatDailySentences(`${context.setup} B: "${expression}"`);
+      return expression;
     }
 
     function buildDailyQuiz(entry) {
@@ -2956,9 +2960,9 @@
       ]);
 
       return {
-        prompt: formatDailySentences('오늘 표현을 실제로 쓸 수 있는 상황을 고르세요.'),
+        prompt: formatDailySentences('오늘 표현의 실제 쓰임과 가장 가까운 상황을 고르세요.'),
         options,
-        explanation: formatDailySentences(`"${entry.expression_en}"는 "${entry.situation_kr}"에 쓰는 표현입니다.`)
+        explanation: formatDailySentences(`"${entry.expression_en}"는 "${entry.usage_context_kr || entry.situation_kr}"에 쓰는 표현입니다.`)
       };
     }
 
@@ -2979,7 +2983,7 @@
     }
 
     function buildDailyUsageOption(entry) {
-      return `${entry.situation_kr}\n${entry.expression_meaning_kr}`;
+      return entry.usage_context_kr || entry.situation_kr;
     }
 
     function getDailyUsageDistractors(entry, pool) {

@@ -17,10 +17,38 @@ const MANUAL_CORRECTIONS = {
     search_keywords_en: ['video call', 'audio check', 'coming through', 'voice'],
     difficulty: 'intermediate',
     target_confidence: 'verified',
+    context_confidence: 'verified',
     target_audit_note: 'Manual transcript audit: the Reel frames "can you hear me" as the common phrase and teaches the softer "coming through" alternative.',
+    context_audit_note: 'Manual transcript audit: the transcript discusses Zoom/meeting audio and whether the voice is coming through.',
+    usage_example_en: 'Is my voice coming through okay?',
+    usage_context_kr: '화상회의에서 내 목소리가 잘 전달되는지 부드럽게 확인할 때',
     rejected_phrases: ['can you hear me']
+  },
+  'https://www.instagram.com/reel/DHalR-Bz1Ci/': {
+    expression_en: 'pretty',
+    expression_meaning_kr: '꽤, 상당히',
+    situation_kr: '정도를 강조하거나 거의 확신할 때',
+    description_kr: 'pretty는 예쁘다는 뜻뿐 아니라 꽤/상당히, 거의 확신한다는 뉘앙스로도 써요.',
+    category: '문화·뉘앙스',
+    search_keywords_kr: ['꽤', '상당히', '거의 확신', 'pretty 뜻', '정도 강조'],
+    search_keywords_en: ['pretty', 'quite', 'fairly', 'pretty sure'],
+    difficulty: 'beginner',
+    target_confidence: 'verified',
+    context_confidence: 'verified',
+    target_audit_note: 'Manual transcript audit: the Reel teaches pretty as "quite/fairly" and "pretty sure", not a greeting/check-in phrase.',
+    context_audit_note: 'Manual transcript audit: corrected the prior wrong context "상대방의 안부를 물을 때".',
+    target_evidence: "pretty can mean quite/fairly; transcript example: I'm pretty sure he's coming.",
+    usage_example_en: "I'm pretty sure he's coming.",
+    usage_context_kr: '어떤 정도가 꽤 높거나 거의 확신한다고 말할 때',
+    rejected_phrases: ['fine']
   }
 };
+
+const GENERIC_CONTEXT_WORDS = new Set([
+  '때', '경우', '상황', '표현', '사용', '쓰는', '쓸', '할', '하는', '하고',
+  '하고싶을', '싶을', '말할', '말하고', '영어', '자연스럽게', '유용해요',
+  '상대방', '누군가', '사람', '일상', '친구', '자주'
+]);
 
 function loadReelsData(filePath) {
   const code = fs.readFileSync(filePath, 'utf8');
@@ -80,6 +108,26 @@ function expressionAppearsInSource(entry, rawEntry, transcript) {
   return parts.length > 1 && parts.every(part => sourceText.includes(part));
 }
 
+function koreanTokens(value) {
+  return String(value || '')
+    .match(/[가-힣]{2,}/g)?.map(token => token.trim())
+    .filter(token => token && !GENERIC_CONTEXT_WORDS.has(token)) || [];
+}
+
+function contextAppearsInTranscript(entry, transcript) {
+  const haystack = normalize(transcript);
+  if (!haystack) return false;
+
+  const situationTokens = [...new Set(koreanTokens(entry.situation_kr))];
+  if (!situationTokens.length) return false;
+
+  const matches = situationTokens.filter(token => haystack.includes(normalize(token)));
+  if (matches.length > 0) return true;
+
+  const evidence = normalize(entry.target_evidence || '');
+  return situationTokens.some(token => evidence.includes(normalize(token)));
+}
+
 function buildValidation(entry, rawEntry, transcript, enrichedEntry) {
   const correction = MANUAL_CORRECTIONS[entry.reel_url];
   if (correction) {
@@ -97,7 +145,8 @@ function buildValidation(entry, rawEntry, transcript, enrichedEntry) {
   const confidence = enrichedEntry?.confidence || (hasTranscript ? 'review' : 'low');
   const appears = expressionAppearsInSource(entry, rawEntry, transcript);
   const correctionMarker = hasCorrectionMarkerAfterExpression(transcript, entry.expression_en);
-  const verified = confidence === 'high' && appears && !correctionMarker;
+  const targetVerified = confidence === 'high' && appears && !correctionMarker;
+  const contextVerified = targetVerified && contextAppearsInTranscript(entry, transcript);
 
   return {
     ...entry,
@@ -105,17 +154,23 @@ function buildValidation(entry, rawEntry, transcript, enrichedEntry) {
     source_type: 'instagram_reel',
     source_reel_id: rawEntry?.id || null,
     target_source: hasTranscript ? 'transcript' : 'caption',
-    target_confidence: verified ? 'verified' : 'review',
-    target_audit_note: verified
+    target_confidence: targetVerified ? 'verified' : 'review',
+    context_confidence: contextVerified ? 'verified' : 'review',
+    target_audit_note: targetVerified
       ? 'Transcript/caption audit passed.'
       : [
         confidence !== 'high' ? `Extractor confidence is ${confidence}.` : '',
         !appears ? 'Expression was not directly found in transcript/caption text.' : '',
         correctionMarker ? 'Transcript appears to contrast this phrase with a better alternative.' : ''
       ].filter(Boolean).join(' '),
+    context_audit_note: contextVerified
+      ? 'Usage context is supported by transcript terms.'
+      : 'Usage context was not sufficiently supported by transcript terms.',
     target_evidence: transcriptSnippet(transcript, entry.expression_en),
     rejected_phrases: [],
-    excluded_from_daily: !verified
+    usage_example_en: entry.usage_example_en || '',
+    usage_context_kr: entry.usage_context_kr || entry.situation_kr,
+    excluded_from_daily: !(targetVerified && contextVerified)
   };
 }
 
@@ -143,7 +198,7 @@ function writeData(filePath, entries) {
 }
 
 function writeReport(entries) {
-  const review = entries.filter(entry => entry.target_confidence !== 'verified');
+  const review = entries.filter(entry => entry.target_confidence !== 'verified' || entry.context_confidence !== 'verified');
   const corrected = entries.filter(entry => MANUAL_CORRECTIONS[entry.reel_url]);
   let report = '# Target Expression Audit\n\n';
   report += '## Summary\n';
@@ -153,17 +208,17 @@ function writeReport(entries) {
   report += `- Manual corrections applied: ${corrected.length}\n\n`;
 
   report += '## Manual Corrections\n';
-  report += '| id | source_reel_id | expression_en | rejected_phrases | reel_url |\n';
-  report += '|----|----------------|---------------|------------------|----------|\n';
+  report += '| id | source_reel_id | expression_en | usage_context_kr | rejected_phrases | reel_url |\n';
+  report += '|----|----------------|---------------|------------------|------------------|----------|\n';
   for (const entry of corrected) {
-    report += `| ${entry.id} | ${entry.source_reel_id || ''} | ${entry.expression_en} | ${(entry.rejected_phrases || []).join(', ')} | ${entry.reel_url} |\n`;
+    report += `| ${entry.id} | ${entry.source_reel_id || ''} | ${entry.expression_en} | ${entry.usage_context_kr || entry.situation_kr || ''} | ${(entry.rejected_phrases || []).join(', ')} | ${entry.reel_url} |\n`;
   }
 
   report += '\n## Excluded Pending Review\n';
-  report += '| id | source_reel_id | expression_en | reason | reel_url |\n';
-  report += '|----|----------------|---------------|--------|----------|\n';
+  report += '| id | source_reel_id | expression_en | target_confidence | context_confidence | reason | reel_url |\n';
+  report += '|----|----------------|---------------|-------------------|--------------------|--------|----------|\n';
   for (const entry of review) {
-    report += `| ${entry.id} | ${entry.source_reel_id || ''} | ${entry.expression_en} | ${entry.target_audit_note || ''} | ${entry.reel_url} |\n`;
+    report += `| ${entry.id} | ${entry.source_reel_id || ''} | ${entry.expression_en} | ${entry.target_confidence || ''} | ${entry.context_confidence || ''} | ${[entry.target_audit_note, entry.context_audit_note].filter(Boolean).join(' ')} | ${entry.reel_url} |\n`;
   }
 
   fs.writeFileSync('target-expression-audit.md', report, 'utf8');
@@ -185,7 +240,7 @@ writeData('data.js', audited);
 writeData('public/data.js', audited);
 writeReport(audited);
 
-const verified = audited.filter(entry => entry.target_confidence === 'verified').length;
+const verified = audited.filter(entry => entry.target_confidence === 'verified' && entry.context_confidence === 'verified').length;
 const review = audited.length - verified;
 console.log(JSON.stringify({
   total: audited.length,

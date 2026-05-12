@@ -32,6 +32,7 @@ function isTrustedReelEntry(entry) {
     entry &&
     entry.source_type === 'instagram_reel' &&
     entry.target_confidence === 'verified' &&
+    entry.context_confidence === 'verified' &&
     entry.excluded_from_daily !== true &&
     String(entry.expression_en || '').trim() &&
     String(entry.expression_meaning_kr || '').trim() &&
@@ -122,11 +123,11 @@ function buildDailyUsageQuiz(entry, catalog) {
   const options = stableShuffle(
     [
       {
-        text: `${entry.situation_kr}\n${entry.expression_meaning_kr}`,
+        text: entry.usage_context_kr || entry.situation_kr,
         correct: true,
       },
       ...distractors.map((item) => ({
-        text: `${item.situation_kr}\n${item.expression_meaning_kr}`,
+        text: item.usage_context_kr || item.situation_kr,
         correct: false,
       })),
     ],
@@ -134,9 +135,9 @@ function buildDailyUsageQuiz(entry, catalog) {
   );
 
   return {
-    prompt: '오늘 표현을 실제로 쓸 수 있는 상황을 고르세요.',
+    prompt: '오늘 표현의 실제 쓰임과 가장 가까운 상황을 고르세요.',
     options,
-    explanation: `"${entry.expression_en}"는 "${entry.situation_kr}"에 쓰는 표현입니다.`,
+    explanation: `"${entry.expression_en}"는 "${entry.usage_context_kr || entry.situation_kr}"에 쓰는 표현입니다.`,
     source: {
       id: entry.id,
       reel_url: entry.reel_url,
