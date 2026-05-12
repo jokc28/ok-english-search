@@ -46,7 +46,19 @@ expression_en: {entry.get('expression_en', '')}
 description_kr: {entry.get('description_kr', '')}
 
 === TASK ===
-Based on the transcript (primary source) and caption (secondary), identify the ACTUAL English expression being taught in this Reel.
+Based on the transcript (primary source) and caption (secondary), identify the ACTUAL TARGET English expression being taught in this Reel.
+
+The target expression is the phrase the teacher recommends the learner should use.
+Do NOT select a phrase just because it appears in the script.
+
+Common Reel pattern:
+- The teacher may first mention a common, awkward, literal, or less-preferred phrase.
+- Then the teacher contrasts it with the better phrase using Korean markers like "보다는", "대신", "그것보다는", "이렇게 말해", "더 자연스럽게", or English markers like "rather than" / "instead of".
+- In that case, reject the first phrase and choose the better replacement as expression_en.
+
+Example:
+- Transcript says: "can you hear me 많이 하는데 그것보다는 ... coming through"
+- expression_en must be a natural target like "Is my voice coming through okay?", NOT "can you hear me".
 
 Return ONLY a valid JSON object (no markdown, no backticks):
 
@@ -59,10 +71,13 @@ Return ONLY a valid JSON object (no markdown, no backticks):
   "search_keywords_kr": ["4-6 Korean search keywords"],
   "search_keywords_en": ["2-4 English synonyms/related"],
   "difficulty": "beginner OR intermediate OR advanced",
-  "confidence": "high if transcript clearly shows the expression, low if guessing"
+  "confidence": "high if transcript clearly shows the target expression, low if guessing",
+  "rejected_phrases": ["phrases that were mentioned but should NOT be treated as the target expression"],
+  "target_evidence": "short transcript phrase proving why expression_en is the recommended target"
 }}
 
 CRITICAL: The transcript is the TRUTH. Follow it over the caption. Do NOT hallucinate expressions.
+CRITICAL: If the transcript teaches "X보다는 Y", choose Y and add X to rejected_phrases.
 QUALITY: Double-check exact spelling, idiom wording, and standard usage before returning expression_en.
 QUALITY: Do not confuse similar-looking words. For hidden identity/appearance, use "disguise", never "despise".
 QUALITY: If the expression is an idiom, return the standard native-speaker form exactly."""

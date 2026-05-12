@@ -30,6 +30,9 @@ function loadCatalog() {
 function isTrustedReelEntry(entry) {
   return !!(
     entry &&
+    entry.source_type === 'instagram_reel' &&
+    entry.target_confidence === 'verified' &&
+    entry.excluded_from_daily !== true &&
     String(entry.expression_en || '').trim() &&
     String(entry.expression_meaning_kr || '').trim() &&
     String(entry.situation_kr || '').trim() &&

@@ -29,7 +29,15 @@ for entry in entries:
         'search_keywords_en': e.get('search_keywords_en', []),
         'difficulty': e.get('difficulty', 'intermediate'),
         'reel_url': entry.get('reel_url', ''),
-        'date': entry.get('date', '')
+        'date': entry.get('date', ''),
+        'source_type': 'instagram_reel',
+        'source_reel_id': entry['id'],
+        'target_source': 'transcript' if e else 'caption',
+        'target_confidence': 'verified' if e.get('confidence') == 'high' and e.get('expression_en') else 'review',
+        'target_audit_note': 'Transcript enrichment marked this as high confidence.' if e.get('confidence') == 'high' else 'Needs manual target-expression review.',
+        'target_evidence': e.get('target_evidence', ''),
+        'rejected_phrases': e.get('rejected_phrases', []),
+        'excluded_from_daily': not (e.get('confidence') == 'high' and e.get('expression_en'))
     }
 
     if new_entry['category'] not in VALID_CATEGORIES:

@@ -3,6 +3,7 @@
   "version": "2.0.0",
   "private": true,
   "scripts": {
+    "audit:targets": "node scripts/apply-target-validation.js",
     "configure:sponsor": "node scripts/configure-sponsor.js"
   }
 }
