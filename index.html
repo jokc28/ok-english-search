@@ -1597,7 +1597,7 @@
     let llmTimer = null;
     let currentResults = null;
     let activeHub = 'dictionary';
-    let activeSituationId = 'comfort';
+    let activeSituationId = 'all';
     let quizState = {
       deck: [],
       index: 0,
@@ -1680,6 +1680,12 @@
     ];
 
     const SITUATION_GROUPS = [
+      {
+        id: 'all',
+        label: '전체 상황',
+        prompt: '표현 사전에 있는 전체 릴스 표현을 상황별로 연습할 때',
+        keywords: []
+      },
       {
         id: 'comfort',
         label: '위로·감정',
@@ -1769,6 +1775,18 @@
         String(entry.expression_meaning_kr || '').trim() &&
         String(entry.situation_kr || '').trim() &&
         String(entry.quiz_sentence_en || '').trim() &&
+        /^https:\/\/www\.instagram\.com\/reel\/[A-Za-z0-9_-]+\/?$/.test(String(entry.reel_url || '').trim())
+      );
+    }
+
+    function isPracticeReadyEntry(entry) {
+      return !!(
+        entry &&
+        entry.source_type === 'instagram_reel' &&
+        String(entry.expression_en || '').trim() &&
+        String(entry.expression_meaning_kr || '').trim() &&
+        String(entry.situation_kr || '').trim() &&
+        String(entry.description_kr || '').trim() &&
         /^https:\/\/www\.instagram\.com\/reel\/[A-Za-z0-9_-]+\/?$/.test(String(entry.reel_url || '').trim())
       );
     }
@@ -2021,7 +2039,7 @@
     function getQuizPool() {
       const category = quizCategorySelect.value;
       return REELS_DATA.filter(entry => {
-        if (!isTrustedReelEntry(entry)) return false;
+        if (!isPracticeReadyEntry(entry)) return false;
         if (category && entry.category !== category) return false;
         return true;
       });
@@ -2181,7 +2199,9 @@
         if (isContrastLesson(entry)) return buildContrastQuestion(entry, pool, index);
         const type = getQuizQuestionType(index);
         if (type === 'recall') return buildRecallQuestion(entry, index);
-        const quiz = await fetchValidatedExpressionQuiz(entry, 'dialogue');
+        const quiz = isTrustedReelEntry(entry)
+          ? await fetchValidatedExpressionQuiz(entry, 'dialogue')
+          : buildExpressionChoiceQuiz(entry);
         return buildDialogueQuizQuestion(entry, quiz);
       }));
 
@@ -2402,6 +2422,12 @@
     }
 
     // ─── Situation Practice ───
+    function getPracticeReadyEntries() {
+      return REELS_DATA
+        .filter(isPracticeReadyEntry)
+        .map(normalizeExpressionEntry);
+    }
+
     function getQuizReadyEntries() {
       return REELS_DATA
         .filter(isTrustedReelEntry)
@@ -2425,9 +2451,9 @@
     }
 
     function getSituationMatches(group) {
-      return getQuizReadyEntries()
+      return getPracticeReadyEntries()
         .map(entry => ({ entry, score: getSituationScore(entry, group) }))
-        .filter(item => item.score > 0)
+        .filter(item => group.id === 'all' || item.score > 0)
         .sort((a, b) => b.score - a.score || (b.entry.date || '').localeCompare(a.entry.date || ''))
         .map(item => item.entry);
     }
@@ -2480,7 +2506,7 @@
       });
 
       const activeGroup = groupsWithCounts.find(group => group.id === activeSituationId) || groupsWithCounts[0];
-      const matches = activeGroup.matches.slice(0, 8);
+      const matches = activeGroup.matches;
       situationSummary.textContent = `${activeGroup.prompt} · ${activeGroup.matches.length}개 표현`;
 
       if (!matches.length) {
@@ -2895,7 +2921,7 @@
     }
 
     function buildExpressionChoiceQuiz(entry) {
-      const pool = getQuizReadyEntries();
+      const pool = getPracticeReadyEntries();
       const distractors = getDistractorCandidates(entry, pool, 'expression_en');
       const options = shuffle([
         { text: entry.expression_en, correct: true },
