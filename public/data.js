@@ -4137,7 +4137,7 @@ const REELS_DATA = [
   {
     "id": 118,
     "expression_en": "She showed no emotion.",
-    "expression_meaning_kr": "",
+    "expression_meaning_kr": "감정을 드러내지 않았다",
     "situation_kr": "감정을 표현하고 싶지 않을 때",
     "description_kr": "감정을 숨기고 싶을 때 유용한 표현이에요.",
     "category": "일상대화",
@@ -5336,7 +5336,7 @@ const REELS_DATA = [
   {
     "id": 152,
     "expression_en": "Turn on the light.",
-    "expression_meaning_kr": "",
+    "expression_meaning_kr": "불을 켜다",
     "situation_kr": "어두운 방에서 불을 켤 때",
     "description_kr": "‘on’의 기본 의미는 위에, 붙다, 추가되다예요.",
     "category": "일상대화",
@@ -5436,7 +5436,7 @@ const REELS_DATA = [
   {
     "id": 155,
     "expression_en": "That tracks",
-    "expression_meaning_kr": "",
+    "expression_meaning_kr": "그게 맞아",
     "situation_kr": "상대방의 말에 동의할 때",
     "description_kr": "상대방의 의견에 쉽게 맞장구칠 수 있는 표현이에요.",
     "category": "일상대화",
@@ -5572,7 +5572,7 @@ const REELS_DATA = [
   {
     "id": 159,
     "expression_en": "I'm gonna study.",
-    "expression_meaning_kr": "",
+    "expression_meaning_kr": "공부할 거야",
     "situation_kr": "미래에 할 일을 말할 때",
     "description_kr": "미래에 계획을 이야기할 때 자주 써요.",
     "category": "일상대화",
@@ -5637,7 +5637,7 @@ const REELS_DATA = [
   {
     "id": 161,
     "expression_en": "Hang Out",
-    "expression_meaning_kr": "",
+    "expression_meaning_kr": "같이 놀다",
     "situation_kr": "친구와 시간을 보낼 때",
     "description_kr": "커피 한 잔 하면서 편하게 이야기할 때 써요.",
     "category": "일상대화",
@@ -8129,7 +8129,7 @@ const REELS_DATA = [
   {
     "id": 232,
     "expression_en": "Can I get a...",
-    "expression_meaning_kr": "",
+    "expression_meaning_kr": "~를 받을 수 있을까요?",
     "situation_kr": "호텔에서 체크인할 때",
     "description_kr": "호텔에서 필요한 서비스를 요청할 때 유용해요.",
     "category": "일상대화",
@@ -8443,7 +8443,7 @@ const REELS_DATA = [
   {
     "id": 241,
     "expression_en": "Do you have anything to declare?",
-    "expression_meaning_kr": "",
+    "expression_meaning_kr": "신고할 물건이 있나요?",
     "situation_kr": "입국심사할 때",
     "description_kr": "입국심사에서 자주 쓰이는 표현이에요. 꼭 기억해두세요!",
     "category": "일상대화",
@@ -8543,7 +8543,7 @@ const REELS_DATA = [
   {
     "id": 244,
     "expression_en": "If I had to choose one",
-    "expression_meaning_kr": "",
+    "expression_meaning_kr": "하나만 선택해야 한다면",
     "situation_kr": "투표할 때",
     "description_kr": "선택이 어려운 상황에서 쓰는 표현이에요.",
     "category": "일상대화",
@@ -8713,7 +8713,7 @@ const REELS_DATA = [
   {
     "id": 249,
     "expression_en": "to worship",
-    "expression_meaning_kr": "",
+    "expression_meaning_kr": "숭배하다",
     "situation_kr": "한국 양궁을 이야기할 때",
     "description_kr": "양궁에 대한 열정을 표현하고 싶을 때 사용해요.",
     "category": "일상대화",
