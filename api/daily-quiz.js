@@ -1,211 +1,173 @@
-const FORBIDDEN_PATTERNS = [
-  /natural english line/i,
-  /what would sound natural/i,
-  /placeholder/i,
-  /meta/i,
-  /system instruction/i,
-  /\[blank\]/i,
-  /speaker a:\s*"i need/i,
-  /speaker b:\s*"\[blank\]/i
-];
+import fs from 'node:fs';
+import path from 'node:path';
+import vm from 'node:vm';
 
-function stripCodeFences(text) {
-  if (!text) return '';
-  const trimmed = text.trim();
-  if (!trimmed.startsWith('```')) return trimmed;
-  return trimmed.split('\n').slice(1).join('\n').replace(/```$/, '').trim();
-}
+let cachedCatalog = null;
 
-function parseJSON(text) {
-  return JSON.parse(stripCodeFences(text));
-}
+function loadCatalog() {
+  if (cachedCatalog) return cachedCatalog;
 
-function hasForbiddenText(value) {
-  return FORBIDDEN_PATTERNS.some(pattern => pattern.test(value || ''));
-}
-
-function isValidQuizPayload(payload, expression) {
-  if (!payload || typeof payload !== 'object') return false;
-  if (typeof payload.prompt !== 'string' || !payload.prompt.trim()) return false;
-  if (!Array.isArray(payload.options) || payload.options.length !== 3) return false;
-  if (typeof payload.explanation !== 'string' || !payload.explanation.trim()) return false;
-  if (hasForbiddenText(payload.prompt) || hasForbiddenText(payload.explanation)) return false;
-
-  let correctCount = 0;
-  for (const option of payload.options) {
-    if (!option || typeof option.text !== 'string' || typeof option.correct !== 'boolean') return false;
-    if (!option.text.includes('____')) return false;
-    if (hasForbiddenText(option.text)) return false;
-    if (option.correct) correctCount += 1;
+  const candidates = [
+    path.join(process.cwd(), 'data.js'),
+    path.join(process.cwd(), 'public', 'data.js'),
+  ];
+  const dataPath = candidates.find((candidate) => fs.existsSync(candidate));
+  if (!dataPath) {
+    throw new Error('Expression catalog not found');
   }
 
-  if (correctCount !== 1) return false;
+  const code = fs.readFileSync(dataPath, 'utf8');
+  const context = {};
+  vm.createContext(context);
+  vm.runInContext(`${code}\nthis.REELS_DATA = REELS_DATA;`, context);
 
-  const combined = [payload.prompt, payload.explanation, ...payload.options.map(option => option.text)].join(' ');
-  if (!combined.toLowerCase().includes(expression.toLowerCase()) && !payload.explanation.toLowerCase().includes(expression.toLowerCase())) {
-    return false;
-  }
-
-  return true;
+  cachedCatalog = Array.isArray(context.REELS_DATA)
+    ? context.REELS_DATA.filter(isTrustedReelEntry)
+    : [];
+  return cachedCatalog;
 }
 
-async function callOpenAI(apiKey, prompt) {
-  const response = await fetch('https://api.openai.com/v1/chat/completions', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer ${apiKey}`
+function isTrustedReelEntry(entry) {
+  return !!(
+    entry &&
+    String(entry.expression_en || '').trim() &&
+    String(entry.expression_meaning_kr || '').trim() &&
+    String(entry.situation_kr || '').trim() &&
+    /^https:\/\/www\.instagram\.com\/reel\/[A-Za-z0-9_-]+\/?$/.test(String(entry.reel_url || '').trim())
+  );
+}
+
+function stableShuffle(items, seedText) {
+  const arr = [...items];
+  let seed = Array.from(String(seedText)).reduce(
+    (acc, ch) => (acc * 31 + ch.charCodeAt(0)) >>> 0,
+    2166136261,
+  );
+
+  for (let i = arr.length - 1; i > 0; i -= 1) {
+    seed = (seed * 1664525 + 1013904223) >>> 0;
+    const j = seed % (i + 1);
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+
+  return arr;
+}
+
+function findCatalogEntry(requestEntry, catalog) {
+  const id = Number(requestEntry?.id);
+  if (Number.isFinite(id)) {
+    const byId = catalog.find((entry) => entry.id === id);
+    if (byId) return byId;
+  }
+
+  const expression = String(requestEntry?.expression_en || '').trim().toLowerCase();
+  const reelUrl = String(requestEntry?.reel_url || '').trim();
+  return catalog.find((entry) =>
+    entry.reel_url === reelUrl &&
+    entry.expression_en.trim().toLowerCase() === expression
+  );
+}
+
+function collectDistractors(entry, catalog) {
+  const seen = new Set([entry.expression_en.trim().toLowerCase()]);
+  const tiers = [
+    catalog.filter((item) => item.id !== entry.id && item.category === entry.category && item.difficulty === entry.difficulty),
+    catalog.filter((item) => item.id !== entry.id && item.category === entry.category),
+    catalog.filter((item) => item.id !== entry.id && item.difficulty === entry.difficulty),
+    catalog.filter((item) => item.id !== entry.id),
+  ];
+  const distractors = [];
+
+  for (const tier of tiers) {
+    for (const item of stableShuffle(tier, `${entry.id}:${tier.length}:${distractors.length}`)) {
+      const expression = item.expression_en.trim();
+      const key = expression.toLowerCase();
+      if (!expression || seen.has(key)) continue;
+      seen.add(key);
+      distractors.push(item);
+      if (distractors.length >= 3) return distractors;
+    }
+  }
+
+  return distractors;
+}
+
+function buildExpressionChoiceQuiz(entry, catalog) {
+  const distractors = collectDistractors(entry, catalog);
+  const options = stableShuffle(
+    [
+      { text: entry.expression_en, correct: true },
+      ...distractors.map((item) => ({ text: item.expression_en, correct: false })),
+    ],
+    `daily:${entry.id}:${entry.date || ''}`,
+  );
+
+  return {
+    prompt: `다음 뜻과 상황에 가장 자연스러운 영어 표현을 고르세요.`,
+    displayCue: `${entry.expression_meaning_kr} · ${entry.situation_kr}`,
+    options,
+    explanation: `"${entry.expression_en}"는 "${entry.situation_kr}"에 쓰는 표현입니다.`,
+    source: {
+      id: entry.id,
+      reel_url: entry.reel_url,
     },
-    body: JSON.stringify({
-      model: 'gpt-4o-mini',
-      temperature: 0.3,
-      max_tokens: 700,
-      messages: [{ role: 'user', content: prompt }]
-    })
-  });
-
-  if (!response.ok) {
-    const errText = await response.text();
-    throw new Error(`OpenAI API error: ${errText}`);
-  }
-
-  const data = await response.json();
-  return data.choices[0].message.content.trim();
+  };
 }
 
-function buildGenerationPrompt(entry) {
-  return `You generate a short English quiz for a Korean English-learning app.
+function buildDailyUsageQuiz(entry, catalog) {
+  const distractors = collectDistractors(entry, catalog);
+  const options = stableShuffle(
+    [
+      {
+        text: `${entry.situation_kr}\n${entry.expression_meaning_kr}`,
+        correct: true,
+      },
+      ...distractors.map((item) => ({
+        text: `${item.situation_kr}\n${item.expression_meaning_kr}`,
+        correct: false,
+      })),
+    ],
+    `daily-usage:${entry.id}:${entry.date || ''}`,
+  );
 
-Target expression:
-- expression_en: "${entry.expression_en}"
-- expression_meaning_kr: "${entry.expression_meaning_kr}"
-- situation_kr: "${entry.situation_kr}"
-- description_kr: "${entry.description_kr}"
-- category: "${entry.category}"
-- keywords: ${JSON.stringify([...(entry.search_keywords_kr || []), ...(entry.search_keywords_en || [])])}
-
-Task:
-- Create a multiple-choice quiz with 3 dialogue options.
-- The user already sees today's expression at the top of the card.
-- Your job is to test whether the user can recognize the ONE dialogue where that exact expression most naturally fits into the blank.
-- Each option must be a self-contained, realistic real-world mini-dialogue.
-- Every option must contain the blank token exactly as "____".
-- Exactly one option must logically demand the target expression.
-- The two wrong options must still sound like plausible conversations, but the target expression should feel unnatural or incorrect in those blanks.
-
-Hard constraints:
-- DO NOT output placeholder text.
-- DO NOT use meta-language in the dialogue.
-- DO NOT write things like "I need a natural English line here", "what would sound natural", "Speaker A", "Speaker B", "system", or "placeholder".
-- DO NOT explain the task inside the dialogue.
-- The conversation must be realistic and sound like native-level everyday speech.
-- Keep each option concise: 2 lines max.
-- Write the prompt and explanation in Korean.
-- Write the dialogue itself in natural English.
-
-Return ONLY valid JSON:
-{
-  "prompt": "Korean instruction for the quiz",
-  "options": [
-    { "text": "A: ...\\nB: ____", "correct": true },
-    { "text": "A: ...\\nB: ____", "correct": false },
-    { "text": "A: ...\\nB: ____", "correct": false }
-  ],
-  "explanation": "Korean explanation of why the correct dialogue fits the target expression"
-}`;
-}
-
-function buildValidationPrompt(entry, candidate) {
-  return `You validate and repair a short English quiz for a Korean learning app.
-
-Target expression:
-- expression_en: "${entry.expression_en}"
-- expression_meaning_kr: "${entry.expression_meaning_kr}"
-- situation_kr: "${entry.situation_kr}"
-- description_kr: "${entry.description_kr}"
-
-Candidate JSON:
-${candidate}
-
-Validation checklist:
-- The quiz must keep the same concept: choose the ONE dialogue where today's expression most naturally fits the blank.
-- Every option must be a realistic, self-contained conversation.
-- No placeholder bleed except the final blank token "____".
-- No meta-language, no task wording, no system wording, no hallucinated template text.
-- Exactly one option is correct.
-- The correct option must strongly and logically demand the target expression.
-- Wrong options must be plausible but incorrect for the target expression.
-- Korean prompt and explanation must be clear and natural.
-- Dialogue English must be natural and idiomatic.
-
-Hard constraints:
-- DO NOT output placeholder text.
-- DO NOT use meta-language in the dialogue.
-- The conversation must be a self-contained, realistic real-world scenario.
-
-If the candidate is flawed, rewrite it completely.
-Return ONLY valid JSON with this schema:
-{
-  "prompt": "Korean instruction",
-  "options": [
-    { "text": "A: ...\\nB: ____", "correct": true },
-    { "text": "A: ...\\nB: ____", "correct": false },
-    { "text": "A: ...\\nB: ____", "correct": false }
-  ],
-  "explanation": "Korean explanation"
-}`;
+  return {
+    prompt: '오늘 표현을 실제로 쓸 수 있는 상황을 고르세요.',
+    options,
+    explanation: `"${entry.expression_en}"는 "${entry.situation_kr}"에 쓰는 표현입니다.`,
+    source: {
+      id: entry.id,
+      reel_url: entry.reel_url,
+    },
+  };
 }
 
 export default async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+
   if (req.method === 'OPTIONS') return res.status(200).end();
-  if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
-
-  const rateLimit = globalThis._dailyQuizRateLimit || (globalThis._dailyQuizRateLimit = {});
-  const ip = req.headers['x-forwarded-for']?.split(',')[0] || 'unknown';
-  const now = Date.now();
-  const WINDOW = 60000;
-  const MAX = 20;
-  if (!rateLimit[ip]) rateLimit[ip] = [];
-  rateLimit[ip] = rateLimit[ip].filter(t => now - t < WINDOW);
-  if (rateLimit[ip].length >= MAX) {
-    return res.status(429).json({ error: 'Too many requests. Try again in a minute.' });
-  }
-  rateLimit[ip].push(now);
-
-  const entry = req.body?.entry;
-  if (!entry?.expression_en || !entry?.expression_meaning_kr || !entry?.situation_kr) {
-    return res.status(400).json({ error: 'Missing entry fields' });
-  }
-
-  const apiKey = process.env.OPENAI_API_KEY;
-  if (!apiKey) {
-    return res.status(500).json({ error: 'API key not configured' });
-  }
-
-  const variant = req.body?.variant || 'dialogue';
-  const cacheKey = `${variant}:${entry.id || entry.expression_en}:${entry.date || ''}`;
-  const cache = globalThis._dailyQuizCache || (globalThis._dailyQuizCache = new Map());
-  if (cache.has(cacheKey)) {
-    return res.status(200).json(cache.get(cacheKey));
+  if (req.method !== 'POST') {
+    return res.status(405).json({ error: 'Method not allowed' });
   }
 
   try {
-    const generatedText = await callOpenAI(apiKey, buildGenerationPrompt(entry));
-    const validatedText = await callOpenAI(apiKey, buildValidationPrompt(entry, generatedText));
-    const quiz = parseJSON(validatedText);
+    const catalog = loadCatalog();
+    const entry = findCatalogEntry(req.body?.entry, catalog);
 
-    if (!isValidQuizPayload(quiz, entry.expression_en)) {
-      throw new Error('Validated quiz failed guard checks');
+    if (!entry) {
+      return res.status(400).json({
+        error: 'Entry is not in the verified Instagram Reel catalog',
+      });
     }
 
-    const response = { quiz };
-    cache.set(cacheKey, response);
-    return res.status(200).json(response);
+    const quiz = req.body?.variant === 'daily_usage'
+      ? buildDailyUsageQuiz(entry, catalog)
+      : buildExpressionChoiceQuiz(entry, catalog);
+
+    return res.status(200).json({ quiz });
   } catch (err) {
-    console.error('Daily quiz generation error:', err);
-    return res.status(502).json({ error: 'Daily quiz generation failed' });
+    console.error('Daily quiz generation failed:', err);
+    return res.status(500).json({ error: 'Daily quiz generation failed' });
   }
 }

@@ -1791,6 +1791,16 @@
       return arr;
     }
 
+    function isTrustedReelEntry(entry) {
+      return !!(
+        entry &&
+        String(entry.expression_en || '').trim() &&
+        String(entry.expression_meaning_kr || '').trim() &&
+        String(entry.situation_kr || '').trim() &&
+        /^https:\/\/www\.instagram\.com\/reel\/[A-Za-z0-9_-]+\/?$/.test(String(entry.reel_url || '').trim())
+      );
+    }
+
     function switchHub(hub) {
       activeHub = hub;
       hubTabs.forEach(tab => {
@@ -2039,7 +2049,7 @@
     function getQuizPool() {
       const category = quizCategorySelect.value;
       return REELS_DATA.filter(entry => {
-        if (!entry.expression_en || !entry.expression_meaning_kr || !entry.situation_kr) return false;
+        if (!isTrustedReelEntry(entry)) return false;
         if (category && entry.category !== category) return false;
         return true;
       });
@@ -2174,7 +2184,8 @@
         type: 'dialogue',
         prompt: quiz.prompt,
         options: quiz.options,
-        explanation: quiz.explanation
+        explanation: quiz.explanation,
+        displayCue: quiz.displayCue || entry.situation_kr
       };
     }
 
@@ -2298,7 +2309,7 @@
 
       const isContrast = current.type === 'contrast';
       const isDialogue = current.type === 'dialogue';
-      const label = isDialogue ? '가장 자연스러운 대화를 고르세요' : isContrast ? '차이를 고르세요' : current.type === 'situation' ? '쓸 수 있는 상황을 고르세요' : '뜻을 고르세요';
+      const label = isDialogue ? '가장 자연스러운 표현을 고르세요' : isContrast ? '차이를 고르세요' : current.type === 'situation' ? '쓸 수 있는 상황을 고르세요' : '뜻을 고르세요';
       const cueNote = isDialogue
         ? current.prompt
         : isContrast
@@ -2308,7 +2319,7 @@
         : '표현만 보고 한국어 뜻을 먼저 떠올린 뒤 고르세요.';
       quizCard.innerHTML = `
         <div class="quiz-prompt-label">${label}</div>
-        <div class="quiz-expression">${escapeHtml(isContrast ? current.term : entry.expression_en)}</div>
+        <div class="quiz-expression">${escapeHtml(isDialogue ? current.displayCue : isContrast ? current.term : entry.expression_en)}</div>
         ${isContrast ? `<div class="quiz-contrast-pair">비교 대상: ${escapeHtml(current.pairedTerm)}</div>` : ''}
         <div class="quiz-cue-note">${escapeHtml(cueNote)}</div>
         <div class="quiz-options">
@@ -2421,7 +2432,7 @@
     // ─── Situation Practice ───
     function getQuizReadyEntries() {
       return REELS_DATA
-        .filter(entry => entry.expression_en && entry.expression_meaning_kr && entry.situation_kr)
+        .filter(isTrustedReelEntry)
         .map(normalizeExpressionEntry);
     }
 
@@ -2918,7 +2929,6 @@
 
     function buildDailyQuiz(entry) {
       const pool = getQuizReadyEntries();
-      const context = getDailyContext(entry);
 
       if (isContrastLesson(entry)) {
         const question = buildContrastQuestion(entry, pool, getDailyIndex(2));
@@ -2935,40 +2945,61 @@
         };
       }
 
-      const distractors = getDailyScenarioDistractors(entry, pool);
+      const distractors = getDailyUsageDistractors(entry, pool);
 
       const options = shuffle([
-        { text: buildDailyBlankDialogue(entry), correct: true },
-        ...distractors.map(item => ({ text: buildDailyBlankDialogue(item), correct: false }))
+        { text: buildDailyUsageOption(entry), correct: true },
+        ...distractors.map(item => ({ text: buildDailyUsageOption(item), correct: false }))
       ]);
 
       return {
-        prompt: formatDailySentences(`오늘 표현이 빈칸에 가장 자연스럽게 들어갈 대화를 고르세요.`),
+        prompt: formatDailySentences('오늘 표현을 실제로 쓸 수 있는 상황을 고르세요.'),
         options,
-        explanation: formatDailySentences(`"${entry.expression_en}" fits this kind of situation. ${context.scene}`)
+        explanation: formatDailySentences(`"${entry.expression_en}"는 "${entry.situation_kr}"에 쓰는 표현입니다.`)
       };
     }
 
-    function buildDailyBlankDialogue(entry) {
-      const context = getDailyContext(entry);
-      return formatDailySentences(`${context.setup}\nB: ____`);
+    function buildExpressionChoiceQuiz(entry) {
+      const pool = getQuizReadyEntries();
+      const distractors = getDistractorCandidates(entry, pool, 'expression_en');
+      const options = shuffle([
+        { text: entry.expression_en, correct: true },
+        ...distractors.map(item => ({ text: item.expression_en, correct: false }))
+      ]);
+
+      return {
+        prompt: '다음 뜻과 상황에 가장 자연스러운 영어 표현을 고르세요.',
+        displayCue: `${entry.expression_meaning_kr} · ${entry.situation_kr}`,
+        options,
+        explanation: `"${entry.expression_en}"는 "${entry.situation_kr}"에 쓰는 표현입니다.`
+      };
     }
 
-    function getDailyScenarioDistractors(entry, pool) {
-      const correctText = buildDailyBlankDialogue(entry);
+    function buildDailyUsageOption(entry) {
+      return `${entry.situation_kr}\n${entry.expression_meaning_kr}`;
+    }
+
+    function getDailyUsageDistractors(entry, pool) {
+      const correctText = buildDailyUsageOption(entry);
       const primary = shuffle(pool.filter(item =>
         item.id !== entry.id &&
-        item.category !== entry.category &&
-        buildDailyBlankDialogue(item) !== correctText
+        item.category === entry.category &&
+        item.difficulty === entry.difficulty &&
+        buildDailyUsageOption(item) !== correctText
+      ));
+      const secondary = shuffle(pool.filter(item =>
+        item.id !== entry.id &&
+        item.category === entry.category &&
+        buildDailyUsageOption(item) !== correctText
       ));
       const fallback = shuffle(pool.filter(item =>
         item.id !== entry.id &&
-        buildDailyBlankDialogue(item) !== correctText
+        buildDailyUsageOption(item) !== correctText
       ));
 
       const seen = new Set([correctText]);
-      return [...primary, ...fallback].filter(item => {
-        const text = buildDailyBlankDialogue(item);
+      return [...primary, ...secondary, ...fallback].filter(item => {
+        const text = buildDailyUsageOption(item);
         if (seen.has(text)) return false;
         seen.add(text);
         return true;
@@ -3041,7 +3072,9 @@
         return data.quiz;
       } catch (err) {
         console.error('Daily quiz API failed, using local fallback:', err);
-        return buildDailyQuiz(entry);
+        return variant === 'daily_usage'
+          ? buildDailyQuiz(entry)
+          : buildExpressionChoiceQuiz(entry);
       }
     }
 
@@ -3081,7 +3114,7 @@
         <button class="daily-quiz-option" type="button" disabled>자연스러운 빈칸 문제를 준비 중입니다.</button>
         <button class="daily-quiz-option" type="button" disabled>잠시만 기다려 주세요.</button>
       `;
-      const dailyQuiz = await fetchValidatedExpressionQuiz(entry, 'dialogue');
+      const dailyQuiz = await fetchValidatedExpressionQuiz(entry, 'daily_usage');
       renderDailyQuiz(dailyQuiz);
 
       document.getElementById('dailyWatchBtn').addEventListener('click', () => {
