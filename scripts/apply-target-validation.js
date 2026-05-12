@@ -20,7 +20,8 @@ const MANUAL_CORRECTIONS = {
     context_confidence: 'verified',
     target_audit_note: 'Manual transcript audit: the Reel frames "can you hear me" as the common phrase and teaches the softer "coming through" alternative.',
     context_audit_note: 'Manual transcript audit: the transcript discusses Zoom/meeting audio and whether the voice is coming through.',
-    usage_example_en: 'Is my voice coming through okay?',
+    usage_example_en: 'Before we start, is my voice coming through okay?',
+    example_confidence: 'verified',
     usage_context_kr: '화상회의에서 내 목소리가 잘 전달되는지 부드럽게 확인할 때',
     rejected_phrases: ['can you hear me']
   },
@@ -39,6 +40,7 @@ const MANUAL_CORRECTIONS = {
     context_audit_note: 'Manual transcript audit: corrected the prior wrong context "상대방의 안부를 물을 때".',
     target_evidence: "pretty can mean quite/fairly; transcript example: I'm pretty sure he's coming.",
     usage_example_en: "I'm pretty sure he's coming.",
+    example_confidence: 'verified',
     usage_context_kr: '어떤 정도가 꽤 높거나 거의 확신한다고 말할 때',
     rejected_phrases: ['fine']
   }
@@ -66,6 +68,22 @@ function normalize(value) {
     .replace(/[^a-z0-9가-힣\s]/g, ' ')
     .replace(/\s+/g, ' ')
     .trim();
+}
+
+function normalizeEnglish(value) {
+  return String(value || '')
+    .toLowerCase()
+    .replace(/[’']/g, '')
+    .replace(/[^a-z0-9\s]/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function expressionParts(expression) {
+  return String(expression || '')
+    .split(/\s+(?:vs\.?|versus)\s+|(?:\s*)[／/](?:\s*)/i)
+    .map(part => part.trim())
+    .filter(Boolean);
 }
 
 function transcriptSnippet(transcript, expression) {
@@ -101,10 +119,7 @@ function expressionAppearsInSource(entry, rawEntry, transcript) {
 
   if (sourceText.includes(expression)) return true;
 
-  const parts = String(entry.expression_en || '')
-    .split(/\s+(?:vs\.?|versus)\s+|(?:\s*)[／/](?:\s*)/i)
-    .map(normalize)
-    .filter(Boolean);
+  const parts = expressionParts(entry.expression_en).map(normalize);
   return parts.length > 1 && parts.every(part => sourceText.includes(part));
 }
 
@@ -128,16 +143,102 @@ function contextAppearsInTranscript(entry, transcript) {
   return situationTokens.some(token => evidence.includes(normalize(token)));
 }
 
+function cleanEnglishSpan(value) {
+  return String(value || '')
+    .replace(/\s+/g, ' ')
+    .replace(/\s+([,.!?])/g, '$1')
+    .replace(/^[-–—:,.\s]+|[-–—:,\s]+$/g, '')
+    .trim();
+}
+
+function englishCandidateSpans(transcript) {
+  const spans = String(transcript || '').match(/[A-Za-z][A-Za-z0-9'"’.,!?;:() -]{4,}/g) || [];
+  return spans.flatMap(span => {
+    const cleaned = cleanEnglishSpan(span);
+    const sentences = cleaned.split(/(?<=[.!?])\s+/).map(cleanEnglishSpan).filter(Boolean);
+    return [cleaned, ...sentences];
+  })
+    .filter(span => /[A-Za-z]/.test(span))
+    .filter(span => span.length <= 180);
+}
+
+function containsExpression(example, expression) {
+  const normalizedExample = normalizeEnglish(example);
+  const parts = expressionParts(expression).map(normalizeEnglish).filter(Boolean);
+  if (!parts.length) return false;
+  return parts.some(part => normalizedExample.includes(part));
+}
+
+function isMeaningfulUsageExample(entry, example) {
+  const cleaned = cleanEnglishSpan(example);
+  if (!cleaned || /[가-힣]/.test(cleaned)) return false;
+  if (!containsExpression(cleaned, entry.expression_en)) return false;
+  if (!/[.!?]$/.test(cleaned)) return false;
+
+  const normalizedExample = normalizeEnglish(cleaned);
+  const normalizedExpression = normalizeEnglish(entry.expression_en);
+  const exampleWords = normalizedExample.split(/\s+/).filter(Boolean);
+  const expressionWords = normalizedExpression.split(/\s+/).filter(Boolean);
+
+  if (normalizedExample === normalizedExpression) return false;
+  if (exampleWords.length < Math.max(4, expressionWords.length + 2)) return false;
+  if (expressionWords.length <= 2 && normalizedExample.endsWith(normalizedExpression)) return false;
+  if (/natural place to use|sounds less natural|what would sound natural|how would you describe|phrase would fit/i.test(cleaned)) return false;
+  if (/^(?:[a-z]+[,.]\s*){2,}[a-z]+[.!?]?$/i.test(cleaned)) return false;
+
+  return true;
+}
+
+function compactUsageExample(entry, example) {
+  const expression = normalizeEnglish(entry.expression_en);
+  const expressionWords = expression.split(/\s+/).filter(Boolean).length;
+  const seen = new Set();
+  const sentences = cleanEnglishSpan(example)
+    .split(/(?<=[.!?])\s+/)
+    .map(cleanEnglishSpan)
+    .filter(Boolean)
+    .filter(sentence => {
+      const normalized = normalizeEnglish(sentence);
+      const wordCount = normalized.split(/\s+/).filter(Boolean).length;
+      if (!normalized || seen.has(normalized)) return false;
+      seen.add(normalized);
+      if (normalized === expression) return false;
+      if (expressionWords <= 3 && normalized.endsWith(expression) && wordCount <= expressionWords + 1) return false;
+      return true;
+    });
+
+  return sentences.join(' ').trim();
+}
+
+function extractUsageExample(entry, transcript) {
+  const existing = compactUsageExample(entry, entry.usage_example_en);
+  if (isMeaningfulUsageExample(entry, existing)) return existing;
+
+  const candidates = englishCandidateSpans(transcript)
+    .map(span => compactUsageExample(entry, span))
+    .filter(span => isMeaningfulUsageExample(entry, span))
+    .sort((a, b) => {
+      const aWords = normalizeEnglish(a).split(/\s+/).length;
+      const bWords = normalizeEnglish(b).split(/\s+/).length;
+      return aWords - bWords;
+    });
+
+  return candidates[0] || '';
+}
+
 function buildValidation(entry, rawEntry, transcript, enrichedEntry) {
   const correction = MANUAL_CORRECTIONS[entry.reel_url];
   if (correction) {
+    const exampleVerified = isMeaningfulUsageExample(correction, correction.usage_example_en);
     return {
       ...entry,
       ...correction,
       source_type: 'instagram_reel',
       source_reel_id: rawEntry?.id || null,
       target_source: 'transcript_manual_audit',
-      excluded_from_daily: false
+      example_confidence: exampleVerified ? 'verified' : 'review',
+      example_audit_note: exampleVerified ? 'Manual example passed sentence-quality checks.' : 'Manual example is missing or too weak.',
+      excluded_from_daily: !exampleVerified
     };
   }
 
@@ -147,6 +248,8 @@ function buildValidation(entry, rawEntry, transcript, enrichedEntry) {
   const correctionMarker = hasCorrectionMarkerAfterExpression(transcript, entry.expression_en);
   const targetVerified = confidence === 'high' && appears && !correctionMarker;
   const contextVerified = targetVerified && contextAppearsInTranscript(entry, transcript);
+  const usageExample = extractUsageExample(entry, transcript);
+  const exampleVerified = targetVerified && contextVerified && isMeaningfulUsageExample(entry, usageExample);
 
   return {
     ...entry,
@@ -168,9 +271,13 @@ function buildValidation(entry, rawEntry, transcript, enrichedEntry) {
       : 'Usage context was not sufficiently supported by transcript terms.',
     target_evidence: transcriptSnippet(transcript, entry.expression_en),
     rejected_phrases: [],
-    usage_example_en: entry.usage_example_en || '',
+    usage_example_en: usageExample,
+    example_confidence: exampleVerified ? 'verified' : 'review',
+    example_audit_note: exampleVerified
+      ? 'Usage example is a transcript-supported sentence.'
+      : 'Usage example is missing, too short, or only repeats the target expression.',
     usage_context_kr: entry.usage_context_kr || entry.situation_kr,
-    excluded_from_daily: !(targetVerified && contextVerified)
+    excluded_from_daily: !(targetVerified && contextVerified && exampleVerified)
   };
 }
 
@@ -198,7 +305,11 @@ function writeData(filePath, entries) {
 }
 
 function writeReport(entries) {
-  const review = entries.filter(entry => entry.target_confidence !== 'verified' || entry.context_confidence !== 'verified');
+  const review = entries.filter(entry =>
+    entry.target_confidence !== 'verified' ||
+    entry.context_confidence !== 'verified' ||
+    entry.example_confidence !== 'verified'
+  );
   const corrected = entries.filter(entry => MANUAL_CORRECTIONS[entry.reel_url]);
   let report = '# Target Expression Audit\n\n';
   report += '## Summary\n';
@@ -208,17 +319,17 @@ function writeReport(entries) {
   report += `- Manual corrections applied: ${corrected.length}\n\n`;
 
   report += '## Manual Corrections\n';
-  report += '| id | source_reel_id | expression_en | usage_context_kr | rejected_phrases | reel_url |\n';
-  report += '|----|----------------|---------------|------------------|------------------|----------|\n';
+  report += '| id | source_reel_id | expression_en | usage_context_kr | usage_example_en | rejected_phrases | reel_url |\n';
+  report += '|----|----------------|---------------|------------------|------------------|------------------|----------|\n';
   for (const entry of corrected) {
-    report += `| ${entry.id} | ${entry.source_reel_id || ''} | ${entry.expression_en} | ${entry.usage_context_kr || entry.situation_kr || ''} | ${(entry.rejected_phrases || []).join(', ')} | ${entry.reel_url} |\n`;
+    report += `| ${entry.id} | ${entry.source_reel_id || ''} | ${entry.expression_en} | ${entry.usage_context_kr || entry.situation_kr || ''} | ${entry.usage_example_en || ''} | ${(entry.rejected_phrases || []).join(', ')} | ${entry.reel_url} |\n`;
   }
 
   report += '\n## Excluded Pending Review\n';
-  report += '| id | source_reel_id | expression_en | target_confidence | context_confidence | reason | reel_url |\n';
-  report += '|----|----------------|---------------|-------------------|--------------------|--------|----------|\n';
+  report += '| id | source_reel_id | expression_en | target_confidence | context_confidence | example_confidence | reason | reel_url |\n';
+  report += '|----|----------------|---------------|-------------------|--------------------|--------------------|--------|----------|\n';
   for (const entry of review) {
-    report += `| ${entry.id} | ${entry.source_reel_id || ''} | ${entry.expression_en} | ${entry.target_confidence || ''} | ${entry.context_confidence || ''} | ${[entry.target_audit_note, entry.context_audit_note].filter(Boolean).join(' ')} | ${entry.reel_url} |\n`;
+    report += `| ${entry.id} | ${entry.source_reel_id || ''} | ${entry.expression_en} | ${entry.target_confidence || ''} | ${entry.context_confidence || ''} | ${entry.example_confidence || ''} | ${[entry.target_audit_note, entry.context_audit_note, entry.example_audit_note].filter(Boolean).join(' ')} | ${entry.reel_url} |\n`;
   }
 
   fs.writeFileSync('target-expression-audit.md', report, 'utf8');
@@ -240,7 +351,11 @@ writeData('data.js', audited);
 writeData('public/data.js', audited);
 writeReport(audited);
 
-const verified = audited.filter(entry => entry.target_confidence === 'verified' && entry.context_confidence === 'verified').length;
+const verified = audited.filter(entry =>
+  entry.target_confidence === 'verified' &&
+  entry.context_confidence === 'verified' &&
+  entry.example_confidence === 'verified'
+).length;
 const review = audited.length - verified;
 console.log(JSON.stringify({
   total: audited.length,

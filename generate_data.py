@@ -39,6 +39,8 @@ for entry in entries:
         'context_audit_note': 'Run npm run audit:targets to validate usage context against transcripts.',
         'target_evidence': e.get('target_evidence', ''),
         'usage_example_en': e.get('usage_example_en', ''),
+        'example_confidence': 'review',
+        'example_audit_note': 'Run npm run audit:targets to extract and validate a full usage example sentence.',
         'usage_context_kr': e.get('usage_context_kr', e.get('situation_kr', '')),
         'rejected_phrases': e.get('rejected_phrases', []),
         'excluded_from_daily': not (e.get('confidence') == 'high' and e.get('expression_en'))

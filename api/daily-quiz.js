@@ -33,10 +33,12 @@ function isTrustedReelEntry(entry) {
     entry.source_type === 'instagram_reel' &&
     entry.target_confidence === 'verified' &&
     entry.context_confidence === 'verified' &&
+    entry.example_confidence === 'verified' &&
     entry.excluded_from_daily !== true &&
     String(entry.expression_en || '').trim() &&
     String(entry.expression_meaning_kr || '').trim() &&
     String(entry.situation_kr || '').trim() &&
+    String(entry.usage_example_en || '').trim() &&
     /^https:\/\/www\.instagram\.com\/reel\/[A-Za-z0-9_-]+\/?$/.test(String(entry.reel_url || '').trim())
   );
 }
@@ -118,24 +120,72 @@ function buildExpressionChoiceQuiz(entry, catalog) {
   };
 }
 
-function buildDailyUsageQuiz(entry, catalog) {
-  const distractors = collectDistractors(entry, catalog);
+function cleanSentence(text) {
+  return String(text || '').replace(/\s+/g, ' ').trim();
+}
+
+function buildWrongUsageSentences(entry) {
+  const expression = cleanSentence(entry.expression_en);
+  const lower = expression.toLowerCase();
+  const isSingleWord = /^[a-z]+$/i.test(expression);
+
+  if (isSingleWord) {
+    if (lower === 'pretty') {
+      return [
+        'She looks pretty in that jacket.',
+        'Can you pretty me after lunch?',
+        'I pretty to the office every day.',
+      ];
+    }
+    return [
+      `Can you ${expression} me after lunch?`,
+      `I ${expression} to the office every day.`,
+      `This report is very ${expression} tomorrow.`,
+    ];
+  }
+
+  if (expression.endsWith('?')) {
+    return [
+      `This sandwich is ${expression}`,
+      `I bought ${expression} yesterday.`,
+      `The weather became ${expression} after lunch.`,
+    ];
+  }
+
+  if (/^(i|i'm|i’ve|we|she|he|they|that|it|it's|there)\b/i.test(expression)) {
+    return [
+      `This report is ${expression}.`,
+      `Please ${expression} before the meeting.`,
+      `The weather became ${expression} yesterday.`,
+    ];
+  }
+
+  return [
+    `I need to ${expression} my coffee tomorrow.`,
+    `This room is very ${expression} today.`,
+    `Can you ${expression} me after lunch?`,
+  ];
+}
+
+function buildDailyUsageQuiz(entry) {
+  const wrongOptions = buildWrongUsageSentences(entry)
+    .filter(text => text && text !== entry.usage_example_en)
+    .slice(0, 3)
+    .map(text => ({ text, correct: false }));
+
   const options = stableShuffle(
     [
       {
-        text: entry.usage_context_kr || entry.situation_kr,
+        text: cleanSentence(entry.usage_example_en),
         correct: true,
       },
-      ...distractors.map((item) => ({
-        text: item.usage_context_kr || item.situation_kr,
-        correct: false,
-      })),
+      ...wrongOptions,
     ],
     `daily-usage:${entry.id}:${entry.date || ''}`,
   );
 
   return {
-    prompt: '오늘 표현의 실제 쓰임과 가장 가까운 상황을 고르세요.',
+    prompt: '오늘 표현이 자연스럽게 쓰인 문장을 고르세요.',
     options,
     explanation: `"${entry.expression_en}"는 "${entry.usage_context_kr || entry.situation_kr}"에 쓰는 표현입니다.`,
     source: {
@@ -166,7 +216,7 @@ export default async function handler(req, res) {
     }
 
     const quiz = req.body?.variant === 'daily_usage'
-      ? buildDailyUsageQuiz(entry, catalog)
+      ? buildDailyUsageQuiz(entry)
       : buildExpressionChoiceQuiz(entry, catalog);
 
     return res.status(200).json({ quiz });

@@ -32,7 +32,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "용기를 내서 사람 만날 때"
+    "usage_context_kr": "용기를 내서 사람 만날 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "expression_en": "squeeze in",
@@ -68,7 +70,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "바쁜 와중에 시간을 낼 때"
+    "usage_context_kr": "바쁜 와중에 시간을 낼 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 3,
@@ -101,7 +105,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "재미없는 상황을 표현할 때"
+    "usage_context_kr": "재미없는 상황을 표현할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 4,
@@ -134,7 +140,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "약속을 취소할 때"
+    "usage_context_kr": "약속을 취소할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 5,
@@ -163,11 +171,13 @@ const REELS_DATA = [
     "target_audit_note": "Transcript/caption audit passed.",
     "target_evidence": "너 아직도 누군가의 말에 동의할 때 i agree i agree 이런 말만 쓰니 그게 되게 쉽잖아 쉬운데 멋이 없는 거지 sounds fair enough i agree 정말 그 사람과 100 동의할 때 쓰는 말이야 내가 완전히 동의하지 않는 상황 그럴 때 쓸 수 있는 표현은 sounds fair enough fair 공평하다니까 너 말도 공평하게 들려 그래서 무조건적인 아 너 말이 맞아요 알겠어요 알겠어요 하는 것이 아니라 일리 있네",
     "rejected_phrases": [],
-    "excluded_from_daily": false,
+    "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "완전 동의하지 않을 때"
+    "usage_context_kr": "완전 동의하지 않을 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 6,
@@ -201,7 +211,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "중요한 순간에 결정을 내릴 때"
+    "usage_context_kr": "중요한 순간에 결정을 내릴 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 7,
@@ -234,7 +246,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "과거의 좋은 시절을 회상할 때"
+    "usage_context_kr": "과거의 좋은 시절을 회상할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 8,
@@ -266,8 +280,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
-    "usage_context_kr": "게임이 안 될 때"
+    "usage_example_en": "By five years, it's not even close.",
+    "usage_context_kr": "게임이 안 될 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 9,
@@ -300,7 +316,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "점심 후 몸이 무거울 때"
+    "usage_context_kr": "점심 후 몸이 무거울 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 10,
@@ -333,7 +351,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "상태를 물어볼 때"
+    "usage_context_kr": "상태를 물어볼 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 11,
@@ -366,7 +386,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "곤란한 질문을 받을 때"
+    "usage_context_kr": "곤란한 질문을 받을 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 12,
@@ -399,7 +421,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "피부 관련 대화를 할 때"
+    "usage_context_kr": "피부 관련 대화를 할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 13,
@@ -428,11 +452,13 @@ const REELS_DATA = [
     "target_audit_note": "Transcript/caption audit passed.",
     "target_evidence": "집순이 집돌이는 무조건 알아야 되는 표현 집콕한다를 영어로 play at home 아니야 stay in 이라고 해야 돼 우리가 play라는 거는 놀다라는 뜻으로 알고 있지만 조금 더 구체적으로 들어가면 어린아이가 속굽 장난할 때 쓰는 표현인 거야 그러니까 그냥 나 집에 있을 거야 집에서 그냥 뭐 넷플릭스도 보고 유튜브도 보고 그냥 있을 거야 를 생각해 보면 stay 나 집에 있을 거야",
     "rejected_phrases": [],
-    "excluded_from_daily": false,
+    "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "집에서 시간을 보낼 때"
+    "usage_context_kr": "집에서 시간을 보낼 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 14,
@@ -465,7 +491,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "힘든 상황에서 응원할 때"
+    "usage_context_kr": "힘든 상황에서 응원할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 15,
@@ -498,7 +526,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "상황을 확인하고 싶을 때"
+    "usage_context_kr": "상황을 확인하고 싶을 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 16,
@@ -531,7 +561,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "SNS에서 인기 있을 때"
+    "usage_context_kr": "SNS에서 인기 있을 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 17,
@@ -564,7 +596,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "친구의 속마음을 알 때"
+    "usage_context_kr": "친구의 속마음을 알 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 18,
@@ -596,8 +630,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
-    "usage_context_kr": "부정적인 표현을 피하고 싶을 때"
+    "usage_example_en": "It's not the most flavorful.",
+    "usage_context_kr": "부정적인 표현을 피하고 싶을 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 19,
@@ -630,7 +666,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "여행할 때"
+    "usage_context_kr": "여행할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 20,
@@ -663,8 +701,10 @@ const REELS_DATA = [
     "excluded_from_daily": false,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "",
-    "usage_context_kr": "임신 소식을 전할 때"
+    "usage_example_en": "We're expecting a baby in March.",
+    "usage_context_kr": "임신 소식을 전할 때",
+    "example_confidence": "verified",
+    "example_audit_note": "Usage example is a transcript-supported sentence."
   },
   {
     "id": 21,
@@ -698,7 +738,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "영어 공부를 이야기할 때"
+    "usage_context_kr": "영어 공부를 이야기할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 22,
@@ -730,8 +772,10 @@ const REELS_DATA = [
     "excluded_from_daily": false,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "",
-    "usage_context_kr": "누군가의 의견을 인정할 때"
+    "usage_example_en": "I'd say that's fair. Sometimes I'd like to hang out with people who aren't that bright.",
+    "usage_context_kr": "누군가의 의견을 인정할 때",
+    "example_confidence": "verified",
+    "example_audit_note": "Usage example is a transcript-supported sentence."
   },
   {
     "id": 23,
@@ -764,7 +808,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "감정적으로 무관심할 때"
+    "usage_context_kr": "감정적으로 무관심할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 24,
@@ -793,11 +839,13 @@ const REELS_DATA = [
     "target_audit_note": "Transcript/caption audit passed.",
     "target_evidence": "월급 받으면 갑자기 순식간에 사라지잖아 그래서 내가 돈을 모아서 무언가를 살 때 영어로 뭐라고 할까 이럴 때 쓸 수 있는 표현은 save up 이라는 표현이야 돈을 아낀다 save money 라는 표현을 써도 되는데 차근차근 모아서 돈을 모은다의 뉘앙스를 주려면 save up 이라는 표현을 써야 돼 내년 여행 가려고 돈 모으는 중이야 우리 독립하려고 돈 모으는 중이야 coaching core we saving up to mo",
     "rejected_phrases": [],
-    "excluded_from_daily": false,
+    "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "돈을 모을 때"
+    "usage_context_kr": "돈을 모을 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 25,
@@ -831,7 +879,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "사진이 잘 나올 때"
+    "usage_context_kr": "사진이 잘 나올 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 26,
@@ -864,8 +914,10 @@ const REELS_DATA = [
     "excluded_from_daily": false,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "",
-    "usage_context_kr": "마음이 바뀔 때"
+    "usage_example_en": "So I was like, you know what?",
+    "usage_context_kr": "마음이 바뀔 때",
+    "example_confidence": "verified",
+    "example_audit_note": "Usage example is a transcript-supported sentence."
   },
   {
     "id": 27,
@@ -898,7 +950,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "새해 목표를 세울 때"
+    "usage_context_kr": "새해 목표를 세울 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 28,
@@ -931,7 +985,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "친구들과 술자리에서 할 때"
+    "usage_context_kr": "친구들과 술자리에서 할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 29,
@@ -964,7 +1020,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "확실한 방법이 필요할 때"
+    "usage_context_kr": "확실한 방법이 필요할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 30,
@@ -996,8 +1054,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
-    "usage_context_kr": "자신의 생각을 의심할 때"
+    "usage_example_en": "But at a certain point you go, Am I delusional? Maybe I'm not funny.",
+    "usage_context_kr": "자신의 생각을 의심할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 31,
@@ -1030,7 +1090,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "누군가의 슬픈 소식을 들었을 때"
+    "usage_context_kr": "누군가의 슬픈 소식을 들었을 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 32,
@@ -1063,7 +1125,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "2025년을 이야기할 때"
+    "usage_context_kr": "2025년을 이야기할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 33,
@@ -1096,7 +1160,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "모든 조건을 만족할 때"
+    "usage_context_kr": "모든 조건을 만족할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 34,
@@ -1125,11 +1191,13 @@ const REELS_DATA = [
     "target_audit_note": "Transcript/caption audit passed.",
     "target_evidence": "변화를 부드럽게 전달할 수 있는 영어표현이야 라고 하면은 어 아니 이번에 머리스타일 바뀌었어 잘 어울린다 그래서 우리가 알아둬야 될거는 첫번째 notice 내가 알아차린거야 두번째 happened to notice 정말 우연히 알아차렸다 그리고 마지막 i couldnt help but notice는 눈에 띄어서 자연스럽게 말하는 영어표현이다",
     "rejected_phrases": [],
-    "excluded_from_daily": false,
+    "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "상태 변화를 전달할 때"
+    "usage_context_kr": "상태 변화를 전달할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 35,
@@ -1161,8 +1229,10 @@ const REELS_DATA = [
     "excluded_from_daily": false,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "",
-    "usage_context_kr": "문제를 해결하고 싶을 때"
+    "usage_example_en": "let's figure out our next step.",
+    "usage_context_kr": "문제를 해결하고 싶을 때",
+    "example_confidence": "verified",
+    "example_audit_note": "Usage example is a transcript-supported sentence."
   },
   {
     "id": 36,
@@ -1195,7 +1265,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "징크스에 대해 이야기할 때"
+    "usage_context_kr": "징크스에 대해 이야기할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 37,
@@ -1227,8 +1299,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
-    "usage_context_kr": "물건을 내려놓고 싶을 때"
+    "usage_example_en": "Had to put it down before I forget it.",
+    "usage_context_kr": "물건을 내려놓고 싶을 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 38,
@@ -1261,7 +1335,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "친구와 편하게 대화할 때"
+    "usage_context_kr": "친구와 편하게 대화할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 39,
@@ -1294,7 +1370,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "감정이 상했을 때"
+    "usage_context_kr": "감정이 상했을 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 40,
@@ -1327,7 +1405,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "감정이 자주 변할 때"
+    "usage_context_kr": "감정이 자주 변할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 41,
@@ -1360,7 +1440,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "상대의 선택을 존중할 때"
+    "usage_context_kr": "상대의 선택을 존중할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 42,
@@ -1394,7 +1476,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "재미있는 활동을 설명할 때"
+    "usage_context_kr": "재미있는 활동을 설명할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 43,
@@ -1426,8 +1510,10 @@ const REELS_DATA = [
     "excluded_from_daily": false,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "",
-    "usage_context_kr": "중독성 있는 노래를 들을 때"
+    "usage_example_en": "That song is an earworm. I can't stop humming.",
+    "usage_context_kr": "중독성 있는 노래를 들을 때",
+    "example_confidence": "verified",
+    "example_audit_note": "Usage example is a transcript-supported sentence."
   },
   {
     "id": 44,
@@ -1460,7 +1546,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "연락이 끊겼을 때"
+    "usage_context_kr": "연락이 끊겼을 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 45,
@@ -1493,7 +1581,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "말 많은 사람에게"
+    "usage_context_kr": "말 많은 사람에게",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 46,
@@ -1525,8 +1615,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
-    "usage_context_kr": "공부할 때"
+    "usage_example_en": "I'm locked in on the presentation today.",
+    "usage_context_kr": "공부할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 47,
@@ -1559,7 +1651,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "상황을 가정할 때"
+    "usage_context_kr": "상황을 가정할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 48,
@@ -1592,7 +1686,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "TV나 음악을 틀고 싶을 때"
+    "usage_context_kr": "TV나 음악을 틀고 싶을 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 49,
@@ -1624,8 +1720,10 @@ const REELS_DATA = [
     "excluded_from_daily": false,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "",
-    "usage_context_kr": "친구에게 중요한 이야기를 할 때"
+    "usage_example_en": "I've been meaning to tell you your presentation was amazing.",
+    "usage_context_kr": "친구에게 중요한 이야기를 할 때",
+    "example_confidence": "verified",
+    "example_audit_note": "Usage example is a transcript-supported sentence."
   },
   {
     "id": 50,
@@ -1659,7 +1757,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "파티나 여행할 때"
+    "usage_context_kr": "파티나 여행할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 51,
@@ -1688,11 +1788,13 @@ const REELS_DATA = [
     "target_audit_note": "Transcript/caption audit passed.",
     "target_evidence": "들릴 수 있잖아 나 아무것도 모르는 바보예요 그게 아니라 나 좀 아는데 내가 거기까진 아직 미쳐 잘 모르겠어요 의 부드러운 몰라는 영어로 뭐야 not that i know of 정도로 부드럽게 말을 할 수 있는 거야 예를 들어 did she quit her job 그 친구 혹시 직장 그만뒀대 라고 물어봤을 때 좀 민감할 수 있는 질문이잖아 not that i know of 내가 알고 있기로는 아닐 거야 정도로 부드럽게 표현할 수 있다라는 거지 as far a",
     "rejected_phrases": [],
-    "excluded_from_daily": false,
+    "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "모르는 정보를 말할 때"
+    "usage_context_kr": "모르는 정보를 말할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 52,
@@ -1725,7 +1827,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "힐링할 때도, 피곤할 때도"
+    "usage_context_kr": "힐링할 때도, 피곤할 때도",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 53,
@@ -1758,7 +1862,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "친구에게 물어볼 때"
+    "usage_context_kr": "친구에게 물어볼 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 54,
@@ -1791,7 +1897,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "경기에서 교체할 때"
+    "usage_context_kr": "경기에서 교체할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 55,
@@ -1824,7 +1932,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "대화 전환할 때"
+    "usage_context_kr": "대화 전환할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 56,
@@ -1856,8 +1966,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
-    "usage_context_kr": "진실을 강조할 때"
+    "usage_example_en": "I swear it's true.",
+    "usage_context_kr": "진실을 강조할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 57,
@@ -1886,11 +1998,13 @@ const REELS_DATA = [
     "target_audit_note": "Transcript/caption audit passed.",
     "target_evidence": "o wrong 이렇게 얘기를 할 수 있겠지 내가 원치 않던 방향으로 흘러가니까 그치 그리고 내가 정말 추천해주고 사람들이 잘 모르는 표현으로는 go awry라는 표현이야 awry가 뜻하지 않게 비틀어지는 것들을 의미하거든 그래서 my plan went awry라고 하면은 내 계획은 완전히 망가졌어 틀어졌어 라고 얘기하면 된다 here is where you go a little awry 여기서는 좀 어색해지는 곳이야",
     "rejected_phrases": [],
-    "excluded_from_daily": false,
+    "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "계획이 어긋날 때"
+    "usage_context_kr": "계획이 어긋날 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 58,
@@ -1922,8 +2036,10 @@ const REELS_DATA = [
     "excluded_from_daily": false,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "",
-    "usage_context_kr": "상대방의 거짓말을 알게 될 때"
+    "usage_example_en": "Right off the bat, I knew he was lying.",
+    "usage_context_kr": "상대방의 거짓말을 알게 될 때",
+    "example_confidence": "verified",
+    "example_audit_note": "Usage example is a transcript-supported sentence."
   },
   {
     "id": 59,
@@ -1952,11 +2068,13 @@ const REELS_DATA = [
     "target_audit_note": "Transcript/caption audit passed.",
     "target_evidence": "람을 미치고 팔짝 뛰게 하는지 영어로 뭐야 그러게 뭐 you make me crazy 더 정확한 표현은 you drive me crazy 또는 it drives me crazy 라고 얘기를 해야 돼 아 넌 진짜 날 너무 미치게 해 drives me crazy 라고 얘기를 하면 돼 너무 극단적인 경우가 아니고 조금 신경이 쓰여 약간 자꾸 내 신경을 긁어대 그러면 it bugs me 마치 벌레처럼 it bugs me 라고 얘기를 해도 되고 신경을 거슬리는 정도면",
     "rejected_phrases": [],
-    "excluded_from_daily": false,
+    "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "소음 때문에 짜증날 때"
+    "usage_context_kr": "소음 때문에 짜증날 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 60,
@@ -1989,7 +2107,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "집에 손님을 초대할 때"
+    "usage_context_kr": "집에 손님을 초대할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 61,
@@ -2022,8 +2142,10 @@ const REELS_DATA = [
     "excluded_from_daily": false,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "",
-    "usage_context_kr": "여러 역할을 동시에 할 때"
+    "usage_example_en": "I am a producer. I wear two hats now. I think that it's important that I represent the movie well.",
+    "usage_context_kr": "여러 역할을 동시에 할 때",
+    "example_confidence": "verified",
+    "example_audit_note": "Usage example is a transcript-supported sentence."
   },
   {
     "id": 62,
@@ -2056,7 +2178,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "누군가에게 미안할 때"
+    "usage_context_kr": "누군가에게 미안할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 63,
@@ -2088,8 +2212,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
-    "usage_context_kr": "아쉬운 상황에서 긍정적으로 말할 때"
+    "usage_example_en": "My last thought is that I suck at this, but at least you didn't smash.",
+    "usage_context_kr": "아쉬운 상황에서 긍정적으로 말할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 64,
@@ -2122,7 +2248,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "정치인에 대한 여론이 바뀔 때"
+    "usage_context_kr": "정치인에 대한 여론이 바뀔 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 65,
@@ -2159,7 +2287,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "OCD 의미를 설명할 때"
+    "usage_context_kr": "OCD 의미를 설명할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 66,
@@ -2195,7 +2325,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "상대방에게 눈치를 물을 때"
+    "usage_context_kr": "상대방에게 눈치를 물을 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 67,
@@ -2231,7 +2363,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "상대방에게 눈치를 물을 때"
+    "usage_context_kr": "상대방에게 눈치를 물을 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 68,
@@ -2263,8 +2397,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
-    "usage_context_kr": "수업에 집중할 때"
+    "usage_example_en": "You need to pay attention in class in order to pass.",
+    "usage_context_kr": "수업에 집중할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 69,
@@ -2293,11 +2429,13 @@ const REELS_DATA = [
     "target_audit_note": "Transcript/caption audit passed.",
     "target_evidence": "지금부터 영어가 왜 어려운지 이 영상 하나로 내가 말을 해줄게 그러면 응용 한숫금도 nice to meet you nice meeting you 차이가 뭘까 nice to meet you는 처음 만나는 사람한테 얘기를 하는 거고 nice meeting you는 만나서 반가웠다 하는 말 아니야 이미 지나간 거에 대해서 이게 영어가 어려운 이유인 거야",
     "rejected_phrases": [],
-    "excluded_from_daily": false,
+    "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "처음 만나는 사람에게 할 때"
+    "usage_context_kr": "처음 만나는 사람에게 할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 70,
@@ -2331,7 +2469,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "실력을 키우고 싶을 때"
+    "usage_context_kr": "실력을 키우고 싶을 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 71,
@@ -2365,7 +2505,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "격식 있는 자리에서"
+    "usage_context_kr": "격식 있는 자리에서",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 72,
@@ -2394,11 +2536,13 @@ const REELS_DATA = [
     "target_audit_note": "Transcript/caption audit passed.",
     "target_evidence": "",
     "rejected_phrases": [],
-    "excluded_from_daily": false,
+    "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "양측 균형 비교할 때"
+    "usage_context_kr": "양측 균형 비교할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 73,
@@ -2431,8 +2575,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
-    "usage_context_kr": "어떤 상황에서도 함께할 때"
+    "usage_example_en": "For better or for worse, we're all living in Oppenheimer's world, so I would really like to dedicate this to the peacemakers everywhere.",
+    "usage_context_kr": "어떤 상황에서도 함께할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 74,
@@ -2465,7 +2611,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "내가 좋아하지 않을 때"
+    "usage_context_kr": "내가 좋아하지 않을 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 75,
@@ -2499,7 +2647,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "결승에서 전승할 때"
+    "usage_context_kr": "결승에서 전승할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 76,
@@ -2532,7 +2682,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "회의나 발표 중에"
+    "usage_context_kr": "회의나 발표 중에",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 77,
@@ -2565,8 +2717,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
-    "usage_context_kr": "무언가를 배우고 싶을 때"
+    "usage_example_en": "you learn it as you go.",
+    "usage_context_kr": "무언가를 배우고 싶을 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 78,
@@ -2599,7 +2753,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "요청이나 질문을 꺼낼 때"
+    "usage_context_kr": "요청이나 질문을 꺼낼 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 79,
@@ -2631,8 +2787,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
-    "usage_context_kr": "용서할 때"
+    "usage_example_en": "He's a big man or apologizing first.",
+    "usage_context_kr": "용서할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 80,
@@ -2665,8 +2823,10 @@ const REELS_DATA = [
     "excluded_from_daily": false,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "",
-    "usage_context_kr": "현재 상황을 설명할 때"
+    "usage_example_en": "I'm currently working on a different project.",
+    "usage_context_kr": "현재 상황을 설명할 때",
+    "example_confidence": "verified",
+    "example_audit_note": "Usage example is a transcript-supported sentence."
   },
   {
     "id": 81,
@@ -2698,8 +2858,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
-    "usage_context_kr": "힘든 하루를 보낸 후에"
+    "usage_example_en": "I need to chill out and relax.",
+    "usage_context_kr": "힘든 하루를 보낸 후에",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 82,
@@ -2732,7 +2894,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "상황을 반대로 설명할 때"
+    "usage_context_kr": "상황을 반대로 설명할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 83,
@@ -2761,11 +2925,13 @@ const REELS_DATA = [
     "target_audit_note": "Transcript/caption audit passed.",
     "target_evidence": "이게 막 싸움나고 그럴 표현까지는 아닌가 그 정도는 아닌데 만약에 내가 좀 욕 같아서 걱정이 돼 그러면 know it all이라고 얘기해도 돼 mr know it all know 알다 그것은 모든 것을 아는 척하는 사람 정말 재수없는 녀석 그래서 mr know it all이라고 얘기해도 돼",
     "rejected_phrases": [],
-    "excluded_from_daily": false,
+    "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "회의 중에 잘난 척할 때"
+    "usage_context_kr": "회의 중에 잘난 척할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 84,
@@ -2794,11 +2960,13 @@ const REELS_DATA = [
     "target_audit_note": "Transcript/caption audit passed.",
     "target_evidence": "고 영어회화 표현들을 다 구성해볼게 만약에 내가 좀 편안해 봄이 앞으로 기운 게 아니라 봄이 뒤로 누이면서 되게 편안한 자세에 놓이게 될 거야 laid back 모든 영어는 very를 쓰지 않고도 영어 표현으로 대체를 할 수 있다",
     "rejected_phrases": [],
-    "excluded_from_daily": false,
+    "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "편안한 분위기일 때"
+    "usage_context_kr": "편안한 분위기일 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 85,
@@ -2830,8 +2998,10 @@ const REELS_DATA = [
     "excluded_from_daily": false,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "",
-    "usage_context_kr": "너무 웃겨서 웃을 때"
+    "usage_example_en": "I cracked up for like 5 minutes.",
+    "usage_context_kr": "너무 웃겨서 웃을 때",
+    "example_confidence": "verified",
+    "example_audit_note": "Usage example is a transcript-supported sentence."
   },
   {
     "id": 86,
@@ -2864,7 +3034,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "감정이 격해졌을 때"
+    "usage_context_kr": "감정이 격해졌을 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 87,
@@ -2893,11 +3065,13 @@ const REELS_DATA = [
     "target_audit_note": "Transcript/caption audit passed.",
     "target_evidence": "",
     "rejected_phrases": [],
-    "excluded_from_daily": false,
+    "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "새로운 시도를 하기 전"
+    "usage_context_kr": "새로운 시도를 하기 전",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 88,
@@ -2930,7 +3104,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "일상 대화할 때"
+    "usage_context_kr": "일상 대화할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 89,
@@ -2963,8 +3139,10 @@ const REELS_DATA = [
     "excluded_from_daily": false,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "",
-    "usage_context_kr": "더위를 느낄 때"
+    "usage_example_en": "let's go inside and cool off for a bit.",
+    "usage_context_kr": "더위를 느낄 때",
+    "example_confidence": "verified",
+    "example_audit_note": "Usage example is a transcript-supported sentence."
   },
   {
     "id": 90,
@@ -2993,11 +3171,13 @@ const REELS_DATA = [
     "target_audit_note": "Transcript/caption audit passed.",
     "target_evidence": "런 경우에는 tag along이라고 해 어쨌든 소외됐다는 감정이 느껴질 거 아니야 그럼 이때는 im lonely 이렇게 얘기를 하는 게 아니야 i feel left out left가 남겨지다거든 나 좀 혼자 남겨진 것 같아 나 좀 소외감이 들어 i feel left out",
     "rejected_phrases": [],
-    "excluded_from_daily": false,
+    "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "친구들 사이에 낄 때"
+    "usage_context_kr": "친구들 사이에 낄 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 91,
@@ -3027,11 +3207,13 @@ const REELS_DATA = [
     "target_audit_note": "Transcript/caption audit passed.",
     "target_evidence": "런 경우는 뭐라고 할까 그건 진짜 모르겠는데 thinning hair 이 머리카락이 굵기가 점점 얇아지고 힘이 없어진다라는 걸 표현하기 위해서 im having a thinning hair라고 얘기할 수 있지",
     "rejected_phrases": [],
-    "excluded_from_daily": false,
+    "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "탈모 초기 증세가 있을 때"
+    "usage_context_kr": "탈모 초기 증세가 있을 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 92,
@@ -3064,7 +3246,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "놀라운 소식을 들었을 때"
+    "usage_context_kr": "놀라운 소식을 들었을 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 93,
@@ -3094,11 +3278,13 @@ const REELS_DATA = [
     "target_audit_note": "Transcript/caption audit passed.",
     "target_evidence": "",
     "rejected_phrases": [],
-    "excluded_from_daily": false,
+    "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "우리끼리 잠깐 얘기할 때"
+    "usage_context_kr": "우리끼리 잠깐 얘기할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 94,
@@ -3132,7 +3318,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "감정이나 통증을 해소할 때"
+    "usage_context_kr": "감정이나 통증을 해소할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 95,
@@ -3164,8 +3352,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
-    "usage_context_kr": "시간에 대해 이야기할 때"
+    "usage_example_en": "time wise, it was a waste.",
+    "usage_context_kr": "시간에 대해 이야기할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 96,
@@ -3199,7 +3389,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "누군가가 집중이 필요할 때"
+    "usage_context_kr": "누군가가 집중이 필요할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 97,
@@ -3228,11 +3420,13 @@ const REELS_DATA = [
     "target_audit_note": "Transcript/caption audit passed.",
     "target_evidence": "ecessary가 필요하다야 그런데 불필요하다도 너무 과한 것 같아 조금 더 톤을 낮추고 싶어 아 좀 덜 필요한 것 같아요 라고 얘기를 하려면 less necessary 지금 그렇게까지 필요하진 않으니까 덜 필요해요 less necessary 아 자 그러면 이번에는 지금 갖고 있는 것들이나 기능들이 중복이 되어서 필요가 없는 경우는 이걸 뭐라 할까 모르겠는데 이거는 redundant 그래서 이런 부분들을 여러 상황과 맥락 속에서 내 톤에 맞춰서 사용을",
     "rejected_phrases": [],
-    "excluded_from_daily": false,
+    "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "회의 중 아이디어 평가할 때"
+    "usage_context_kr": "회의 중 아이디어 평가할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 98,
@@ -3264,8 +3458,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
-    "usage_context_kr": "기다리던 사람에게 전화할 때"
+    "usage_example_en": "It's about time you got here.",
+    "usage_context_kr": "기다리던 사람에게 전화할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 99,
@@ -3295,11 +3491,13 @@ const REELS_DATA = [
     "target_audit_note": "Transcript/caption audit passed.",
     "target_evidence": "표현 i agree는 되게 공식적인 표현으로 느껴질 수 있단 말이야 저 동의합니다 근데 너와 나 같은 친한 친구 사이에서는 해볼 법한 표현은 im down 우울하다고 아니 down 아래인데 사운드에 있다 아니야 아니야 아니야 나 너가 하는 말은 정말 들을 준비도 있고 나도 같이 하고 싶어 라는 뜻이야 down의 반대가 뭐야 up 그래서 im up for it 이라는 표현도 있거든 그것 또한 마찬가지로 너가 해준 제안 좋아 나는 의미가 들",
     "rejected_phrases": [],
-    "excluded_from_daily": false,
+    "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "친한 친구와 대화할 때"
+    "usage_context_kr": "친한 친구와 대화할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 100,
@@ -3332,7 +3530,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "돈을 갚겠다고 할 때"
+    "usage_context_kr": "돈을 갚겠다고 할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 101,
@@ -3365,7 +3565,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "말하고 싶지 않을 때"
+    "usage_context_kr": "말하고 싶지 않을 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 102,
@@ -3398,7 +3600,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "이유 없이 잠수할 때"
+    "usage_context_kr": "이유 없이 잠수할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 103,
@@ -3431,7 +3635,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "상대방의 말에 공감할 때"
+    "usage_context_kr": "상대방의 말에 공감할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 104,
@@ -3465,7 +3671,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "잘 차려입은 남성에게"
+    "usage_context_kr": "잘 차려입은 남성에게",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 105,
@@ -3495,11 +3703,13 @@ const REELS_DATA = [
     "target_audit_note": "Transcript/caption audit passed.",
     "target_evidence": "영어를 좀 잘하네 좀 하지 이제 여기서 내가 직접적으로 지적을 하는 느낌이 좀 싫어 그래서 뭐 묻은 것 같아요 라고 부드럽게 말을 하고 싶다면 youve got a little something here 라고 하면 되고 그리고 이거와 좀 비슷한 느낌으로는 친구 오랜만에 봤는데 너무 얼굴이 피곤해 보여 수척해 보여 이럴 때 하는 경우가 뭐가 있을까 you look terrible today 자 다음 질문입니다 친구 오랜만에 봤는데 너무 얼굴이 피곤해 보여 이럴 때 하는 경우가 뭐가 있을",
     "rejected_phrases": [],
-    "excluded_from_daily": false,
+    "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "옷이나 얼굴에 뭐가 묻었을 때"
+    "usage_context_kr": "옷이나 얼굴에 뭐가 묻었을 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 106,
@@ -3531,8 +3741,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
-    "usage_context_kr": "무언가를 설명할 때"
+    "usage_example_en": "Let me walk you through this whole process.",
+    "usage_context_kr": "무언가를 설명할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 107,
@@ -3565,7 +3777,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "누군가의 말을 믿기 힘들 때"
+    "usage_context_kr": "누군가의 말을 믿기 힘들 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 108,
@@ -3598,7 +3812,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "커피를 마신 후 정신이 맑아질 때"
+    "usage_context_kr": "커피를 마신 후 정신이 맑아질 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 109,
@@ -3632,7 +3848,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "약속에 못 갔을 때"
+    "usage_context_kr": "약속에 못 갔을 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 110,
@@ -3661,11 +3879,13 @@ const REELS_DATA = [
     "target_audit_note": "Transcript/caption audit passed.",
     "target_evidence": "통제하기 어려운 욕망을 표현할 때 crave라는 표현을 써 원하는 것이 깊고 지속적인 것이었어",
     "rejected_phrases": [],
-    "excluded_from_daily": false,
+    "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "원하는 것이 깊을 때"
+    "usage_context_kr": "원하는 것이 깊을 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 111,
@@ -3694,11 +3914,13 @@ const REELS_DATA = [
     "target_audit_note": "Transcript/caption audit passed.",
     "target_evidence": "onely 하면은 너가 태생적으로 외로운 사람이에요 라고 하는 느낌이 약간 있어 그건 아닌데 그치 그러니까 잠깐 느끼는 감정인 거잖아 그러니까 i feel lonely 어 난 외로움을 좀 느껴 이렇게 되는 거야 간접적으로 표현하고 싶을 때는 그러면은 i could use some company 나 좀 적적한데 누가 옆에 있어주면 좋을 것 같아 컴퍼니가 동료란 뜻이거든 또 하나 더 있다면은 im feeling a bit disconnected 라고 해",
     "rejected_phrases": [],
-    "excluded_from_daily": false,
+    "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "외로움을 표현하고 싶을 때"
+    "usage_context_kr": "외로움을 표현하고 싶을 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 112,
@@ -3727,11 +3949,13 @@ const REELS_DATA = [
     "target_audit_note": "Transcript/caption audit passed.",
     "target_evidence": "옥쌤 7월에 공휴일 없는 거 알고 있었어 im afraid so 무서워 너도 여기서 afraid는 무섭다는 뜻이 아니야 유감스럽지만 그렇다라는 의미야 그냥 yes라고 해도 되긴 하지 yes라고 하면 그냥 그래 맞아 라고 할 수 있지만 나도 정말 7월에 공휴일 없는 게 아쉬워 하면서 대답을 해야 되잖아 그치 그러니까 im afraid so 하면서 표",
     "rejected_phrases": [],
-    "excluded_from_daily": false,
+    "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "공휴일 없을 때"
+    "usage_context_kr": "공휴일 없을 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 113,
@@ -3764,7 +3988,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "과시하고 싶을 때"
+    "usage_context_kr": "과시하고 싶을 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 114,
@@ -3797,7 +4023,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "일회용품을 말할 때"
+    "usage_context_kr": "일회용품을 말할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 115,
@@ -3827,11 +4055,13 @@ const REELS_DATA = [
     "target_audit_note": "Transcript/caption audit passed.",
     "target_evidence": "근데 난 권장하지는 않아 그 상황이나 맥락을 봐야 돼 결국에는 정말 오랜 기간 동안 승리가 없어 왔고 그걸 되게 갈망해왔고 염원해왔던 거잖아 break the curse라는 표현을 쓸 수 있어 또한 저주와 같은 것을 깨부순 거지 팀은 드디어 이겨냈고 우승을 확보했다 오랜 실패와 좌절을 끝내고 드디어 원하던 것을 이루는 거야",
     "rejected_phrases": [],
-    "excluded_from_daily": false,
+    "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "오랜 실패를 극복할 때"
+    "usage_context_kr": "오랜 실패를 극복할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 116,
@@ -3865,7 +4095,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "별자리로 성격을 이야기할 때"
+    "usage_context_kr": "별자리로 성격을 이야기할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 117,
@@ -3894,11 +4126,13 @@ const REELS_DATA = [
     "target_audit_note": "Transcript/caption audit passed.",
     "target_evidence": "되게 좋은 질문이야 그래서 우리가 가장 가벼운 단계는 뭐냐면 몇 번 데이트 정도는 해봤어 사귀진 않는데 그냥 썸이고 알아가는 단계야 그럼 그냥 im seeing someone 이라고 얘기를 해도 돼 성당이 높은 표현은 뭐가 있어 그럼 이제 사실 사귀게 되는 관계잖아 그러면 그냥 im dating someone 더 높은 단계도 있나 좀 더 펜시하게 표현하자면 어쨌든 너는 이 사람만 만나는 거잖아 다른 사람들이 이 관계에 끼지 않는단 말이야 그래서 exclus",
     "rejected_phrases": [],
-    "excluded_from_daily": false,
+    "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "연애 초기 단계일 때"
+    "usage_context_kr": "연애 초기 단계일 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 118,
@@ -3923,7 +4157,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "감정을 표현하고 싶지 않을 때"
+    "usage_context_kr": "감정을 표현하고 싶지 않을 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 119,
@@ -3955,8 +4191,10 @@ const REELS_DATA = [
     "excluded_from_daily": false,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "",
-    "usage_context_kr": "회의 후 다시 이야기할 때"
+    "usage_example_en": "So, can we circle back to this topic later?",
+    "usage_context_kr": "회의 후 다시 이야기할 때",
+    "example_confidence": "verified",
+    "example_audit_note": "Usage example is a transcript-supported sentence."
   },
   {
     "id": 120,
@@ -3988,8 +4226,10 @@ const REELS_DATA = [
     "excluded_from_daily": false,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "",
-    "usage_context_kr": "회의 중 의견을 말할 때"
+    "usage_example_en": "As far as I'm concerned, this looks like a great idea.",
+    "usage_context_kr": "회의 중 의견을 말할 때",
+    "example_confidence": "verified",
+    "example_audit_note": "Usage example is a transcript-supported sentence."
   },
   {
     "id": 121,
@@ -4022,7 +4262,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "외로움을 느낄 때"
+    "usage_context_kr": "외로움을 느낄 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 122,
@@ -4052,11 +4294,13 @@ const REELS_DATA = [
     "target_audit_note": "Transcript/caption audit passed.",
     "target_evidence": "원어민들이 정말 많이 쓰는 영어 표현 딱 두 가지 들어봐 you know i mean you know 뭘까 너 알지 약간 이런 거 아니야 맞아 정확해 상대방의 반응을 이끌어내기 위한 표현인 거야 it was a little bit awkward you know 아 그때 좀 어색했었잖아 그치 이렇게 청중의 반응을 이끌어내는 표현이라는 거지 i mean은 무슨",
     "rejected_phrases": [],
-    "excluded_from_daily": false,
+    "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "상대방의 반응을 원할 때"
+    "usage_context_kr": "상대방의 반응을 원할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 123,
@@ -4089,7 +4333,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "말하면서 정정할 때"
+    "usage_context_kr": "말하면서 정정할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 124,
@@ -4118,11 +4364,13 @@ const REELS_DATA = [
     "target_audit_note": "Transcript/caption audit passed.",
     "target_evidence": "er see you around 하면은 보자 see니까 우리 다음에 봐 잘가 이렇게 얘기가 된다라는 거야 catch you around 아니면 catch you later 이라는 표현도 있어 catch는 잡다라는 거야 우리가 이 상황에서 생각을 해보면 catch you around catch you later는 사람을 붙잡아서 보다 그러니까 다음에 정말 기회 될 때 보자 잘가 친구야 이렇게 된다라는 거지",
     "rejected_phrases": [],
-    "excluded_from_daily": false,
+    "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "헤어질 때"
+    "usage_context_kr": "헤어질 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 125,
@@ -4155,7 +4403,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "발표할 때"
+    "usage_context_kr": "발표할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 126,
@@ -4184,11 +4434,13 @@ const REELS_DATA = [
     "target_audit_note": "Transcript/caption audit passed.",
     "target_evidence": "철이 든다는 거는 우리가 성장하는 거잖아 그렇지 그러니까 grow 그리고 i였을 때 갖고 있던 것들로부터 벗어나는 과정이니까 out of it grow out of it이라고 하면 철이 든다 나처럼 이 풍선을 보면서 겉으로는 어른이지만 마음속으로는 동심을 또는 이 어린아이의 순수함을 갖고 있는 사람들 그럼 그런 경우에는 im still a kid at heart 심장은 아직 어린아이라는 거지 아직 동심을 갖고 있어 라고 얘기를 하는 거야",
     "rejected_phrases": [],
-    "excluded_from_daily": false,
+    "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "어린 시절을 그리워할 때"
+    "usage_context_kr": "어린 시절을 그리워할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 127,
@@ -4217,11 +4469,13 @@ const REELS_DATA = [
     "target_audit_note": "Transcript/caption audit passed.",
     "target_evidence": "서 내가 졸업반이어가지고 학교를 잘 안가 근데 테크니클을 엄밀히 말하자면 아직 학생이야 그럼 오히려 간단히 말하면 이런 표현도 있나 어 그러면 basically 우리가 basic라는 표현 많이 쓰잖아 기초부터 말하자면 간단히 말하자면 이런식으로 문장의 처음으로 쓰기에 되게 적절한거지 basically technically",
     "rejected_phrases": [],
-    "excluded_from_daily": false,
+    "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "간단히 설명할 때"
+    "usage_context_kr": "간단히 설명할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 128,
@@ -4250,11 +4504,13 @@ const REELS_DATA = [
     "target_audit_note": "Transcript/caption audit passed.",
     "target_evidence": "외국 노래 같은 거 보면 단어뒤에 less가 많이 붙던데 그게 뭔 뜻이냐 되게 좋은 질문인데 이 less가 붙으면 어떤 단어든 간에 단어의 의미의 반대 또는 부정한다고 봐도 돼 tire는 뭔가 피곤하고 그런 거잖아 그러니까 tireless는 이 지치지 않는 이라는 뜻이 돼버린다 그리고 endless는 end은 끝이야 끝이 없는",
     "rejected_phrases": [],
-    "excluded_from_daily": false,
+    "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "단어의 의미를 반대로 할 때"
+    "usage_context_kr": "단어의 의미를 반대로 할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 129,
@@ -4289,7 +4545,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "위장 친구가 있을 때"
+    "usage_context_kr": "위장 친구가 있을 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 130,
@@ -4324,7 +4582,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "가족과 시간을 보낼 때"
+    "usage_context_kr": "가족과 시간을 보낼 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 131,
@@ -4354,11 +4614,13 @@ const REELS_DATA = [
     "target_audit_note": "Transcript/caption audit passed.",
     "target_evidence": "것보다 그 사람이 자이든 타이든 간에 연결이 약해져서든 어쨌든 이 미팅을 나가게 되었잖아 그러면 단순하게 나갔고 더 이상 우리가 함께하지 않아 i think we lost him 우리 잃어버린 것 같아 그 사람을 이렇게 얘기를 해주면 문맥적으로는 연결이 끊긴 것 같아요 라고 얘기를 할 수 있는 거지 그렇게 표현을 해주는 게 훨씬 더 부드럽고 완곡하게 표현을 하는 거야",
     "rejected_phrases": [],
-    "excluded_from_daily": false,
+    "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "연결이 끊겼을 때"
+    "usage_context_kr": "연결이 끊겼을 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 132,
@@ -4387,11 +4649,13 @@ const REELS_DATA = [
     "target_audit_note": "Transcript/caption audit passed.",
     "target_evidence": "단어들이 몇 가지 있을 거란 말이야 잼이지 어 잼이면 딸기잼 그렇지 딸기잼 생각을 해도 되고 아니면 우리가 막히다란 뜻이 있어 traffic jam 하면 교통이 막히다 교통체증을 의미하거든 그리고 또 대표적으로는 nail 여자애들이 꼭 네일하러 가잖아 그 손톱의 의미도 있지만 못 망치질할 때 못이라는 의미도 있어 아 못이 네일이구나 어 재밌는 표현으로는 you nailed it 하면 정말 더 잘했다 못에 박히는 것처럼 정말 쩔었다",
     "rejected_phrases": [],
-    "excluded_from_daily": false,
+    "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "교통체증을 표현할 때"
+    "usage_context_kr": "교통체증을 표현할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 133,
@@ -4424,7 +4688,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "미팅이나 수업 끝낼 때"
+    "usage_context_kr": "미팅이나 수업 끝낼 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 134,
@@ -4460,8 +4726,10 @@ const REELS_DATA = [
     "excluded_from_daily": false,
     "context_confidence": "verified",
     "context_audit_note": "Manual transcript audit: the transcript discusses Zoom/meeting audio and whether the voice is coming through.",
-    "usage_example_en": "Is my voice coming through okay?",
-    "usage_context_kr": "화상회의에서 내 목소리가 잘 전달되는지 부드럽게 확인할 때"
+    "usage_example_en": "Before we start, is my voice coming through okay?",
+    "usage_context_kr": "화상회의에서 내 목소리가 잘 전달되는지 부드럽게 확인할 때",
+    "example_confidence": "verified",
+    "example_audit_note": "Manual example passed sentence-quality checks."
   },
   {
     "id": 135,
@@ -4493,8 +4761,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
-    "usage_context_kr": "제안을 거절할 때"
+    "usage_example_en": "I turn down the offer.",
+    "usage_context_kr": "제안을 거절할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 136,
@@ -4527,7 +4797,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "누리는 것에 감사할 때"
+    "usage_context_kr": "누리는 것에 감사할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 137,
@@ -4556,11 +4828,13 @@ const REELS_DATA = [
     "target_audit_note": "Transcript/caption audit passed.",
     "target_evidence": "면 오히려 좋아까지는 아닌데 아 뭐 이정도면 not bad not bad 이거 영어로 뭐라고 할까 not bad 밖에 생각이 안 나 그럴 때는 could be worse 더 나빴을 수도 있는데 괜찮아 could be worse 어 어 아니면 on the plus side 플러스 플러스 사이드 그러니까 긍정적인 측면을 보자면 그런 뜻인 거지 그렇게 말을 하면은 나쁜 상황이어도 아 그래 더 나빠지지 않은 거야 감사해하자 만족해하자 이런 거지 이야 표현이",
     "rejected_phrases": [],
-    "excluded_from_daily": false,
+    "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "상황이 안 좋을 때"
+    "usage_context_kr": "상황이 안 좋을 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 138,
@@ -4593,7 +4867,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "사기꾼을 설명할 때"
+    "usage_context_kr": "사기꾼을 설명할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 139,
@@ -4622,11 +4898,13 @@ const REELS_DATA = [
     "target_audit_note": "Transcript/caption audit passed.",
     "target_evidence": "아 배고프다 너 어제 피자 먹었다며 너 다이어트 하는 거 아니었어 포기하다는 영어로 give up이야 영어를 좀 배웠다고 많이 날카로워졌구나 당연하지 give up 포기하다 뜻 맞아 그런데 내가 다이어트를 포기한 게 아니라 어제 잠깐 야식의 유혹에 넘어갔단 말이야 그래서 어쩔 수 없이 한 번 굴복당했어 그 야식의 유혹에 그 야식의 유혹에 굴복하다 포기를 아예 나는 다이어트 안 해",
     "rejected_phrases": [],
-    "excluded_from_daily": false,
+    "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "다이어트를 포기할 때"
+    "usage_context_kr": "다이어트를 포기할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 140,
@@ -4659,7 +4937,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "목이 마를 때"
+    "usage_context_kr": "목이 마를 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 141,
@@ -4688,11 +4968,13 @@ const REELS_DATA = [
     "target_audit_note": "Transcript/caption audit passed.",
     "target_evidence": "와 근데 이거 왜 이렇게 맛있냐 와 갈치가 진짜 끝내준다 im not kidding this is the best fish ive ever had 키링 장난치냐고 그게 아니라 키링은 장난치다인 거잖아 그러니까 im not kidding이면 내가 진짜 장난없이라는 거잖아 내 진심으로 마음에 우러나오는 표현으로 아 나 진짜로 농담 없이 진짜 맛있어 라는 얘기를 하는 거야",
     "rejected_phrases": [],
-    "excluded_from_daily": false,
+    "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "진심을 전할 때"
+    "usage_context_kr": "진심을 전할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 142,
@@ -4725,7 +5007,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "너무 웃길 때"
+    "usage_context_kr": "너무 웃길 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 143,
@@ -4757,8 +5041,10 @@ const REELS_DATA = [
     "excluded_from_daily": false,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "",
-    "usage_context_kr": "부당한 대우를 받을 때"
+    "usage_example_en": "Then this is so unfair. I feel like I'm being mistreated.",
+    "usage_context_kr": "부당한 대우를 받을 때",
+    "example_confidence": "verified",
+    "example_audit_note": "Usage example is a transcript-supported sentence."
   },
   {
     "id": 144,
@@ -4791,7 +5077,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "주차할 때"
+    "usage_context_kr": "주차할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 145,
@@ -4829,7 +5117,9 @@ const REELS_DATA = [
     "context_confidence": "verified",
     "context_audit_note": "Manual transcript audit: corrected the prior wrong context \"상대방의 안부를 물을 때\".",
     "usage_example_en": "I'm pretty sure he's coming.",
-    "usage_context_kr": "어떤 정도가 꽤 높거나 거의 확신한다고 말할 때"
+    "usage_context_kr": "어떤 정도가 꽤 높거나 거의 확신한다고 말할 때",
+    "example_confidence": "verified",
+    "example_audit_note": "Manual example passed sentence-quality checks."
   },
   {
     "id": 146,
@@ -4862,7 +5152,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "위험한 사람을 묘사할 때"
+    "usage_context_kr": "위험한 사람을 묘사할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 147,
@@ -4895,7 +5187,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "시끄러울 때"
+    "usage_context_kr": "시끄러울 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 148,
@@ -4928,7 +5222,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "식사 후 배부를 때"
+    "usage_context_kr": "식사 후 배부를 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 149,
@@ -4961,7 +5257,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "자신의 미성숙함을 표현할 때"
+    "usage_context_kr": "자신의 미성숙함을 표현할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 150,
@@ -4990,11 +5288,13 @@ const REELS_DATA = [
     "target_audit_note": "Transcript/caption audit passed.",
     "target_evidence": "아 혹시 크리스프 도넛 없다던데 아 오히려 좋아 오히려 좋아 영어로 먹에 굿굿 굿굿 아 그래서 even better 이런 예상치 못한 상황인 거잖아 뭐 못 먹으면 어때 오히려 좋아 이런 즉각적인 상황 반응은 even better 만약에 더 나은 선택지가 있어 아 그럼 도넛 말고 오믈렛이나 샌드위치를 먹어야지 라고 하면은 better yet better yet ill have a sandwich 더",
     "rejected_phrases": [],
-    "excluded_from_daily": false,
+    "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "예상치 못한 상황일 때"
+    "usage_context_kr": "예상치 못한 상황일 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 151,
@@ -5029,7 +5329,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "스트레스 표현할 때"
+    "usage_context_kr": "스트레스 표현할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 152,
@@ -5054,7 +5356,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "어두운 방에서 불을 켤 때"
+    "usage_context_kr": "어두운 방에서 불을 켤 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 153,
@@ -5083,11 +5387,13 @@ const REELS_DATA = [
     "target_audit_note": "Transcript/caption audit passed.",
     "target_evidence": "그러니까 네가 지루한 사람이라는 건가 설마 아니 나 지금 지루하다고 그치 그러니까 네가 느끼는 상태나 감정이 지루하다인 거잖아 그치 그럴 때는 i am bored라고 해야 돼 두 개 차이가 있어 자 boring이라고 하는 경우에는 너가 그렇게 느끼게 만드는 사물이나 대상이어야 돼 너가 영화를 봤는데 너무 지루했어 영화가 the movie was boring 그리고 그거로 인해서 내가 뭐 예를 들어서 지루함을 느꼈어 i am bored you a",
     "rejected_phrases": [],
-    "excluded_from_daily": false,
+    "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "지루함을 느낄 때"
+    "usage_context_kr": "지루함을 느낄 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 154,
@@ -5123,7 +5429,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "헷갈리는 단어 구분할 때"
+    "usage_context_kr": "헷갈리는 단어 구분할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 155,
@@ -5148,7 +5456,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "상대방의 말에 동의할 때"
+    "usage_context_kr": "상대방의 말에 동의할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 156,
@@ -5178,11 +5488,13 @@ const REELS_DATA = [
     "target_audit_note": "Transcript/caption audit passed.",
     "target_evidence": "옥쌤 집에 가자 결항 됐는데 야 결항 됐잖아 기분이 어땠어 멘붕이야 자 멘붕은 영어로 뭘까 멘탈 브레이크 혈 아 아쉬운데 이럴 때는 freak out 이라는 표현을 써야 돼 i totally freaked out when my flight was cancelled 우리가 결항 되었을 때 완전 그냥 멘탈 붕괴 그 자체였다 라고도 쓰는데 freak out은 어떤 되게 큰 감정이나 이런 것들을 표현할 때 쓴단 말이야 뭐 놀라거나 혼란스럽",
     "rejected_phrases": [],
-    "excluded_from_daily": false,
+    "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "큰 감정이 드는 경우"
+    "usage_context_kr": "큰 감정이 드는 경우",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 157,
@@ -5211,11 +5523,13 @@ const REELS_DATA = [
     "target_audit_note": "Transcript/caption audit passed.",
     "target_evidence": "멋지다 이런 식으로 표현할 때 쓰는 거고 아 그래 그치 그러니까 더운 것은 사실 어떻게 보면 지금 이 공간에서의 성질인 거잖아 그러니까 그냥 its so hot in here 이렇게 얘기를 하면 되는 거야 잇을 쓰면 되는구나 그러니까 마찬가지로 추워 그럼 its so cold in here im cold라고 얘기를 하지 않는 것과 비슷한 논리야 이거는 주의해야겠다 쪽팔린 상황이네 이거",
     "rejected_phrases": [],
-    "excluded_from_daily": false,
+    "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "더운 공간에서"
+    "usage_context_kr": "더운 공간에서",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 158,
@@ -5251,7 +5565,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "외모를 물어볼 때"
+    "usage_context_kr": "외모를 물어볼 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 159,
@@ -5276,7 +5592,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "미래에 할 일을 말할 때"
+    "usage_context_kr": "미래에 할 일을 말할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 160,
@@ -5312,7 +5630,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "헷갈리는 단어 구분할 때"
+    "usage_context_kr": "헷갈리는 단어 구분할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 161,
@@ -5337,7 +5657,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "친구와 시간을 보낼 때"
+    "usage_context_kr": "친구와 시간을 보낼 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 162,
@@ -5370,7 +5692,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "집중이 안 될 때"
+    "usage_context_kr": "집중이 안 될 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 163,
@@ -5403,7 +5727,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "내 의견을 말할 때"
+    "usage_context_kr": "내 의견을 말할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 164,
@@ -5436,7 +5762,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "내 의견이 틀릴 때"
+    "usage_context_kr": "내 의견이 틀릴 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 165,
@@ -5468,8 +5796,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
-    "usage_context_kr": "일상적인 행동을 표현할 때"
+    "usage_example_en": "I sometimes play soccer.",
+    "usage_context_kr": "일상적인 행동을 표현할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 166,
@@ -5502,7 +5832,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "불규칙한 일이 있을 때"
+    "usage_context_kr": "불규칙한 일이 있을 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 167,
@@ -5531,11 +5863,13 @@ const REELS_DATA = [
     "target_audit_note": "Transcript/caption audit passed.",
     "target_evidence": "나 막차를 놓쳤어 자 지금 마지막 차를 놓쳤다는 의미에서 final 쓴 거지 맞아 이런 경우엔 last를 써야 돼 last하고 final 이 차이가 뭐냐 싶을 수 있잖아 final은 조금 더 최종적인 결론의 그리고 약간의 공식적인 표현이기도 해 뭐 예를 들어서 우리가 생각하는 final exam 같은 거 있잖아 last도 final랑 의미 비슷해 그런데 순서상 마지막에 있는 경우잖아 그",
     "rejected_phrases": [],
-    "excluded_from_daily": false,
+    "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "순서상 마지막일 때"
+    "usage_context_kr": "순서상 마지막일 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 168,
@@ -5564,11 +5898,13 @@ const REELS_DATA = [
     "target_audit_note": "Transcript/caption audit passed.",
     "target_evidence": "아니면 어떠한 대화 내용 속에서 내가 제대로 지금 이거 이해한 거 맞나요 분명히 적극적으로 의사표현해야 되는 경우가 있단 말이야 그러면 그냥 let me get this straight 라고 얘기를 하는 거야 아 이게 약간 대화의 템포를 조절할 수 있어서 좋네 그렇지 아 내가 맞게 이해했는지 내가 한 번 말로 해볼게 내가 틀렸으면 말해줘와 같은 대화 표현 방식인 거지",
     "rejected_phrases": [],
-    "excluded_from_daily": false,
+    "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "대화 중 이해 확인할 때"
+    "usage_context_kr": "대화 중 이해 확인할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 169,
@@ -5597,11 +5933,13 @@ const REELS_DATA = [
     "target_audit_note": "Transcript/caption audit passed.",
     "target_evidence": "아욱쌤 땡큐 땡큐 말고 다른 표현도 있어 자 그리고 만약에 더 나아가서 영화나 이런 극적인 감사함을 표시해야 되는 경우 있잖아 그런 경우에는 it means everything to me 나에게 있어서 모든 것과 같아 라는 거지 어쨌든 붕어빵 잘 먹을게요 땡큐 그냥 이럴 땐 땡큐",
     "rejected_phrases": [],
-    "excluded_from_daily": false,
+    "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "극적인 감사할 때"
+    "usage_context_kr": "극적인 감사할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 170,
@@ -5630,11 +5968,13 @@ const REELS_DATA = [
     "target_audit_note": "Transcript/caption audit passed.",
     "target_evidence": "왜 티가 2개 들어갔냐 아 그래서 지금 이거 티가 2개 들어가서 레이터터터어 아니냐 물어본 거지 바로 그렇지 이런 실수로 아니야 이거는 발음을 letter이라고 해 later는 우리가 알고 있는 뜻 뭐야 나중에 그치 나중에 그러니까 i will call you back later 할 때 나 좀 이따 너한테 나중에 전화할게란 뜻이잖아 근데 letter는 뭐냐 전자 후자 우리가 선택지를 줄 때 전자 후자 이런 얘기하잖아 거기서 후자를 얘기하",
     "rejected_phrases": [],
-    "excluded_from_daily": false,
+    "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "선택지를 말할 때"
+    "usage_context_kr": "선택지를 말할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 171,
@@ -5667,7 +6007,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "영어 발음할 때"
+    "usage_context_kr": "영어 발음할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 172,
@@ -5696,11 +6038,13 @@ const REELS_DATA = [
     "target_audit_note": "Transcript/caption audit passed.",
     "target_evidence": "내가 after는 아는데 afterworld가 정확히 뭐야 사람들이 정말 많이 헷갈리는 내용 중에 하나인데 after는 이 시간의 흐름상 더 지난 후에 일어나는 경우를 말하는 거예요 a라는 사건이 있고 b라는 사건이 있을 때 b라는 사건이 그냥 a사건 후에 일어났으면 after afterworld는 직후에 라는 의미가 더 강력하",
     "rejected_phrases": [],
-    "excluded_from_daily": false,
+    "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "사건이 바로 일어날 때"
+    "usage_context_kr": "사건이 바로 일어날 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 173,
@@ -5732,8 +6076,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
-    "usage_context_kr": "기간을 강조할 때"
+    "usage_example_en": "And we didn't sleep for a good 4 days.",
+    "usage_context_kr": "기간을 강조할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 174,
@@ -5763,11 +6109,13 @@ const REELS_DATA = [
     "target_audit_note": "Transcript/caption audit passed.",
     "target_evidence": "ick me pick me pick me up 이런 거 알아 pick me 아니지 궁금한 게 choose me는 안 되겠대 되게 좋은 질문인데 pick and choose 차이가 뭘까 생각을 해보면 pick은 발음이 꽤 짧잖아 짧은 시간 내에 의사결정을 해야 되는 경우를 말을 해 choose 발음도 길지 그러니까 여러 가지 선택지 중에서 누가 좀 심사숙고 또 시간을 들여서 선택을 하는 거야 그런데 재미난 건 뭐냐 pick choose 합쳐서 pick a",
     "rejected_phrases": [],
-    "excluded_from_daily": false,
+    "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "여러 옵션 중에서 선택할 때"
+    "usage_context_kr": "여러 옵션 중에서 선택할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 175,
@@ -5796,11 +6144,13 @@ const REELS_DATA = [
     "target_audit_note": "Transcript/caption audit passed.",
     "target_evidence": "levator 하면 되나 어렵잖아 사실 나 엘리베이터에 있어 라고 얘기를 하면 되는데 엘리베이터에 있다라는 표현은 at the elevator in the elevator 다 사용이 가능해 근데 at the elevator는 그냥 나 엘리베이터에 있어라는 말이고 꼭 엘리베이터 안에 있지 않아도 돼 내가 여기 있다고 해도 나 엘리베이터 앞에 있어 근데 우리가 엘리베이터 내부에 들어와 있잖아 실내를 의미하는 in이 들어와 줘야 돼 그래서 우리는 were i",
     "rejected_phrases": [],
-    "excluded_from_daily": false,
+    "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "엘리베이터에 있을 때"
+    "usage_context_kr": "엘리베이터에 있을 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 176,
@@ -5834,7 +6184,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "잘못된 주문을 말할 때"
+    "usage_context_kr": "잘못된 주문을 말할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 177,
@@ -5867,8 +6219,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
-    "usage_context_kr": "친구와 함께할 때"
+    "usage_example_en": "I feel the most powerful when I'm BLACKPINK. Having my girls by my side.",
+    "usage_context_kr": "친구와 함께할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 178,
@@ -5898,11 +6252,13 @@ const REELS_DATA = [
     "target_audit_note": "Transcript/caption audit passed.",
     "target_evidence": "잖아 그랬을 때는 company는 어떠한 실제 하는 물리적인 것을 지칭하는 것이 아니라 개념적인 거야 회사 조직 그런 것들을 의미하는 거니까 i dont want to go to the office 내 사무실 가기 싫어 라고 하던지 아니면 work 일하기 싫어 라는 식으로 표현을 해주는 게 훨씬 더 적절한 표현이야 그러니까 company는 생각보다 우리가 쓸 일이 그렇게 많지가 않을 수도 있어 office work로 대부분 다 사용이 가능하거든 구분 잘해야겠다",
     "rejected_phrases": [],
-    "excluded_from_daily": false,
+    "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "회사에 가기 싫을 때"
+    "usage_context_kr": "회사에 가기 싫을 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 179,
@@ -5935,7 +6291,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "혼자서 무언가 할 때"
+    "usage_context_kr": "혼자서 무언가 할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 180,
@@ -5967,8 +6325,10 @@ const REELS_DATA = [
     "excluded_from_daily": false,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "",
-    "usage_context_kr": "로켓 발사 성공할 때"
+    "usage_example_en": "It only comes back to land if everything is like super green, super green, super green. And then we had some concerns about the tower.",
+    "usage_context_kr": "로켓 발사 성공할 때",
+    "example_confidence": "verified",
+    "example_audit_note": "Usage example is a transcript-supported sentence."
   },
   {
     "id": 181,
@@ -6001,7 +6361,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "농작물을 기를 때"
+    "usage_context_kr": "농작물을 기를 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 182,
@@ -6034,7 +6396,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "실패했을 때 긍정적으로 할 때"
+    "usage_context_kr": "실패했을 때 긍정적으로 할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 183,
@@ -6066,8 +6430,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
-    "usage_context_kr": "햇볕을 피하고 싶을 때"
+    "usage_example_en": "I wear sunscreen everyday.",
+    "usage_context_kr": "햇볕을 피하고 싶을 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 184,
@@ -6099,8 +6465,10 @@ const REELS_DATA = [
     "excluded_from_daily": false,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "",
-    "usage_context_kr": "주저하지 않고 바로 할 때"
+    "usage_example_en": "Would you go in it? Without a doubt, like in a heartbeat, I'm on it. That was crazy.",
+    "usage_context_kr": "주저하지 않고 바로 할 때",
+    "example_confidence": "verified",
+    "example_audit_note": "Usage example is a transcript-supported sentence."
   },
   {
     "id": 185,
@@ -6133,7 +6501,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "아플 때 병원에 갈 때"
+    "usage_context_kr": "아플 때 병원에 갈 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 186,
@@ -6166,7 +6536,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "친구에게 물어볼 때"
+    "usage_context_kr": "친구에게 물어볼 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 187,
@@ -6199,7 +6571,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "결정을 내릴 때"
+    "usage_context_kr": "결정을 내릴 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 188,
@@ -6228,11 +6602,13 @@ const REELS_DATA = [
     "target_audit_note": "Transcript/caption audit passed.",
     "target_evidence": "공을 거뒀다라고 얘기를 할 수가 있겠지 다른 표현은 뭐가 있어 아 그는 아 그는 그는 그는 그는 다른 표현은 뭐가 있어 여기서 비슷한 표현으로 blow up이라는 표현이 있어 blow up은 원래 터지다 터뜨리다 폭발하다 이런 뜻이란 말이야 갑자기 큰 관심을 얻거나 또는 큰 성공을 거두거나 라는 의미로까지도 해석이 될 수 있는 거지",
     "rejected_phrases": [],
-    "excluded_from_daily": false,
+    "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "코인이 인기를 얻을 때"
+    "usage_context_kr": "코인이 인기를 얻을 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 189,
@@ -6264,8 +6640,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
-    "usage_context_kr": "무언가를 할 때"
+    "usage_example_en": "And I'm going to do my best.",
+    "usage_context_kr": "무언가를 할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 190,
@@ -6297,8 +6675,10 @@ const REELS_DATA = [
     "excluded_from_daily": false,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "",
-    "usage_context_kr": "극적인 상황에서"
+    "usage_example_en": "The unkillable demon king! Unkillable one more time! Unbelievable once more!",
+    "usage_context_kr": "극적인 상황에서",
+    "example_confidence": "verified",
+    "example_audit_note": "Usage example is a transcript-supported sentence."
   },
   {
     "id": 191,
@@ -6327,11 +6707,13 @@ const REELS_DATA = [
     "target_audit_note": "Transcript/caption audit passed.",
     "target_evidence": "기 전에 몸을 푸는 행위를 웜업이라고 하지 자 그리고 get warm 아 따뜻하게 하다가 되는 거잖아 그러니까 따뜻하게 해라 라는 의미인 거고 keep warm 따뜻한 상태를 유지하는 거야 또한 warm 말고도 heat up이라는 표현이 있는데 heat up은 음식을 데우거나 진짜 말 그대로 따뜻하게 할 때 heat up이라는 표현을 쓰기도 해 이런 식으로 정말 자유자재로 쓸 수 있다라는 것까지도 하면 좋을 것 같아",
     "rejected_phrases": [],
-    "excluded_from_daily": false,
+    "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "추운 날씨에 따뜻할 때"
+    "usage_context_kr": "추운 날씨에 따뜻할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 192,
@@ -6364,7 +6746,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "누군가를 칭찬할 때"
+    "usage_context_kr": "누군가를 칭찬할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 193,
@@ -6394,11 +6778,13 @@ const REELS_DATA = [
     "target_audit_note": "Transcript/caption audit passed.",
     "target_evidence": "회사는 격식 있고 조금 공손한 자리일 수 있잖아 그러니까 내가 만약에 좀 더 공식적이고 격식을 차린 자리에서 공손함을 가져가고 싶어 그럴 때는 i apologize 를 먼저 해 나 먼저 사죄드립니다 무엇 때문에 사죄하시는 건데요 for the inconvenience 내가 당신에게 끼친 불편함 inconvenience에 대해서 사죄드립니다 라고 가야 되는 거야 나보다 높은 상사에게 말하기에도 너무나도 좋은 표현이라는 거지",
     "rejected_phrases": [],
-    "excluded_from_daily": false,
+    "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "격식 있는 자리에서"
+    "usage_context_kr": "격식 있는 자리에서",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 194,
@@ -6431,7 +6817,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "예상치 못한 일이 발생할 때"
+    "usage_context_kr": "예상치 못한 일이 발생할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 195,
@@ -6460,11 +6848,13 @@ const REELS_DATA = [
     "target_audit_note": "Transcript/caption audit passed.",
     "target_evidence": "마니또가 영어 자체는 아니야 스페인어에서 유래된 표현이고 내가 이걸 영어로 표현하고 싶어 그러면 산타 앞에 secret 비밀 붙여 비밀 산타 secret santa 마니또와 똑같은 의미를 갖고 있다고 볼 수 있어 그 산타가 내가 아는 그 산타지 그치 그 산타가 원래 선물을 주잖아 근데 비밀로 주는 게 마니또잖아 그러니까 secret santa라고 하는 거고 누가 누구한테 선물을 줬는지 공개를 할 거 아니야 그럴 때는 lets reveal our",
     "rejected_phrases": [],
-    "excluded_from_daily": false,
+    "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "선물을 주고받는 경우"
+    "usage_context_kr": "선물을 주고받는 경우",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 196,
@@ -6493,11 +6883,13 @@ const REELS_DATA = [
     "target_audit_note": "Transcript/caption audit passed.",
     "target_evidence": "격이 날아오르는 것 같이 soar 이라는 표현을 할 수 있어 근데 내가 좀 더 강조를 하고 싶어 가격이 마치 로켓처럼 하늘 향해 올라가는 거야 skyrocket 이라고도 표현할 수 있는 거야 그럼 떡락은 다이빙한다 생각해 다이빙해서 가격이 땅에 쳐박혔어 plummet 이라고도 얘기를 할 수 있는 거야 옥쌤 그럼 너는 soar야 plummet이야 난 확실하게 plummet 아니 요즘 soar가 아닌 게 가능해",
     "rejected_phrases": [],
-    "excluded_from_daily": false,
+    "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "가격이 급격히 오를 때"
+    "usage_context_kr": "가격이 급격히 오를 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 197,
@@ -6530,7 +6922,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "상황이 급할 때"
+    "usage_context_kr": "상황이 급할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 198,
@@ -6560,11 +6954,13 @@ const REELS_DATA = [
     "target_audit_note": "Transcript/caption audit passed.",
     "target_evidence": "일단 먼저 나 가고 있다고 먼저 말을 해줘 im on my way 그리고 나 좀 앞에 일들이 미뤄져서 늦을 것 같아 라고 얘기를 하는 거니까 im running a bit late 나 조금 늦을 것 같아 약간 아쉬운 어조에 뉘앙스가 들어간 문장도 청구해 주는 게 되게 좋은 거지 간접적으로 그렇지 그러니까 예의 있게 사회성 있게 행동하자",
     "rejected_phrases": [],
-    "excluded_from_daily": false,
+    "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "약속에 늦을 때"
+    "usage_context_kr": "약속에 늦을 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 199,
@@ -6597,7 +6993,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "기다려줄 때"
+    "usage_context_kr": "기다려줄 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 200,
@@ -6626,11 +7024,13 @@ const REELS_DATA = [
     "target_audit_note": "Transcript/caption audit passed.",
     "target_evidence": "r 물론 썸타다가 something에서 출발을 했으니까 우리가 그렇게 쓰고는 있지만 만약에 이걸 내가 영어로 표현하려면 어떻게 할까 생각해보면 fling이란 표현을 많이 써 fling은 말 그대로 우리가 아는 썸과 똑같아 민지 and i had a short fling 이라고 하면은 민지와 나는 잠깐의 썸을 탔다 정도인 거야 그런데 썸을 타기 전에 어쨌든 너가 그 분에게 호감을 가졌던 감정의 단계가 있었을 거 아니야 그 단계에서는 너는",
     "rejected_phrases": [],
-    "excluded_from_daily": false,
+    "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "썸을 타고 있을 때"
+    "usage_context_kr": "썸을 타고 있을 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 201,
@@ -6663,7 +7063,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "집을 빌릴 때 하는 경우"
+    "usage_context_kr": "집을 빌릴 때 하는 경우",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 202,
@@ -6692,11 +7094,13 @@ const REELS_DATA = [
     "target_audit_note": "Transcript/caption audit passed.",
     "target_evidence": "보이니까 어떻게 보면 실수 없이 좋은 선택을 하고 싶은 너의 마음가짐에서 비롯된 거지 이게 영어에서도 반영이 되어 있거든 이런 경우에는 내가 indecisive person이다 라고 표현을 해 decide가 결정이고 앞에 in이 붙으면 하지 않다라는 게 되거든 그러니까 결정을 쉽사리 못한다 indecisive person이라고 말을 할 수 있는 거지",
     "rejected_phrases": [],
-    "excluded_from_daily": false,
+    "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "결정을 내릴 때"
+    "usage_context_kr": "결정을 내릴 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 203,
@@ -6725,11 +7129,13 @@ const REELS_DATA = [
     "target_audit_note": "Transcript/caption audit passed.",
     "target_evidence": "장에서 사용하려면 사실 좀 어려워 그러니까 나에게 애정 표현 좀 해줘 라는 식의 표현을 많이 하잖아 그런 경우에는 physical만 떼 그리고 show me some affection 아니면 give me some love 라고 해도 되는 거야",
     "rejected_phrases": [],
-    "excluded_from_daily": false,
+    "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "애정 표현이 필요할 때"
+    "usage_context_kr": "애정 표현이 필요할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 204,
@@ -6759,11 +7165,13 @@ const REELS_DATA = [
     "target_audit_note": "Transcript/caption audit passed.",
     "target_evidence": "너 그거 미국인 친구한테 준비한 인사말이지 너 취미 뭐냐고 너 남는 시간에 뭐하냐고 물어보려고 했던 것도 맞아 그냥 what do you do for fun 너 재미로 뭐해 what do you do in your free time 시간 날 때 뭐해 라고 아주 가볍게 물어보는 게 훨씬 더 너가 원하는 질문의 의도에 맞게 표현이 되는 거야 하비는 여기서 진중하고 지속적이고 되게 시간을 내가 계속해서 내서 하는 취미를 들을 말해 웃겨주지 뭐",
     "rejected_phrases": [],
-    "excluded_from_daily": false,
+    "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "친구에게 취미 물어볼 때"
+    "usage_context_kr": "친구에게 취미 물어볼 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 205,
@@ -6792,11 +7200,13 @@ const REELS_DATA = [
     "target_audit_note": "Transcript/caption audit passed.",
     "target_evidence": "서 내가 오늘 두 가지 대표적으로 설명을 해줄 텐데 편의점에서 1plus1 행사를 본 적이 있을 거야 근데 1plus1이라고 하면 못 알아듣고 buy one get one free 라는 표현을 써야 돼 1plus1은 하나를 사면 하나를 더 해서 주는 거잖아 그럼 하나 일단 사 buy one 그리고 하나를 더 준다는 거니까 get one free야 두 번째로는 sns야 sns는 말 그대로 social networking service network service",
     "rejected_phrases": [],
-    "excluded_from_daily": false,
+    "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "편의점에서 할인할 때"
+    "usage_context_kr": "편의점에서 할인할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 206,
@@ -6828,8 +7238,10 @@ const REELS_DATA = [
     "excluded_from_daily": false,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "",
-    "usage_context_kr": "업무 진행 상황을 확인할 때"
+    "usage_example_en": "I'll touch base with you.",
+    "usage_context_kr": "업무 진행 상황을 확인할 때",
+    "example_confidence": "verified",
+    "example_audit_note": "Usage example is a transcript-supported sentence."
   },
   {
     "id": 207,
@@ -6858,11 +7270,13 @@ const REELS_DATA = [
     "target_audit_note": "Transcript/caption audit passed.",
     "target_evidence": "밤에 먹잖아 그치 late 늦은 밤 night 그래서 late night snack이라고 얘기를 하고 내가 좀 더 강렬하게 표현하고 싶다 그럼 im craving for a late night snack이라고 하면 되는 거야 여기서 craving은 정말 이걸 원하는 상황을 말하는 거지 옥쌤 근데 야식 먹은 건 잘못된 거야 미안합니다",
     "rejected_phrases": [],
-    "excluded_from_daily": false,
+    "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "늦은 밤 간식 먹고 싶을 때"
+    "usage_context_kr": "늦은 밤 간식 먹고 싶을 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 208,
@@ -6894,8 +7308,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
-    "usage_context_kr": "택시에서 스몰토크할 때"
+    "usage_example_en": "Any good places to eat near here, around here?",
+    "usage_context_kr": "택시에서 스몰토크할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 209,
@@ -6924,11 +7340,13 @@ const REELS_DATA = [
     "target_audit_note": "Transcript/caption audit passed.",
     "target_evidence": "여기서 알아둬야 될 건 뭐냐면 내가 그러면 할로윈 때 뱀파이어로 분장할 거야 했을 때 i cosplay vampire 이렇게 말하는 게 아니야 i will dress up as a vampire 이라고 가는 거지 dress up은 뭐냐면 옷을 분장해서 입는다라는 뜻이거든 i will dress up as a vampire 뱀파이어처럼 입을 거다라고 되는 거지",
     "rejected_phrases": [],
-    "excluded_from_daily": false,
+    "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "할로윈 때 분장할 때"
+    "usage_context_kr": "할로윈 때 분장할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 210,
@@ -6961,7 +7379,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "맛있는 음식을 먹을 때"
+    "usage_context_kr": "맛있는 음식을 먹을 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 211,
@@ -6993,8 +7413,10 @@ const REELS_DATA = [
     "excluded_from_daily": false,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "",
-    "usage_context_kr": "면접에서 떨어졌을 때"
+    "usage_example_en": "I struck out at the job interview.",
+    "usage_context_kr": "면접에서 떨어졌을 때",
+    "example_confidence": "verified",
+    "example_audit_note": "Usage example is a transcript-supported sentence."
   },
   {
     "id": 212,
@@ -7026,8 +7448,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
-    "usage_context_kr": "자신의 취향을 말할 때"
+    "usage_example_en": "person I like coffee I'm a coffee person I'm a cat person I'm a morning person If you add a person at the end, it becomes, I'm a person who is interested in and likes those things.",
+    "usage_context_kr": "자신의 취향을 말할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 213,
@@ -7060,7 +7484,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "약속이 있을 때"
+    "usage_context_kr": "약속이 있을 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 214,
@@ -7090,11 +7516,13 @@ const REELS_DATA = [
     "target_audit_note": "Transcript/caption audit passed.",
     "target_evidence": "어떤 의미가 비슷한 literature 이라고 해야 되는 거고 그럼 그걸 문장으로 다시 통으로 옮겨보면 she won 수상을 했다는 뜻이거든 she won the nobel prize 노벨상을 수상했다라는 거지 in literature",
     "rejected_phrases": [],
-    "excluded_from_daily": false,
+    "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "수상 소식을 전할 때"
+    "usage_context_kr": "수상 소식을 전할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 215,
@@ -7127,7 +7555,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "강렬한 맛을 표현할 때"
+    "usage_context_kr": "강렬한 맛을 표현할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 216,
@@ -7160,7 +7590,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "말실수했을 때"
+    "usage_context_kr": "말실수했을 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 217,
@@ -7189,11 +7621,13 @@ const REELS_DATA = [
     "target_audit_note": "Transcript/caption audit passed.",
     "target_evidence": "보면 좀 조롱이 들어가 있는 어원에서 출발을 시작을 했어 그래서 외국인 친구를 만나서 야 우리 비용 반반 부담하자 라고 얘기를 하려고 하면은 lets split the bill 이란 표현을 쓸 수 있어 자 bill 여기서 뜻이 뭐야 bill 영수증 아니야 맞아 그러니까 영수증을 반반 나눈 건 뭐냐 비용을 반반 부담하자라고 되는 거야 빈틈하자 어 자 그리고 거기서 조금 더 나아가서 내가 bill 이란 영수증 표현들 생각이 안 나 자 그러면 lets pay 일단",
     "rejected_phrases": [],
-    "excluded_from_daily": false,
+    "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "비용을 나눌 때"
+    "usage_context_kr": "비용을 나눌 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 218,
@@ -7223,11 +7657,13 @@ const REELS_DATA = [
     "target_audit_note": "Transcript/caption audit passed.",
     "target_evidence": "내가 그렇게 나아가고 잘 되기를 바라는 마음에서 응원을 하는 거잖아 나아간다 go 내 이름 붙여서 go 옥쌤 만약에 조금 더 길게 하고 싶다면 go for it 어떤 걸 향해서 나아가세요 go라는 단어 하나만 잘 쓰면 사실 응원으로 무궁무진하게 쓸 수 있어 오케이 go 옥쌤 오케이",
     "rejected_phrases": [],
-    "excluded_from_daily": false,
+    "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "친구에게 응원할 때"
+    "usage_context_kr": "친구에게 응원할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 219,
@@ -7257,11 +7693,13 @@ const REELS_DATA = [
     "target_audit_note": "Transcript/caption audit passed.",
     "target_evidence": "학원 졸업할 수 있는 거지 너 지금 저 뒤에 건물에서 그냥 논문만 깨작깨작 쓰면 졸업을 할 수 있냐라고 물어본 거야 맞아 그건 무슨 뜻이지 자 its easy 그건 정말 쉽겠다 for you 너가 to say 그 말을 하는 것은 그러니까 말로는 쉽다라는 거야 논문을 쓰는 것도 당연히 영어로 다 작성을 해야 되지 밑바탕이 되는 실험들도 다 결과들이 준비가 되어 있어야 되지 리뷰한테 평가를 받고 또 다시 수정을 거쳐서 학회나 이런 데 제출해야",
     "rejected_phrases": [],
-    "excluded_from_daily": false,
+    "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "말로는 쉽다고 할 때"
+    "usage_context_kr": "말로는 쉽다고 할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 220,
@@ -7294,7 +7732,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "친구와 외식할 때"
+    "usage_context_kr": "친구와 외식할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 221,
@@ -7323,11 +7763,13 @@ const REELS_DATA = [
     "target_audit_note": "Transcript/caption audit passed.",
     "target_evidence": "은 i really like you 또는 i love you 해도 돼 내가 알고 있는 거네 근데 조금 더 거기서 맛을 좀 추가하고 싶다 그러면 i have feelings for you라고 해도 되는 거지 i have feelings 나 감정을 갖고 있어요 for you 당신을 위한 결국 나는 당신에게 이 이성적인 감정이 있어요라고 하는 것과 매우 똑같은 말인 거잖아 그런 식으로 강조를 해줄 수도 있다라는 거지",
     "rejected_phrases": [],
-    "excluded_from_daily": false,
+    "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "사랑 고백할 때"
+    "usage_context_kr": "사랑 고백할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 222,
@@ -7360,7 +7802,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "부탁할 때"
+    "usage_context_kr": "부탁할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 223,
@@ -7389,11 +7833,13 @@ const REELS_DATA = [
     "target_audit_note": "Transcript/caption audit passed.",
     "target_evidence": "pork 그래 이거는 내 잘못이야 one more pork라는 표현 좋아 그런데 그것보다 조금 더 끝내주는 표현이 있다라고 하면은 우리가 흔히 extra pork라는 말을 할 수가 있어 extra 그렇지 그러니까 one more pork는 당연히 의미 전달은 완벽하겠다 그렇지만 그것보다 내가 좀 더 간편하고 실생활에 더 많이 자주 쓰이는 표현을 쓰고 싶다라고 하면은 extra pork라는 표현을 쓰는 게 좋고 그 extra는 우리가 잘",
     "rejected_phrases": [],
-    "excluded_from_daily": false,
+    "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "더 필요한 것을 요청할 때"
+    "usage_context_kr": "더 필요한 것을 요청할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 224,
@@ -7422,11 +7868,13 @@ const REELS_DATA = [
     "target_audit_note": "Transcript/caption audit passed.",
     "target_evidence": "옥쌤 나 민지가 나 좋아하는 것 같거든 바로 고백 박는다 민지씨의 의견도 들어봐야 되겠지만 일단은 이럴 때 너를 위한 최적의 영어 표현 dont get ahead of yourself 자신감 있게 고백 박아버리라는 거지 자신감을 가지라는 건 전혀 아니고 ahead는 앞이라는 뜻이야 dont get ahead는 앞으로 나아가지 마라는 거야 of yourself 너 자신의 이게 무슨 말이냐면 너가 천천히 그 과정을 가면 되는 거를 너 마음이 너무 앞선 나머지 저 멀리",
     "rejected_phrases": [],
-    "excluded_from_daily": false,
+    "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "고백하기 전 마음 다잡을 때"
+    "usage_context_kr": "고백하기 전 마음 다잡을 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 225,
@@ -7455,11 +7903,13 @@ const REELS_DATA = [
     "target_audit_note": "Transcript/caption audit passed.",
     "target_evidence": "러니까 먼저 can you give me 너 나한테 뭐 해줄 수 있어 라고 먼저 물어봐 그리고 뭘 해줘야 되는데 했을 때는 a ride 그래서 can you give me a ride 라고 표현을 해주는 게 가장 올바른 영어 표현이다 라고 할 수 있는 거지 아 큰일 날 뻔했네 땀 타고 맞을 수 있어",
     "rejected_phrases": [],
-    "excluded_from_daily": false,
+    "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "차를 태워줄 때"
+    "usage_context_kr": "차를 태워줄 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 226,
@@ -7492,7 +7942,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "누군가에게 가는 경우"
+    "usage_context_kr": "누군가에게 가는 경우",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 227,
@@ -7525,7 +7977,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "25세 전후에 느낄 때"
+    "usage_context_kr": "25세 전후에 느낄 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 228,
@@ -7559,7 +8013,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "미국 명절 문화 이해할 때"
+    "usage_context_kr": "미국 명절 문화 이해할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 229,
@@ -7588,11 +8044,13 @@ const REELS_DATA = [
     "target_audit_note": "Transcript/caption audit passed.",
     "target_evidence": "e to 그치 want to 뒤에는 이제 방을 예약하다니까 나 방 예약 원해 이런 식으로 전달이 된 거야 직접적으로 아 명령조로 그렇지 그런데 would like to make a reservation이면은 방 예약을 하면 정말 좋을 것 같아요 라는 식의 간접적인 표현으로 전달이 되는 거야 아 훨씬 더 부드러운 표현이네",
     "rejected_phrases": [],
-    "excluded_from_daily": false,
+    "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "호텔 방 예약할 때"
+    "usage_context_kr": "호텔 방 예약할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 230,
@@ -7628,7 +8086,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "첫인상에 대해 물어볼 때"
+    "usage_context_kr": "첫인상에 대해 물어볼 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 231,
@@ -7658,11 +8118,13 @@ const REELS_DATA = [
     "target_audit_note": "Transcript/caption audit passed.",
     "target_evidence": "같은 경우에는 breakfast이겠지 자 그러면 합쳐서 조식 시간 breakfast hours가 되는 거야 자 그럼 물어볼 거는 뭐냐 실제로 when are the breakfast hours 뭔가 영업 시간이라고 하니까 시작 시간 끝나는 시간 이런 걸 다 물어봐야 될 것 같지만 실제로는 그렇지 않고 그냥 너가 궁금하고 사용하고 싶어하는 부대 시설 플러스 뒤에 hours만 붙이면 호텔 직원 분들은 알아들으실 거야",
     "rejected_phrases": [],
-    "excluded_from_daily": false,
+    "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "호텔 조식 시간 물어볼 때"
+    "usage_context_kr": "호텔 조식 시간 물어볼 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 232,
@@ -7687,7 +8149,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "호텔에서 체크인할 때"
+    "usage_context_kr": "호텔에서 체크인할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 233,
@@ -7717,11 +8181,13 @@ const REELS_DATA = [
     "target_audit_note": "Transcript/caption audit passed.",
     "target_evidence": "내가 널 위해서 커피를 가져왔어 얼음 좀 적게 달라고 했데요 아 맞다 근데 이럴 때는 can you do me a coffee with easy ice 라고 표현을 하면 돼 easy ice easy ice 쉬운 얼음 take it easy라는 표현 들어봤을 거야 아 부담 갖지 말고 편안하게 해 라는 뜻이거든 맞아 그러니까 여기서 easy ice라는 건 뭐냐면 얼음도 부담 없이 편하게 양으로 따지자면 적게 설명이 된다",
     "rejected_phrases": [],
-    "excluded_from_daily": false,
+    "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "커피 주문할 때"
+    "usage_context_kr": "커피 주문할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 234,
@@ -7754,7 +8220,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "상대방의 관심사에 대해 이야기할 때"
+    "usage_context_kr": "상대방의 관심사에 대해 이야기할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 235,
@@ -7784,11 +8252,13 @@ const REELS_DATA = [
     "target_audit_note": "Transcript/caption audit passed.",
     "target_evidence": "좀 덕식 있는 자리에서 하기에 되게 좋은 표현이야 그렇지만 또래 친구 그냥 친구처럼 지낼 수 있는 사이에서는 my name is 라는 말보다 you can call me 너의 이름 이렇게 하면 돼 그래서 만약에 내 이름이 데이비드야 그러면 you can call me david 왜냐하면 내 자체가 너 나 데이비드라고 불러줘라는 뜻이잖아 그게 뭐겠어 내 이름은 데이비드예요랑 똑같다란 말이야",
     "rejected_phrases": [],
-    "excluded_from_daily": false,
+    "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "친구처럼 지낼 때"
+    "usage_context_kr": "친구처럼 지낼 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 236,
@@ -7821,8 +8291,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
-    "usage_context_kr": "여행지 추천할 때"
+    "usage_example_en": "I think I like Busan.",
+    "usage_context_kr": "여행지 추천할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 237,
@@ -7854,8 +8326,10 @@ const REELS_DATA = [
     "excluded_from_daily": false,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "",
-    "usage_context_kr": "자주 가는 장소를 설명할 때"
+    "usage_example_en": "This is Korean's go to spot.",
+    "usage_context_kr": "자주 가는 장소를 설명할 때",
+    "example_confidence": "verified",
+    "example_audit_note": "Usage example is a transcript-supported sentence."
   },
   {
     "id": 238,
@@ -7888,7 +8362,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "여행을 떠날 때"
+    "usage_context_kr": "여행을 떠날 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 239,
@@ -7925,7 +8401,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "고정관념에 대해 이야기할 때"
+    "usage_context_kr": "고정관념에 대해 이야기할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 240,
@@ -7958,7 +8436,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "누군가 때문에 힘들 때"
+    "usage_context_kr": "누군가 때문에 힘들 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 241,
@@ -7983,7 +8463,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "입국심사할 때"
+    "usage_context_kr": "입국심사할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 242,
@@ -8019,7 +8501,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "서울대생 고정관념을 물을 때"
+    "usage_context_kr": "서울대생 고정관념을 물을 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 243,
@@ -8051,8 +8535,10 @@ const REELS_DATA = [
     "excluded_from_daily": false,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "",
-    "usage_context_kr": "둘 중 하나를 선택할 때"
+    "usage_example_en": "I like neither of them.",
+    "usage_context_kr": "둘 중 하나를 선택할 때",
+    "example_confidence": "verified",
+    "example_audit_note": "Usage example is a transcript-supported sentence."
   },
   {
     "id": 244,
@@ -8077,7 +8563,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "투표할 때"
+    "usage_context_kr": "투표할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 245,
@@ -8106,11 +8594,13 @@ const REELS_DATA = [
     "target_audit_note": "Transcript/caption audit passed.",
     "target_evidence": "때는 영어로 뭐라고 해야 돼 아 이럴 때는 사실 your body looks great 라고 해도 돼 되게 좋은 뜻이잖아 근데 그런 것보다는 youre in great shape 그러니까 shape가 어떤 모양을 말하잖아 와 너의 몸의 모양이 너무나도 대단해 보인다 그래서 youre in great shape 라고 얘기를 해주는 게 좀 더 듣는 사람으로서는 칭찬으로 와닿을 수 있지 아 그러면 그게 일상적으로 써도 예의가 있는 표현인 거지 그치 그러니까 일상적으",
     "rejected_phrases": [],
-    "excluded_from_daily": false,
+    "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "몸이 좋아졌을 때"
+    "usage_context_kr": "몸이 좋아졌을 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 246,
@@ -8143,7 +8633,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "땀냄새가 날 때"
+    "usage_context_kr": "땀냄새가 날 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 247,
@@ -8179,7 +8671,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "한국에 온 이유를 물을 때"
+    "usage_context_kr": "한국에 온 이유를 물을 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 248,
@@ -8211,8 +8705,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
-    "usage_context_kr": "즉흥적으로 행동할 때"
+    "usage_example_en": "I regretted or suffered a couple of times when I was a little bit younger, so that's why I've changed now and I'm like, whatever comes to my mind, I'm doing it.",
+    "usage_context_kr": "즉흥적으로 행동할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 249,
@@ -8237,7 +8733,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "한국 양궁을 이야기할 때"
+    "usage_context_kr": "한국 양궁을 이야기할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 250,
@@ -8269,8 +8767,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
-    "usage_context_kr": "비슷한 사람을 언급할 때"
+    "usage_example_en": "If it's like a long-term relationship, those are the people that are most similar to me.",
+    "usage_context_kr": "비슷한 사람을 언급할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 251,
@@ -8303,7 +8803,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "데이트 상대를 고를 때"
+    "usage_context_kr": "데이트 상대를 고를 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 252,
@@ -8335,8 +8837,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
-    "usage_context_kr": "칭찬할 때"
+    "usage_example_en": "Just like as I was interviewing you, I mean, it's a compliment, but your English is very good.",
+    "usage_context_kr": "칭찬할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 253,
@@ -8369,7 +8873,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "모르는 것을 말할 때"
+    "usage_context_kr": "모르는 것을 말할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 254,
@@ -8401,8 +8907,10 @@ const REELS_DATA = [
     "excluded_from_daily": false,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "",
-    "usage_context_kr": "상대방에게 미안할 때"
+    "usage_example_en": "I'm afraid I gotta get back to work.",
+    "usage_context_kr": "상대방에게 미안할 때",
+    "example_confidence": "verified",
+    "example_audit_note": "Usage example is a transcript-supported sentence."
   },
   {
     "id": 255,
@@ -8431,11 +8939,13 @@ const REELS_DATA = [
     "target_audit_note": "Transcript/caption audit passed.",
     "target_evidence": "너 왜 맨날 휴지를 접어 just for the sake of it 뭐 때문에 한다고 그냥 한다 just for the sake of it 별다른 특별한 이유 없어 for the sake of 라는 거는 어떠한 목적을 위해서란 뜻을 갖고 있어 여기서 just를 붙이잖아 뚜렷한 목적 없이 그냥 한다 라고 되는 거야 아 이거 구구절절 영어로 설명해야 너무",
     "rejected_phrases": [],
-    "excluded_from_daily": false,
+    "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "특별한 이유 없이 할 때"
+    "usage_context_kr": "특별한 이유 없이 할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 256,
@@ -8469,7 +8979,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "질문할 때 하는 경우"
+    "usage_context_kr": "질문할 때 하는 경우",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   },
   {
     "id": 257,
@@ -8502,7 +9014,9 @@ const REELS_DATA = [
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
     "usage_example_en": "",
-    "usage_context_kr": "새로운 도전을 할 때"
+    "usage_context_kr": "새로운 도전을 할 때",
+    "example_confidence": "review",
+    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
   }
 ];
 const CATEGORIES = [

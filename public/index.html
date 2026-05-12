@@ -1797,10 +1797,12 @@
         entry.source_type === 'instagram_reel' &&
         entry.target_confidence === 'verified' &&
         entry.context_confidence === 'verified' &&
+        entry.example_confidence === 'verified' &&
         entry.excluded_from_daily !== true &&
         String(entry.expression_en || '').trim() &&
         String(entry.expression_meaning_kr || '').trim() &&
         String(entry.situation_kr || '').trim() &&
+        String(entry.usage_example_en || '').trim() &&
         /^https:\/\/www\.instagram\.com\/reel\/[A-Za-z0-9_-]+\/?$/.test(String(entry.reel_url || '').trim())
       );
     }
@@ -2956,11 +2958,11 @@
 
       const options = shuffle([
         { text: buildDailyUsageOption(entry), correct: true },
-        ...distractors.map(item => ({ text: buildDailyUsageOption(item), correct: false }))
+        ...distractors.map(text => ({ text, correct: false }))
       ]);
 
       return {
-        prompt: formatDailySentences('오늘 표현의 실제 쓰임과 가장 가까운 상황을 고르세요.'),
+        prompt: formatDailySentences('오늘 표현이 자연스럽게 쓰인 문장을 고르세요.'),
         options,
         explanation: formatDailySentences(`"${entry.expression_en}"는 "${entry.usage_context_kr || entry.situation_kr}"에 쓰는 표현입니다.`)
       };
@@ -2983,34 +2985,60 @@
     }
 
     function buildDailyUsageOption(entry) {
-      return entry.usage_context_kr || entry.situation_kr;
+      return String(entry.usage_example_en || '').replace(/\s+/g, ' ').trim();
+    }
+
+    function buildWrongDailyUsageSentences(entry) {
+      const expression = entry.expression_en.trim();
+      const lower = expression.toLowerCase();
+      const isSingleWord = /^[a-z]+$/i.test(expression);
+
+      if (isSingleWord) {
+        if (lower === 'pretty') {
+          return [
+            'She looks pretty in that jacket.',
+            'Can you pretty me after lunch?',
+            'I pretty to the office every day.'
+          ];
+        }
+        return [
+          `Can you ${expression} me after lunch?`,
+          `I ${expression} to the office every day.`,
+          `This report is very ${expression} tomorrow.`
+        ];
+      }
+
+      if (expression.endsWith('?')) {
+        return [
+          `This sandwich is ${expression}`,
+          `I bought ${expression} yesterday.`,
+          `The weather became ${expression} after lunch.`
+        ];
+      }
+
+      if (/^(i|i'm|i’ve|we|she|he|they|that|it|it's|there)\b/i.test(expression)) {
+        return [
+          `This report is ${expression}.`,
+          `Please ${expression} before the meeting.`,
+          `The weather became ${expression} yesterday.`
+        ];
+      }
+
+      return [
+        `I need to ${expression} my coffee tomorrow.`,
+        `This room is very ${expression} today.`,
+        `Can you ${expression} me after lunch?`
+      ];
     }
 
     function getDailyUsageDistractors(entry, pool) {
       const correctText = buildDailyUsageOption(entry);
-      const primary = shuffle(pool.filter(item =>
-        item.id !== entry.id &&
-        item.category === entry.category &&
-        item.difficulty === entry.difficulty &&
-        buildDailyUsageOption(item) !== correctText
-      ));
-      const secondary = shuffle(pool.filter(item =>
-        item.id !== entry.id &&
-        item.category === entry.category &&
-        buildDailyUsageOption(item) !== correctText
-      ));
-      const fallback = shuffle(pool.filter(item =>
-        item.id !== entry.id &&
-        buildDailyUsageOption(item) !== correctText
-      ));
-
       const seen = new Set([correctText]);
-      return [...primary, ...secondary, ...fallback].filter(item => {
-        const text = buildDailyUsageOption(item);
+      return buildWrongDailyUsageSentences(entry).filter(text => {
         if (seen.has(text)) return false;
         seen.add(text);
         return true;
-      }).slice(0, 2);
+      }).slice(0, 3);
     }
 
     function buildContrastUsageExample(term, meaning, isTarget) {
