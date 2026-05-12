@@ -337,34 +337,6 @@
       margin-bottom: 12px;
     }
 
-    .daily-lesson-grid {
-      display: grid;
-      gap: 10px;
-      margin: 14px 0;
-    }
-
-    .daily-lesson-block {
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      background: var(--bg-card);
-      padding: 12px;
-    }
-
-    .daily-lesson-block strong {
-      display: block;
-      margin-bottom: 5px;
-      color: var(--text-primary);
-      font-size: 12px;
-      font-weight: 900;
-    }
-
-    .daily-lesson-block p {
-      color: var(--text-secondary);
-      font-size: 13px;
-      line-height: 1.5;
-      white-space: pre-line;
-    }
-
     .daily-mini-quiz {
       display: grid;
       gap: 8px;
@@ -1482,12 +1454,6 @@
       <div class="daily-meaning" id="dailyMeaning"></div>
       <div class="daily-situation" id="dailySituation"></div>
       <div class="daily-description" id="dailyDescription"></div>
-      <div class="daily-lesson-grid">
-        <div class="daily-lesson-block">
-          <strong>사용 예문</strong>
-          <p id="dailyExample"></p>
-        </div>
-      </div>
       <div class="daily-mini-quiz">
         <div class="daily-mini-quiz-label">오늘의 10초 퀴즈</div>
         <div id="dailyQuizOptions"></div>
@@ -1797,12 +1763,12 @@
         entry.source_type === 'instagram_reel' &&
         entry.target_confidence === 'verified' &&
         entry.context_confidence === 'verified' &&
-        entry.example_confidence === 'verified' &&
+        entry.quiz_sentence_confidence === 'verified' &&
         entry.excluded_from_daily !== true &&
         String(entry.expression_en || '').trim() &&
         String(entry.expression_meaning_kr || '').trim() &&
         String(entry.situation_kr || '').trim() &&
-        String(entry.usage_example_en || '').trim() &&
+        String(entry.quiz_sentence_en || '').trim() &&
         /^https:\/\/www\.instagram\.com\/reel\/[A-Za-z0-9_-]+\/?$/.test(String(entry.reel_url || '').trim())
       );
     }
@@ -2896,53 +2862,13 @@
       };
     }
 
-    function buildDailyExample(entry) {
-      const context = getDailyContext(entry);
-      const expression = entry.expression_en.trim();
-
-      if (entry.usage_example_en) {
-        return formatDailySentences(entry.usage_example_en);
-      }
-
-      if (isContrastLesson(entry)) {
-        const question = buildContrastQuestion(entry, getQuizReadyEntries(), getDailyIndex(2));
-        return formatDailySentences(`${buildContrastUsageExample(question.term, question.correct, true)} ${question.pairedTerm ? buildContrastUsageExample(question.pairedTerm, question.pairedMeaning, true) : ''}`.trim());
-      }
-
-      if (/friend in disguise/i.test(expression)) {
-        return 'A: I thought he was just being friendly.\nB: Be careful. He might be a friend in disguise.';
-      }
-
-      if (expression.endsWith('?')) {
-        return expression;
-      }
-
-      if (/^(i|i'm|i’ve|we|she|he|they|that|it|it's|there)\b/i.test(expression)) {
-        return expression;
-      }
-
-      if (/^[a-z]+$/i.test(expression)) {
-        return expression;
-      }
-
-      if (/^(for|with|to|at|on|in|by|from|whether)\b/i.test(expression)) {
-        return expression;
-      }
-
-      if (/^[a-z]/.test(expression)) {
-        return expression;
-      }
-
-      return expression;
-    }
-
     function buildDailyQuiz(entry) {
       const pool = getQuizReadyEntries();
 
       if (isContrastLesson(entry)) {
         const question = buildContrastQuestion(entry, pool, getDailyIndex(2));
-        const correctExample = buildContrastUsageExample(question.term, question.correct, true);
-        const wrongExample = buildContrastUsageExample(question.pairedTerm || question.term, question.pairedMeaning || question.correct, false);
+        const correctExample = buildContrastQuizSentence(question.term, question.correct, true);
+        const wrongExample = buildContrastQuizSentence(question.pairedTerm || question.term, question.pairedMeaning || question.correct, false);
         return {
           prompt: formatDailySentences(`${question.term}가 빈칸에 가장 자연스럽게 들어갈 문장을 고르세요.`),
           options: shuffle([
@@ -2985,7 +2911,7 @@
     }
 
     function buildDailyUsageOption(entry) {
-      return String(entry.usage_example_en || '').replace(/\s+/g, ' ').trim();
+      return String(entry.quiz_sentence_en || '').replace(/\s+/g, ' ').trim();
     }
 
     function buildWrongDailyUsageSentences(entry) {
@@ -3041,7 +2967,7 @@
       }).slice(0, 3);
     }
 
-    function buildContrastUsageExample(term, meaning, isTarget) {
+    function buildContrastQuizSentence(term, meaning, isTarget) {
       const lowerMeaning = (meaning || '').toLowerCase();
       const lowerTerm = (term || '').toLowerCase();
 
@@ -3134,7 +3060,6 @@
       document.getElementById('dailyMeaning').textContent = entry.expression_meaning_kr || '';
       document.getElementById('dailySituation').textContent = entry.situation_kr;
       document.getElementById('dailyDescription').textContent = entry.description_kr;
-      document.getElementById('dailyExample').textContent = buildDailyExample(entry);
 
       const cat = getCategoryInfo(entry.category);
       document.getElementById('dailyCategory').innerHTML = `${cat.emoji} ${escapeHtml(cat.label)}`;

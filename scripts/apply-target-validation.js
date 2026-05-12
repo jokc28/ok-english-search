@@ -20,8 +20,8 @@ const MANUAL_CORRECTIONS = {
     context_confidence: 'verified',
     target_audit_note: 'Manual transcript audit: the Reel frames "can you hear me" as the common phrase and teaches the softer "coming through" alternative.',
     context_audit_note: 'Manual transcript audit: the transcript discusses Zoom/meeting audio and whether the voice is coming through.',
-    usage_example_en: 'Before we start, is my voice coming through okay?',
-    example_confidence: 'verified',
+    quiz_sentence_en: 'Before we start, is my voice coming through okay?',
+    quiz_sentence_confidence: 'verified',
     usage_context_kr: '화상회의에서 내 목소리가 잘 전달되는지 부드럽게 확인할 때',
     rejected_phrases: ['can you hear me']
   },
@@ -39,8 +39,8 @@ const MANUAL_CORRECTIONS = {
     target_audit_note: 'Manual transcript audit: the Reel teaches pretty as "quite/fairly" and "pretty sure", not a greeting/check-in phrase.',
     context_audit_note: 'Manual transcript audit: corrected the prior wrong context "상대방의 안부를 물을 때".',
     target_evidence: "pretty can mean quite/fairly; transcript example: I'm pretty sure he's coming.",
-    usage_example_en: "I'm pretty sure he's coming.",
-    example_confidence: 'verified',
+    quiz_sentence_en: "I'm pretty sure he's coming.",
+    quiz_sentence_confidence: 'verified',
     usage_context_kr: '어떤 정도가 꽤 높거나 거의 확신한다고 말할 때',
     rejected_phrases: ['fine']
   }
@@ -169,7 +169,7 @@ function containsExpression(example, expression) {
   return parts.some(part => normalizedExample.includes(part));
 }
 
-function isMeaningfulUsageExample(entry, example) {
+function isMeaningfulQuizSentence(entry, example) {
   const cleaned = cleanEnglishSpan(example);
   if (!cleaned || /[가-힣]/.test(cleaned)) return false;
   if (!containsExpression(cleaned, entry.expression_en)) return false;
@@ -189,7 +189,7 @@ function isMeaningfulUsageExample(entry, example) {
   return true;
 }
 
-function compactUsageExample(entry, example) {
+function compactQuizSentence(entry, example) {
   const expression = normalizeEnglish(entry.expression_en);
   const expressionWords = expression.split(/\s+/).filter(Boolean).length;
   const seen = new Set();
@@ -210,13 +210,13 @@ function compactUsageExample(entry, example) {
   return sentences.join(' ').trim();
 }
 
-function extractUsageExample(entry, transcript) {
-  const existing = compactUsageExample(entry, entry.usage_example_en);
-  if (isMeaningfulUsageExample(entry, existing)) return existing;
+function extractQuizSentence(entry, transcript) {
+  const existing = compactQuizSentence(entry, entry.quiz_sentence_en);
+  if (isMeaningfulQuizSentence(entry, existing)) return existing;
 
   const candidates = englishCandidateSpans(transcript)
-    .map(span => compactUsageExample(entry, span))
-    .filter(span => isMeaningfulUsageExample(entry, span))
+    .map(span => compactQuizSentence(entry, span))
+    .filter(span => isMeaningfulQuizSentence(entry, span))
     .sort((a, b) => {
       const aWords = normalizeEnglish(a).split(/\s+/).length;
       const bWords = normalizeEnglish(b).split(/\s+/).length;
@@ -229,16 +229,16 @@ function extractUsageExample(entry, transcript) {
 function buildValidation(entry, rawEntry, transcript, enrichedEntry) {
   const correction = MANUAL_CORRECTIONS[entry.reel_url];
   if (correction) {
-    const exampleVerified = isMeaningfulUsageExample(correction, correction.usage_example_en);
+    const quizSentenceVerified = isMeaningfulQuizSentence(correction, correction.quiz_sentence_en);
     return {
       ...entry,
       ...correction,
       source_type: 'instagram_reel',
       source_reel_id: rawEntry?.id || null,
       target_source: 'transcript_manual_audit',
-      example_confidence: exampleVerified ? 'verified' : 'review',
-      example_audit_note: exampleVerified ? 'Manual example passed sentence-quality checks.' : 'Manual example is missing or too weak.',
-      excluded_from_daily: !exampleVerified
+      quiz_sentence_confidence: quizSentenceVerified ? 'verified' : 'review',
+      quiz_sentence_audit_note: quizSentenceVerified ? 'Manual quiz sentence passed sentence-quality checks.' : 'Manual quiz sentence is missing or too weak.',
+      excluded_from_daily: !quizSentenceVerified
     };
   }
 
@@ -248,8 +248,8 @@ function buildValidation(entry, rawEntry, transcript, enrichedEntry) {
   const correctionMarker = hasCorrectionMarkerAfterExpression(transcript, entry.expression_en);
   const targetVerified = confidence === 'high' && appears && !correctionMarker;
   const contextVerified = targetVerified && contextAppearsInTranscript(entry, transcript);
-  const usageExample = extractUsageExample(entry, transcript);
-  const exampleVerified = targetVerified && contextVerified && isMeaningfulUsageExample(entry, usageExample);
+  const quizSentence = extractQuizSentence(entry, transcript);
+  const quizSentenceVerified = targetVerified && contextVerified && isMeaningfulQuizSentence(entry, quizSentence);
 
   return {
     ...entry,
@@ -271,13 +271,13 @@ function buildValidation(entry, rawEntry, transcript, enrichedEntry) {
       : 'Usage context was not sufficiently supported by transcript terms.',
     target_evidence: transcriptSnippet(transcript, entry.expression_en),
     rejected_phrases: [],
-    usage_example_en: usageExample,
-    example_confidence: exampleVerified ? 'verified' : 'review',
-    example_audit_note: exampleVerified
-      ? 'Usage example is a transcript-supported sentence.'
-      : 'Usage example is missing, too short, or only repeats the target expression.',
+    quiz_sentence_en: quizSentence,
+    quiz_sentence_confidence: quizSentenceVerified ? 'verified' : 'review',
+    quiz_sentence_audit_note: quizSentenceVerified
+      ? 'Quiz sentence is a transcript-supported sentence.'
+      : 'Quiz sentence is missing, too short, or only repeats the target expression.',
     usage_context_kr: entry.usage_context_kr || entry.situation_kr,
-    excluded_from_daily: !(targetVerified && contextVerified && exampleVerified)
+    excluded_from_daily: !(targetVerified && contextVerified && quizSentenceVerified)
   };
 }
 
@@ -308,7 +308,7 @@ function writeReport(entries) {
   const review = entries.filter(entry =>
     entry.target_confidence !== 'verified' ||
     entry.context_confidence !== 'verified' ||
-    entry.example_confidence !== 'verified'
+    entry.quiz_sentence_confidence !== 'verified'
   );
   const corrected = entries.filter(entry => MANUAL_CORRECTIONS[entry.reel_url]);
   let report = '# Target Expression Audit\n\n';
@@ -319,17 +319,17 @@ function writeReport(entries) {
   report += `- Manual corrections applied: ${corrected.length}\n\n`;
 
   report += '## Manual Corrections\n';
-  report += '| id | source_reel_id | expression_en | usage_context_kr | usage_example_en | rejected_phrases | reel_url |\n';
+  report += '| id | source_reel_id | expression_en | usage_context_kr | quiz_sentence_en | rejected_phrases | reel_url |\n';
   report += '|----|----------------|---------------|------------------|------------------|------------------|----------|\n';
   for (const entry of corrected) {
-    report += `| ${entry.id} | ${entry.source_reel_id || ''} | ${entry.expression_en} | ${entry.usage_context_kr || entry.situation_kr || ''} | ${entry.usage_example_en || ''} | ${(entry.rejected_phrases || []).join(', ')} | ${entry.reel_url} |\n`;
+    report += `| ${entry.id} | ${entry.source_reel_id || ''} | ${entry.expression_en} | ${entry.usage_context_kr || entry.situation_kr || ''} | ${entry.quiz_sentence_en || ''} | ${(entry.rejected_phrases || []).join(', ')} | ${entry.reel_url} |\n`;
   }
 
   report += '\n## Excluded Pending Review\n';
-  report += '| id | source_reel_id | expression_en | target_confidence | context_confidence | example_confidence | reason | reel_url |\n';
+  report += '| id | source_reel_id | expression_en | target_confidence | context_confidence | quiz_sentence_confidence | reason | reel_url |\n';
   report += '|----|----------------|---------------|-------------------|--------------------|--------------------|--------|----------|\n';
   for (const entry of review) {
-    report += `| ${entry.id} | ${entry.source_reel_id || ''} | ${entry.expression_en} | ${entry.target_confidence || ''} | ${entry.context_confidence || ''} | ${entry.example_confidence || ''} | ${[entry.target_audit_note, entry.context_audit_note, entry.example_audit_note].filter(Boolean).join(' ')} | ${entry.reel_url} |\n`;
+    report += `| ${entry.id} | ${entry.source_reel_id || ''} | ${entry.expression_en} | ${entry.target_confidence || ''} | ${entry.context_confidence || ''} | ${entry.quiz_sentence_confidence || ''} | ${[entry.target_audit_note, entry.context_audit_note, entry.quiz_sentence_audit_note].filter(Boolean).join(' ')} | ${entry.reel_url} |\n`;
   }
 
   fs.writeFileSync('target-expression-audit.md', report, 'utf8');
@@ -354,7 +354,7 @@ writeReport(audited);
 const verified = audited.filter(entry =>
   entry.target_confidence === 'verified' &&
   entry.context_confidence === 'verified' &&
-  entry.example_confidence === 'verified'
+  entry.quiz_sentence_confidence === 'verified'
 ).length;
 const review = audited.length - verified;
 console.log(JSON.stringify({

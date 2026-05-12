@@ -31,10 +31,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "용기를 내서 사람 만날 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "expression_en": "squeeze in",
@@ -69,10 +69,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "바쁜 와중에 시간을 낼 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 3,
@@ -104,10 +104,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "재미없는 상황을 표현할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 4,
@@ -139,10 +139,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "약속을 취소할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 5,
@@ -174,10 +174,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "완전 동의하지 않을 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 6,
@@ -210,10 +210,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "중요한 순간에 결정을 내릴 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 7,
@@ -245,10 +245,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "과거의 좋은 시절을 회상할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 8,
@@ -280,10 +280,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "By five years, it's not even close.",
+    "quiz_sentence_en": "By five years, it's not even close.",
     "usage_context_kr": "게임이 안 될 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 9,
@@ -315,10 +315,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "점심 후 몸이 무거울 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 10,
@@ -350,10 +350,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "상태를 물어볼 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 11,
@@ -385,10 +385,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "곤란한 질문을 받을 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 12,
@@ -420,10 +420,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "피부 관련 대화를 할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 13,
@@ -455,10 +455,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "집에서 시간을 보낼 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 14,
@@ -490,10 +490,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "힘든 상황에서 응원할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 15,
@@ -525,10 +525,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "상황을 확인하고 싶을 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 16,
@@ -560,10 +560,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "SNS에서 인기 있을 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 17,
@@ -595,10 +595,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "친구의 속마음을 알 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 18,
@@ -630,10 +630,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "It's not the most flavorful.",
+    "quiz_sentence_en": "It's not the most flavorful.",
     "usage_context_kr": "부정적인 표현을 피하고 싶을 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 19,
@@ -665,10 +665,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "여행할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 20,
@@ -701,10 +701,10 @@ const REELS_DATA = [
     "excluded_from_daily": false,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "We're expecting a baby in March.",
+    "quiz_sentence_en": "We're expecting a baby in March.",
     "usage_context_kr": "임신 소식을 전할 때",
-    "example_confidence": "verified",
-    "example_audit_note": "Usage example is a transcript-supported sentence."
+    "quiz_sentence_confidence": "verified",
+    "quiz_sentence_audit_note": "Quiz sentence is a transcript-supported sentence."
   },
   {
     "id": 21,
@@ -737,10 +737,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "영어 공부를 이야기할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 22,
@@ -772,10 +772,10 @@ const REELS_DATA = [
     "excluded_from_daily": false,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "I'd say that's fair. Sometimes I'd like to hang out with people who aren't that bright.",
+    "quiz_sentence_en": "I'd say that's fair. Sometimes I'd like to hang out with people who aren't that bright.",
     "usage_context_kr": "누군가의 의견을 인정할 때",
-    "example_confidence": "verified",
-    "example_audit_note": "Usage example is a transcript-supported sentence."
+    "quiz_sentence_confidence": "verified",
+    "quiz_sentence_audit_note": "Quiz sentence is a transcript-supported sentence."
   },
   {
     "id": 23,
@@ -807,10 +807,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "감정적으로 무관심할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 24,
@@ -842,10 +842,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "돈을 모을 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 25,
@@ -878,10 +878,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "사진이 잘 나올 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 26,
@@ -914,10 +914,10 @@ const REELS_DATA = [
     "excluded_from_daily": false,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "So I was like, you know what?",
+    "quiz_sentence_en": "So I was like, you know what?",
     "usage_context_kr": "마음이 바뀔 때",
-    "example_confidence": "verified",
-    "example_audit_note": "Usage example is a transcript-supported sentence."
+    "quiz_sentence_confidence": "verified",
+    "quiz_sentence_audit_note": "Quiz sentence is a transcript-supported sentence."
   },
   {
     "id": 27,
@@ -949,10 +949,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "새해 목표를 세울 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 28,
@@ -984,10 +984,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "친구들과 술자리에서 할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 29,
@@ -1019,10 +1019,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "확실한 방법이 필요할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 30,
@@ -1054,10 +1054,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "But at a certain point you go, Am I delusional? Maybe I'm not funny.",
+    "quiz_sentence_en": "But at a certain point you go, Am I delusional? Maybe I'm not funny.",
     "usage_context_kr": "자신의 생각을 의심할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 31,
@@ -1089,10 +1089,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "누군가의 슬픈 소식을 들었을 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 32,
@@ -1124,10 +1124,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "2025년을 이야기할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 33,
@@ -1159,10 +1159,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "모든 조건을 만족할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 34,
@@ -1194,10 +1194,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "상태 변화를 전달할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 35,
@@ -1229,10 +1229,10 @@ const REELS_DATA = [
     "excluded_from_daily": false,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "let's figure out our next step.",
+    "quiz_sentence_en": "let's figure out our next step.",
     "usage_context_kr": "문제를 해결하고 싶을 때",
-    "example_confidence": "verified",
-    "example_audit_note": "Usage example is a transcript-supported sentence."
+    "quiz_sentence_confidence": "verified",
+    "quiz_sentence_audit_note": "Quiz sentence is a transcript-supported sentence."
   },
   {
     "id": 36,
@@ -1264,10 +1264,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "징크스에 대해 이야기할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 37,
@@ -1299,10 +1299,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "Had to put it down before I forget it.",
+    "quiz_sentence_en": "Had to put it down before I forget it.",
     "usage_context_kr": "물건을 내려놓고 싶을 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 38,
@@ -1334,10 +1334,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "친구와 편하게 대화할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 39,
@@ -1369,10 +1369,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "감정이 상했을 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 40,
@@ -1404,10 +1404,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "감정이 자주 변할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 41,
@@ -1439,10 +1439,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "상대의 선택을 존중할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 42,
@@ -1475,10 +1475,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "재미있는 활동을 설명할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 43,
@@ -1510,10 +1510,10 @@ const REELS_DATA = [
     "excluded_from_daily": false,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "That song is an earworm. I can't stop humming.",
+    "quiz_sentence_en": "That song is an earworm. I can't stop humming.",
     "usage_context_kr": "중독성 있는 노래를 들을 때",
-    "example_confidence": "verified",
-    "example_audit_note": "Usage example is a transcript-supported sentence."
+    "quiz_sentence_confidence": "verified",
+    "quiz_sentence_audit_note": "Quiz sentence is a transcript-supported sentence."
   },
   {
     "id": 44,
@@ -1545,10 +1545,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "연락이 끊겼을 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 45,
@@ -1580,10 +1580,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "말 많은 사람에게",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 46,
@@ -1615,10 +1615,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "I'm locked in on the presentation today.",
+    "quiz_sentence_en": "I'm locked in on the presentation today.",
     "usage_context_kr": "공부할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 47,
@@ -1650,10 +1650,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "상황을 가정할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 48,
@@ -1685,10 +1685,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "TV나 음악을 틀고 싶을 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 49,
@@ -1720,10 +1720,10 @@ const REELS_DATA = [
     "excluded_from_daily": false,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "I've been meaning to tell you your presentation was amazing.",
+    "quiz_sentence_en": "I've been meaning to tell you your presentation was amazing.",
     "usage_context_kr": "친구에게 중요한 이야기를 할 때",
-    "example_confidence": "verified",
-    "example_audit_note": "Usage example is a transcript-supported sentence."
+    "quiz_sentence_confidence": "verified",
+    "quiz_sentence_audit_note": "Quiz sentence is a transcript-supported sentence."
   },
   {
     "id": 50,
@@ -1756,10 +1756,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "파티나 여행할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 51,
@@ -1791,10 +1791,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "모르는 정보를 말할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 52,
@@ -1826,10 +1826,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "힐링할 때도, 피곤할 때도",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 53,
@@ -1861,10 +1861,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "친구에게 물어볼 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 54,
@@ -1896,10 +1896,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "경기에서 교체할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 55,
@@ -1931,10 +1931,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "대화 전환할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 56,
@@ -1966,10 +1966,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "I swear it's true.",
+    "quiz_sentence_en": "I swear it's true.",
     "usage_context_kr": "진실을 강조할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 57,
@@ -2001,10 +2001,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "계획이 어긋날 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 58,
@@ -2036,10 +2036,10 @@ const REELS_DATA = [
     "excluded_from_daily": false,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "Right off the bat, I knew he was lying.",
+    "quiz_sentence_en": "Right off the bat, I knew he was lying.",
     "usage_context_kr": "상대방의 거짓말을 알게 될 때",
-    "example_confidence": "verified",
-    "example_audit_note": "Usage example is a transcript-supported sentence."
+    "quiz_sentence_confidence": "verified",
+    "quiz_sentence_audit_note": "Quiz sentence is a transcript-supported sentence."
   },
   {
     "id": 59,
@@ -2071,10 +2071,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "소음 때문에 짜증날 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 60,
@@ -2106,10 +2106,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "집에 손님을 초대할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 61,
@@ -2142,10 +2142,10 @@ const REELS_DATA = [
     "excluded_from_daily": false,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "I am a producer. I wear two hats now. I think that it's important that I represent the movie well.",
+    "quiz_sentence_en": "I am a producer. I wear two hats now. I think that it's important that I represent the movie well.",
     "usage_context_kr": "여러 역할을 동시에 할 때",
-    "example_confidence": "verified",
-    "example_audit_note": "Usage example is a transcript-supported sentence."
+    "quiz_sentence_confidence": "verified",
+    "quiz_sentence_audit_note": "Quiz sentence is a transcript-supported sentence."
   },
   {
     "id": 62,
@@ -2177,10 +2177,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "누군가에게 미안할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 63,
@@ -2212,10 +2212,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "My last thought is that I suck at this, but at least you didn't smash.",
+    "quiz_sentence_en": "My last thought is that I suck at this, but at least you didn't smash.",
     "usage_context_kr": "아쉬운 상황에서 긍정적으로 말할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 64,
@@ -2247,10 +2247,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "정치인에 대한 여론이 바뀔 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 65,
@@ -2286,10 +2286,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "OCD 의미를 설명할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 66,
@@ -2324,10 +2324,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "상대방에게 눈치를 물을 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 67,
@@ -2362,10 +2362,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "상대방에게 눈치를 물을 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 68,
@@ -2397,10 +2397,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "You need to pay attention in class in order to pass.",
+    "quiz_sentence_en": "You need to pay attention in class in order to pass.",
     "usage_context_kr": "수업에 집중할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 69,
@@ -2432,10 +2432,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "처음 만나는 사람에게 할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 70,
@@ -2468,10 +2468,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "실력을 키우고 싶을 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 71,
@@ -2504,10 +2504,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "격식 있는 자리에서",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 72,
@@ -2539,10 +2539,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "양측 균형 비교할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 73,
@@ -2575,10 +2575,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "For better or for worse, we're all living in Oppenheimer's world, so I would really like to dedicate this to the peacemakers everywhere.",
+    "quiz_sentence_en": "For better or for worse, we're all living in Oppenheimer's world, so I would really like to dedicate this to the peacemakers everywhere.",
     "usage_context_kr": "어떤 상황에서도 함께할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 74,
@@ -2610,10 +2610,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "내가 좋아하지 않을 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 75,
@@ -2646,10 +2646,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "결승에서 전승할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 76,
@@ -2681,10 +2681,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "회의나 발표 중에",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 77,
@@ -2717,10 +2717,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "you learn it as you go.",
+    "quiz_sentence_en": "you learn it as you go.",
     "usage_context_kr": "무언가를 배우고 싶을 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 78,
@@ -2752,10 +2752,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "요청이나 질문을 꺼낼 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 79,
@@ -2787,10 +2787,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "He's a big man or apologizing first.",
+    "quiz_sentence_en": "He's a big man or apologizing first.",
     "usage_context_kr": "용서할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 80,
@@ -2823,10 +2823,10 @@ const REELS_DATA = [
     "excluded_from_daily": false,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "I'm currently working on a different project.",
+    "quiz_sentence_en": "I'm currently working on a different project.",
     "usage_context_kr": "현재 상황을 설명할 때",
-    "example_confidence": "verified",
-    "example_audit_note": "Usage example is a transcript-supported sentence."
+    "quiz_sentence_confidence": "verified",
+    "quiz_sentence_audit_note": "Quiz sentence is a transcript-supported sentence."
   },
   {
     "id": 81,
@@ -2858,10 +2858,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "I need to chill out and relax.",
+    "quiz_sentence_en": "I need to chill out and relax.",
     "usage_context_kr": "힘든 하루를 보낸 후에",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 82,
@@ -2893,10 +2893,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "상황을 반대로 설명할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 83,
@@ -2928,10 +2928,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "회의 중에 잘난 척할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 84,
@@ -2963,10 +2963,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "편안한 분위기일 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 85,
@@ -2998,10 +2998,10 @@ const REELS_DATA = [
     "excluded_from_daily": false,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "I cracked up for like 5 minutes.",
+    "quiz_sentence_en": "I cracked up for like 5 minutes.",
     "usage_context_kr": "너무 웃겨서 웃을 때",
-    "example_confidence": "verified",
-    "example_audit_note": "Usage example is a transcript-supported sentence."
+    "quiz_sentence_confidence": "verified",
+    "quiz_sentence_audit_note": "Quiz sentence is a transcript-supported sentence."
   },
   {
     "id": 86,
@@ -3033,10 +3033,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "감정이 격해졌을 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 87,
@@ -3068,10 +3068,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "새로운 시도를 하기 전",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 88,
@@ -3103,10 +3103,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "일상 대화할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 89,
@@ -3139,10 +3139,10 @@ const REELS_DATA = [
     "excluded_from_daily": false,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "let's go inside and cool off for a bit.",
+    "quiz_sentence_en": "let's go inside and cool off for a bit.",
     "usage_context_kr": "더위를 느낄 때",
-    "example_confidence": "verified",
-    "example_audit_note": "Usage example is a transcript-supported sentence."
+    "quiz_sentence_confidence": "verified",
+    "quiz_sentence_audit_note": "Quiz sentence is a transcript-supported sentence."
   },
   {
     "id": 90,
@@ -3174,10 +3174,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "친구들 사이에 낄 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 91,
@@ -3210,10 +3210,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "탈모 초기 증세가 있을 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 92,
@@ -3245,10 +3245,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "놀라운 소식을 들었을 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 93,
@@ -3281,10 +3281,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "우리끼리 잠깐 얘기할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 94,
@@ -3317,10 +3317,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "감정이나 통증을 해소할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 95,
@@ -3352,10 +3352,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "time wise, it was a waste.",
+    "quiz_sentence_en": "time wise, it was a waste.",
     "usage_context_kr": "시간에 대해 이야기할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 96,
@@ -3388,10 +3388,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "누군가가 집중이 필요할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 97,
@@ -3423,10 +3423,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "회의 중 아이디어 평가할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 98,
@@ -3458,10 +3458,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "It's about time you got here.",
+    "quiz_sentence_en": "It's about time you got here.",
     "usage_context_kr": "기다리던 사람에게 전화할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 99,
@@ -3494,10 +3494,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "친한 친구와 대화할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 100,
@@ -3529,10 +3529,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "돈을 갚겠다고 할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 101,
@@ -3564,10 +3564,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "말하고 싶지 않을 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 102,
@@ -3599,10 +3599,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "이유 없이 잠수할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 103,
@@ -3634,10 +3634,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "상대방의 말에 공감할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 104,
@@ -3670,10 +3670,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "잘 차려입은 남성에게",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 105,
@@ -3706,10 +3706,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "옷이나 얼굴에 뭐가 묻었을 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 106,
@@ -3741,10 +3741,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "Let me walk you through this whole process.",
+    "quiz_sentence_en": "Let me walk you through this whole process.",
     "usage_context_kr": "무언가를 설명할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 107,
@@ -3776,10 +3776,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "누군가의 말을 믿기 힘들 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 108,
@@ -3811,10 +3811,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "커피를 마신 후 정신이 맑아질 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 109,
@@ -3847,10 +3847,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "약속에 못 갔을 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 110,
@@ -3882,10 +3882,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "원하는 것이 깊을 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 111,
@@ -3917,10 +3917,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "외로움을 표현하고 싶을 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 112,
@@ -3952,10 +3952,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "공휴일 없을 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 113,
@@ -3987,10 +3987,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "과시하고 싶을 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 114,
@@ -4022,10 +4022,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "일회용품을 말할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 115,
@@ -4058,10 +4058,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "오랜 실패를 극복할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 116,
@@ -4094,10 +4094,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "별자리로 성격을 이야기할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 117,
@@ -4129,10 +4129,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "연애 초기 단계일 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 118,
@@ -4156,10 +4156,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "감정을 표현하고 싶지 않을 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 119,
@@ -4191,10 +4191,10 @@ const REELS_DATA = [
     "excluded_from_daily": false,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "So, can we circle back to this topic later?",
+    "quiz_sentence_en": "So, can we circle back to this topic later?",
     "usage_context_kr": "회의 후 다시 이야기할 때",
-    "example_confidence": "verified",
-    "example_audit_note": "Usage example is a transcript-supported sentence."
+    "quiz_sentence_confidence": "verified",
+    "quiz_sentence_audit_note": "Quiz sentence is a transcript-supported sentence."
   },
   {
     "id": 120,
@@ -4226,10 +4226,10 @@ const REELS_DATA = [
     "excluded_from_daily": false,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "As far as I'm concerned, this looks like a great idea.",
+    "quiz_sentence_en": "As far as I'm concerned, this looks like a great idea.",
     "usage_context_kr": "회의 중 의견을 말할 때",
-    "example_confidence": "verified",
-    "example_audit_note": "Usage example is a transcript-supported sentence."
+    "quiz_sentence_confidence": "verified",
+    "quiz_sentence_audit_note": "Quiz sentence is a transcript-supported sentence."
   },
   {
     "id": 121,
@@ -4261,10 +4261,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "외로움을 느낄 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 122,
@@ -4297,10 +4297,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "상대방의 반응을 원할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 123,
@@ -4332,10 +4332,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "말하면서 정정할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 124,
@@ -4367,10 +4367,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "헤어질 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 125,
@@ -4402,10 +4402,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "발표할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 126,
@@ -4437,10 +4437,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "어린 시절을 그리워할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 127,
@@ -4472,10 +4472,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "간단히 설명할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 128,
@@ -4507,10 +4507,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "단어의 의미를 반대로 할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 129,
@@ -4544,10 +4544,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "위장 친구가 있을 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 130,
@@ -4581,10 +4581,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "가족과 시간을 보낼 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 131,
@@ -4617,10 +4617,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "연결이 끊겼을 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 132,
@@ -4652,10 +4652,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "교통체증을 표현할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 133,
@@ -4687,10 +4687,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "미팅이나 수업 끝낼 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 134,
@@ -4726,10 +4726,10 @@ const REELS_DATA = [
     "excluded_from_daily": false,
     "context_confidence": "verified",
     "context_audit_note": "Manual transcript audit: the transcript discusses Zoom/meeting audio and whether the voice is coming through.",
-    "usage_example_en": "Before we start, is my voice coming through okay?",
+    "quiz_sentence_en": "Before we start, is my voice coming through okay?",
     "usage_context_kr": "화상회의에서 내 목소리가 잘 전달되는지 부드럽게 확인할 때",
-    "example_confidence": "verified",
-    "example_audit_note": "Manual example passed sentence-quality checks."
+    "quiz_sentence_confidence": "verified",
+    "quiz_sentence_audit_note": "Manual quiz sentence passed sentence-quality checks."
   },
   {
     "id": 135,
@@ -4761,10 +4761,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "I turn down the offer.",
+    "quiz_sentence_en": "I turn down the offer.",
     "usage_context_kr": "제안을 거절할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 136,
@@ -4796,10 +4796,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "누리는 것에 감사할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 137,
@@ -4831,10 +4831,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "상황이 안 좋을 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 138,
@@ -4866,10 +4866,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "사기꾼을 설명할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 139,
@@ -4901,10 +4901,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "다이어트를 포기할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 140,
@@ -4936,10 +4936,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "목이 마를 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 141,
@@ -4971,10 +4971,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "진심을 전할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 142,
@@ -5006,10 +5006,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "너무 웃길 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 143,
@@ -5041,10 +5041,10 @@ const REELS_DATA = [
     "excluded_from_daily": false,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "Then this is so unfair. I feel like I'm being mistreated.",
+    "quiz_sentence_en": "Then this is so unfair. I feel like I'm being mistreated.",
     "usage_context_kr": "부당한 대우를 받을 때",
-    "example_confidence": "verified",
-    "example_audit_note": "Usage example is a transcript-supported sentence."
+    "quiz_sentence_confidence": "verified",
+    "quiz_sentence_audit_note": "Quiz sentence is a transcript-supported sentence."
   },
   {
     "id": 144,
@@ -5076,10 +5076,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "주차할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 145,
@@ -5116,10 +5116,10 @@ const REELS_DATA = [
     "excluded_from_daily": false,
     "context_confidence": "verified",
     "context_audit_note": "Manual transcript audit: corrected the prior wrong context \"상대방의 안부를 물을 때\".",
-    "usage_example_en": "I'm pretty sure he's coming.",
+    "quiz_sentence_en": "I'm pretty sure he's coming.",
     "usage_context_kr": "어떤 정도가 꽤 높거나 거의 확신한다고 말할 때",
-    "example_confidence": "verified",
-    "example_audit_note": "Manual example passed sentence-quality checks."
+    "quiz_sentence_confidence": "verified",
+    "quiz_sentence_audit_note": "Manual quiz sentence passed sentence-quality checks."
   },
   {
     "id": 146,
@@ -5151,10 +5151,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "위험한 사람을 묘사할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 147,
@@ -5186,10 +5186,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "시끄러울 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 148,
@@ -5221,10 +5221,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "식사 후 배부를 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 149,
@@ -5256,10 +5256,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "자신의 미성숙함을 표현할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 150,
@@ -5291,10 +5291,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "예상치 못한 상황일 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 151,
@@ -5328,10 +5328,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "스트레스 표현할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 152,
@@ -5355,10 +5355,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "어두운 방에서 불을 켤 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 153,
@@ -5390,10 +5390,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "지루함을 느낄 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 154,
@@ -5428,10 +5428,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "헷갈리는 단어 구분할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 155,
@@ -5455,10 +5455,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "상대방의 말에 동의할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 156,
@@ -5491,10 +5491,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "큰 감정이 드는 경우",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 157,
@@ -5526,10 +5526,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "더운 공간에서",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 158,
@@ -5564,10 +5564,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "외모를 물어볼 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 159,
@@ -5591,10 +5591,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "미래에 할 일을 말할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 160,
@@ -5629,10 +5629,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "헷갈리는 단어 구분할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 161,
@@ -5656,10 +5656,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "친구와 시간을 보낼 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 162,
@@ -5691,10 +5691,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "집중이 안 될 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 163,
@@ -5726,10 +5726,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "내 의견을 말할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 164,
@@ -5761,10 +5761,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "내 의견이 틀릴 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 165,
@@ -5796,10 +5796,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "I sometimes play soccer.",
+    "quiz_sentence_en": "I sometimes play soccer.",
     "usage_context_kr": "일상적인 행동을 표현할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 166,
@@ -5831,10 +5831,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "불규칙한 일이 있을 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 167,
@@ -5866,10 +5866,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "순서상 마지막일 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 168,
@@ -5901,10 +5901,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "대화 중 이해 확인할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 169,
@@ -5936,10 +5936,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "극적인 감사할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 170,
@@ -5971,10 +5971,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "선택지를 말할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 171,
@@ -6006,10 +6006,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "영어 발음할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 172,
@@ -6041,10 +6041,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "사건이 바로 일어날 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 173,
@@ -6076,10 +6076,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "And we didn't sleep for a good 4 days.",
+    "quiz_sentence_en": "And we didn't sleep for a good 4 days.",
     "usage_context_kr": "기간을 강조할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 174,
@@ -6112,10 +6112,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "여러 옵션 중에서 선택할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 175,
@@ -6147,10 +6147,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "엘리베이터에 있을 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 176,
@@ -6183,10 +6183,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "잘못된 주문을 말할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 177,
@@ -6219,10 +6219,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "I feel the most powerful when I'm BLACKPINK. Having my girls by my side.",
+    "quiz_sentence_en": "I feel the most powerful when I'm BLACKPINK. Having my girls by my side.",
     "usage_context_kr": "친구와 함께할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 178,
@@ -6255,10 +6255,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "회사에 가기 싫을 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 179,
@@ -6290,10 +6290,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "혼자서 무언가 할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 180,
@@ -6325,10 +6325,10 @@ const REELS_DATA = [
     "excluded_from_daily": false,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "It only comes back to land if everything is like super green, super green, super green. And then we had some concerns about the tower.",
+    "quiz_sentence_en": "It only comes back to land if everything is like super green, super green, super green. And then we had some concerns about the tower.",
     "usage_context_kr": "로켓 발사 성공할 때",
-    "example_confidence": "verified",
-    "example_audit_note": "Usage example is a transcript-supported sentence."
+    "quiz_sentence_confidence": "verified",
+    "quiz_sentence_audit_note": "Quiz sentence is a transcript-supported sentence."
   },
   {
     "id": 181,
@@ -6360,10 +6360,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "농작물을 기를 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 182,
@@ -6395,10 +6395,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "실패했을 때 긍정적으로 할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 183,
@@ -6430,10 +6430,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "I wear sunscreen everyday.",
+    "quiz_sentence_en": "I wear sunscreen everyday.",
     "usage_context_kr": "햇볕을 피하고 싶을 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 184,
@@ -6465,10 +6465,10 @@ const REELS_DATA = [
     "excluded_from_daily": false,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "Would you go in it? Without a doubt, like in a heartbeat, I'm on it. That was crazy.",
+    "quiz_sentence_en": "Would you go in it? Without a doubt, like in a heartbeat, I'm on it. That was crazy.",
     "usage_context_kr": "주저하지 않고 바로 할 때",
-    "example_confidence": "verified",
-    "example_audit_note": "Usage example is a transcript-supported sentence."
+    "quiz_sentence_confidence": "verified",
+    "quiz_sentence_audit_note": "Quiz sentence is a transcript-supported sentence."
   },
   {
     "id": 185,
@@ -6500,10 +6500,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "아플 때 병원에 갈 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 186,
@@ -6535,10 +6535,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "친구에게 물어볼 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 187,
@@ -6570,10 +6570,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "결정을 내릴 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 188,
@@ -6605,10 +6605,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "코인이 인기를 얻을 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 189,
@@ -6640,10 +6640,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "And I'm going to do my best.",
+    "quiz_sentence_en": "And I'm going to do my best.",
     "usage_context_kr": "무언가를 할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 190,
@@ -6675,10 +6675,10 @@ const REELS_DATA = [
     "excluded_from_daily": false,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "The unkillable demon king! Unkillable one more time! Unbelievable once more!",
+    "quiz_sentence_en": "The unkillable demon king! Unkillable one more time! Unbelievable once more!",
     "usage_context_kr": "극적인 상황에서",
-    "example_confidence": "verified",
-    "example_audit_note": "Usage example is a transcript-supported sentence."
+    "quiz_sentence_confidence": "verified",
+    "quiz_sentence_audit_note": "Quiz sentence is a transcript-supported sentence."
   },
   {
     "id": 191,
@@ -6710,10 +6710,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "추운 날씨에 따뜻할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 192,
@@ -6745,10 +6745,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "누군가를 칭찬할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 193,
@@ -6781,10 +6781,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "격식 있는 자리에서",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 194,
@@ -6816,10 +6816,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "예상치 못한 일이 발생할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 195,
@@ -6851,10 +6851,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "선물을 주고받는 경우",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 196,
@@ -6886,10 +6886,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "가격이 급격히 오를 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 197,
@@ -6921,10 +6921,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "상황이 급할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 198,
@@ -6957,10 +6957,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "약속에 늦을 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 199,
@@ -6992,10 +6992,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "기다려줄 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 200,
@@ -7027,10 +7027,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "썸을 타고 있을 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 201,
@@ -7062,10 +7062,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "집을 빌릴 때 하는 경우",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 202,
@@ -7097,10 +7097,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "결정을 내릴 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 203,
@@ -7132,10 +7132,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "애정 표현이 필요할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 204,
@@ -7168,10 +7168,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "친구에게 취미 물어볼 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 205,
@@ -7203,10 +7203,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "편의점에서 할인할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 206,
@@ -7238,10 +7238,10 @@ const REELS_DATA = [
     "excluded_from_daily": false,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "I'll touch base with you.",
+    "quiz_sentence_en": "I'll touch base with you.",
     "usage_context_kr": "업무 진행 상황을 확인할 때",
-    "example_confidence": "verified",
-    "example_audit_note": "Usage example is a transcript-supported sentence."
+    "quiz_sentence_confidence": "verified",
+    "quiz_sentence_audit_note": "Quiz sentence is a transcript-supported sentence."
   },
   {
     "id": 207,
@@ -7273,10 +7273,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "늦은 밤 간식 먹고 싶을 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 208,
@@ -7308,10 +7308,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "Any good places to eat near here, around here?",
+    "quiz_sentence_en": "Any good places to eat near here, around here?",
     "usage_context_kr": "택시에서 스몰토크할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 209,
@@ -7343,10 +7343,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "할로윈 때 분장할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 210,
@@ -7378,10 +7378,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "맛있는 음식을 먹을 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 211,
@@ -7413,10 +7413,10 @@ const REELS_DATA = [
     "excluded_from_daily": false,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "I struck out at the job interview.",
+    "quiz_sentence_en": "I struck out at the job interview.",
     "usage_context_kr": "면접에서 떨어졌을 때",
-    "example_confidence": "verified",
-    "example_audit_note": "Usage example is a transcript-supported sentence."
+    "quiz_sentence_confidence": "verified",
+    "quiz_sentence_audit_note": "Quiz sentence is a transcript-supported sentence."
   },
   {
     "id": 212,
@@ -7448,10 +7448,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "person I like coffee I'm a coffee person I'm a cat person I'm a morning person If you add a person at the end, it becomes, I'm a person who is interested in and likes those things.",
+    "quiz_sentence_en": "person I like coffee I'm a coffee person I'm a cat person I'm a morning person If you add a person at the end, it becomes, I'm a person who is interested in and likes those things.",
     "usage_context_kr": "자신의 취향을 말할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 213,
@@ -7483,10 +7483,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "약속이 있을 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 214,
@@ -7519,10 +7519,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "수상 소식을 전할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 215,
@@ -7554,10 +7554,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "강렬한 맛을 표현할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 216,
@@ -7589,10 +7589,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "말실수했을 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 217,
@@ -7624,10 +7624,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "비용을 나눌 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 218,
@@ -7660,10 +7660,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "친구에게 응원할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 219,
@@ -7696,10 +7696,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "말로는 쉽다고 할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 220,
@@ -7731,10 +7731,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "친구와 외식할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 221,
@@ -7766,10 +7766,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "사랑 고백할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 222,
@@ -7801,10 +7801,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "부탁할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 223,
@@ -7836,10 +7836,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "더 필요한 것을 요청할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 224,
@@ -7871,10 +7871,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "고백하기 전 마음 다잡을 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 225,
@@ -7906,10 +7906,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "차를 태워줄 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 226,
@@ -7941,10 +7941,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "누군가에게 가는 경우",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 227,
@@ -7976,10 +7976,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "25세 전후에 느낄 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 228,
@@ -8012,10 +8012,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "미국 명절 문화 이해할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 229,
@@ -8047,10 +8047,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "호텔 방 예약할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 230,
@@ -8085,10 +8085,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "첫인상에 대해 물어볼 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 231,
@@ -8121,10 +8121,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "호텔 조식 시간 물어볼 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 232,
@@ -8148,10 +8148,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "호텔에서 체크인할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 233,
@@ -8184,10 +8184,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "커피 주문할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 234,
@@ -8219,10 +8219,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "상대방의 관심사에 대해 이야기할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 235,
@@ -8255,10 +8255,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "친구처럼 지낼 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 236,
@@ -8291,10 +8291,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "I think I like Busan.",
+    "quiz_sentence_en": "I think I like Busan.",
     "usage_context_kr": "여행지 추천할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 237,
@@ -8326,10 +8326,10 @@ const REELS_DATA = [
     "excluded_from_daily": false,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "This is Korean's go to spot.",
+    "quiz_sentence_en": "This is Korean's go to spot.",
     "usage_context_kr": "자주 가는 장소를 설명할 때",
-    "example_confidence": "verified",
-    "example_audit_note": "Usage example is a transcript-supported sentence."
+    "quiz_sentence_confidence": "verified",
+    "quiz_sentence_audit_note": "Quiz sentence is a transcript-supported sentence."
   },
   {
     "id": 238,
@@ -8361,10 +8361,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "여행을 떠날 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 239,
@@ -8400,10 +8400,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "고정관념에 대해 이야기할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 240,
@@ -8435,10 +8435,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "누군가 때문에 힘들 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 241,
@@ -8462,10 +8462,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "입국심사할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 242,
@@ -8500,10 +8500,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "서울대생 고정관념을 물을 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 243,
@@ -8535,10 +8535,10 @@ const REELS_DATA = [
     "excluded_from_daily": false,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "I like neither of them.",
+    "quiz_sentence_en": "I like neither of them.",
     "usage_context_kr": "둘 중 하나를 선택할 때",
-    "example_confidence": "verified",
-    "example_audit_note": "Usage example is a transcript-supported sentence."
+    "quiz_sentence_confidence": "verified",
+    "quiz_sentence_audit_note": "Quiz sentence is a transcript-supported sentence."
   },
   {
     "id": 244,
@@ -8562,10 +8562,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "투표할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 245,
@@ -8597,10 +8597,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "몸이 좋아졌을 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 246,
@@ -8632,10 +8632,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "땀냄새가 날 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 247,
@@ -8670,10 +8670,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "한국에 온 이유를 물을 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 248,
@@ -8705,10 +8705,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "I regretted or suffered a couple of times when I was a little bit younger, so that's why I've changed now and I'm like, whatever comes to my mind, I'm doing it.",
+    "quiz_sentence_en": "I regretted or suffered a couple of times when I was a little bit younger, so that's why I've changed now and I'm like, whatever comes to my mind, I'm doing it.",
     "usage_context_kr": "즉흥적으로 행동할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 249,
@@ -8732,10 +8732,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "한국 양궁을 이야기할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 250,
@@ -8767,10 +8767,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "If it's like a long-term relationship, those are the people that are most similar to me.",
+    "quiz_sentence_en": "If it's like a long-term relationship, those are the people that are most similar to me.",
     "usage_context_kr": "비슷한 사람을 언급할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 251,
@@ -8802,10 +8802,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "데이트 상대를 고를 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 252,
@@ -8837,10 +8837,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "Just like as I was interviewing you, I mean, it's a compliment, but your English is very good.",
+    "quiz_sentence_en": "Just like as I was interviewing you, I mean, it's a compliment, but your English is very good.",
     "usage_context_kr": "칭찬할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 253,
@@ -8872,10 +8872,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "모르는 것을 말할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 254,
@@ -8907,10 +8907,10 @@ const REELS_DATA = [
     "excluded_from_daily": false,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "I'm afraid I gotta get back to work.",
+    "quiz_sentence_en": "I'm afraid I gotta get back to work.",
     "usage_context_kr": "상대방에게 미안할 때",
-    "example_confidence": "verified",
-    "example_audit_note": "Usage example is a transcript-supported sentence."
+    "quiz_sentence_confidence": "verified",
+    "quiz_sentence_audit_note": "Quiz sentence is a transcript-supported sentence."
   },
   {
     "id": 255,
@@ -8942,10 +8942,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "verified",
     "context_audit_note": "Usage context is supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "특별한 이유 없이 할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 256,
@@ -8978,10 +8978,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "질문할 때 하는 경우",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   },
   {
     "id": 257,
@@ -9013,10 +9013,10 @@ const REELS_DATA = [
     "excluded_from_daily": true,
     "context_confidence": "review",
     "context_audit_note": "Usage context was not sufficiently supported by transcript terms.",
-    "usage_example_en": "",
+    "quiz_sentence_en": "",
     "usage_context_kr": "새로운 도전을 할 때",
-    "example_confidence": "review",
-    "example_audit_note": "Usage example is missing, too short, or only repeats the target expression."
+    "quiz_sentence_confidence": "review",
+    "quiz_sentence_audit_note": "Quiz sentence is missing, too short, or only repeats the target expression."
   }
 ];
 const CATEGORIES = [

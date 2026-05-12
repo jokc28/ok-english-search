@@ -33,12 +33,12 @@ function isTrustedReelEntry(entry) {
     entry.source_type === 'instagram_reel' &&
     entry.target_confidence === 'verified' &&
     entry.context_confidence === 'verified' &&
-    entry.example_confidence === 'verified' &&
+    entry.quiz_sentence_confidence === 'verified' &&
     entry.excluded_from_daily !== true &&
     String(entry.expression_en || '').trim() &&
     String(entry.expression_meaning_kr || '').trim() &&
     String(entry.situation_kr || '').trim() &&
-    String(entry.usage_example_en || '').trim() &&
+    String(entry.quiz_sentence_en || '').trim() &&
     /^https:\/\/www\.instagram\.com\/reel\/[A-Za-z0-9_-]+\/?$/.test(String(entry.reel_url || '').trim())
   );
 }
@@ -169,14 +169,14 @@ function buildWrongUsageSentences(entry) {
 
 function buildDailyUsageQuiz(entry) {
   const wrongOptions = buildWrongUsageSentences(entry)
-    .filter(text => text && text !== entry.usage_example_en)
+    .filter(text => text && text !== entry.quiz_sentence_en)
     .slice(0, 3)
     .map(text => ({ text, correct: false }));
 
   const options = stableShuffle(
     [
       {
-        text: cleanSentence(entry.usage_example_en),
+        text: cleanSentence(entry.quiz_sentence_en),
         correct: true,
       },
       ...wrongOptions,
