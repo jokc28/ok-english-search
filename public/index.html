@@ -1783,6 +1783,7 @@
       return !!(
         entry &&
         entry.source_type === 'instagram_reel' &&
+        entry.target_confidence === 'verified' &&
         String(entry.expression_en || '').trim() &&
         String(entry.expression_meaning_kr || '').trim() &&
         String(entry.situation_kr || '').trim() &&
@@ -1897,9 +1898,10 @@
     // ─── Local Search ───
     function localSearch(query) {
       const q = query.toLowerCase().trim();
-      if (!q) return REELS_DATA;
+      const entries = getPracticeReadyEntries();
+      if (!q) return entries;
 
-      return REELS_DATA
+      return entries
         .map(entry => {
           let score = 0;
           if (entry.expression_en.toLowerCase().includes(q)) score += 10;
@@ -1931,7 +1933,8 @@
 
     // ─── LLM Search ───
     async function llmSearch(query) {
-      const entries = REELS_DATA.map(r => ({
+      const catalog = getPracticeReadyEntries();
+      const entries = catalog.map(r => ({
         id: r.id,
         e: r.expression_en,
         s: r.situation_kr,
@@ -1948,7 +1951,7 @@
 
         if (!res.ok) throw new Error('API error');
         const { results } = await res.json();
-        return results.map(id => REELS_DATA.find(r => r.id === id)).filter(Boolean);
+        return results.map(id => catalog.find(r => r.id === id)).filter(Boolean);
       } catch (err) {
         console.error('LLM search failed, using local:', err);
         return null;
@@ -1992,7 +1995,7 @@
     }
 
     function updateQuizMissedCount() {
-      const count = getMissedIds().filter(id => REELS_DATA.some(entry => String(entry.id) === id)).length;
+      const count = getMissedIds().filter(id => getPracticeReadyEntries().some(entry => String(entry.id) === id)).length;
       quizMissedCount.textContent = `오답 ${count}개`;
       quizModeButtons.forEach(button => {
         if (button.dataset.mode === 'missed') button.disabled = count === 0;
@@ -2562,7 +2565,7 @@
       } else if (query) {
         results = localSearch(query);
       } else {
-        results = [...REELS_DATA];
+        results = getPracticeReadyEntries();
       }
 
       // Apply category filter
@@ -2608,7 +2611,7 @@
       // Category count
       if (activeCategory && !bookmarkMode) {
         const cat = getCategoryInfo(activeCategory);
-        const catCount = REELS_DATA.filter(r => r.category === activeCategory).length;
+        const catCount = getPracticeReadyEntries().filter(r => r.category === activeCategory).length;
         categoryCountEl.innerHTML = `${cat.emoji} ${cat.label} ${catCount}개 표현`;
         categoryCountEl.classList.add('visible');
       } else {
@@ -3204,7 +3207,7 @@
     }
 
     // ─── Footer ───
-    document.getElementById('footerCount').textContent = `총 ${REELS_DATA.length}개 표현 수록`;
+    document.getElementById('footerCount').textContent = `총 ${getPracticeReadyEntries().length}개 검증 표현 수록`;
 
     // ─── Init ───
     initQuizCategorySelect();
