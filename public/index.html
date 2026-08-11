@@ -1745,7 +1745,7 @@
     <section class="hub-panel hidden" id="situationHub">
       <div class="situation-shell">
         <div class="situation-intro">
-          <h2>상황에서 바로 꺼내 쓰는 표현</h2>
+          <h2 id="situationHubHeading" tabindex="-1">상황에서 바로 꺼내 쓰는 표현</h2>
           <p>실제 말할 장면을 먼저 고르면, 그 상황에 맞는 릴스 표현과 짧은 대화 연습을 모아 보여줍니다.</p>
           <div class="situation-grid" id="situationGrid"></div>
         </div>
@@ -1816,7 +1816,7 @@
     <section class="hub-panel hidden" id="quizHub">
       <div class="quiz-shell">
         <div class="quiz-intro">
-          <h2>릴스 표현을 실제 대화에 연결해 보세요</h2>
+          <h2 id="quizHubHeading" tabindex="-1">릴스 표현을 실제 대화에 연결해 보세요</h2>
           <p>검토된 대화형 빈칸 문제와 직접 입력 문제로 표현을 다시 꺼내보고, 틀린 표현은 오답 큐에 남깁니다.</p>
           <div class="quiz-controls">
             <select class="quiz-select" id="quizCategorySelect" aria-label="퀴즈 카테고리"></select>
@@ -2101,6 +2101,14 @@
       quizHub.classList.toggle('hidden', hub !== 'quiz');
       if (hub === 'situation') renderSituationPractice();
       if (hub === 'quiz') renderQuiz();
+
+      const focusTarget = {
+        mission: document.querySelector('#guidedMissionApp h2'),
+        situation: document.getElementById('situationHubHeading'),
+        dictionary: searchInput,
+        quiz: document.getElementById('quizHubHeading')
+      }[hub];
+      focusTarget?.focus();
     }
 
     window.okEnglishSwitchHub = switchHub;

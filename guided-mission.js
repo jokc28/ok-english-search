@@ -57,12 +57,20 @@
       </section>`;
   }
 
-  function renderBuilder() {
+  function restoreChoiceFocus(field, value) {
+    const dataKey = field === 'remove' ? 'builderRemove' : 'builderReduce';
+    const selector = field === 'remove' ? '[data-builder-remove]' : '[data-builder-reduce]';
+    const target = Array.from(app.querySelectorAll(selector))
+      .find(button => button.dataset[dataKey] === value);
+    target?.focus();
+  }
+
+  function renderBuilder(focusTarget = null) {
     const canBuild = core.buildOrder(state).length === 2;
     app.innerHTML = `
       <section class="mission-stage builder-stage">
         <div class="mission-kicker">REEL ORDER MAKER</div>
-        <h2>${escapeHtml(pack.headline)}</h2>
+        <h2 id="builderHeading" tabindex="-1">${escapeHtml(pack.headline)}</h2>
         <p class="mission-copy">원하는 주문을 고르면, 직원에게 바로 말할 영어 두 문장이 완성됩니다.</p>
         <div class="mission-example"><strong>완성 예</strong><br><span>Everything except pickles.</span><br><span>Go easy on the mayo.</span></div>
         ${choiceGroup('완전히 빼기', 'remove', pack.remove_options, state.remove)}
@@ -74,16 +82,18 @@
 
     app.querySelectorAll('[data-builder-remove]').forEach(button => {
       button.addEventListener('click', () => {
-        state = core.selectRemove(state, button.dataset.builderRemove);
+        const value = button.dataset.builderRemove;
+        state = core.selectRemove(state, value);
         saveState();
-        renderBuilder();
+        renderBuilder({ field: 'remove', value });
       });
     });
     app.querySelectorAll('[data-builder-reduce]').forEach(button => {
       button.addEventListener('click', () => {
-        state = core.selectReduce(state, button.dataset.builderReduce);
+        const value = button.dataset.builderReduce;
+        state = core.selectReduce(state, value);
         saveState();
-        renderBuilder();
+        renderBuilder({ field: 'reduce', value });
       });
     });
     document.getElementById('builderComplete').addEventListener('click', () => {
@@ -91,6 +101,9 @@
       saveState();
       renderComplete();
     });
+
+    if (focusTarget === 'heading') document.getElementById('builderHeading')?.focus();
+    if (focusTarget?.field) restoreChoiceFocus(focusTarget.field, focusTarget.value);
   }
 
   function renderComplete() {
@@ -98,7 +111,7 @@
     app.innerHTML = `
       <section class="mission-stage builder-stage">
         <div class="mission-kicker">ORDER READY</div>
-        <h2>영어 주문이 완성됐어요</h2>
+        <h2 id="builderCompleteHeading" tabindex="-1">영어 주문이 완성됐어요</h2>
         <div class="mission-result-box">
           ${lines.map(line => `<div class="mission-result-line"><strong>${escapeHtml(line.resultLabel)}</strong><span>${escapeHtml(line.sentence)}</span></div>`).join('')}
         </div>
@@ -113,10 +126,11 @@
     document.getElementById('builderReset').addEventListener('click', () => {
       state = core.resetOrder(state);
       saveState();
-      renderBuilder();
+      renderBuilder('heading');
     });
     document.getElementById('builderQuiz').addEventListener('click', () => window.okEnglishSwitchHub?.('quiz'));
     document.getElementById('builderDictionary').addEventListener('click', () => window.okEnglishSwitchHub?.('dictionary'));
+    document.getElementById('builderCompleteHeading').focus();
   }
 
   renderBuilder();

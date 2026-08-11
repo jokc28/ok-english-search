@@ -54,23 +54,34 @@ try {
   assert.equal(await page.locator('#guidedMissionApp .mission-primary').count(), 1);
   assert.equal(await page.locator('#builderComplete').isDisabled(), true);
 
-  await page.locator('[data-builder-remove="pickles"]').click();
-  await page.locator('[data-builder-reduce="mayo"]').click();
+  await page.locator('[data-builder-remove="pickles"]').focus();
+  await page.keyboard.press('Enter');
+  assert.equal(await page.evaluate(() => document.activeElement?.dataset.builderRemove), 'pickles');
+  await page.locator('[data-builder-reduce="mayo"]').focus();
+  await page.keyboard.press('Enter');
+  assert.equal(await page.evaluate(() => document.activeElement?.dataset.builderReduce), 'mayo');
   assert.equal(await page.locator('[data-builder-remove="pickles"]').getAttribute('aria-pressed'), 'true');
   assert.equal(await page.locator('[data-builder-reduce="mayo"]').getAttribute('aria-pressed'), 'true');
   assert.equal(await page.locator('#builderComplete').isDisabled(), false);
 
-  await page.locator('#builderComplete').click();
+  await page.keyboard.press('Tab');
+  assert.equal(await page.evaluate(() => document.activeElement?.dataset.builderReduce), 'dressing');
+  await page.keyboard.press('Tab');
+  assert.equal(await page.evaluate(() => document.activeElement?.id), 'builderComplete');
+  await page.keyboard.press('Enter');
   await page.getByText('Everything except pickles.').waitFor();
   await page.getByText('Go easy on the mayo.').waitFor();
   await page.getByText('쓰임 구분').waitFor();
+  assert.equal(await page.evaluate(() => document.activeElement?.id), 'builderCompleteHeading');
   assert.deepEqual(await page.evaluate(() => JSON.parse(localStorage.getItem('ok_reel_builder_v1'))), {
     remove: 'pickles',
     reduce: 'mayo',
     completionCount: 1
   });
 
-  await page.locator('#builderReset').click();
+  await page.locator('#builderReset').focus();
+  await page.keyboard.press('Enter');
+  assert.equal(await page.evaluate(() => document.activeElement?.id), 'builderHeading');
   assert.equal(await page.locator('#builderComplete').isDisabled(), true);
   assert.deepEqual(await page.evaluate(() => JSON.parse(localStorage.getItem('ok_reel_builder_v1'))), {
     remove: null,
@@ -81,21 +92,29 @@ try {
   await page.locator('[data-builder-remove="onions"]').click();
   await page.locator('[data-builder-reduce="sauce"]').click();
   await page.locator('#builderComplete').click();
-  await page.locator('#builderDictionary').click();
+  await page.locator('#builderDictionary').focus();
+  await page.keyboard.press('Enter');
   assert.equal(await page.locator('#dictionaryHub').isVisible(), true);
   assert.equal(await page.locator('#secondaryNav').isVisible(), false);
+  assert.equal(await page.evaluate(() => document.activeElement?.id), 'searchInput');
 
-  await page.locator('#builderHome').click();
+  await page.locator('#builderHome').focus();
+  await page.keyboard.press('Enter');
   assert.equal(await page.locator('#guidedMissionHub').isVisible(), true);
+  assert.equal(await page.evaluate(() => document.activeElement?.id), 'builderCompleteHeading');
   await page.reload({ waitUntil: 'domcontentloaded' });
   await page.locator('#builderComplete').waitFor();
   assert.equal(await page.locator('[data-builder-remove="onions"]').getAttribute('aria-pressed'), 'true');
   assert.equal(await page.locator('[data-builder-reduce="sauce"]').getAttribute('aria-pressed'), 'true');
 
   await page.locator('#builderComplete').click();
-  await page.locator('#builderQuiz').click();
+  await page.locator('#builderQuiz').focus();
+  await page.keyboard.press('Enter');
   assert.equal(await page.locator('#quizHub').isVisible(), true);
-  await page.locator('#builderHome').click();
+  assert.equal(await page.evaluate(() => document.activeElement?.id), 'quizHubHeading');
+  await page.locator('#builderHome').focus();
+  await page.keyboard.press('Enter');
+  assert.equal(await page.evaluate(() => document.activeElement?.id), 'builderCompleteHeading');
   await page.reload({ waitUntil: 'domcontentloaded' });
   assert.equal(await page.locator('[data-builder-remove="onions"]').getAttribute('aria-pressed'), 'true');
   assert.equal(await page.locator('[data-builder-reduce="sauce"]').getAttribute('aria-pressed'), 'true');
@@ -104,6 +123,13 @@ try {
     reduce: 'sauce',
     completionCount: 3
   });
+
+  await page.locator('#secondaryNav [data-hub="situation"]').focus();
+  await page.keyboard.press('Enter');
+  assert.equal(await page.evaluate(() => document.activeElement?.id), 'situationHubHeading');
+  await page.locator('#builderHome').focus();
+  await page.keyboard.press('Enter');
+  assert.equal(await page.evaluate(() => document.activeElement?.id), 'builderHeading');
 
   const deepLinkPage = await context.newPage();
   deepLinkPage.on('pageerror', error => pageErrors.push(error.message));
