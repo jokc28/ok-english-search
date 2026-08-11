@@ -38,11 +38,13 @@
   }
 
   function saveState() {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify({
-      remove: state.remove,
-      reduce: state.reduce,
-      completionCount: state.completionCount
-    }));
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify({
+        remove: state.remove,
+        reduce: state.reduce,
+        completionCount: state.completionCount
+      }));
+    } catch {}
   }
 
   function choiceGroup(title, field, options, selectedValue) {
@@ -72,6 +74,7 @@
         <div class="mission-kicker">REEL ORDER MAKER</div>
         <h2 id="builderHeading" tabindex="-1">${escapeHtml(pack.headline)}</h2>
         <p class="mission-copy">원하는 주문을 고르면, 직원에게 바로 말할 영어 두 문장이 완성됩니다.</p>
+        <p class="mission-source"><a id="builderReelSource" href="${escapeHtml(pack.reel_url)}" target="_blank" rel="noopener noreferrer">이 주문이 나온 Reel 보기</a></p>
         <div class="mission-example"><strong>완성 예</strong><br><span>Everything except pickles.</span><br><span>Go easy on the mayo.</span></div>
         ${choiceGroup('완전히 빼기', 'remove', pack.remove_options, state.remove)}
         ${choiceGroup('양 줄이기', 'reduce', pack.reduce_options, state.reduce)}

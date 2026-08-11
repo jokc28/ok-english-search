@@ -86,6 +86,7 @@ async function runViewportFlow(browser, baseUrl, viewport) {
     assert.equal(await page.locator('#guidedMissionApp form, #guidedMissionApp input, #guidedMissionApp select').count(), 0);
     assert.equal(await page.locator('#guidedMissionApp .mission-stage .mission-stage, #guidedMissionApp .mission-stage .card').count(), 0);
     assert.equal(await page.locator('#guidedMissionApp .mission-primary').count(), 1);
+    assert.equal(await page.locator('#builderReelSource').getAttribute('href'), 'https://www.instagram.com/reel/Da7hx5AxWQW/');
     assert.equal(await page.locator('#builderComplete').isDisabled(), true);
     await assertNoHorizontalOverflow(page, `${viewport.width}x${viewport.height} builder intro`);
     await capture(page, 'intro', captureMobileEvidence);
@@ -218,6 +219,34 @@ async function runViewportFlow(browser, baseUrl, viewport) {
   }
 }
 
+async function runDeniedStorageFlow(browser, baseUrl) {
+  const context = await browser.newContext({ viewport: { width: 390, height: 844 } });
+  await context.addInitScript(() => {
+    Storage.prototype.setItem = () => {
+      throw new DOMException('Storage writes denied', 'SecurityError');
+    };
+  });
+  const pageErrors = [];
+  const page = await context.newPage();
+  page.on('pageerror', error => pageErrors.push(error.message));
+
+  try {
+    await open(page, baseUrl, 'denied-storage root entry');
+    await page.locator('#builderComplete').waitFor();
+    await page.locator('[data-builder-remove="pickles"]').click();
+    await page.locator('[data-builder-reduce="mayo"]').click();
+    assert.equal(await page.locator('#builderComplete').isDisabled(), false);
+    await page.locator('#builderComplete').click();
+    await page.getByText('Everything except pickles.').waitFor();
+    await page.getByText('Go easy on the mayo.').waitFor();
+    assert.equal(await page.locator('#builderCompleteHeading').isVisible(), true);
+    await assertNoHorizontalOverflow(page, 'denied-storage completed builder');
+    assert.deepEqual(pageErrors, []);
+  } finally {
+    await context.close();
+  }
+}
+
 await new Promise(resolve => server.listen(0, '127.0.0.1', resolve));
 const { port } = server.address();
 const baseUrl = `http://127.0.0.1:${port}`;
@@ -227,6 +256,7 @@ try {
   for (const viewport of viewports) {
     await runViewportFlow(browser, baseUrl, viewport);
   }
+  await runDeniedStorageFlow(browser, baseUrl);
   console.log('Reel situation builder browser flow passed at 360x800, 390x844, and 1440x1000');
 } finally {
   await browser.close();
