@@ -16,15 +16,6 @@
 
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231A1814'/><text x='50' y='68' font-size='50' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='bold'>옥</text></svg>">
 
-  <!-- Google Analytics 4 -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX');
-  </script>
-
   <!-- Fonts -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -122,51 +113,6 @@
       max-width: 480px;
       margin: 0 auto;
       padding: 0 20px 40px;
-    }
-
-    .hub-tabs {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 6px;
-      padding: 6px;
-      margin: 0 -4px 16px;
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      background: color-mix(in srgb, var(--bg-card) 92%, transparent);
-      box-shadow: var(--shadow-card);
-      backdrop-filter: blur(16px);
-    }
-
-    .hub-tab {
-      min-height: 48px;
-      border: none;
-      border-radius: 12px;
-      background: transparent;
-      color: var(--text-secondary);
-      font-family: 'Pretendard Variable', system-ui, -apple-system, sans-serif;
-      font-size: 12px;
-      font-weight: 800;
-      cursor: pointer;
-    }
-
-    .hub-tab.active {
-      color: #FFFFFF;
-      background: var(--accent-dark);
-    }
-
-    .hub-tab[data-hub="quiz"].active {
-      background: var(--quiz);
-    }
-
-    .hub-tab[data-hub="situation"].active {
-      background: var(--study);
-    }
-
-    .hub-tab[data-hub="mission"].active {
-      background: var(--accent);
     }
 
     .hub-panel.hidden {
@@ -538,18 +484,92 @@
       color: var(--accent);
     }
 
+    .mission-example,
+    .mission-meaning-box,
+    .mission-result-box {
+      margin-top: 14px;
+      border-radius: 8px;
+      padding: 13px;
+      background: var(--bg-subtle);
+      color: var(--text-secondary);
+      font-size: 13px;
+      line-height: 1.65;
+    }
+
+    .mission-example strong,
+    .mission-choice-label {
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 900;
+    }
+
+    .mission-example span,
+    .mission-result-line span,
+    .mission-meaning-box code {
+      color: var(--text-primary);
+      font-family: 'DM Mono', monospace;
+    }
+
+    .mission-choice-group {
+      margin-top: 18px;
+    }
+
+    .mission-chip-row {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .mission-chip {
+      min-height: 48px;
+      padding: 8px;
+      text-align: center;
+    }
+
+    .mission-result-box {
+      display: grid;
+      gap: 12px;
+      background: color-mix(in srgb, var(--success) 12%, var(--bg-card));
+      color: var(--success);
+    }
+
+    .mission-result-line {
+      display: grid;
+      gap: 4px;
+    }
+
+    .builder-result-actions {
+      grid-template-columns: 1fr;
+    }
+
+    .secondary-nav {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+      margin: 18px 0;
+      color: var(--text-tertiary);
+      font-size: 12px;
+    }
+
+    .secondary-nav button {
+      border: none;
+      padding: 0;
+      background: transparent;
+      color: var(--text-secondary);
+      font: inherit;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .secondary-nav.hidden {
+      display: none;
+    }
+
     @media (max-width: 370px) {
-      .hub-tabs {
-        gap: 3px;
-        padding: 4px;
-      }
-
-      .hub-tab {
-        min-height: 44px;
-        font-size: 11px;
-      }
-
       .mission-actions {
+        grid-template-columns: 1fr;
+      }
+
+      .mission-chip-row {
         grid-template-columns: 1fr;
       }
     }
@@ -1695,7 +1715,7 @@
   <div class="container">
     <!-- Header -->
     <header class="header">
-      <div class="logo"><span>옥</span></div>
+      <button class="logo" id="builderHome" type="button" aria-label="주문 만들기로 돌아가기"><span>옥</span></button>
       <div class="header-info">
         <h1>옥쌤 영어 허브</h1>
         <p>말하고 바꿔 쓰는 상황 훈련 · <a href="https://www.instagram.com/ok.english.kr/" target="_blank" rel="noopener noreferrer">@ok.english.kr</a></p>
@@ -1707,25 +1727,20 @@
       </button>
     </header>
 
-    <div class="hub-tabs" role="tablist" aria-label="학습 허브">
-      <button class="hub-tab active" data-hub="mission" role="tab" aria-selected="true">훈련 미션</button>
-      <button class="hub-tab" data-hub="situation" role="tab" aria-selected="false">상황 연습</button>
-      <button class="hub-tab" data-hub="dictionary" role="tab" aria-selected="false">표현 사전</button>
-      <button class="hub-tab" data-hub="quiz" role="tab" aria-selected="false">퀴즈 허브</button>
-    </div>
-
     <section class="hub-panel" id="guidedMissionHub">
       <div class="mission-shell">
-        <div class="mission-overview">
-          <div class="mission-kicker">무료 미션 01</div>
-          <h2>예약 없이 지금 가능한지 묻기</h2>
-          <p>처음 가는 가게에서 필요한 말을 먼저 꺼내고, 빠진 의미를 찾은 뒤 다른 장면까지 바꿔 말합니다.</p>
-        </div>
         <div id="guidedMissionApp" aria-live="polite">
-          <div class="mission-stage mission-loading">첫 장면을 준비하고 있습니다.</div>
+          <div class="mission-stage mission-loading">주문 만들기를 준비하고 있습니다.</div>
         </div>
       </div>
     </section>
+
+    <nav class="secondary-nav" id="secondaryNav" aria-label="다른 학습 도구">
+      <span>다른 연습</span>
+      <button data-hub="situation" type="button">상황 연습</button>
+      <button data-hub="dictionary" type="button">표현 사전</button>
+      <button data-hub="quiz" type="button">퀴즈 허브</button>
+    </nav>
 
     <section class="hub-panel hidden" id="situationHub">
       <div class="situation-shell">
@@ -1851,7 +1866,7 @@
 
   <!-- Bottom CTA Bar -->
   <div class="bottom-bar" id="bottomBar">
-    <a href="https://www.instagram.com/ok.english.kr/" target="_blank" rel="noopener noreferrer" onclick="trackCTA('bottom_bar')">영어는옥쌤 인스타 팔로우하기 →</a>
+    <a href="https://www.instagram.com/ok.english.kr/" target="_blank" rel="noopener noreferrer">영어는옥쌤 인스타 팔로우하기 →</a>
     <button class="bottom-bar-close" id="bottomBarClose" aria-label="닫기">✕</button>
   </div>
 
@@ -1890,7 +1905,9 @@
     const QUIZ_LENGTH = 7;
 
     // ─── DOM ───
-    const hubTabs = document.querySelectorAll('.hub-tab');
+    const secondaryNav = document.getElementById('secondaryNav');
+    const secondaryNavButtons = secondaryNav.querySelectorAll('[data-hub]');
+    const builderHome = document.getElementById('builderHome');
     const guidedMissionHub = document.getElementById('guidedMissionHub');
     const situationHub = document.getElementById('situationHub');
     const situationGrid = document.getElementById('situationGrid');
@@ -2077,11 +2094,7 @@
         bottomBar.classList.remove('visible');
         document.body.classList.remove('has-bottom-bar');
       }
-      hubTabs.forEach(tab => {
-        const isActive = tab.dataset.hub === hub;
-        tab.classList.toggle('active', isActive);
-        tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
-      });
+      secondaryNav.classList.toggle('hidden', hub !== 'mission');
       guidedMissionHub.classList.toggle('hidden', hub !== 'mission');
       situationHub.classList.toggle('hidden', hub !== 'situation');
       dictionaryHub.classList.toggle('hidden', hub !== 'dictionary');
@@ -2089,6 +2102,8 @@
       if (hub === 'situation') renderSituationPractice();
       if (hub === 'quiz') renderQuiz();
     }
+
+    window.okEnglishSwitchHub = switchHub;
 
     // ─── Bookmarks ───
     function getBookmarks() {
@@ -2102,8 +2117,6 @@
       const isAdding = idx === -1;
       if (isAdding) bm.push(id); else bm.splice(idx, 1);
       localStorage.setItem('ok_english_bookmarks', JSON.stringify(bm));
-      const entry = REELS_DATA.find(r => r.id === id);
-      if (entry) trackBookmark(entry, isAdding);
       showToast(isAdding ? '표현을 저장했어요!' : '저장을 해제했어요');
       updateBookmarkUI();
       render();
@@ -2137,46 +2150,11 @@
       setTimeout(() => el.classList.remove('show'), duration);
     }
 
-    // ─── GA4 Tracking ───
-    function trackSearch(query, resultCount, method) {
-      gtag('event', 'search', { search_term: query, result_count: resultCount, search_method: method });
-    }
-
-    function trackWatch(entry) {
-      gtag('event', 'watch_reel', { expression: entry.expression_en, category: entry.category, difficulty: entry.difficulty, entry_id: entry.id });
-    }
-
-    function trackShare(entry) {
-      gtag('event', 'share', { content_type: 'expression', item_id: entry.id, expression: entry.expression_en });
-    }
-
-    function trackBookmark(entry, isAdding) {
-      gtag('event', isAdding ? 'bookmark_add' : 'bookmark_remove', { expression: entry.expression_en, entry_id: entry.id });
-    }
-
-    function trackCategoryFilter(category) {
-      gtag('event', 'filter_category', { category: category });
-    }
-
-    function trackCTA(location) {
-      gtag('event', 'cta_click', { cta_type: 'okmorning_app', cta_location: location });
-    }
-
-    function trackSponsor(location) {
-      gtag('event', 'sponsor_click', { sponsor_alias: SPONSOR_ALIAS, sponsor_location: location });
-    }
-
     function handleSponsorClick(event, location) {
       if (!SPONSOR_URL_IS_CONFIGURED) {
         event.preventDefault();
         showToast('후원 링크가 아직 연결되지 않았어요.');
-        return;
       }
-      trackSponsor(location);
-    }
-
-    function trackDailyView(entry) {
-      gtag('event', 'daily_expression_view', { expression: entry.expression_en, entry_id: entry.id });
     }
 
     // ─── Local Search ───
@@ -2259,7 +2237,6 @@
           showToast('링크가 복사됐어요!');
         });
       }
-      trackShare(entry);
     }
 
     // ─── Quiz Hub ───
@@ -2678,7 +2655,6 @@
         </div>`;
       document.getElementById('quizWatchBtn').addEventListener('click', () => {
         window.open(entry.reel_url, '_blank');
-        trackWatch(entry);
       });
       document.getElementById('quizNextBtn').addEventListener('click', () => {
         quizState.index += 1;
@@ -2830,7 +2806,6 @@
           if (!entry) return;
           if (button.dataset.action === 'watch') {
             window.open(entry.reel_url, '_blank');
-            trackWatch(entry);
           } else {
             showEntryInDictionary(entry.id);
           }
@@ -2940,7 +2915,7 @@
             <div class="cta-banner">
               <h3>📱 더 많은 영어 표현을 만나보세요</h3>
               <p>영어는옥쌤 인스타그램에서 매일 새로운 표현을 배워요</p>
-              <a href="https://www.instagram.com/ok.english.kr/" target="_blank" rel="noopener noreferrer" class="cta-button" onclick="trackCTA('inline_banner')">인스타그램 팔로우 →</a>
+              <a href="https://www.instagram.com/ok.english.kr/" target="_blank" rel="noopener noreferrer" class="cta-button">인스타그램 팔로우 →</a>
             </div>`);
         }
 
@@ -2976,7 +2951,7 @@
                     <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/>
                   </svg>
                 </button>
-                <button class="card-action-btn watch-btn" aria-label="시청" onclick="window.open('${escapeHtml(item.reel_url)}','_blank');trackWatch(REELS_DATA.find(r=>r.id===${item.id}))">
+                <button class="card-action-btn watch-btn" aria-label="시청" onclick="window.open('${escapeHtml(item.reel_url)}','_blank')">
                   <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><polygon points="5,3 19,12 5,21"/></svg>
                   시청
                 </button>
@@ -3011,7 +2986,6 @@
       localDebounce = setTimeout(() => {
         currentResults = localSearch(query);
         render();
-        trackSearch(query, currentResults.length, 'local');
       }, 100);
 
       // LLM search for Korean natural language
@@ -3023,7 +2997,6 @@
           if (llmResults && searchInput.value.trim() === query) {
             currentResults = llmResults;
             render();
-            trackSearch(query, llmResults.length, 'llm');
           }
         }, 800);
       }
@@ -3056,7 +3029,6 @@
           activeCategory = cat.id;
           document.querySelectorAll('.tag-pill').forEach(p => p.classList.remove('active'));
           pill.classList.add('active');
-          trackCategoryFilter(cat.id);
         }
         render();
       });
@@ -3393,10 +3365,8 @@
 
       document.getElementById('dailyWatchBtn').addEventListener('click', () => {
         window.open(entry.reel_url, '_blank');
-        trackWatch(entry);
       });
 
-      trackDailyView(entry);
 
       // Daily quote
       const quoteIdx = getDailyIndex(DAILY_QUOTES.length);
@@ -3436,9 +3406,11 @@
       localStorage.setItem('ok_bottom_bar_dismissed', Date.now().toString());
     });
 
-    hubTabs.forEach(tab => {
+    secondaryNavButtons.forEach(tab => {
       tab.addEventListener('click', () => switchHub(tab.dataset.hub));
     });
+
+    builderHome.addEventListener('click', () => switchHub('mission'));
 
     quizStartBtn.addEventListener('click', buildQuizDeck);
 

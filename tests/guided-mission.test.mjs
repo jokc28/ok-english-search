@@ -12,43 +12,40 @@ function read(path) {
   return readFileSync(resolve(path), 'utf8');
 }
 
-test('catalog exposes the active Subway builder choices in Korean', () => {
-  const builder = packs.find(pack => pack.id === 'subway-order-builder-01');
-
-  assert.deepEqual(builder, {
-    id: 'subway-order-builder-01',
-    headline: '써브웨이에서 내 취향대로 주문 만들기',
-    remove_options: [
-      { value: 'onions', label: '양파' },
-      { value: 'pickles', label: '피클' },
-      { value: 'jalapenos', label: '할라피뇨' }
-    ],
-    reduce_options: [
-      { value: 'sauce', label: '소스' },
-      { value: 'mayo', label: '마요' },
-      { value: 'dressing', label: '드레싱' }
-    ]
-  });
+test('catalog contains only the active Subway builder pack', () => {
+  assert.deepEqual(packs, [
+    {
+      id: 'subway-order-builder-01',
+      headline: '써브웨이에서 내 취향대로 주문 만들기',
+      remove_options: [
+        { value: 'onions', label: '양파' },
+        { value: 'pickles', label: '피클' },
+        { value: 'jalapenos', label: '할라피뇨' }
+      ],
+      reduce_options: [
+        { value: 'sauce', label: '소스' },
+        { value: 'mayo', label: '마요' },
+        { value: 'dressing', label: '드레싱' }
+      ]
+    }
+  ]);
 });
 
-test('legacy controller contract remains runnable until its atomic replacement', () => {
-  const mission = packs[0];
-  const initial = core.createInitialProgress(mission.id);
-  const blocked = core.recordObstacle(initial, 'intent');
+test('builder assets contain no legacy speech mission compatibility API', () => {
+  const coreSource = read('public/guided-mission-core.js');
+  const controllerSource = read('public/guided-mission.js');
 
-  assert.equal(mission.id, 'walk-ins-01');
-  assert.ok(mission.first_attempt_prompt);
-  assert.ok(mission.intent_distinction.options.length);
-  assert.ok(mission.meaning_bridge_steps.length);
-  assert.ok(mission.assembly_slots.length);
-  assert.ok(mission.spoken_prompt);
-  assert.ok(mission.transfer_scenarios.length);
-  assert.ok(mission.retry_stage.intent);
-  assert.ok(mission.sources[0].url);
-  assert.equal(initial.stage, 'first-attempt');
-  assert.equal(core.gradeSpokenAttempt('Are you taking walk-ins right now?', 'direct').correct, true);
-  assert.deepEqual(blocked.obstacles, ['intent']);
-  assert.equal(blocked.retryStage, 'intent');
+  assert.doesNotMatch(coreSource, /gradeSpokenAttempt|createInitialProgress|recordObstacle/);
+  assert.doesNotMatch(controllerSource, /SpeechRecognition|walk-ins|missionFirstAttempt|missionSpoken|missionTransfer/);
+});
+
+test('root builder entry removes placeholder analytics and the top hub tablist', () => {
+  const index = read('public/index.html');
+
+  assert.doesNotMatch(index, /G-XXXXXXXXXX|googletagmanager|function gtag/);
+  assert.doesNotMatch(index, /class="hub-tabs"|role="tablist"/);
+  assert.match(index, /id="guidedMissionApp"/);
+  assert.match(read('public/guided-mission.js'), /영어 주문 만들기/);
 });
 
 test('builder keeps order lines empty until it has two valid choices', () => {
@@ -112,4 +109,6 @@ test('builder completion and reset preserve immutable completion history', () =>
 test('root and public builder assets remain byte-identical', () => {
   assert.equal(read('guided-mission-core.js'), read('public/guided-mission-core.js'));
   assert.equal(read('guided-missions.js'), read('public/guided-missions.js'));
+  assert.equal(read('guided-mission.js'), read('public/guided-mission.js'));
+  assert.equal(read('index.html'), read('public/index.html'));
 });

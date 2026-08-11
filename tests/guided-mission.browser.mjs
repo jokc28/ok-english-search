@@ -39,69 +39,76 @@ try {
 
   await page.goto(baseUrl, { waitUntil: 'domcontentloaded' });
   await page.evaluate(() => {
+    localStorage.removeItem('ok_reel_builder_v1');
     localStorage.removeItem('ok_guided_mission_progress_v1');
     localStorage.removeItem('ok_guided_retry_queue_v1');
     location.reload();
   });
   await page.waitForLoadState('domcontentloaded');
+  await page.locator('#builderComplete').waitFor();
 
-  assert.equal(await page.locator('.hub-tab.active').textContent(), '훈련 미션');
-  await page.locator('#missionFirstAttempt').fill('Can I enter?');
-  await page.locator('#missionFirstNext').click();
-  await page.locator('[data-intent="entry-permission"]').click();
-  await page.locator('#missionIntentNext').click();
-  await page.locator('[data-meaning="walk-inside"]').click();
-  await page.locator('#missionMeaningNext').click();
-  await page.locator('[data-meaning="unbooked-customer"]').click();
-  await page.locator('#missionMeaningNext').click();
-  await page.locator('[data-meaning="accept-serve"]').click();
-  await page.locator('#missionMeaningNext').click();
-  await page.locator('#missionSlot0').selectOption('Are you taking');
-  await page.locator('#missionSlot1').selectOption('walk-ins');
-  await page.locator('#missionSlot2').selectOption('right now?');
-  await page.locator('#missionAssemblyCheck').click();
-  await page.locator('#missionAssemblyCheck').click();
+  assert.equal(await page.locator('#guidedMissionHub').isVisible(), true);
+  assert.equal(await page.locator('[role="tablist"]').count(), 0);
+  assert.equal(await page.locator('#guidedMissionApp textarea').count(), 0);
+  assert.equal(await page.locator('#guidedMissionApp [class*="speech"]').count(), 0);
+  assert.equal(await page.locator('#guidedMissionApp .mission-primary').count(), 1);
+  assert.equal(await page.locator('#builderComplete').isDisabled(), true);
 
-  assert.equal(await page.locator('#missionSpokenAttempt').getAttribute('readonly'), '');
-  assert.equal(await page.locator('#missionSpokenCheck').isDisabled(), true);
-  await page.locator('#missionSpokenManual').click();
-  assert.equal(await page.locator('#missionSpokenAttempt').getAttribute('readonly'), null);
-  await page.locator('#missionSpokenAttempt').fill('Are you taking walk-ins right now?');
-  await page.locator('#missionSpokenCheck').click();
-  await page.locator('#missionSpokenCheck').click();
+  await page.locator('[data-builder-remove="pickles"]').click();
+  await page.locator('[data-builder-reduce="mayo"]').click();
+  assert.equal(await page.locator('[data-builder-remove="pickles"]').getAttribute('aria-pressed'), 'true');
+  assert.equal(await page.locator('[data-builder-reduce="mayo"]').getAttribute('aria-pressed'), 'true');
+  assert.equal(await page.locator('#builderComplete').isDisabled(), false);
 
-  assert.equal(await page.locator('#missionTransferAttempt').getAttribute('readonly'), '');
-  await page.locator('#missionTransferManual').click();
-  await page.locator('#missionTransferAttempt').fill('Do you take walk-ins on Saturdays?');
-  await page.locator('#missionTransferCheck').click();
-  await page.locator('#missionTransferCheck').click();
-  await page.getByText('같은 의미를 두 장면에서 직접 꺼냈습니다').waitFor();
+  await page.locator('#builderComplete').click();
+  await page.getByText('Everything except pickles.').waitFor();
+  await page.getByText('Go easy on the mayo.').waitFor();
+  await page.getByText('쓰임 구분').waitFor();
+  assert.deepEqual(await page.evaluate(() => JSON.parse(localStorage.getItem('ok_reel_builder_v1'))), {
+    remove: 'pickles',
+    reduce: 'mayo',
+    completionCount: 1
+  });
 
-  const saved = await page.evaluate(() => ({
-    progress: JSON.parse(localStorage.getItem('ok_guided_mission_progress_v1')),
-    retry: JSON.parse(localStorage.getItem('ok_guided_retry_queue_v1'))
-  }));
-  assert.equal(saved.progress.completed, true);
-  assert.deepEqual(saved.progress.obstacles, ['intent', 'meaning']);
-  assert.equal(saved.retry[0].retryStage, 'meaning');
+  await page.locator('#builderReset').click();
+  assert.equal(await page.locator('#builderComplete').isDisabled(), true);
+  assert.deepEqual(await page.evaluate(() => JSON.parse(localStorage.getItem('ok_reel_builder_v1'))), {
+    remove: null,
+    reduce: null,
+    completionCount: 1
+  });
+
+  await page.locator('[data-builder-remove="onions"]').click();
+  await page.locator('[data-builder-reduce="sauce"]').click();
+  await page.locator('#builderComplete').click();
+  await page.locator('#builderDictionary').click();
+  assert.equal(await page.locator('#dictionaryHub').isVisible(), true);
+  assert.equal(await page.locator('#secondaryNav').isVisible(), false);
+
+  await page.locator('#builderHome').click();
+  assert.equal(await page.locator('#guidedMissionHub').isVisible(), true);
   await page.reload({ waitUntil: 'domcontentloaded' });
-  await page.getByText('같은 의미를 두 장면에서 직접 꺼냈습니다').waitFor();
-  await page.locator('#missionRetry').click();
-  await page.getByText('`walk in`이 이 장면에서 보여주는 움직임은?').waitFor();
+  await page.locator('#builderComplete').waitFor();
+  assert.equal(await page.locator('[data-builder-remove="onions"]').getAttribute('aria-pressed'), 'true');
+  assert.equal(await page.locator('[data-builder-reduce="sauce"]').getAttribute('aria-pressed'), 'true');
 
-  const exactPage = await context.newPage();
-  await exactPage.goto(`${baseUrl}?exact=${Date.now()}`, { waitUntil: 'domcontentloaded' });
-  await exactPage.evaluate(() => localStorage.removeItem('ok_guided_mission_progress_v1'));
-  await exactPage.reload({ waitUntil: 'domcontentloaded' });
-  await exactPage.locator('#missionFirstAttempt').fill('Are you taking walk-ins right now?');
-  await exactPage.locator('#missionFirstNext').click();
-  await exactPage.locator('[data-intent="current-capacity"]').click();
-  await exactPage.getByText('첫 시도에 핵심 의미가 모두 들어 있습니다').waitFor();
+  await page.locator('#builderComplete').click();
+  await page.locator('#builderQuiz').click();
+  assert.equal(await page.locator('#quizHub').isVisible(), true);
+  await page.locator('#builderHome').click();
+  await page.reload({ waitUntil: 'domcontentloaded' });
+  assert.equal(await page.locator('[data-builder-remove="onions"]').getAttribute('aria-pressed'), 'true');
+  assert.equal(await page.locator('[data-builder-reduce="sauce"]').getAttribute('aria-pressed'), 'true');
+  assert.deepEqual(await page.evaluate(() => JSON.parse(localStorage.getItem('ok_reel_builder_v1'))), {
+    remove: 'onions',
+    reduce: 'sauce',
+    completionCount: 3
+  });
 
   const deepLinkPage = await context.newPage();
+  deepLinkPage.on('pageerror', error => pageErrors.push(error.message));
   await deepLinkPage.goto(`${baseUrl}?q=hello`, { waitUntil: 'domcontentloaded' });
   assert.equal(await deepLinkPage.locator('#dictionaryHub').isVisible(), true);
-  assert.equal(await deepLinkPage.locator('.hub-tab.active').textContent(), '표현 사전');
 
   const linkTargets = await deepLinkPage.evaluate(() => {
     const entry = REELS_DATA.find(item => (
@@ -113,88 +120,33 @@ try {
   });
 
   const categoryPage = await context.newPage();
+  categoryPage.on('pageerror', error => pageErrors.push(error.message));
   await categoryPage.goto(`${baseUrl}?cat=${encodeURIComponent(linkTargets.category)}`, { waitUntil: 'domcontentloaded' });
   assert.equal(await categoryPage.locator('#dictionaryHub').isVisible(), true);
   assert.equal(await categoryPage.locator(`.tag-pill[data-category="${linkTargets.category}"]`).getAttribute('class'), 'tag-pill active');
 
   const idPage = await context.newPage();
+  idPage.on('pageerror', error => pageErrors.push(error.message));
   await idPage.goto(`${baseUrl}?id=${linkTargets.id}`, { waitUntil: 'domcontentloaded' });
-  assert.equal(await idPage.locator('#dictionaryHub').isVisible(), true);
   await idPage.locator(`#card-${linkTargets.id}`).waitFor();
 
   const bookmarkPage = await context.newPage();
+  bookmarkPage.on('pageerror', error => pageErrors.push(error.message));
   await bookmarkPage.goto(`${baseUrl}?bookmark=${Date.now()}`, { waitUntil: 'domcontentloaded' });
   await bookmarkPage.locator('#headerBookmarkBtn').click();
   assert.equal(await bookmarkPage.locator('#dictionaryHub').isVisible(), true);
 
-  const ctaPage = await context.newPage();
-  await ctaPage.goto(`${baseUrl}?cta=${Date.now()}`, { waitUntil: 'domcontentloaded' });
-  await ctaPage.locator('.hub-tab[data-hub="dictionary"]').click();
-  await ctaPage.waitForTimeout(3200);
-  assert.equal(await ctaPage.locator('#bottomBar').getAttribute('class'), 'bottom-bar visible');
-  await ctaPage.locator('.hub-tab[data-hub="mission"]').click();
-  assert.equal(await ctaPage.locator('#bottomBar').getAttribute('class'), 'bottom-bar');
+  for (const viewport of [{ width: 360, height: 800 }, { width: 390, height: 844 }, { width: 1440, height: 1000 }]) {
+    const responsivePage = await context.newPage();
+    responsivePage.on('pageerror', error => pageErrors.push(error.message));
+    await responsivePage.setViewportSize(viewport);
+    await responsivePage.goto(`${baseUrl}?viewport=${viewport.width}`, { waitUntil: 'domcontentloaded' });
+    assert.equal(await responsivePage.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth), true);
+    await responsivePage.close();
+  }
 
-  await context.addInitScript(() => {
-    class FakeSpeechRecognition {
-      start() {
-        setTimeout(() => {
-          if (window.__speechMode === 'error') {
-            this.onerror?.({ error: 'no-speech' });
-            return;
-          }
-          this.onresult?.({ results: [[{ transcript: window.__speechTranscript }]] });
-        }, 0);
-      }
-    }
-    window.SpeechRecognition = FakeSpeechRecognition;
-    window.webkitSpeechRecognition = FakeSpeechRecognition;
-  });
-
-  const recognitionPage = await context.newPage();
-  await recognitionPage.goto(`${baseUrl}?recognition=${Date.now()}`, { waitUntil: 'domcontentloaded' });
-  await recognitionPage.evaluate(() => {
-    localStorage.setItem('ok_guided_mission_progress_v1', JSON.stringify({
-      missionId: 'walk-ins-01',
-      stage: 'spoken',
-      completed: false,
-      attempts: {},
-      obstacles: [],
-      retryStage: null
-    }));
-  });
-  await recognitionPage.reload({ waitUntil: 'domcontentloaded' });
-  await recognitionPage.evaluate(() => {
-    window.__speechMode = 'success';
-    window.__speechTranscript = 'Are you taking walk-ins right now?';
-  });
-  await recognitionPage.locator('#missionSpokenButton').click();
-  await recognitionPage.waitForFunction(() => document.getElementById('missionSpokenAttempt').value.includes('right now'));
-  assert.equal(await recognitionPage.locator('#missionSpokenAttempt').getAttribute('readonly'), null);
-  assert.equal(await recognitionPage.evaluate(() => JSON.parse(localStorage.getItem('ok_guided_mission_progress_v1')).attempts.spokenMethod), 'recognition');
-  await recognitionPage.locator('#missionSpokenCheck').click();
-  await recognitionPage.locator('#missionSpokenCheck').click();
-
-  await recognitionPage.evaluate(() => {
-    window.__speechMode = 'error';
-    window.__speechTranscript = '';
-  });
-  await recognitionPage.locator('#missionTransferButton').click();
-  await recognitionPage.getByText('음성을 확인하지 못했습니다').waitFor();
-  assert.equal(await recognitionPage.locator('#missionTransferAttempt').getAttribute('readonly'), '');
-  assert.equal(await recognitionPage.locator('#missionTransferCheck').isDisabled(), true);
-
-  await recognitionPage.evaluate(() => {
-    window.__speechMode = 'success';
-    window.__speechTranscript = 'Do you take walk-ins on Saturdays?';
-  });
-  await recognitionPage.locator('#missionTransferButton').click();
-  await recognitionPage.waitForFunction(() => document.getElementById('missionTransferAttempt').value.includes('Saturdays'));
-  assert.equal(await recognitionPage.evaluate(() => JSON.parse(localStorage.getItem('ok_guided_mission_progress_v1')).attempts.transferMethod), 'recognition');
-
-  assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth), true);
   assert.deepEqual(pageErrors, []);
-  console.log('Guided mission browser flow passed');
+  console.log('Reel situation builder browser flow passed');
 } finally {
   await browser.close();
   await new Promise(resolve => server.close(resolve));
