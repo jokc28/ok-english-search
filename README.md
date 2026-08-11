@@ -1,6 +1,21 @@
-# 옥모닝 표현 사전
+# 옥쌤 영어 훈련
 
-Instagram [@ok.english.kr](https://www.instagram.com/ok.english.kr/)의 영어 표현 튜토리얼 Reels를 상황별로 검색할 수 있는 모바일 웹앱입니다. Instagram 프로필 링크에 연결하여 팔로워들이 원하는 표현을 빠르게 찾고 바로 시청할 수 있습니다.
+Instagram [@ok.english.kr](https://www.instagram.com/ok.english.kr/)의 표현을 실제 상황에서 먼저 말하고, 빠진 의미를 찾고, 다른 장면까지 바꿔 말하는 모바일 영어 훈련 웹앱입니다. 기존 상황 검색, 표현 사전, 퀴즈 위에 완결형 훈련 미션을 추가했습니다.
+
+## Guided Mission MVP
+
+첫 무료 미션은 `Are you taking walk-ins right now?`를 다음 순서로 연습합니다.
+
+1. 정답을 보기 전에 영어로 먼저 시도합니다.
+2. 입장 허가와 예약 없는 손님의 현재 수용 가능 여부를 구분합니다.
+3. `walk in`, `a walk-in`, `take walk-ins`가 연결되는 이유를 선택하며 확인합니다.
+4. 의미 단위 세 개를 직접 조립합니다.
+5. 완성 문장을 소리 내어 말하고 확인합니다.
+6. 토요일 운영 방침을 묻는 새 상황으로 바꿔 말합니다.
+
+브라우저가 Web Speech API를 지원하면 영어 음성을 텍스트로 확인합니다. 지원하지 않거나 인식에 실패하면 소리 내어 말한 뒤 직접 입력할 수 있습니다. 진행 상태와 막힌 단계는 현재 브라우저의 `localStorage`에만 저장되며, 음성 파일은 저장하지 않습니다.
+
+계정, 기기 간 동기화, 결제, 구독, 발음 채점, 음성 이력은 아직 구현되어 있지 않습니다. 첫 미션의 시작·완료·전환 성공 데이터를 검증한 뒤 추가할 범위입니다.
 
 ## How to Add a New Reel
 
@@ -66,6 +81,13 @@ python3 -m http.server 8001 -d public
 ```
 
 확인 URL: `http://localhost:8001/`
+
+자동 검증:
+
+```bash
+npm test
+npm run test:browser
+```
 
 AI 검색 API와 Daily Quiz 생성/검증 API까지 확인하려면 Vercel 환경변수 `OPENAI_API_KEY`가 설정된 상태에서 Vercel 배포본 또는 `vercel dev`를 사용하세요. GitHub Pages처럼 정적 호스팅만 있는 환경에서는 Daily Quiz가 로컬 fallback 로직으로 동작합니다.
 

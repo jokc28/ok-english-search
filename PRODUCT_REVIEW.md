@@ -17,13 +17,18 @@ The `awesome-design-md` local references are mostly pointer README files, not fu
 
 ## Implemented Pivot
 
-The app now exposes two hubs:
+The app now exposes four hubs:
 
+- **Guided Mission Hub:** opens first and requires a first attempt, intent diagnosis, meaning construction, phrase assembly, spoken output, and an unseen transfer. The first mission saves both completion and the learner's latest obstacle locally.
 - **Dictionary Hub:** keeps the existing situation-first search, AI search fallback, category filters, saved expressions, sharing, and Reel links.
 - **Quiz Hub:** creates a short mobile quiz from the same expression catalog. Users choose all expressions, a category, or their saved 오답 queue, then answer mixed meaning, situation, and typed-recall questions before jumping back to the source Reel.
 - **Situation Practice Hub:** groups the expression catalog by real-use scenarios such as 위로·감정, 부탁·요청, 카페·식당, 여행·호텔, 의견·맞장구, 헷갈리는 표현, 스몰토크, and 칭찬·리액션.
 
-The top daily card is now a compact daily lesson: expression, meaning, situation, a more natural use example, a 10-second comprehension quiz, and the source Reel link. On Vercel, the daily quiz is generated through a dedicated LLM API route and then independently validated by a second LLM pass plus server-side guard checks to block placeholder bleed and meta-language. On static hosting without the API route, the app falls back to the local quiz generator.
+The daily card now lives inside the Dictionary Hub so it does not interrupt the guided mission. It remains a compact daily lesson with expression, meaning, situation, a more natural use example, a 10-second comprehension quiz, and the source Reel link. On Vercel, the daily quiz is generated through a dedicated LLM API route and then independently validated by a second LLM pass plus server-side guard checks to block placeholder bleed and meta-language. On static hosting without the API route, the app falls back to the local quiz generator.
+
+## Current Product Boundary
+
+The guided mission is a usable free product proof, not a live subscription. Progress and the obstacle-aware retry queue use browser `localStorage`; speech recognition is optional and no audio file is retained. Authentication, cross-device history, billing, subscriptions, pronunciation scoring, and durable spoken-attempt history remain unimplemented and must not appear in customer-facing claims.
 
 ## Quiz Learning Strategy
 
