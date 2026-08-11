@@ -106,9 +106,10 @@ test('builder completion and reset preserve immutable completion history', () =>
   assert.equal(completed.completed, true, 'reset must not mutate completed state');
 });
 
-test('root and public builder assets remain byte-identical', () => {
+test('root and public deployable assets remain byte-identical', () => {
   assert.equal(read('guided-mission-core.js'), read('public/guided-mission-core.js'));
   assert.equal(read('guided-missions.js'), read('public/guided-missions.js'));
   assert.equal(read('guided-mission.js'), read('public/guided-mission.js'));
   assert.equal(read('index.html'), read('public/index.html'));
+  assert.equal(read('og-image.svg'), read('public/og-image.svg'));
 });

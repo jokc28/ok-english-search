@@ -35,7 +35,91 @@ cmp data.js public/data.js
 
 https://jokc28.github.io/ok-english-search/
 
-배포는 `main`의 정적 파일을 기준으로 수행합니다. 배포 전에는 아래 검증과 root/public 동기화를 모두 통과시킵니다.
+배포는 `main`의 정적 파일을 기준으로 수행합니다. 기능 브랜치의 독립 리뷰가 승인된 뒤 다음 순서로 진행합니다. 일반 체크아웃의 `git status --short`가 아무것도 출력하지 않을 때만 계속합니다.
+
+```bash
+cd /Users/jungokchul/private/okapp/ok-english-search
+git status --short
+git switch main
+git pull --ff-only origin main
+git merge --ff-only feat/reel-situation-builder
+```
+
+일반 체크아웃에서 아래 전체 검증을 다시 실행한 뒤 `main`을 push합니다.
+
+```bash
+npm test
+npm run test:browser
+npm audit --audit-level=high
+cmp data.js public/data.js
+cmp guided-mission-core.js public/guided-mission-core.js
+cmp guided-mission.js public/guided-mission.js
+cmp guided-missions.js public/guided-missions.js
+cmp index.html public/index.html
+cmp og-image.svg public/og-image.svg
+git diff --check origin/main..main
+git push origin main
+```
+
+push 성공만으로 배포 완료로 판단하지 않습니다. GitHub Pages 캐시를 우회해 현재 builder marker가 활성화될 때까지 다음 검사를 실행합니다. 30회 안에 `pages_ready=1`이 되지 않으면 배포 미완료입니다.
+
+```bash
+pages_url='https://jokc28.github.io/ok-english-search/'
+pages_revision=$(git rev-parse HEAD)
+pages_ready=0
+for pages_attempt in {1..30}; do
+  pages_html=$(curl -fsSL "${pages_url}?revision=${pages_revision}-${pages_attempt}") || pages_html=''
+  pages_controller=$(curl -fsSL "${pages_url}guided-mission.js?revision=${pages_revision}-${pages_attempt}") || pages_controller=''
+  pages_catalog=$(curl -fsSL "${pages_url}guided-missions.js?revision=${pages_revision}-${pages_attempt}") || pages_catalog=''
+  if printf '%s' "$pages_html" | grep -q 'id="guidedMissionApp"' \
+    && ! printf '%s' "$pages_html" | grep -q 'G-XXXXXXXXXX' \
+    && printf '%s' "$pages_controller" | grep -q 'REEL ORDER MAKER' \
+    && printf '%s' "$pages_controller" | grep -q '영어 주문 만들기' \
+    && printf '%s' "$pages_catalog" | grep -q 'subway-order-builder-01'; then
+    pages_ready=1
+    break
+  fi
+  sleep 10
+done
+test "$pages_ready" -eq 1
+```
+
+marker 확인 후 실제 운영 URL에서 390x844 완료 경로를 실행합니다.
+
+```bash
+PRODUCTION_URL='https://jokc28.github.io/ok-english-search/' node --input-type=module <<'EOF'
+import assert from 'node:assert/strict';
+import { chromium } from 'playwright';
+
+const chromePath = process.env.CHROME_PATH || '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome';
+const browser = await chromium.launch({ headless: true, executablePath: chromePath });
+
+try {
+  const context = await browser.newContext({ viewport: { width: 390, height: 844 } });
+  const page = await context.newPage();
+  const pageErrors = [];
+  page.on('pageerror', error => pageErrors.push(error.message));
+
+  const response = await page.goto(process.env.PRODUCTION_URL, { waitUntil: 'domcontentloaded' });
+  assert.equal(response?.status(), 200);
+  await page.evaluate(() => localStorage.removeItem('ok_reel_builder_v1'));
+  await page.reload({ waitUntil: 'domcontentloaded' });
+  await page.locator('[data-builder-remove="pickles"]').click();
+  await page.locator('[data-builder-reduce="mayo"]').click();
+  await page.locator('#builderComplete').click();
+  await page.getByText('Everything except pickles.').waitFor();
+  await page.getByText('Go easy on the mayo.').waitFor();
+  assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth), true);
+  assert.deepEqual(pageErrors, []);
+  await context.close();
+  console.log('Production 390x844 completion path passed');
+} finally {
+  await browser.close();
+}
+EOF
+```
+
+현재 builder marker poll과 이 운영 완료 경로가 모두 통과해야 배포 완료입니다.
 
 ## 검증
 
@@ -48,6 +132,7 @@ cmp guided-mission-core.js public/guided-mission-core.js
 cmp guided-mission.js public/guided-mission.js
 cmp guided-missions.js public/guided-missions.js
 cmp index.html public/index.html
+cmp og-image.svg public/og-image.svg
 git diff --check
 ```
 
