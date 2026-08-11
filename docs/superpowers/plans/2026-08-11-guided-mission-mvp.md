@@ -146,6 +146,6 @@ Expected: all commands exit 0.
 
 Serve `public/`, use a mobile viewport, complete every stage including a wrong intent choice and speech fallback, reload to confirm progress persistence, restart, and capture desktop/mobile screenshots. Check that no controls overlap or shift.
 
-- [ ] **Step 4: Commit, push, and verify production**
+- [x] **Step 4: Commit, push, and verify production**
 
 Commit only the mission files and documentation, push `main`, poll the Vercel production URL until `훈련 미션` and `예약 없이 지금 가능한지 묻기` are live, then repeat the mobile path against production.
