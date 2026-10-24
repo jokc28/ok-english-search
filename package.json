@@ -3,12 +3,19 @@
   "version": "2.0.0",
   "private": true,
   "scripts": {
-    "test": "node --test tests/*.test.mjs",
+    "test": "node --test --test-concurrency=1 tests/*.test.mjs",
     "test:browser": "node tests/guided-mission.browser.mjs",
     "audit:targets": "node scripts/apply-target-validation.js",
-    "configure:sponsor": "node scripts/configure-sponsor.js"
+    "configure:sponsor": "node scripts/configure-sponsor.js",
+    "workflow": "node ../scripts/workflow.mjs ok-english-search",
+    "check:release": "node scripts/check-release.mjs",
+    "test:browser:ci": "node tests/guided-mission.browser.mjs --no-report"
   },
   "devDependencies": {
     "playwright": "1.62.1"
-  }
+  },
+  "releaseChecks": [
+    "test",
+    "test:browser:ci"
+  ]
 }

@@ -14,7 +14,7 @@ const screenshotRoot = join(
   'artifacts',
   'task-3-browser'
 );
-const chromePath = process.env.CHROME_PATH || '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome';
+const chromePath = process.env.CHROME_PATH || (process.platform === 'darwin' ? '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' : chromium.executablePath());
 assert.ok(existsSync(chromePath), `Chrome not found: set CHROME_PATH (checked ${chromePath})`);
 
 const mimeTypes = {
@@ -29,7 +29,8 @@ const viewports = [
   { width: 1440, height: 1000 }
 ];
 
-mkdirSync(screenshotRoot, { recursive: true });
+const recordEvidence = !process.argv.includes('--no-report');
+if (recordEvidence) mkdirSync(screenshotRoot, { recursive: true });
 
 const server = createServer((request, response) => {
   const requestPath = new URL(request.url, 'http://localhost').pathname;
@@ -65,7 +66,7 @@ async function runViewportFlow(browser, baseUrl, viewport) {
   const addPageErrorListener = page => page.on('pageerror', error => pageErrors.push(error.message));
   const page = await context.newPage();
   addPageErrorListener(page);
-  const captureMobileEvidence = viewport.width === 390 && viewport.height === 844;
+  const captureMobileEvidence = recordEvidence && viewport.width === 390 && viewport.height === 844;
 
   try {
     await open(page, baseUrl, `${viewport.width}x${viewport.height} root entry`);
